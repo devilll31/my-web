@@ -3,27 +3,11 @@
 
 import Link from 'next/link';
 import {
-  ArrowRightLeft,
-  Calculator,
-  CheckSquare,
   ChevronDown,
-  Code,
-  FileText,
-  FlaskConical,
-  Folder,
-  Globe,
-  Image,
-  Link as LinkIcon,
-  Lock,
-  Network,
-  Palette,
-  PenLine,
-  ScanText,
   Search,
 } from 'lucide-react';
 import React from 'react';
 
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
@@ -47,8 +31,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Logo className="h-6 w-6" />
-          <span className="font-bold text-lg font-headline">D2ools</span>
+          <Logo className="h-10 w-24" />
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-6">
           <nav className="hidden md:flex items-center space-x-6">

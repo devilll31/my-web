@@ -8,8 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="space-y-4 col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl text-white">D2ools</span>
+              <Logo className="h-12 w-28 text-primary" />
             </Link>
             <p className="text-sm text-slate-400">
               The next level of online utility tools. Fast, free, and easy to use.
