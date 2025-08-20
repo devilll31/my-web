@@ -65,7 +65,7 @@ export default function Header() {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
                         <Link href="/tools" className="block p-2 rounded-md hover:bg-accent/50 transition-colors">
-                            <h4 className="font-medium text-primary">All 500+ Tools</h4>
+                            <h4 className="font-medium text-primary">All 100+ Tools</h4>
                             <p className="text-sm text-muted-foreground">Browse all available tools categorized for your convenience.</p>
                         </Link>
                     </div>
@@ -90,21 +90,18 @@ export default function Header() {
             </Popover>
 
             <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/contact">Contact Us</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
           </nav>
-          <div className="flex-1 hidden md:flex justify-center px-8">
-            <div className="relative w-full max-w-md">
+          <div className="flex-1 flex justify-end">
+            <div className="relative w-full max-w-xs">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search tools..."
+                placeholder="Search for tools... e.g. PDF to Word"
                 className="w-full rounded-full pl-9"
               />
             </div>
           </div>
-          <Button asChild>
-            <Link href="/tools">Get Started</Link>
-          </Button>
         </div>
       </div>
     </header>

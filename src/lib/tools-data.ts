@@ -615,8 +615,9 @@ export const getToolsByCategory = (categorySlug: string): Tool[] => {
 };
 
 export const getAllToolsByCategories = (): Category[] => {
-  return categories.map(category => ({
+  const allCategories = categories.map(category => ({
     ...category,
     tools: getToolsByCategory(category.slug),
   }));
+  return allCategories.filter(category => category.tools.length > 0);
 };
