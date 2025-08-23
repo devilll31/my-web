@@ -3,16 +3,15 @@ import Logo from '@/components/logo';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-slate-300">
+    <footer className="bg-slate-900 text-slate-300">
       <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="space-y-4 col-span-2 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <Logo className="h-10 w-10 text-primary" />
-               <span className="font-bold text-2xl text-white">D2ools</span>
             </Link>
-            <p className="text-sm text-slate-400">
-              The next level of online utility tools. Fast, free, and easy to use.
+            <p className="text-sm text-slate-400 max-w-xs">
+              The next level of online utility tools. Fast, free, and easy to use for all your digital needs.
             </p>
           </div>
           <div>

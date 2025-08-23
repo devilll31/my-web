@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { getCategoryBySlug } from '@/lib/tools-data';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 
 interface ToolCardProps {
   tool: Tool;
@@ -15,25 +16,30 @@ export default function ToolCard({ tool, className }: ToolCardProps) {
 
   if (!category) return null;
 
+  const isFeatured = tool.slug.includes('-ai');
+
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
-      <div className="relative w-full h-full p-4 bg-card rounded-2xl shadow-sm border border-border/50 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-primary/50 hover:-translate-y-1 overflow-hidden bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm">
+      <div className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:border-primary/30 hover:-translate-y-1 overflow-hidden">
         <div className="flex flex-col justify-between h-full">
           <div>
-            <div className="mb-3">
+            <div className="flex items-center justify-between mb-3">
                {category.icon && (
-                <category.icon className="h-7 w-7 text-primary" />
+                <div className="p-2 bg-primary/10 rounded-md">
+                  <category.icon className="h-5 w-5 text-primary" />
+                </div>
               )}
+              {isFeatured && <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">Featured</Badge>}
             </div>
-            <h3 className="text-base font-bold font-headline mb-1">{tool.name}</h3>
+            <h3 className="text-sm font-bold font-headline mb-1">{tool.name}</h3>
             <p className="text-xs text-muted-foreground line-clamp-2 min-h-[30px]">
               {tool.description}
             </p>
           </div>
-          <div className="mt-3">
-             <Button size="sm" variant="outline" className="w-full justify-between border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground">
-                <span>Open</span>
-                <ArrowRight className="h-4 w-4" />
+          <div className="mt-4">
+             <Button size="sm" variant="outline" className="w-full text-sm font-semibold justify-between border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40">
+                <span>View Tool</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>
