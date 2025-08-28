@@ -31,7 +31,7 @@ export default function Home() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
                   Welcome to <span className="gradient-text">D2ools</span>
                 </h1>
-                <TypingAnimation text="The next level of online utility tools. Access 100+ free utilities." className="mx-auto max-w-[700px] text-muted-foreground md:text-xl" />
+                <TypingAnimation text="The next level of online utility tools. Access 500+ free utilities." className="mx-auto max-w-[700px] text-muted-foreground md:text-xl" />
               </div>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
                 {stats.map((stat) => (

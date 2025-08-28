@@ -18,7 +18,7 @@ const fontSourceCodePro = Source_Code_Pro({
 
 export const metadata: Metadata = {
   title: 'D2ools - The Next Level of Online Utility Tools',
-  description: 'Access 100+ free utilities for PDF, files, images, and more. The ultimate toolkit for all your digital needs.',
+  description: 'Access 500+ free utilities for PDF, files, images, and more. The ultimate toolkit for all your digital needs.',
 };
 
 export default function RootLayout({

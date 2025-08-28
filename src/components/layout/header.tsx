@@ -32,7 +32,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Logo className="h-10 w-10" />
+          <Logo className="h-8 w-auto" />
+          <span className="font-bold text-lg gradient-text">D2ools</span>
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
@@ -48,7 +49,7 @@ export default function Header() {
               <PopoverContent className="w-[600px] p-4" align="start">
                 <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
-                        <Link href="/tools" className="block p-2 rounded-md hover:bg-accent/50 transition-colors">
+                        <Link href="/tools" className="block p-2 rounded-md hover:bg-accent/10 transition-colors">
                             <h4 className="font-medium text-primary">All 500+ Tools</h4>
                             <p className="text-sm text-muted-foreground">Browse all available tools categorized for your convenience.</p>
                         </Link>
@@ -59,7 +60,7 @@ export default function Header() {
                     <Link
                       key={category.name}
                       href={`/tools#${category.slug}`}
-                      className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/50 transition-colors"
+                      className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
                     >
                       <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />

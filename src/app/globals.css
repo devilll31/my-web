@@ -14,19 +14,19 @@ body {
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 262 82% 56%;
+    --primary: 210.3 89.2% 51.2%;
     --primary-foreground: 210 20% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 342 98% 69%;
+    --accent: 26.9 95.3% 54.9%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 262 82% 56%;
+    --ring: 210.3 89.2% 51.2%;
     --radius: 0.8rem;
   }
   .dark {
@@ -36,19 +36,19 @@ body {
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 262 82% 56%;
+    --primary: 210.3 89.2% 51.2%;
     --primary-foreground: 210 20% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 342 98% 69%;
+    --accent: 26.9 95.3% 54.9%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 262 82% 56%;
+    --ring: 210.3 89.2% 51.2%;
   }
 }
 
@@ -96,10 +96,10 @@ body {
   }
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   }
   .btn-gradient {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);
+    background-image: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary)) 100%);
     background-size: 200% auto;
     transition: all 0.3s ease-in-out;
   }
@@ -108,7 +108,7 @@ body {
   }
   .bg-hero-gradient {
     background-color: #ffffff;
-    background-image: radial-gradient(at 20% 25%, hsla(220, 80%, 90%, 0.4) 0px, transparent 50%),
-                      radial-gradient(at 75% 30%, hsla(260, 80%, 90%, 0.4) 0px, transparent 50%);
+    background-image: radial-gradient(at 20% 25%, hsla(210, 89%, 51%, 0.1) 0px, transparent 50%),
+                      radial-gradient(at 75% 30%, hsla(27, 95%, 55%, 0.1) 0px, transparent 50%);
   }
 }

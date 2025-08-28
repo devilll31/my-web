@@ -9,7 +9,7 @@ import { getAllToolsByCategories } from '@/lib/tools-data';
 
 export const metadata = {
   title: 'All Tools | D2ools',
-  description: 'Browse all 100+ free online tools offered by D2ools. Find utilities for PDF, images, text, SEO, and more, all in one place.',
+  description: 'Browse all 500+ free online tools offered by D2ools. Find utilities for PDF, images, text, SEO, and more, all in one place.',
 };
 
 export default function AllToolsPage() {
@@ -20,7 +20,7 @@ export default function AllToolsPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">All Tools</h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Explore our comprehensive suite of over 100+ tools. Everything you need for your digital tasks, organized by category.
+          Explore our comprehensive suite of over 500+ tools. Everything you need for your digital tasks, organized by category.
         </p>
       </div>
 
