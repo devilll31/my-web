@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +10,7 @@ interface TypingAnimationProps {
   typingSpeed?: number;
   deletingSpeed?: number;
   delay?: number;
+  isLooping?: boolean;
 }
 
 const TypingAnimation: React.FC<TypingAnimationProps> = ({
@@ -17,12 +19,15 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   typingSpeed = 100,
   deletingSpeed = 50,
   delay = 2500,
+  isLooping = false,
 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
+  const [hasCompleted, setHasCompleted] = useState(false);
 
   useEffect(() => {
+    if (hasCompleted && !isLooping) return;
+
     let ticker: NodeJS.Timeout;
     
     const handleTyping = () => {
@@ -34,29 +39,31 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
       );
 
       if (!isDeleting && displayedText === fullText) {
-        // Pause at the end of typing
-        ticker = setTimeout(() => setIsDeleting(true), delay);
+        if (isLooping) {
+            ticker = setTimeout(() => setIsDeleting(true), delay);
+        } else {
+            setHasCompleted(true);
+        }
       } else if (isDeleting && displayedText === '') {
-        // Finish deleting, loop to next
         setIsDeleting(false);
-        setLoopNum(loopNum + 1);
       } else {
-        // Continue typing or deleting
         ticker = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
       }
     };
 
-    ticker = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+    ticker = setTimeout(handleTyping, typingSpeed);
 
     return () => clearTimeout(ticker);
-  }, [displayedText, isDeleting, text, loopNum, typingSpeed, deletingSpeed, delay]);
+  }, [displayedText, isDeleting, text, typingSpeed, deletingSpeed, delay, isLooping, hasCompleted]);
 
   return (
-    <span className={cn(className, 'relative')}>
+    <h1 className={cn(className, 'relative')}>
       {displayedText}
       <span className="inline-block w-0.5 h-full animate-pulse bg-foreground/70" style={{height: '1em', verticalAlign: 'text-bottom'}}></span>
-    </span>
+    </h1>
   );
 };
 
 export default TypingAnimation;
+
+    

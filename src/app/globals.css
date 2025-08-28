@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +9,9 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 224 71.4% 96%;
     --foreground: 224 71.4% 4.1%;
-    --card: 240 5.9% 95%;
+    --card: 240 5.9% 100%;
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
@@ -20,7 +21,7 @@ body {
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 26.9 95.3% 54.9%;
+    --accent: 330 95% 55%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -42,7 +43,7 @@ body {
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 26.9 95.3% 54.9%;
+    --accent: 330 95% 55%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -109,6 +110,30 @@ body {
   .bg-hero-gradient {
     background-color: #ffffff;
     background-image: radial-gradient(at 20% 25%, hsla(210, 89%, 51%, 0.1) 0px, transparent 50%),
-                      radial-gradient(at 75% 30%, hsla(27, 95%, 55%, 0.1) 0px, transparent 50%);
+                      radial-gradient(at 75% 30%, hsla(330, 95%, 55%, 0.1) 0px, transparent 50%);
+  }
+
+  .glowing-slogan {
+    animation: fadeIn 1.5s ease-in-out forwards, glow 8s linear infinite;
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px hsla(210, 89%, 51%, 0.3), 0 0 20px hsla(270, 95%, 55%, 0.3), 0 0 30px hsla(330, 95%, 55%, 0.3);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes glow {
+    0% { background-image: linear-gradient(90deg, #00C6FF, #0072FF, #F0F, #FFC837, #00C6FF); }
+    25% { background-image: linear-gradient(90deg, #FFC837, #00C6FF, #0072FF, #F0F, #FFC837); }
+    50% { background-image: linear-gradient(90deg, #F0F, #FFC837, #00C6FF, #0072FF, #F0F); }
+    75% { background-image: linear-gradient(90deg, #0072FF, #F0F, #FFC837, #00C6FF, #0072FF); }
+    100% { background-image: linear-gradient(90deg, #00C6FF, #0072FF, #F0F, #FFC837, #00C6FF); }
   }
 }
+
+    

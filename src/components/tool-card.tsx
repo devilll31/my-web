@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { type Tool } from '@/lib/tools-data';
 import { Button } from '@/components/ui/button';
@@ -9,14 +10,28 @@ import { Badge } from '@/components/ui/badge';
 interface ToolCardProps {
   tool: Tool;
   className?: string;
+  tag?: string;
 }
 
-export default function ToolCard({ tool, className }: ToolCardProps) {
+export default function ToolCard({ tool, className, tag }: ToolCardProps) {
   const category = getCategoryBySlug(tool.category);
 
   if (!category) return null;
 
-  const isFeatured = tool.slug.includes('-ai');
+  const isFeatured = tag ? false : tool.slug.includes('-ai');
+
+  const getTagVariant = (tagName?: string) => {
+    switch(tagName?.toLowerCase()) {
+      case 'trending':
+        return 'secondary';
+      case 'popular':
+        return 'default';
+      case 'featured':
+        return 'destructive';
+      default:
+        return 'secondary';
+    }
+  }
 
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
@@ -29,6 +44,7 @@ export default function ToolCard({ tool, className }: ToolCardProps) {
                   <category.icon className="h-5 w-5 text-primary" />
                 </div>
               )}
+              {tag && <Badge variant={getTagVariant(tag)}>{tag}</Badge>}
               {isFeatured && <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">Featured</Badge>}
             </div>
             <h3 className="text-sm font-bold font-headline mb-1">{tool.name}</h3>
@@ -47,3 +63,5 @@ export default function ToolCard({ tool, className }: ToolCardProps) {
     </Link>
   );
 }
+
+    
