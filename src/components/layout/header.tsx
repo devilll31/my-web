@@ -33,7 +33,6 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Logo className="h-8 w-auto" />
-          <span className="font-bold text-lg gradient-text">D2ools</span>
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
@@ -86,9 +85,7 @@ export default function Header() {
                 className="w-full rounded-full pl-9 bg-gray-100/80 border-transparent focus:bg-white focus:border-primary/50"
               />
             </div>
-            <Button className="hidden sm:inline-flex rounded-full">Sign Up</Button>
-            <Button variant="ghost" className="sm:hidden"><Search className="h-5 w-5"/></Button>
-            <Button variant="ghost" className="rounded-full">Log in</Button>
+             <Button variant="ghost" className="sm:hidden"><Search className="h-5 w-5"/></Button>
           </div>
         </div>
       </div>

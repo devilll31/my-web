@@ -1,12 +1,11 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, File, Image as ImageIcon, Wand2 } from 'lucide-react';
-
+import { ArrowRight, Check, File, Image as ImageIcon, Wand2, Users, Zap, ShieldCheck, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
 import Slogan from '@/components/slogan';
-import RotatingToolCarousel from '@/components/rotating-tool-carousel';
+import ToolCard from '@/components/tool-card';
 
 export default function Home() {
   const allTools = getTools();
@@ -17,17 +16,24 @@ export default function Home() {
   const featuredTools = allTools.filter(t => t.slug.includes('-ai')).slice(0, 20);
   
   const stats = [
-    { value: 'PDF Tools', label: '15+ Tools', icon: <File className="w-5 h-5 text-blue-500" /> },
-    { value: 'Image Tools', label: '20+ Tools', icon: <ImageIcon className="w-5 h-5 text-purple-500" /> },
-    { value: 'AI Tools', label: '5+ Tools', icon: <Wand2 className="w-5 h-5 text-pink-500" /> },
+    { value: '500+ Tools', label: 'Powerful and Versatile', icon: <Wand2 className="w-6 h-6 text-white" /> },
+    { value: '100k+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-white" /> },
+    { value: '100% Free', label: 'No Hidden Costs', icon: <Check className="w-6 h-6 text-white" /> },
   ];
+
+  const features = [
+      { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-primary" /> },
+      { text: 'Lightning Fast', icon: <Zap className="w-5 h-5 text-primary" /> },
+      { text: 'No Registration', icon: <File className="w-5 h-5 text-primary" /> },
+      { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-primary" /> },
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full pt-24 pb-16 md:pt-32 md:pb-24 bg-hero-gradient overflow-hidden">
-          <div className="container px-4 md:px-6 relative">
-            <div className="flex flex-col items-center space-y-4 text-center">
+        <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-16 bg-hero-gradient overflow-hidden">
+          <div className="container px-4 md:px-6 relative text-center">
+            <div className="flex flex-col items-center space-y-4">
               <div className="space-y-6">
                 <TypingAnimation
                     text="Welcome to D2ools"
@@ -36,26 +42,31 @@ export default function Home() {
                 />
                 <Slogan text="The next level of online utility tools. Access 500+ free utilities." />
               </div>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
+            </div>
+
+            <div className="mt-12 animate-fade-in-up animation-delay-500">
+                <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">Trusted by professionals worldwide</p>
+                <div className="mt-4 flex flex-wrap justify-center gap-4 md:gap-8">
+                    {features.map((feature) => (
+                        <div key={feature.text} className="flex items-center gap-2.5 text-sm font-medium">
+                            {feature.icon}
+                            <span>{feature.text}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in-up animation-delay-700">
                 {stats.map((stat) => (
-                  <div key={stat.value} className="flex items-center gap-3 p-3 bg-white/50 rounded-lg shadow-sm border">
+                  <div key={stat.value} className="p-4 rounded-xl shadow-lg flex items-center gap-4 text-white btn-gradient">
                     {stat.icon}
-                    <div>
-                      <p className="font-semibold">{stat.value}</p>
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    <div className="text-left">
+                      <p className="font-bold text-xl">{stat.value}</p>
+                      <p className="text-sm opacity-90">{stat.label}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="space-x-4 pt-6 animate-fade-in-up animation-delay-900">
-                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg transition-transform transform hover:scale-105">
-                  <Link href="/tools">Explore All Tools</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full bg-white hover:bg-gray-100 border-2 border-border text-primary shadow-lg transition-transform transform hover:scale-105">
-                  <Link href="#popular-tools">Top Tools</Link>
-                </Button>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -66,7 +77,11 @@ export default function Home() {
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
-            <RotatingToolCarousel tools={trendingTools} tag="Trending" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                {trendingTools.map((tool) => (
+                    <ToolCard key={tool.slug} tool={tool} tag="Trending" />
+                ))}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/trending">View All Trending Tools</Link>
@@ -82,7 +97,11 @@ export default function Home() {
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
-            <RotatingToolCarousel tools={popularTools} tag="Popular" />
+             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                {popularTools.map((tool) => (
+                    <ToolCard key={tool.slug} tool={tool} tag="Popular" />
+                ))}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/popular">View All Popular Tools</Link>
@@ -98,7 +117,11 @@ export default function Home() {
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
-            <RotatingToolCarousel tools={featuredTools} tag="Featured" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                {featuredTools.map((tool) => (
+                    <ToolCard key={tool.slug} tool={tool} tag="Featured" />
+                ))}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/featured">View All AI Tools</Link>
@@ -131,7 +154,7 @@ export default function Home() {
             </div>
              <div className="text-center mt-12">
               <Button asChild size="lg" className="rounded-full text-white btn-gradient">
-                <Link href="/tools">View All Categories & Tools</Link>
+                <Link href="/tools">Browse All Categories</Link>
               </Button>
             </div>
           </div>
@@ -140,5 +163,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

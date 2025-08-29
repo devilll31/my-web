@@ -53,8 +53,8 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
             </p>
           </div>
           <div className="mt-4">
-             <Button size="sm" variant="outline" className="w-full text-sm font-semibold justify-between border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/40">
-                <span>View Tool</span>
+             <Button size="sm" className="w-full text-sm font-semibold justify-between btn-gradient text-white">
+                <span>Use Now</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
@@ -63,5 +63,3 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
     </Link>
   );
 }
-
-    
