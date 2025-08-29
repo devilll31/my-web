@@ -39,12 +39,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
-        <div className="flex items-center gap-x-8">
-            <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-                <Logo className="h-8 w-auto" />
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
+      <div className="container flex h-16 max-w-screen-2xl items-center">
+        <div className="flex-1 grid grid-cols-10 items-center">
+            <div className="col-span-1">
+                <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+                    <Logo className="h-8 w-auto" />
+                </Link>
+            </div>
+            <nav className="hidden md:flex items-center space-x-6 col-span-4">
             <NavLink href="/">Home</NavLink>
             
             <Popover>
@@ -102,9 +104,9 @@ export default function Header() {
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contact">Contact</NavLink>
             </nav>
-        </div>
-        <div className="flex items-center">
-            <UniversalSearch />
+            <div className="flex items-center col-start-7 col-span-4">
+                <UniversalSearch />
+            </div>
         </div>
       </div>
     </header>
