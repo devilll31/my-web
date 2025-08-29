@@ -31,10 +31,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="/" className="mr-6 flex items-center space-x-2 flex-shrink-0">
           <Logo className="h-8 w-auto" />
         </Link>
-        <div className="flex flex-1 items-center justify-between space-x-4">
+        <div className="flex flex-1 items-center justify-start space-x-4 md:space-x-6">
           <nav className="hidden md:flex items-center space-x-6">
             <NavLink href="/">Home</NavLink>
             
@@ -76,8 +76,9 @@ export default function Header() {
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </nav>
-          <div className="flex-1 flex justify-end items-center gap-2">
-            <div className="relative w-full max-w-md hidden sm:block">
+        </div>
+        <div className="flex-1 flex justify-end items-center gap-2">
+            <div className="relative w-full max-w-lg hidden sm:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
@@ -86,7 +87,6 @@ export default function Header() {
               />
             </div>
              <Button variant="ghost" className="sm:hidden"><Search className="h-5 w-5"/></Button>
-          </div>
         </div>
       </div>
     </header>

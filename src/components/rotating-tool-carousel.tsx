@@ -33,7 +33,10 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
 
   const displayedTools = [];
   for (let i = 0; i < itemsPerPage; i++) {
-    displayedTools.push(tools[(currentIndex + i) % tools.length]);
+    const tool = tools[(currentIndex + i) % tools.length];
+    if (tool) {
+        displayedTools.push(tool);
+    }
   }
 
   return (
@@ -56,5 +59,3 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
 };
 
 export default RotatingToolCarousel;
-
-    
