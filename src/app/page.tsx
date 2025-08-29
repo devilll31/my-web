@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, File, Star, Wand2, Users, Zap, ShieldCheck, Smartphone } from 'lucide-react';
+import { ArrowRight, Check, Star, Wand2, Users, Zap, ShieldCheck, Smartphone, File as FileIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
@@ -11,20 +11,20 @@ export default function Home() {
   const allTools = getTools();
   const categoriesWithTools = getAllToolsByCategories().slice(0, 15);
 
-  const trendingTools = allTools.filter(t => ['pdf-to-word', 'background-remover', 'image-compressor', 'json-to-csv', 'domain-availability-checker', 'emi-calculator', 'qr-code-generator', 'image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-excel', 'password-generator', 'image-to-text-ocr']).slice(0, 20);
-  const popularTools = allTools.filter(t => ['image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'pdf-to-word', 'background-remover', 'image-compressor', 'pdf-to-jpg', 'merge-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-json', 'xml-to-json', 'whois-lookup', 'dns-lookup', 'url-shortener']).slice(0, 20);
-  const featuredTools = allTools.filter(t => ['image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'meta-description-generator', 'paraphraser', 'pdf-background-remover-ai', 'grammar-checker', 'spelling-checker', 'image-background-remover-ai', 'handwriting-ocr', 'table-ocr', 'math-ocr', 'language-detector', 'keyword-extractor', 'suggest-related-tools', 'image-watermark-remover', 'remove-image-noise', 'sharpen-image']).slice(0, 20);
+  const trendingTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
+  const popularTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
+  const featuredTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
   
   const stats = [
     { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
-    { value: '1M+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-primary" /> },
+    { value: '100k+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-primary" /> },
     { value: '100% Free', label: 'No Limits', icon: <Zap className="w-6 h-6 text-primary" /> },
   ];
 
   const features = [
       { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-orange-400" /> },
       { text: 'Lightning Fast', icon: <Zap className="w-5 h-5 text-orange-400" /> },
-      { text: 'No Registration', icon: <File className="w-5 h-5 text-orange-400" /> },
+      { text: 'No Registration', icon: <FileIcon className="w-5 h-5 text-orange-400" /> },
       { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-orange-400" /> },
   ]
 
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="trending-tools" className="w-full py-12 md:py-16 bg-background">
+        <section id="trending-tools" className="w-full py-8 md:py-12 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Trending Tools</h2>
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="popular-tools" className="w-full py-12 md:py-16 bg-gray-50/50 dark:bg-zinc-900/50">
+        <section id="popular-tools" className="w-full py-8 md:py-12 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Most Popular Tools</h2>
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="featured-tools" className="w-full py-12 md:py-16 bg-background">
+        <section id="featured-tools" className="w-full py-8 md:py-12 bg-background">
           <div className="container px-4 md:px-6">
              <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Featured Tools</h2>
