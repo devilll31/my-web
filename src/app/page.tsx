@@ -4,8 +4,8 @@ import { ArrowRight, Check, File, Star, Wand2, Users, Zap, ShieldCheck, Smartpho
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
-import ToolCard from '@/components/tool-card';
 import Slogan from '@/components/slogan';
+import ToolCard from '@/components/tool-card';
 
 export default function Home() {
   const allTools = getTools();
@@ -93,7 +93,7 @@ export default function Home() {
               {trendingTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Trending" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
+              <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/trending">View All Trending Tools</Link>
               </Button>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
               {popularTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Popular" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
+              <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/popular">View All Popular Tools</Link>
               </Button>
             </div>
@@ -129,7 +129,7 @@ export default function Home() {
               {featuredTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Featured" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
+              <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/featured">View All Featured Tools</Link>
               </Button>
             </div>

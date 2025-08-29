@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ArrowRight } from 'lucide-react';
+import { Search, ArrowRight, FileText, Image as ImageIcon, Star } from 'lucide-react';
 import { getTools, getCategories, Tool, Category } from '@/lib/tools-data';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -41,14 +41,14 @@ const UniversalSearch = () => {
       }
       
       const combined = [...categorySuggestions, ...toolSuggestions];
-      const uniqueSuggestions = Array.from(new Map(combined.map(item => [item.slug, item])).values());
+      const uniqueSuggestions = Array.from(new Map(combined.map(item => [(item as any).slug, item])).values());
       
       setSuggestions(uniqueSuggestions.slice(0, 7));
       setShowSuggestions(true);
     } else {
       setShowSuggestions(false);
     }
-  }, [query]);
+  }, [query, allTools, allCategories]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -63,7 +63,11 @@ const UniversalSearch = () => {
   }, []);
 
   const isCategory = (item: Tool | Category): item is Category => 'tools' in item;
-  const isTool = (item: Tool | Category): item is Tool => 'category' in item;
+
+  const getToolIcon = (tool: Tool) => {
+    const category = allCategories.find(c => c.slug === tool.category);
+    return category ? <category.icon className="h-5 w-5 text-secondary-foreground" /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+  }
 
   return (
     <div className="relative w-full max-w-xl" ref={searchContainerRef}>
@@ -82,38 +86,25 @@ const UniversalSearch = () => {
         <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-xl border border-border/50 overflow-hidden z-50">
           <ul className="divide-y divide-border/50">
             {suggestions.map(item => {
-              if (isCategory(item)) {
-                return (
-                  <li key={item.slug}>
-                    <Link href={`/tools#${item.slug}`} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                      <div className="p-2 bg-primary/10 rounded-md">
-                        <item.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-sm">{item.name}</p>
-                        <p className="text-xs text-muted-foreground">Category</p>
-                      </div>
-                       <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />
-                    </Link>
-                  </li>
-                );
-              } 
-              if(isTool(item)) {
-                return (
-                  <li key={item.slug}>
-                    <Link href={`/tools/${item.slug}`} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                       <div className="p-2 bg-secondary rounded-md">
-                        <Star className="h-5 w-5 text-secondary-foreground" />
-                      </div>
-                      <div>
-                         <p className="font-semibold text-sm">{item.name}</p>
-                         <p className="text-xs text-muted-foreground">{item.description}</p>
-                      </div>
-                    </Link>
-                  </li>
-                )
-              }
-              return null;
+              const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
+              const icon = isCategory(item) ? <item.icon className="h-5 w-5 text-primary" /> : getToolIcon(item);
+              const name = item.name;
+              const description = isCategory(item) ? 'Category' : item.description;
+
+              return (
+                <li key={item.slug}>
+                  <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
+                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')}>
+                      {icon}
+                    </div>
+                    <div className="flex-1 overflow-hidden">
+                       <p className="font-semibold text-sm truncate">{name}</p>
+                       <p className="text-xs text-muted-foreground truncate">{description}</p>
+                    </div>
+                    {!isCategory(item) && <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />}
+                  </Link>
+                </li>
+              );
             })}
           </ul>
         </div>
