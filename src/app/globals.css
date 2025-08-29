@@ -107,6 +107,16 @@ body {
   .btn-gradient:hover {
     background-position: right center;
   }
+  .btn-gradient-outline {
+    position: relative;
+    padding: 2px;
+    border-radius: 9999px; /* full for rounded-full */
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-gradient-outline:hover {
+    box-shadow: 0 0 15px hsla(var(--primary), 0.5), 0 0 15px hsla(var(--accent), 0.3);
+  }
   .bg-hero-gradient {
     background-color: #ffffff;
     background-image: radial-gradient(at 20% 25%, hsla(210, 89%, 51%, 0.1) 0px, transparent 50%),
@@ -135,5 +145,3 @@ body {
     100% { background-image: linear-gradient(90deg, #00C6FF, #0072FF, #F0F, #FFC837, #00C6FF); }
   }
 }
-
-    

@@ -63,9 +63,11 @@ export default function Home() {
                 <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg hover:shadow-xl transition-shadow">
                     <Link href="/tools">Explore All 500+ Tools <ArrowRight className="ml-2" /></Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow border-gray-200/80">
-                    <Link href="/tools/popular"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
-                </Button>
+                <div className="btn-gradient-outline shadow-lg hover:shadow-xl">
+                  <Button asChild size="lg" variant="outline" className="rounded-full bg-background/80 backdrop-blur-sm border-0">
+                      <Link href="/tools/popular"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
+                  </Button>
+                </div>
             </div>
 
             <div className="mt-12 animate-fade-in-up animation-delay-900">
