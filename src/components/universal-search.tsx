@@ -66,7 +66,10 @@ const UniversalSearch = () => {
 
   const getToolIcon = (tool: Tool) => {
     const category = allCategories.find(c => c.slug === tool.category);
-    return category ? <category.icon className="h-5 w-5 text-secondary-foreground" /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+    if (category) {
+      return <category.icon className="h-5 w-5 text-secondary-foreground" />;
+    }
+    return <Star className="h-5 w-5 text-secondary-foreground" />;
   }
 
   return (
