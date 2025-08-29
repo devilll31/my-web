@@ -18,5 +18,3 @@ const Slogan: React.FC<SloganProps> = ({ text, className }) => {
 };
 
 export default Slogan;
-
-    
