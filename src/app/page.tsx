@@ -82,7 +82,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="trending-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
+        <section id="trending-tools" className="w-full py-12 md:py-16 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Trending Tools</h2>
@@ -100,7 +100,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="popular-tools" className="w-full py-12 md:py-20 lg:py-24 bg-gray-50/50 dark:bg-zinc-900/50">
+        <section id="popular-tools" className="w-full py-12 md:py-16 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Most Popular Tools</h2>
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="featured-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
+        <section id="featured-tools" className="w-full py-12 md:py-16 bg-background">
           <div className="container px-4 md:px-6">
              <div className="flex items-center justify-center mb-10 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Featured Tools</h2>
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="categories" className="w-full py-12 md:py-20 lg:py-24 bg-gray-50/50 dark:bg-zinc-900/50">
+        <section id="categories" className="w-full py-12 md:py-16 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-4 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">15 Categories, 500+ Tools</h2>
