@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PopularToolsPage() {
   const allTools = getTools();
-  const popularTools = allTools.filter(t => ['image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'pdf-to-word', 'background-remover', 'image-compressor', 'pdf-to-jpg', 'merge-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-json', 'xml-to-json', 'whois-lookup', 'dns-lookup', 'url-shortener']).slice(0, 50);
+  const popularTools = allTools.filter(t => ['image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'pdf-to-word', 'background-remover', 'image-compressor', 'pdf-to-jpg', 'merge-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-json', 'xml-to-json', 'whois-lookup', 'dns-lookup', 'url-shortener', 'domain-availability-checker', 'website-speed-test', 'sitemap-generator', 'meta-tag-analyzer', 'keyword-density-checker', 'currency-converter', 'emi-calculator', 'sip-calculator', 'income-tax-calculator', 'gst-calculator', 'unit-converter', 'bmi-calculator', 'scientific-calculator', 'json-formatter', 'hash-generator', 'regex-tester', 'password-generator', 'qr-code-generator', 'pomodoro-timer', 'time-zone-converter', 'ping-test', 'port-scanner', 'ip-geolocation-lookup', 'color-picker', 'contrast-checker', 'gradient-generator', 'image-to-text-ocr', 'language-detector', 'zip-archive-creator']).slice(0, 50);
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
