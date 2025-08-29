@@ -41,10 +41,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2 flex-shrink-0">
+        <Link href="/" className="mr-4 flex items-center space-x-2 flex-shrink-0">
           <Logo className="h-8 w-auto" />
         </Link>
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 mr-6">
           <NavLink href="/">Home</NavLink>
           
           <Popover>
@@ -102,7 +102,7 @@ export default function Header() {
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </nav>
-        <div className="flex-1 flex justify-center items-center px-8">
+        <div className="flex-1 flex justify-end items-center">
             <UniversalSearch />
         </div>
       </div>
