@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   ChevronDown,
   Search,
+  ArrowRight
 } from 'lucide-react';
 import React from 'react';
 
@@ -12,7 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 import Logo from '@/components/logo';
-import { getCategories } from '@/lib/tools-data';
+import { getCategories, getTop50Tools } from '@/lib/tools-data';
 import { Button } from '@/components/ui/button';
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -27,6 +28,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Header() {
   const categories = getCategories();
+  const topTools = getTop50Tools().slice(0, 20);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
@@ -45,30 +47,38 @@ export default function Header() {
                   <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-out"></span>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-[600px] p-4" align="start">
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-2">
-                        <Link href="/tools" className="block p-2 rounded-md hover:bg-accent/10 transition-colors">
-                            <h4 className="font-medium text-primary">All 500+ Tools</h4>
-                            <p className="text-sm text-muted-foreground">Browse all available tools categorized for your convenience.</p>
-                        </Link>
+              <PopoverContent className="w-[700px] p-4" align="start">
+                <div className="grid grid-cols-2 gap-x-8">
+                  <div>
+                     <h3 className="font-bold text-lg mb-4 text-foreground">Top 50 Tools</h3>
+                     <div className="space-y-2">
+                       {topTools.map(tool => (
+                         <Link key={tool.slug} href={`/tools/${tool.slug}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors">{tool.name}</Link>
+                       ))}
+                     </div>
+                     <Button asChild variant="link" className="p-0 h-auto mt-4">
+                       <Link href="/tools/top-50">View All Top 50 Tools <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                     </Button>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-4 text-foreground">Tool Categories</h3>
+                    <div className="grid grid-cols-1 gap-y-2">
+                      {categories.map((category) => (
+                      <Link
+                        key={category.name}
+                        href={`/tools#${category.slug}`}
+                        className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
+                      >
+                        <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                          <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-sm">{category.name}</p>
+                        </div>
+                      </Link>
+                    ))}
                     </div>
-                    <div className="col-span-2 border-b my-2"></div>
-                    <h4 className="col-span-2 font-medium text-sm text-muted-foreground px-2">Categories</h4>
-                    {categories.map((category) => (
-                    <Link
-                      key={category.name}
-                      href={`/tools#${category.slug}`}
-                      className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
-                    >
-                      <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                      </div>
-                      <div>
-                        <p className="font-medium">{category.name}</p>
-                      </div>
-                    </Link>
-                  ))}
+                  </div>
                 </div>
               </PopoverContent>
             </Popover>

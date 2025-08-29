@@ -11,9 +11,10 @@ interface ToolCardProps {
   tool: Tool;
   className?: string;
   tag?: string;
+  rank?: number;
 }
 
-export default function ToolCard({ tool, className, tag }: ToolCardProps) {
+export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) {
   const category = getCategoryBySlug(tool.category);
 
   if (!category) return null;
@@ -49,6 +50,11 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
       <div className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:border-primary/30 hover:-translate-y-1 overflow-hidden">
+        {rank && (
+            <div className="absolute top-2 right-2 bg-primary/80 text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10">
+              #{rank}
+            </div>
+        )}
         <div className="flex flex-col justify-between h-full">
           <div>
             <div className="flex items-center justify-between mb-3">

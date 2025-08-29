@@ -1,3 +1,4 @@
+
 import {
   FileText,
   Image,
@@ -7,7 +8,7 @@ import {
   Calculator,
   FlaskConical,
   Code,
-  Link,
+  Link as LinkIcon,
   Lock,
   CheckSquare,
   Network,
@@ -15,6 +16,7 @@ import {
   ScanText,
   Folder,
   LucideIcon,
+  Star,
 } from 'lucide-react';
 
 export interface Tool {
@@ -162,7 +164,7 @@ const tools: Tool[] = [
   { name: 'Encode/Decode URL List to CSV', slug: 'url-list-to-csv', description: 'Process a list of URLs from/to a CSV.', category: 'document-file-converters' },
   { name: 'Batch File Renamer', slug: 'batch-file-renamer', description: 'Rename multiple files based on rules.', category: 'document-file-converters' },
   { name: 'Case-Sensitive Filename Normalizer', slug: 'filename-normalizer', description: 'Normalize filenames for case sensitivity.', category: 'document-file-converters' },
-  { name: 'Diacritics Remover (filenames)', slug: 'diacritics-remover-filenames', description: 'Remove diacritics from filenames.', category: 'document-file-converters' },
+  { name: 'diacritics Remover (filenames)', slug: 'diacritics-remover-filenames', description: 'Remove diacritics from filenames.', category: 'document-file-converters' },
   { name: 'Unicode Normalizer', slug: 'unicode-normalizer', description: 'Normalize Unicode text (NFC/NFD).', category: 'document-file-converters' },
   { name: 'ZIP to TAR', slug: 'zip-to-tar', description: 'Convert ZIP archives to TAR.', category: 'document-file-converters' },
   { name: 'TAR to ZIP', slug: 'tar-to-zip', description: 'Convert TAR archives to ZIP.', category: 'document-file-converters' },
@@ -188,15 +190,15 @@ const tools: Tool[] = [
   { name: 'URL Extractor from Text', slug: 'url-extractor', description: 'Extract all URLs from a block of text.', category: 'text-writing-tools' },
   { name: 'Email Extractor from Text', slug: 'email-extractor', description: 'Extract all email addresses from a block of text.', category: 'text-writing-tools' },
   { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', category: 'text-writing-tools' },
-  { name: 'Blog Title Generator (AI-light)', slug: 'blog-title-generator', description: 'Generate blog titles with AI.', category: 'text-writing-tools' },
-  { name: 'Meta Description Generator (AI-light)', slug: 'meta-description-generator', description: 'Generate meta descriptions with AI.', category: 'text-writing-tools' },
-  { name: 'Paraphraser (AI-light)', slug: 'paraphraser', description: 'Paraphrase text using AI.', category: 'text-writing-tools' },
-  { name: 'Summarizer (AI-light)', slug: 'summarizer', description: 'Summarize text using AI.', category: 'text-writing-tools' },
-  { name: 'Keyword Extractor (NLP)', slug: 'keyword-extractor', description: 'Extract keywords from text using NLP.', category: 'text-writing-tools' },
+  { name: 'Blog Title Generator', slug: 'blog-title-generator', description: 'Generate blog titles with AI.', category: 'text-writing-tools' },
+  { name: 'Meta Description Generator', slug: 'meta-description-generator', description: 'Generate meta descriptions with AI.', category: 'text-writing-tools' },
+  { name: 'Paraphraser', slug: 'paraphraser', description: 'Paraphrase text using AI.', category: 'text-writing-tools' },
+  { name: 'Summarizer', slug: 'summarizer', description: 'Summarize text using AI.', category: 'text-writing-tools' },
+  { name: 'Keyword Extractor', slug: 'keyword-extractor', description: 'Extract keywords from text using NLP.', category: 'text-writing-tools' },
   { name: 'Hashtag Generator', slug: 'hashtag-generator', description: 'Generate hashtags for social media.', category: 'text-writing-tools' },
   { name: 'Slug Generator', slug: 'slug-generator', description: 'Create SEO-friendly URL slugs.', category: 'text-writing-tools' },
-  { name: 'Text Diff (Side-by-Side)', slug: 'text-diff', description: 'Compare two texts side-by-side.', category: 'text-writing-tools' },
-  { name: 'Markdown Editor (WYSIWYG)', slug: 'markdown-editor', description: 'A what-you-see-is-what-you-get Markdown editor.', category: 'text-writing-tools' },
+  { name: 'Text Diff', slug: 'text-diff', description: 'Compare two texts side-by-side.', category: 'text-writing-tools' },
+  { name: 'Markdown Editor', slug: 'markdown-editor', description: 'A what-you-see-is-what-you-get Markdown editor.', category: 'text-writing-tools' },
   { name: 'HTML Entities Encoder/Decoder', slug: 'html-entities-encoder-decoder', description: 'Encode or decode HTML entities.', category: 'text-writing-tools' },
   { name: 'Base64 Text Encoder/Decoder', slug: 'base64-text-encoder-decoder', description: 'Encode or decode text in Base64.', category: 'text-writing-tools' },
   { name: 'ROT13 Encoder/Decoder', slug: 'rot13-encoder-decoder', description: 'Encode or decode text using ROT13.', category: 'text-writing-tools' },
@@ -249,6 +251,10 @@ const tools: Tool[] = [
   { name: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility-calculator', description: 'Check your eligibility for a home loan.', category: 'finance-business-calculators' },
   { name: 'Car Loan EMI Calculator', slug: 'car-loan-emi-calculator', description: 'Calculate EMI for your car loan.', category: 'finance-business-calculators' },
   { name: 'Education Loan EMI Calculator', slug: 'education-loan-emi-calculator', description: 'Calculate EMI for your education loan.', category: 'finance-business-calculators' },
+  { name: 'Personal Loan EMI Calculator', slug: 'personal-loan-emi-calculator', description: 'Calculate EMI for your personal loan.', category: 'finance-business-calculators' },
+  { name: 'Business Loan EMI Calculator', slug: 'business-loan-emi-calculator', description: 'Calculate EMI for your business loan.', category: 'finance-business-calculators' },
+  { name: 'Loan Amortization Schedule', slug: 'loan-amortization-schedule', description: 'View the amortization schedule for your loan.', category: 'finance-business-calculators' },
+  { name: 'Compare Loans', slug: 'compare-loans', description: 'Compare two loans side-by-side.', category: 'finance-business-calculators' },
   { name: 'SIP Calculator', slug: 'sip-calculator', description: 'Calculate the future value for your systematic investment plan.', category: 'finance-business-calculators' },
   { name: 'Lumpsum Investment Calculator', slug: 'lumpsum-investment-calculator', description: 'Calculate the future value of a lumpsum investment.', category: 'finance-business-calculators' },
   { name: 'Mutual Fund Returns Calculator', slug: 'mutual-fund-returns-calculator', description: 'Calculate returns on your mutual fund investments.', category: 'finance-business-calculators' },
@@ -282,7 +288,7 @@ const tools: Tool[] = [
   { name: 'Net Worth Tracker', slug: 'net-worth-tracker', description: 'Track your net worth over time.', category: 'finance-business-calculators' },
   { name: 'Budget Planner', slug: 'budget-planner', description: 'Plan your monthly budget.', category: 'finance-business-calculators' },
   { name: 'GST Calculator (quick mode)', slug: 'gst-calculator-quick', description: 'A faster version of the GST calculator.', category: 'finance-business-calculators' },
-  { name: 'Tip Calculator (standalone)', slug: 'tip-calculator', description: 'Calculate tips and split bills easily.', category: 'finance-business-calculators' },
+  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'Calculate tips and split bills easily.', category: 'finance-business-calculators' },
   { name: 'Simple Interest Calculator (quick mode)', slug: 'simple-interest-calculator-quick', description: 'A faster version of the simple interest calculator.', category: 'finance-business-calculators' },
   { name: 'Compound Interest Calculator (quick mode)', slug: 'compound-interest-calculator-quick', description: 'A faster version of the compound interest calculator.', category: 'finance-business-calculators' },
   { name: 'Age Difference Calculator', slug: 'age-difference-calculator', description: 'Calculate the age difference between two dates.', category: 'finance-business-calculators' },
@@ -456,6 +462,7 @@ const tools: Tool[] = [
   { name: 'Invoice Generator', slug: 'invoice-generator', description: 'Generate simple invoices.', category: 'productivity-planning' },
   { name: 'Quote/Estimate Builder', slug: 'quote-estimate-builder', description: 'Build quotes and estimates.', category: 'productivity-planning' },
   { name: 'Expense Splitter', slug: 'expense-splitter', description: 'Split expenses with friends.', category: 'productivity-planning' },
+  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'A simple tip calculator.', category: 'productivity-planning' },
   { name: 'Simple CRM Contacts', slug: 'simple-crm-contacts', description: 'A simple CRM for managing contacts locally.', category: 'productivity-planning' },
   { name: 'Lead Capture Form Builder', slug: 'lead-capture-form-builder', description: 'Build lead capture forms.', category: 'productivity-planning' },
   { name: 'Step Counter (Manual Input)', slug: 'step-counter', description: 'Manually input your daily steps.', category: 'productivity-planning' },
@@ -584,7 +591,7 @@ const categories: Omit<Category, 'tools'>[] = [
     { name: 'Finance & Business Calculators', slug: 'finance-business-calculators', icon: Calculator },
     { name: 'Math, Science & Academic', slug: 'math-science-academic', icon: FlaskConical },
     { name: 'Data & Developer Utilities', slug: 'data-developer-utilities', icon: Code },
-    { name: 'Web & URL Utilities', slug: 'web-url-utilities', icon: Link },
+    { name: 'Web & URL Utilities', slug: 'web-url-utilities', icon: LinkIcon },
     { name: 'Security, Privacy & Hashing', slug: 'security-privacy-hashing', icon: Lock },
     { name: 'Productivity & Planning', slug: 'productivity-planning', icon: CheckSquare },
     { name: 'Networking & Diagnostics', slug: 'networking-diagnostics', icon: Network },
@@ -602,7 +609,7 @@ export const getToolBySlug = (slug: string): Tool | undefined => {
 export const getCategories = (): (Omit<Category, 'tools'> & { icon: LucideIcon })[] => {
     return categories.map(cat => ({
         ...cat,
-        icon: cat.icon as LucideIcon // Already an icon, just for typing
+        icon: cat.icon as LucideIcon 
     }));
 };
 
@@ -620,4 +627,23 @@ export const getAllToolsByCategories = (): Category[] => {
     tools: getToolsByCategory(category.slug),
   }));
   return allCategories.filter(category => category.tools.length > 0);
+};
+
+export const getTop50Tools = (): Tool[] => {
+    const popularToolSlugs = [
+      'pdf-to-word', 'image-compressor', 'background-remover', 'image-resizer', 
+      'merge-pdf', 'split-pdf', 'word-to-pdf', 'image-to-pdf', 'unlock-pdf',
+      'password-generator', 'qr-code-generator', 'json-formatter', 'image-upscaler-ai',
+      'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer',
+      'emi-calculator', 'currency-converter', 'whois-lookup', 'dns-lookup', 'ping-test',
+      'image-to-text-ocr', 'language-detector', 'grammar-checker', 'paraphraser',
+      'csv-to-json', 'json-to-csv', 'case-converter', 'word-counter', 'domain-availability-checker',
+      'unit-converter', 'bmi-calculator', 'hash-generator', 'regex-tester',
+      'sitemap-generator', 'color-picker', 'gradient-generator', 'image-cropper',
+      'jpg-to-png', 'png-to-jpg', 'pdf-to-jpg', 'compress-pdf', 'add-watermark-to-pdf',
+      'url-shortener', 'time-zone-converter', 'invoice-generator', 'meme-generator',
+      'base64-encoder-decoder', 'html-to-pdf'
+    ];
+    
+    return popularToolSlugs.map(slug => getToolBySlug(slug)).filter((t): t is Tool => !!t);
 };

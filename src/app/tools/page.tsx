@@ -1,3 +1,4 @@
+
 import {
   Accordion,
   AccordionContent,
@@ -18,28 +19,30 @@ export default function AllToolsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">All Tools</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">All Tools by Category</h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Explore our comprehensive suite of over 500+ tools. Everything you need for your digital tasks, organized by category.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <Accordion
           type="multiple"
-          className="w-full"
+          className="w-full space-y-4"
           defaultValue={categoriesWithTools.map((cat) => cat.slug)}
         >
           {categoriesWithTools.map((category) => (
-            <AccordionItem value={category.slug} key={category.slug} id={category.slug} className="border-b mb-4 bg-card rounded-lg shadow-sm">
-              <AccordionTrigger className="text-xl font-semibold px-6 py-4 hover:no-underline">
+            <AccordionItem value={category.slug} key={category.slug} id={category.slug} className="border-b-0 bg-card rounded-xl shadow-sm overflow-hidden">
+              <AccordionTrigger className="text-xl font-semibold px-6 py-4 hover:no-underline hover:bg-primary/5 transition-colors">
                 <div className="flex items-center gap-4">
-                  <category.icon className="h-6 w-6 text-primary" />
-                  <span>{category.name}</span>
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                     <category.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <span>{category.name} ({category.tools.length} tools)</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4">
+              <AccordionContent className="px-6 pb-6 bg-secondary/20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-6">
                   {category.tools.map((tool) => (
                     <ToolCard key={tool.slug} tool={tool} />
                   ))}
