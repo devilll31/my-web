@@ -59,10 +59,10 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-700">
-                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg hover:shadow-xl transition-shadow">
+                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg">
                     <Link href="/tools">Explore All 500+ Tools <ArrowRight className="ml-2" /></Link>
                 </Button>
-                <div className="btn-gradient-outline shadow-lg hover:shadow-xl">
+                <div className="btn-gradient-outline shadow-lg">
                   <Button asChild size="lg" variant="outline" className="rounded-full bg-background/80 backdrop-blur-sm border-0">
                       <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
                   </Button>
@@ -93,7 +93,7 @@ export default function Home() {
               {trendingTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Trending" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
                 <Link href="/tools/trending">View All Trending Tools</Link>
               </Button>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
               {popularTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Popular" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
                 <Link href="/tools/popular">View All Popular Tools</Link>
               </Button>
             </div>
@@ -129,7 +129,7 @@ export default function Home() {
               {featuredTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Featured" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
                 <Link href="/tools/featured">View All Featured Tools</Link>
               </Button>
             </div>
