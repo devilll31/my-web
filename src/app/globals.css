@@ -124,12 +124,13 @@ body {
   }
 
   .glowing-slogan {
-    animation: fadeIn 1.5s ease-in-out forwards, glow 8s linear infinite;
-    background-size: 200% 200%;
+    animation: fadeIn 1.5s ease-in-out forwards, text-glow 8s linear infinite;
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 10px hsla(210, 89%, 51%, 0.3), 0 0 20px hsla(270, 95%, 55%, 0.3), 0 0 30px hsla(330, 95%, 55%, 0.3);
+    text-shadow: 0 0 10px hsla(210, 89%, 51%, 0.2), 0 0 20px hsla(270, 95%, 55%, 0.2), 0 0 30px hsla(330, 95%, 55%, 0.2);
+    background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
   }
 
   @keyframes fadeIn {
@@ -137,11 +138,9 @@ body {
     to { opacity: 1; }
   }
 
-  @keyframes glow {
-    0% { background-image: linear-gradient(90deg, #558bcf, #0072FF, #ffab40, #FFC837, #558bcf); }
-    25% { background-image: linear-gradient(90deg, #FFC837, #558bcf, #0072FF, #ffab40, #FFC837); }
-    50% { background-image: linear-gradient(90deg, #ffab40, #FFC837, #558bcf, #0072FF, #ffab40); }
-    75% { background-image: linear-gradient(90deg, #0072FF, #ffab40, #FFC837, #558bcf, #0072FF); }
-    100% { background-image: linear-gradient(90deg, #558bcf, #0072FF, #ffab40, #FFC837, #558bcf); }
+  @keyframes text-glow {
+    to {
+      background-position: 200% center;
+    }
   }
 }
