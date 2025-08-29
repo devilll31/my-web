@@ -18,18 +18,31 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
 
   if (!category) return null;
 
-  const isFeatured = tag ? false : tool.slug.includes('-ai');
+  const isAiTool = tool.slug.includes('-ai');
 
   const getTagVariant = (tagName?: string) => {
     switch(tagName?.toLowerCase()) {
       case 'trending':
-        return 'secondary';
+        return 'destructive';
       case 'popular':
         return 'default';
       case 'featured':
-        return 'destructive';
+        return 'secondary';
       default:
         return 'secondary';
+    }
+  }
+  
+  const getTagClass = (tagName?: string) => {
+    switch(tagName?.toLowerCase()) {
+      case 'trending':
+        return 'bg-red-100 text-red-700 border-red-200';
+      case 'popular':
+        return 'bg-blue-100 text-blue-700 border-blue-200';
+      case 'featured':
+        return 'bg-purple-100 text-purple-700 border-purple-200';
+      default:
+         return 'bg-gray-100 text-gray-700 border-gray-200';
     }
   }
 
@@ -44,8 +57,7 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
                   <category.icon className="h-5 w-5 text-primary" />
                 </div>
               )}
-              {tag && <Badge variant={getTagVariant(tag)}>{tag}</Badge>}
-              {isFeatured && <Badge variant="secondary" className="bg-orange-100 text-orange-700 border-orange-200">Featured</Badge>}
+              {tag && <Badge variant={getTagVariant(tag)} className={cn(getTagClass(tag))}>{tag}</Badge>}
             </div>
             <h3 className="text-sm font-bold font-headline mb-1">{tool.name}</h3>
             <p className="text-xs text-muted-foreground line-clamp-2 min-h-[30px]">
@@ -54,7 +66,7 @@ export default function ToolCard({ tool, className, tag }: ToolCardProps) {
           </div>
           <div className="mt-4">
              <Button size="sm" className="w-full text-sm font-semibold justify-between btn-gradient text-white">
-                <span>Use Now</span>
+                <span>Use Tool</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

@@ -6,6 +6,7 @@ import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import ToolCard from '@/components/tool-card';
+import Slogan from '@/components/slogan';
 
 export default function Home() {
   const allTools = getTools();
@@ -36,16 +37,13 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-6">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
-                  <span className="gradient-text">Zero Learning</span>
-                  <TypingAnimation
-                      text=" Curve"
-                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block"
-                      isLooping={false}
+                   <TypingAnimation
+                      text="Welcome to D2ools"
+                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block gradient-text"
+                      isLooping={true}
                   />
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more.
-                </p>
+                <Slogan text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more." />
               </div>
             </div>
             
@@ -86,15 +84,11 @@ export default function Home() {
         <section id="trending-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Trending Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Trending Tools</h2>
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                {trendingTools.map((tool) => (
-                    <ToolCard key={tool.slug} tool={tool} tag="Trending" />
-                ))}
-            </div>
+            <RotatingToolCarousel tools={trendingTools} tag="Trending" itemsPerPage={5} />
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/trending">View All Trending Tools</Link>
@@ -106,15 +100,11 @@ export default function Home() {
         <section id="popular-tools" className="w-full py-12 md:py-20 lg:py-24 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Most Popular Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Most Popular Tools</h2>
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
-             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                {popularTools.map((tool) => (
-                    <ToolCard key={tool.slug} tool={tool} tag="Popular" />
-                ))}
-            </div>
+             <RotatingToolCarousel tools={popularTools} tag="Popular" itemsPerPage={5} />
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/popular">View All Popular Tools</Link>
@@ -126,15 +116,11 @@ export default function Home() {
         <section id="featured-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
           <div className="container px-4 md:px-6">
              <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Featured Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Featured Tools</h2>
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                {featuredTools.map((tool) => (
-                    <ToolCard key={tool.slug} tool={tool} tag="Featured" />
-                ))}
-            </div>
+            <RotatingToolCarousel tools={featuredTools} tag="Featured" itemsPerPage={5} />
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/featured">View All AI Tools</Link>
