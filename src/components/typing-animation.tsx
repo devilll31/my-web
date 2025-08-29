@@ -21,17 +21,16 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   delay = 2500,
   isLooping = false,
 }) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState(isLooping ? '' : text);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [hasCompleted, setHasCompleted] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
 
   useEffect(() => {
-    if (hasCompleted && !isLooping) return;
-
     let ticker: NodeJS.Timeout;
-    
     const handleTyping = () => {
+      const i = loopNum % text.length;
       const fullText = text;
+      
       setDisplayedText(
         isDeleting
           ? fullText.substring(0, displayedText.length - 1)
@@ -39,31 +38,30 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
       );
 
       if (!isDeleting && displayedText === fullText) {
-        if (isLooping) {
-            ticker = setTimeout(() => setIsDeleting(true), delay);
-        } else {
-            setHasCompleted(true);
+        if(isLooping) {
+          ticker = setTimeout(() => setIsDeleting(true), delay);
         }
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
+        setLoopNum(loopNum + 1);
       } else {
         ticker = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
       }
     };
 
-    ticker = setTimeout(handleTyping, typingSpeed);
+    if(isLooping){
+      ticker = setTimeout(handleTyping, typingSpeed);
+    }
 
     return () => clearTimeout(ticker);
-  }, [displayedText, isDeleting, text, typingSpeed, deletingSpeed, delay, isLooping, hasCompleted]);
+  }, [displayedText, isDeleting, text, typingSpeed, deletingSpeed, delay, isLooping, loopNum]);
 
   return (
-    <h1 className={cn(className, 'relative')}>
-      {displayedText}
+    <span className={cn(className, 'relative')}>
+      {isLooping ? displayedText : text}
       <span className="inline-block w-0.5 h-full animate-pulse bg-foreground/70" style={{height: '1em', verticalAlign: 'text-bottom'}}></span>
-    </h1>
+    </span>
   );
 };
 
 export default TypingAnimation;
-
-    

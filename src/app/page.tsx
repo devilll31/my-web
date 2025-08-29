@@ -1,10 +1,10 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, File, Image as ImageIcon, Wand2, Users, Zap, ShieldCheck, Smartphone } from 'lucide-react';
+import { ArrowRight, Check, File, Image as ImageIcon, Wand2, Users, Zap, ShieldCheck, Smartphone, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
-import Slogan from '@/components/slogan';
+import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import ToolCard from '@/components/tool-card';
 
 export default function Home() {
@@ -16,64 +16,77 @@ export default function Home() {
   const featuredTools = allTools.filter(t => t.slug.includes('-ai')).slice(0, 20);
   
   const stats = [
-    { value: '500+ Tools', label: 'Powerful and Versatile', icon: <Wand2 className="w-6 h-6 text-white" /> },
-    { value: '100k+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-white" /> },
-    { value: '100% Free', label: 'No Hidden Costs', icon: <Check className="w-6 h-6 text-white" /> },
+    { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
+    { value: '1M+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-primary" /> },
+    { value: '100% Free', label: 'No Limits', icon: <Zap className="w-6 h-6 text-primary" /> },
   ];
 
   const features = [
-      { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-primary" /> },
-      { text: 'Lightning Fast', icon: <Zap className="w-5 h-5 text-primary" /> },
-      { text: 'No Registration', icon: <File className="w-5 h-5 text-primary" /> },
-      { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-primary" /> },
+      { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-orange-400" /> },
+      { text: 'Lightning Fast', icon: <Zap className="w-5 h-5 text-orange-400" /> },
+      { text: 'No Registration', icon: <File className="w-5 h-5 text-orange-400" /> },
+      { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-orange-400" /> },
   ]
 
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-16 bg-hero-gradient overflow-hidden">
+        <section className="relative w-full pt-24 pb-12 md:pt-32 md:pb-20 bg-hero-gradient overflow-hidden">
           <div className="container px-4 md:px-6 relative text-center">
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-6">
-                <TypingAnimation
-                    text="Welcome to D2ools"
-                    className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline gradient-text"
-                    isLooping={true}
-                />
-                <Slogan text="The next level of online utility tools. Access 500+ free utilities." />
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
+                  <span className="gradient-text">Zero Learning</span>
+                  <TypingAnimation
+                      text=" Curve"
+                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block"
+                      isLooping={false}
+                  />
+                </h1>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more.
+                </p>
               </div>
             </div>
+            
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in-up animation-delay-500">
+              {stats.map((stat) => (
+                <div key={stat.value} className="p-4 rounded-full shadow-lg flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:shadow-xl transition-shadow cursor-pointer">
+                  <div className="p-3 bg-primary/10 rounded-full">{stat.icon}</div>
+                  <div className="text-left">
+                    <p className="font-semibold text-lg text-gray-800">{stat.value}</p>
+                    <p className="text-sm text-gray-500">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-            <div className="mt-12 animate-fade-in-up animation-delay-500">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-700">
+                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg hover:shadow-xl transition-shadow">
+                    <Link href="/tools">Explore All 500+ Tools <ArrowRight className="ml-2" /></Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow border-gray-200/80">
+                    <Link href="/tools/popular"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
+                </Button>
+            </div>
+
+            <div className="mt-12 animate-fade-in-up animation-delay-900">
                 <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">Trusted by professionals worldwide</p>
                 <div className="mt-4 flex flex-wrap justify-center gap-4 md:gap-8">
                     {features.map((feature) => (
                         <div key={feature.text} className="flex items-center gap-2.5 text-sm font-medium">
                             {feature.icon}
-                            <span>{feature.text}</span>
+                            <span className="text-gray-600">{feature.text}</span>
                         </div>
                     ))}
                 </div>
             </div>
-
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in-up animation-delay-700">
-                {stats.map((stat) => (
-                  <div key={stat.value} className="p-4 rounded-xl shadow-lg flex items-center gap-4 text-white btn-gradient">
-                    {stat.icon}
-                    <div className="text-left">
-                      <p className="font-bold text-xl">{stat.value}</p>
-                      <p className="text-sm opacity-90">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
           </div>
         </section>
-
         <section id="trending-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Trending Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Trending Tools</h2>
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
@@ -93,7 +106,7 @@ export default function Home() {
         <section id="popular-tools" className="w-full py-12 md:py-20 lg:py-24 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
             <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Most Popular Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Most Popular Tools</h2>
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
@@ -113,7 +126,7 @@ export default function Home() {
         <section id="featured-tools" className="w-full py-12 md:py-20 lg:py-24 bg-background">
           <div className="container px-4 md:px-6">
              <div className="flex items-center justify-center mb-10 gap-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Featured Tools</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Featured Tools</h2>
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>

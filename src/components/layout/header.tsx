@@ -34,7 +34,7 @@ export default function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Logo className="h-8 w-auto" />
         </Link>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-between space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
             <NavLink href="/">Home</NavLink>
             
@@ -77,11 +77,11 @@ export default function Header() {
             <NavLink href="/contact">Contact</NavLink>
           </nav>
           <div className="flex-1 flex justify-end items-center gap-2">
-            <div className="relative w-full max-w-xs hidden sm:block">
+            <div className="relative w-full max-w-md hidden sm:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search for tools..."
+                placeholder="Search tools... (e.g., 'PDF to Word', 'Image Resizer')"
                 className="w-full rounded-full pl-9 bg-gray-100/80 border-transparent focus:bg-white focus:border-primary/50"
               />
             </div>
