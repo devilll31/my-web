@@ -64,7 +64,7 @@ export default function Home() {
                 </Button>
                 <div className="btn-gradient-outline shadow-lg hover:shadow-xl">
                   <Button asChild size="lg" variant="outline" className="rounded-full bg-background/80 backdrop-blur-sm border-0">
-                      <Link href="/tools/popular"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
+                      <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
                   </Button>
                 </div>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
               {trendingTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Trending" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
                 <Link href="/tools/trending">View All Trending Tools</Link>
               </Button>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
               {popularTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Popular" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
                 <Link href="/tools/popular">View All Popular Tools</Link>
               </Button>
             </div>
@@ -129,8 +129,8 @@ export default function Home() {
               {featuredTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Featured" />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full">
-                <Link href="/tools/featured">View All AI Tools</Link>
+              <Button asChild variant="outline" className="rounded-full btn-gradient-outline">
+                <Link href="/tools/featured">View All Featured Tools</Link>
               </Button>
             </div>
           </div>

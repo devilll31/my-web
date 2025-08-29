@@ -72,7 +72,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
           </div>
           <div className="mt-4">
              <Button size="sm" className="w-full text-sm font-semibold justify-between btn-gradient text-white">
-                <span>Use Tool</span>
+                <span>Use Now</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

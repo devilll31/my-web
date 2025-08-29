@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @layer base {
@@ -100,7 +100,7 @@ body {
     background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   }
   .btn-gradient {
-    background-image: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary)) 100%);
+    background-image: linear-gradient(to right, #558bcf 0%, #ffab40 50%, #558bcf 100%);
     background-size: 200% auto;
     transition: all 0.3s ease-in-out;
   }
@@ -111,16 +111,16 @@ body {
     position: relative;
     padding: 2px;
     border-radius: 9999px; /* full for rounded-full */
-    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(to right, #558bcf, #ffab40);
     transition: all 0.3s ease-in-out;
   }
   .btn-gradient-outline:hover {
-    box-shadow: 0 0 15px hsla(var(--primary), 0.5), 0 0 15px hsla(var(--accent), 0.3);
+    box-shadow: 0 0 15px hsla(210, 89%, 51%, 0.5), 0 0 15px hsla(33, 100%, 62%, 0.3);
   }
   .bg-hero-gradient {
-    background-color: #ffffff;
+    background-color: #f0f4f8;
     background-image: radial-gradient(at 20% 25%, hsla(210, 89%, 51%, 0.1) 0px, transparent 50%),
-                      radial-gradient(at 75% 30%, hsla(330, 95%, 55%, 0.1) 0px, transparent 50%);
+                      radial-gradient(at 75% 30%, hsla(33, 100%, 62%, 0.1) 0px, transparent 50%);
   }
 
   .glowing-slogan {
@@ -138,10 +138,10 @@ body {
   }
 
   @keyframes glow {
-    0% { background-image: linear-gradient(90deg, #00C6FF, #0072FF, #F0F, #FFC837, #00C6FF); }
-    25% { background-image: linear-gradient(90deg, #FFC837, #00C6FF, #0072FF, #F0F, #FFC837); }
-    50% { background-image: linear-gradient(90deg, #F0F, #FFC837, #00C6FF, #0072FF, #F0F); }
-    75% { background-image: linear-gradient(90deg, #0072FF, #F0F, #FFC837, #00C6FF, #0072FF); }
-    100% { background-image: linear-gradient(90deg, #00C6FF, #0072FF, #F0F, #FFC837, #00C6FF); }
+    0% { background-image: linear-gradient(90deg, #558bcf, #0072FF, #ffab40, #FFC837, #558bcf); }
+    25% { background-image: linear-gradient(90deg, #FFC837, #558bcf, #0072FF, #ffab40, #FFC837); }
+    50% { background-image: linear-gradient(90deg, #ffab40, #FFC837, #558bcf, #0072FF, #ffab40); }
+    75% { background-image: linear-gradient(90deg, #0072FF, #ffab40, #FFC837, #558bcf, #0072FF); }
+    100% { background-image: linear-gradient(90deg, #558bcf, #0072FF, #ffab40, #FFC837, #558bcf); }
   }
 }
