@@ -1,10 +1,9 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, File, Image as ImageIcon, Wand2, Users, Zap, ShieldCheck, Smartphone, Star } from 'lucide-react';
+import { ArrowRight, Check, File, Star, Wand2, Users, Zap, ShieldCheck, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
-import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import ToolCard from '@/components/tool-card';
 import Slogan from '@/components/slogan';
 
@@ -90,7 +89,9 @@ export default function Home() {
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
-            <RotatingToolCarousel tools={trendingTools} tag="Trending" itemsPerPage={5} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {trendingTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Trending" />)}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/trending">View All Trending Tools</Link>
@@ -106,7 +107,9 @@ export default function Home() {
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
-             <RotatingToolCarousel tools={popularTools} tag="Popular" itemsPerPage={5} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {popularTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Popular" />)}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/popular">View All Popular Tools</Link>
@@ -122,7 +125,9 @@ export default function Home() {
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
-            <RotatingToolCarousel tools={featuredTools} tag="Featured" itemsPerPage={5} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {featuredTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Featured" />)}
+            </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full">
                 <Link href="/tools/featured">View All AI Tools</Link>

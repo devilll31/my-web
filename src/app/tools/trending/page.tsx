@@ -3,7 +3,7 @@ import ToolCard from '@/components/tool-card';
 import { getTools } from '@/lib/tools-data';
 
 export const metadata = {
-  title: 'Top 50 Trending Tools | D2ools',
+  title: 'Top Trending Tools | D2ools',
   description: 'Browse the top 50 trending tools on D2ools, updated in real-time based on user activity.',
 };
 
@@ -14,7 +14,7 @@ export default function TrendingToolsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">Top 50 Trending Tools</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">Top Trending Tools</h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           The hottest tools on D2ools right now. Here are the 50 most used tools by our community.
         </p>
