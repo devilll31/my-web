@@ -133,7 +133,7 @@ body {
     animation: blink 1s step-end infinite;
     font-weight: normal;
     display: inline-block;
-    transform: scale(0.15, 1.1) translateY(-2px);
+    transform: scale(0.15, 0.11) translateY(-2px);
     margin-left: 0.2em;
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     -webkit-background-clip: text;
