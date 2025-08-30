@@ -1,8 +1,9 @@
+
 'use client';
 
 import Link from 'next/link';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
@@ -31,6 +32,7 @@ const NavLink = ({ href, children, className }: { href: string; children: React.
 );
 
 export default function Header() {
+  const [isToolsPopoverOpen, setIsToolsPopoverOpen] = useState(false);
   const categories = getCategories();
   const topTools = getTop50Tools().slice(0, 20);
 
@@ -41,16 +43,25 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                 <Logo className="h-8 w-auto" />
             </Link>
-            <nav className="hidden md:flex items-center space-x-6">
+            <nav className="hidden md:flex items-center space-x-1">
             <NavLink href="/">Home</NavLink>
             
-            <Popover>
-                <PopoverTrigger asChild>
+            <Popover open={isToolsPopoverOpen} onOpenChange={setIsToolsPopoverOpen}>
+                <PopoverTrigger 
+                  asChild
+                  onMouseEnter={() => setIsToolsPopoverOpen(true)}
+                  onMouseLeave={() => setIsToolsPopoverOpen(false)}
+                >
                 <Button variant="ghost" className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground flex items-center gap-1 p-2">
                     Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" />
                 </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-screen max-w-4xl p-4" align="start">
+                <PopoverContent 
+                  className="w-screen max-w-4xl p-4" 
+                  align="start"
+                  onMouseEnter={() => setIsToolsPopoverOpen(true)}
+                  onMouseLeave={() => setIsToolsPopoverOpen(false)}
+                >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:col-span-1">
                         <h3 className="font-bold text-lg mb-4 text-foreground">Top 50 Tools</h3>
