@@ -38,12 +38,15 @@ export default function Home() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
                    <TypingAnimation
                       text="Welcome to D2ools"
-                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block"
+                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block gradient-text"
                       isLooping={true}
                   />
                 </h1>
                 <div className="mb-8 pb-4">
-                  <Slogan text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more." />
+                  <Slogan 
+                    text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more."
+                    className="gradient-text"
+                  />
                 </div>
               </div>
             </div>
