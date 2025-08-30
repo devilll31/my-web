@@ -1,4 +1,6 @@
 
+'use client';
+
 import Link from 'next/link';
 import { type Tool } from '@/lib/tools-data';
 import { Button } from '@/components/ui/button';
