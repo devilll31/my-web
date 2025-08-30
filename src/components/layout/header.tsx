@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -23,7 +24,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
         {children}
         <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
     </span>
-    <span 
+    <span
         className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
         style={{
             background: 'radial-gradient(circle at 50% 0%, hsl(var(--primary)), transparent 80%)',
@@ -40,7 +41,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                 <Logo className="h-8 w-auto" />
             </Link>
@@ -54,7 +55,7 @@ export default function Header() {
                         Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" />
                         <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </span>
-                    <span 
+                    <span
                         className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                         style={{
                             background: 'radial-gradient(circle at 50% 0%, hsl(var(--primary)), transparent 80%)',
@@ -103,7 +104,7 @@ export default function Header() {
             <NavLink href="/contact">Contact</NavLink>
             </nav>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-end flex-1">
             <UniversalSearch />
         </div>
       </div>
