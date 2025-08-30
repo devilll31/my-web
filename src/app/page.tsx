@@ -64,11 +64,11 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-700">
-                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg">
-                    <Link href="/tools">Explore All 500+ Tools <ArrowRight className="ml-2" /></Link>
+                <Button asChild size="lg" className="rounded-full group btn-gradient shadow-lg">
+                    <Link href="/tools"><span className="text-white group-hover:text-black transition-colors duration-300">Explore All 500+ Tools</span> <ArrowRight className="ml-2 text-white group-hover:text-black transition-colors duration-300" /></Link>
                 </Button>
-                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg">
-                    <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
+                <Button asChild size="lg" className="rounded-full group btn-gradient shadow-lg">
+                    <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> <span className="text-white group-hover:text-black transition-colors duration-300">Top 50 Tools</span></Link>
                 </Button>
             </div>
 
@@ -96,8 +96,8 @@ export default function Home() {
               {trendingTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Trending" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
-                <Link href="/tools/trending">View All Trending Tools</Link>
+              <Button asChild className="rounded-full group btn-gradient">
+                <Link href="/tools/trending"><span className="text-white group-hover:text-black transition-colors duration-300">View All Trending Tools</span></Link>
               </Button>
             </div>
           </div>
@@ -114,8 +114,8 @@ export default function Home() {
               {popularTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Popular" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
-                <Link href="/tools/popular">View All Popular Tools</Link>
+               <Button asChild className="rounded-full group btn-gradient">
+                <Link href="/tools/popular"><span className="text-white group-hover:text-black transition-colors duration-300">View All Popular Tools</span></Link>
               </Button>
             </div>
           </div>
@@ -132,8 +132,8 @@ export default function Home() {
               {featuredTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Featured" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
-                <Link href="/tools/featured">View All Featured Tools</Link>
+               <Button asChild className="rounded-full group btn-gradient">
+                <Link href="/tools/featured"><span className="text-white group-hover:text-black transition-colors duration-300">View All Featured Tools</span></Link>
               </Button>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
                  return (
                    <Link href={`/tools#${category.slug}`} key={category.slug} className="group block">
                     <div className="flex items-center gap-4 p-4 border rounded-lg bg-white hover:bg-gray-100/50 transition-colors hover:border-primary/50 shadow-sm h-full" style={{ '--category-color': `hsl(${catDetails.color})` } as React.CSSProperties}>
-                      <div className="p-3 rounded-lg" style={{ backgroundColor: `hsla(${catDetails.color}, 70%, 50%, 0.1)`}}>
+                      <div className="p-3 rounded-lg" style={{ backgroundColor: `hsla(${catDetails.color}, 70%, 50%, 0.15)`}}>
                         <category.icon className="h-6 w-6" style={{ color: `hsl(${catDetails.color}, 70%, 50%)` }} />
                       </div>
                       <div>
@@ -166,8 +166,8 @@ export default function Home() {
               })}
             </div>
              <div className="text-center mt-12">
-              <Button asChild size="lg" className="rounded-full text-white btn-gradient">
-                <Link href="/tools">Browse All Categories</Link>
+              <Button asChild size="lg" className="rounded-full group btn-gradient">
+                <Link href="/tools"><span className="text-white group-hover:text-black transition-colors duration-300">Browse All Categories</span></Link>
               </Button>
             </div>
           </div>

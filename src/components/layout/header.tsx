@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ExternalLink } from 'lucide-react';
 import React, { useState } from 'react';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -36,6 +36,9 @@ export default function Header() {
   const categories = getCategories();
   const topTools = getTop50Tools().slice(0, 20);
 
+  const categoriesCol1 = categories.slice(0, 8);
+  const categoriesCol2 = categories.slice(8);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
@@ -67,15 +70,19 @@ export default function Header() {
                 </div>
                 </PopoverTrigger>
                 <PopoverContent 
-                  className="w-screen max-w-4xl p-4" 
+                  className="w-screen max-w-5xl p-6" 
                   align="start"
                   onMouseEnter={() => setIsToolsPopoverOpen(true)}
                   onMouseLeave={() => setIsToolsPopoverOpen(false)}
                 >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-1">
-                        <h3 className="font-bold text-lg mb-4 text-foreground">Top 50 Tools</h3>
-                        <div className="grid grid-cols-1 gap-2">
+                        <h3 className="font-bold text-lg mb-2 text-foreground">Top 50 Tools</h3>
+                        <Link href="/tools/top-50" className="group block mb-4">
+                            <p className="text-sm font-semibold text-primary group-hover:underline">Most popular tools</p>
+                            <p className="text-xs text-muted-foreground">Most popular and frequently used tools by our users. <ExternalLink className="inline-block h-3 w-3" /></p>
+                        </Link>
+                        <div className="flex flex-col gap-1">
                           {topTools.map(tool => (
                               <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-sm text-muted-foreground transition-colors p-1 rounded-md">
                                 <span className="tool-link-text">{tool.name}</span>
@@ -86,23 +93,45 @@ export default function Header() {
                         <Link href="/tools/top-50">View All Top 50 Tools <ArrowRight className="ml-2 h-4 w-4" /></Link>
                         </Button>
                     </div>
-                    <div className="md:col-span-1">
-                        <h3 className="font-bold text-lg mb-4 text-foreground">Tool Categories</h3>
-                        <div className="grid grid-cols-1 gap-y-2">
-                          {categories.map((category) => (
-                          <Link
-                              key={category.name}
-                              href={`/tools#${category.slug}`}
-                              className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
-                          >
-                              <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                              <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                              </div>
-                              <div>
-                              <p className="font-medium text-sm">{category.name}</p>
-                              </div>
-                          </Link>
-                          ))}
+                    <div className="md:col-span-2">
+                        <h3 className="font-bold text-lg mb-2 text-foreground">Tool Categories</h3>
+                         <Link href="/tools" className="group block mb-4">
+                            <p className="text-sm font-semibold text-primary group-hover:underline">All tools by Category</p>
+                            <p className="text-xs text-muted-foreground">Browse 500+ tools organized by category. <ExternalLink className="inline-block h-3 w-3" /></p>
+                        </Link>
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                            <div className="flex flex-col gap-2">
+                                {categoriesCol1.map((category) => (
+                                <Link
+                                    key={category.name}
+                                    href={`/tools#${category.slug}`}
+                                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
+                                >
+                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 70%, 50%, 0.15)` }}>
+                                        <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }}/>
+                                    </div>
+                                    <div>
+                                    <p className="font-medium text-sm">{category.name}</p>
+                                    </div>
+                                </Link>
+                                ))}
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                {categoriesCol2.map((category) => (
+                                <Link
+                                    key={category.name}
+                                    href={`/tools#${category.slug}`}
+                                    className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
+                                >
+                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 70%, 50%, 0.15)`}}>
+                                    <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }} />
+                                    </div>
+                                    <div>
+                                    <p className="font-medium text-sm">{category.name}</p>
+                                    </div>
+                                </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                     </div>

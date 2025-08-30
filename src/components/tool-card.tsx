@@ -70,7 +70,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
           <div>
             <div className="flex items-center justify-between mb-3">
                {category.icon && (
-                <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${categoryColor}, 70%, 50%, 0.1)`}}>
+                <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${categoryColor}, 70%, 50%, 0.15)`}}>
                   <category.icon className="h-5 w-5" style={{ color: 'var(--category-color)' }} />
                 </div>
               )}
@@ -82,9 +82,9 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
             </p>
           </div>
           <div className="mt-4">
-             <Button size="sm" className="w-full text-sm font-semibold justify-between text-white btn-gradient">
-                <span>Use Now</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+             <Button size="sm" className="w-full text-sm font-semibold justify-between group btn-gradient">
+                <span className="text-white group-hover:text-black transition-colors duration-300">Use Now</span>
+                <ArrowRight className="h-4 w-4 text-white group-hover:text-black transition-colors duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
         </div>
