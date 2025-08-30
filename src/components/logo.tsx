@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 const Logo = ({ className, ...props }: React.HTMLAttributes<SVGElement>) => {
   return (
     <svg
-      width="120"
+      width="130"
       height="40"
-      viewBox="0 0 120 40"
+      viewBox="0 0 130 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(className)}
@@ -18,32 +18,36 @@ const Logo = ({ className, ...props }: React.HTMLAttributes<SVGElement>) => {
           <stop offset="100%" stopColor="hsl(var(--accent))" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="12" fill="url(#grad1)"/>
-      <text 
-        x="20" 
-        y="20" 
-        dominantBaseline="central" 
-        textAnchor="middle" 
-        fontSize="20" 
-        fontWeight="bold" 
-        fontFamily="Poppins, sans-serif" 
-        fill="white"
-        dy=".05em"
-      >
-        D2
-      </text>
-      <text 
-        x="78" 
-        y="20" 
-        dominantBaseline="central" 
-        textAnchor="middle" 
-        fontSize="24" 
-        fontWeight="bold" 
-        fontFamily="Inter, sans-serif"
-        className="fill-foreground"
-      >
-        D2ools
-      </text>
+      <g>
+        <rect width="40" height="40" rx="12" fill="url(#grad1)"/>
+        <text
+          x="20"
+          y="20"
+          dominantBaseline="central"
+          textAnchor="middle"
+          fontSize="20"
+          fontWeight="bold"
+          fontFamily="Poppins, sans-serif"
+          fill="white"
+          dy=".05em"
+        >
+          D2
+        </text>
+      </g>
+      <g transform="translate(45, 0)">
+        <text
+          x="42"
+          y="20"
+          dominantBaseline="central"
+          textAnchor="middle"
+          fontSize="24"
+          fontWeight="bold"
+          fontFamily="Inter, sans-serif"
+          className="fill-foreground"
+        >
+          D2ools
+        </text>
+      </g>
     </svg>
   );
 };
