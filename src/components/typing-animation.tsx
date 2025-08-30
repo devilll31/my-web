@@ -28,7 +28,6 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   useEffect(() => {
     let ticker: NodeJS.Timeout;
     const handleTyping = () => {
-      const i = loopNum % text.length;
       const fullText = text;
       
       setDisplayedText(
@@ -44,8 +43,6 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-      } else {
-         // No need for a ticker here if not looping
       }
     };
     
@@ -61,13 +58,10 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
 
     return () => clearTimeout(ticker);
   }, [displayedText, isDeleting, text, typingSpeed, deletingSpeed, delay, isLooping, loopNum]);
-  
-  const words = displayedText.split(' ');
-  const lastWord = words.pop();
 
   return (
     <span className={cn(className, 'typing-animation')}>
-      {words.join(' ')} {lastWord && <span>{lastWord}</span>}
+      {displayedText}
     </span>
   );
 };
