@@ -51,35 +51,37 @@ export default function Header() {
                 </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-screen max-w-4xl p-4" align="start">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div className="md:col-span-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="md:col-span-1">
                         <h3 className="font-bold text-lg mb-4 text-foreground">Top 50 Tools</h3>
                         <div className="grid grid-cols-1 gap-2">
-                        {topTools.map(tool => (
-                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors p-1 rounded-md hover:bg-muted">{tool.name}</Link>
-                        ))}
+                          {topTools.map(tool => (
+                              <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-sm text-muted-foreground transition-colors p-1 rounded-md">
+                                <span className="tool-link-text">{tool.name}</span>
+                              </Link>
+                          ))}
                         </div>
                         <Button asChild variant="link" className="p-0 h-auto mt-4">
                         <Link href="/tools/top-50">View All Top 50 Tools <ArrowRight className="ml-2 h-4 w-4" /></Link>
                         </Button>
                     </div>
-                    <div className="md:col-span-7">
+                    <div className="md:col-span-1">
                         <h3 className="font-bold text-lg mb-4 text-foreground">Tool Categories</h3>
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                        {categories.map((category) => (
-                        <Link
-                            key={category.name}
-                            href={`/tools#${category.slug}`}
-                            className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
-                        >
-                            <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                            <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                            </div>
-                            <div>
-                            <p className="font-medium text-sm">{category.name}</p>
-                            </div>
-                        </Link>
-                        ))}
+                        <div className="grid grid-cols-1 gap-y-2">
+                          {categories.map((category) => (
+                          <Link
+                              key={category.name}
+                              href={`/tools#${category.slug}`}
+                              className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
+                          >
+                              <div className="p-2 bg-primary/10 rounded-md group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                              <category.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                              </div>
+                              <div>
+                              <p className="font-medium text-sm">{category.name}</p>
+                              </div>
+                          </Link>
+                          ))}
                         </div>
                     </div>
                     </div>

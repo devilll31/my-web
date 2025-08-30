@@ -145,4 +145,32 @@ body {
     from, to { color: transparent }
     50% { color: inherit }
   }
+
+  .tool-link-text {
+    @apply relative;
+  }
+
+  .tool-link-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: hsl(var(--primary));
+    transition: width .3s ease;
+    -webkit-transition: width .3s ease;
+  }
+
+  .tool-link:hover .tool-link-text {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 8px hsla(var(--primary), 0.5);
+  }
+
+  .tool-link:hover .tool-link-text::after {
+    width: 100%;
+    left: 0;
+    background-color: hsl(var(--primary));
+  }
 }
