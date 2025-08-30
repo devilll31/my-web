@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ArrowRight, Check, Star, Wand2, Users, FileIcon, Smartphone, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
+import { getAllToolsByCategories, Category, getTools, getCategoryBySlug } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
 import Slogan from '@/components/slogan';
 import ToolCard from '@/components/tool-card';
@@ -67,11 +67,9 @@ export default function Home() {
                 <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg">
                     <Link href="/tools">Explore All 500+ Tools <ArrowRight className="ml-2" /></Link>
                 </Button>
-                <div className="btn-gradient-outline shadow-lg">
-                  <Button asChild size="lg" variant="outline" className="rounded-full bg-background/80 backdrop-blur-sm border-0">
-                      <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
-                  </Button>
-                </div>
+                <Button asChild size="lg" className="rounded-full text-white btn-gradient shadow-lg">
+                    <Link href="/tools/top-50"><Star className="mr-2 text-yellow-400" /> Top 50 Tools</Link>
+                </Button>
             </div>
 
             <div className="mt-12 animate-fade-in-up animation-delay-900">
@@ -148,20 +146,24 @@ export default function Home() {
             </div>
             <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">From PDF manipulation to image editing, we cover a vast range of needs. All our tools are free, secure, and designed to work seamlessly in your browser.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {categoriesWithTools.map((category) => (
-                 <Link href={`/tools#${category.slug}`} key={category.slug} className="group block">
-                  <div className="flex items-center gap-4 p-4 border rounded-lg bg-white hover:bg-gray-100/50 transition-colors hover:border-primary/50 shadow-sm h-full">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <category.icon className="h-6 w-6 text-primary" />
+              {categoriesWithTools.map((category) => {
+                 const catDetails = getCategoryBySlug(category.slug);
+                 if (!catDetails) return null;
+                 return (
+                   <Link href={`/tools#${category.slug}`} key={category.slug} className="group block">
+                    <div className="flex items-center gap-4 p-4 border rounded-lg bg-white hover:bg-gray-100/50 transition-colors hover:border-primary/50 shadow-sm h-full" style={{ '--category-color': `hsl(${catDetails.color})` } as React.CSSProperties}>
+                      <div className="p-3 rounded-lg" style={{ backgroundColor: `hsla(${catDetails.color}, 70%, 50%, 0.1)`}}>
+                        <category.icon className="h-6 w-6" style={{ color: `hsl(${catDetails.color}, 70%, 50%)` }} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{category.name}</h3>
+                        <p className="text-sm text-muted-foreground">{category.tools.length} Tools</p>
+                      </div>
+                      <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold">{category.name}</h3>
-                      <p className="text-sm text-muted-foreground">{category.tools.length} Tools</p>
-                    </div>
-                    <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                )
+              })}
             </div>
              <div className="text-center mt-12">
               <Button asChild size="lg" className="rounded-full text-white btn-gradient">

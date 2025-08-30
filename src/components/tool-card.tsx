@@ -54,7 +54,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
       <div 
         className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:-translate-y-1 overflow-hidden"
-        style={{ '--category-color': `hsl(${categoryColor}, 70%, 50%)`, borderColor: 'hsl(var(--border))' } as React.CSSProperties}
+        style={{ '--category-color': `hsl(${categoryColor})` } as React.CSSProperties}
         onMouseOver={e => e.currentTarget.style.borderColor = `var(--category-color)`}
         onMouseOut={e => e.currentTarget.style.borderColor = 'hsl(var(--border))'}
       >
@@ -82,7 +82,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
             </p>
           </div>
           <div className="mt-4">
-             <Button size="sm" variant="outline" className="w-full text-sm font-semibold justify-between text-white" style={{ background: 'var(--category-color)'}}>
+             <Button size="sm" className="w-full text-sm font-semibold justify-between text-white btn-gradient">
                 <span>Use Now</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>

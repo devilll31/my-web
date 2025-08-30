@@ -52,9 +52,19 @@ export default function Header() {
                   onMouseEnter={() => setIsToolsPopoverOpen(true)}
                   onMouseLeave={() => setIsToolsPopoverOpen(false)}
                 >
-                <Button variant="ghost" className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground flex items-center gap-1 p-2">
-                    Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" />
-                </Button>
+                <div className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground flex items-center gap-1 p-2 cursor-pointer relative">
+                    <span className="relative">
+                      Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 inline transition duration-200 group-data-[state=open]:rotate-180" />
+                      <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </span>
+                     <span
+                        className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                        style={{
+                            background: 'radial-gradient(circle at 50% 0%, hsl(var(--primary)), transparent 80%)',
+                            filter: 'blur(10px)',
+                        }}>
+                    </span>
+                </div>
                 </PopoverTrigger>
                 <PopoverContent 
                   className="w-screen max-w-4xl p-4" 
