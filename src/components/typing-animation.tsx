@@ -21,7 +21,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
   delay = 2500,
   isLooping = false,
 }) => {
-  const [displayedText, setDisplayedText] = useState(isLooping ? '' : text);
+  const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
 
@@ -45,21 +45,29 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
       } else {
-        ticker = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+         // No need for a ticker here if not looping
       }
     };
+    
+    const startTyping = () => {
+        ticker = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+    }
 
     if(isLooping){
-      ticker = setTimeout(handleTyping, typingSpeed);
+      startTyping();
+    } else {
+      setDisplayedText(text);
     }
 
     return () => clearTimeout(ticker);
   }, [displayedText, isDeleting, text, typingSpeed, deletingSpeed, delay, isLooping, loopNum]);
+  
+  const words = displayedText.split(' ');
+  const lastWord = words.pop();
 
   return (
-    <span className={cn(className, 'relative')}>
-      {isLooping ? displayedText : text}
-      <span className="inline-block w-0.5 h-full animate-pulse bg-foreground/70" style={{height: '1em', verticalAlign: 'text-bottom'}}></span>
+    <span className={cn(className, 'typing-animation')}>
+      {words.join(' ')} {lastWord && <span>{lastWord}</span>}
     </span>
   );
 };

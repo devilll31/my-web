@@ -11,7 +11,7 @@ interface SloganProps {
 
 const Slogan: React.FC<SloganProps> = ({ text, className }) => {
   return (
-    <p className={cn('mx-auto max-w-[700px] text-muted-foreground md:text-xl glowing-slogan', className)}>
+    <p className={cn('mx-auto max-w-[700px] text-muted-foreground md:text-xl', className)}>
       {text}
     </p>
   );

@@ -1,11 +1,7 @@
-
 'use client';
 
 import Link from 'next/link';
-import {
-  ChevronDown,
-  ArrowRight
-} from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import React from 'react';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -15,10 +11,10 @@ import { getCategories, getTop50Tools } from '@/lib/tools-data';
 import { Button } from '@/components/ui/button';
 import UniversalSearch from '@/components/universal-search';
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const NavLink = ({ href, children, className }: { href: string; children: React.ReactNode, className?:string }) => (
   <Link
     href={href}
-    className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground relative"
+    className={cn("group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground relative", className)}
   >
     <span className="relative">
         {children}
@@ -40,7 +36,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center">
+      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <div className="flex items-center gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                 <Logo className="h-8 w-auto" />
@@ -50,19 +46,9 @@ export default function Header() {
             
             <Popover>
                 <PopoverTrigger asChild>
-                <button className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground flex items-center relative">
-                    <span className="relative">
-                        Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" />
-                        <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </span>
-                    <span
-                        className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-                        style={{
-                            background: 'radial-gradient(circle at 50% 0%, hsl(var(--primary)), transparent 80%)',
-                            filter: 'blur(10px)',
-                        }}>
-                    </span>
-                </button>
+                <Button variant="ghost" className="group text-sm font-medium transition-colors text-foreground/70 hover:text-foreground flex items-center gap-1 p-2">
+                    Tools <ChevronDown className="relative top-[1px] ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" />
+                </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-screen max-w-4xl p-4" align="start">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -104,8 +90,8 @@ export default function Header() {
             <NavLink href="/contact">Contact</NavLink>
             </nav>
         </div>
-        <div className="flex items-center justify-end flex-1">
-            <UniversalSearch />
+        <div className="flex flex-1 justify-end">
+             <UniversalSearch />
         </div>
       </div>
     </header>

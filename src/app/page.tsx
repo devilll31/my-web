@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, Star, Wand2, Users, Zap, ShieldCheck, Smartphone, File as FileIcon } from 'lucide-react';
+import { ArrowRight, Check, Star, Wand2, Users, ShieldCheck, Smartphone, File as FileIcon, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
@@ -38,11 +38,13 @@ export default function Home() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
                    <TypingAnimation
                       text="Welcome to D2ools"
-                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block gradient-text"
+                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block"
                       isLooping={true}
                   />
                 </h1>
-                <Slogan text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more." />
+                <div className="mb-8 pb-4">
+                  <Slogan text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more." />
+                </div>
               </div>
             </div>
             
