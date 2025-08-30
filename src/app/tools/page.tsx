@@ -27,22 +27,22 @@ export default function AllToolsPage() {
 
       <div className="max-w-7xl mx-auto">
         <Accordion
-          type="multiple"
+          type="single"
+          collapsible
           className="w-full space-y-4"
-          defaultValue={categoriesWithTools.map((cat) => cat.slug)}
         >
           {categoriesWithTools.map((category) => (
             <AccordionItem value={category.slug} key={category.slug} id={category.slug} className="border-b-0 bg-card rounded-xl shadow-sm overflow-hidden">
               <AccordionTrigger className="text-xl font-semibold px-6 py-4 hover:no-underline hover:bg-primary/5 transition-colors">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                     <category.icon className="h-6 w-6 text-primary" />
+                  <div className="p-3 rounded-lg" style={{ backgroundColor: `hsla(${category.color}, 70%, 50%, 0.1)`}}>
+                     <category.icon className="h-6 w-6" style={{ color: `hsl(${category.color}, 70%, 50%)` }} />
                   </div>
-                  <span>{category.name} ({category.tools.length} tools)</span>
+                  <span style={{ color: `hsl(${category.color}, 80%, 30%)` }}>{category.name} ({category.tools.length} tools)</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 bg-secondary/20">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 pt-6">
                   {category.tools.map((tool) => (
                     <ToolCard key={tool.slug} tool={tool} />
                   ))}

@@ -20,6 +20,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
   if (!category) return null;
 
   const isAiTool = tool.slug.includes('-ai');
+  const categoryColor = category.color;
 
   const getTagVariant = (tagName?: string) => {
     switch(tagName?.toLowerCase()) {
@@ -49,9 +50,17 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
 
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
-      <div className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:border-primary/30 hover:-translate-y-1 overflow-hidden">
+      <div 
+        className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:-translate-y-1 overflow-hidden"
+        style={{ '--category-color': `hsl(${categoryColor}, 70%, 50%)`, borderColor: 'hsl(var(--border))' } as React.CSSProperties}
+        onMouseOver={e => e.currentTarget.style.borderColor = `var(--category-color)`}
+        onMouseOut={e => e.currentTarget.style.borderColor = 'hsl(var(--border))'}
+      >
         {rank && (
-            <div className="absolute top-2 right-2 bg-primary/80 text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10">
+            <div 
+              className="absolute top-2 right-2 text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
+              style={{ backgroundColor: 'var(--category-color)' }}
+            >
               #{rank}
             </div>
         )}
@@ -59,8 +68,8 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
           <div>
             <div className="flex items-center justify-between mb-3">
                {category.icon && (
-                <div className="p-2 bg-primary/10 rounded-md">
-                  <category.icon className="h-5 w-5 text-primary" />
+                <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${categoryColor}, 70%, 50%, 0.1)`}}>
+                  <category.icon className="h-5 w-5" style={{ color: 'var(--category-color)' }} />
                 </div>
               )}
               {tag && <Badge variant={getTagVariant(tag)} className={cn(getTagClass(tag))}>{tag}</Badge>}
@@ -71,7 +80,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
             </p>
           </div>
           <div className="mt-4">
-             <Button size="sm" variant="outline" className="w-full text-sm font-semibold justify-between btn-gradient text-white">
+             <Button size="sm" variant="outline" className="w-full text-sm font-semibold justify-between text-white" style={{ background: 'var(--category-color)'}}>
                 <span>Use Now</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
