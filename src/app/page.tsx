@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, Star, Wand2, Users, ShieldCheck, Smartphone, File as FileIcon, Zap } from 'lucide-react';
+import { ArrowRight, Check, Star, Wand2, Users, FileIcon, Smartphone, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
@@ -18,12 +18,12 @@ export default function Home() {
   const stats = [
     { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
     { value: '100k+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-primary" /> },
-    { value: '100% Free', label: 'No Limits', icon: <Zap className="w-6 h-6 text-primary" /> },
+    { value: '100% Free', label: 'No Limits', icon: <Star className="w-6 h-6 text-primary" /> },
   ];
 
   const features = [
       { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-orange-400" /> },
-      { text: 'Lightning Fast', icon: <Zap className="w-5 h-5 text-orange-400" /> },
+      { text: 'Lightning Fast', icon: <Star className="w-5 h-5 text-orange-400" /> },
       { text: 'No Registration', icon: <FileIcon className="w-5 h-5 text-orange-400" /> },
       { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-orange-400" /> },
   ]
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {trendingTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Trending" />)}
+              {trendingTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Trending" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {popularTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Popular" />)}
+              {popularTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Popular" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {featuredTools.map(tool => <ToolCard key={tool.slug} tool={tool} tag="Featured" />)}
+              {featuredTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Featured" rank={index + 1} />)}
             </div>
             <div className="text-center mt-12">
               <Button asChild variant="outline" className="rounded-full btn-gradient text-white">
