@@ -35,8 +35,8 @@ export default function Header() {
   const categories = getCategories();
   const topTools = getTop50Tools().slice(0, 20);
 
-  const categoriesCol1 = categories.slice(0, 10);
-  const categoriesCol2 = categories.slice(10);
+  const categoriesCol1 = categories.slice(0, 9);
+  const categoriesCol2 = categories.slice(9);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
@@ -74,7 +74,7 @@ export default function Header() {
                   onMouseEnter={() => setIsToolsPopoverOpen(true)}
                   onMouseLeave={() => setIsToolsPopoverOpen(false)}
                 >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative bottom-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative -top-3">
                     <div className="md:col-span-1">
                         <div className="relative -top-1">
                             <h3 className="font-bold text-lg mb-2 text-foreground">Top 50 Tools</h3>
@@ -85,7 +85,7 @@ export default function Header() {
                         </div>
                         <div className="flex flex-col gap-0.5">
                            <div className="relative">
-                            <div className="flex flex-col gap-0.5 pr-4">
+                            <div className="flex flex-col gap-0 pr-4">
                                 {topTools.map((tool, index) => (
                                     <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-xs text-muted-foreground transition-colors p-1 rounded-md">
                                     <span className="flex items-center gap-2">

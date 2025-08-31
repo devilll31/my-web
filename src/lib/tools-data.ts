@@ -584,21 +584,21 @@ const tools: Tool[] = [
 ];
 
 const categories: Omit<Category, 'tools'>[] = [
-    { name: 'PDF Tools', slug: 'pdf-tools', icon: FileText, color: '346' }, // Red
-    { name: 'Image Tools', slug: 'image-tools', icon: Image, color: '210' }, // Blue
-    { name: 'Document & File Converters', slug: 'document-file-converters', icon: ArrowRightLeft, color: '158' }, // Green
-    { name: 'Text & Writing Tools', slug: 'text-writing-tools', icon: PenLine, color: '260' }, // Purple
-    { name: 'SEO & Website Tools', slug: 'seo-website-tools', icon: Globe, color: '180' }, // Teal
-    { name: 'Finance & Business Calculators', slug: 'finance-business-calculators', icon: Calculator, color: '30' }, // Orange
-    { name: 'Math, Science & Academic', slug: 'math-science-academic', icon: FlaskConical, color: '200' }, // Sky
-    { name: 'Data & Developer Utilities', slug: 'data-developer-utilities', icon: Code, color: '240' }, // Indigo
-    { name: 'Web & URL Utilities', slug: 'web-url-utilities', icon: LinkIcon, color: '280' }, // Violet
-    { name: 'Security, Privacy & Hashing', slug: 'security-privacy-hashing', icon: Lock, color: '0' }, // New Red for Security
-    { name: 'Productivity & Planning', slug: 'productivity-planning', icon: CheckSquare, color: '320' }, // Pink
-    { name: 'Networking & Diagnostics', slug: 'networking-diagnostics', icon: Network, color: '220' }, // Slate
-    { name: 'Color, Design & Branding', slug: 'color-design-branding', icon: Palette, color: '300' }, // Magenta
-    { name: 'OCR, Language & Localization', slug: 'ocr-language-localization', icon: ScanText, color: '50' }, // Yellow
-    { name: 'System & File Management', slug: 'system-file-management', icon: Folder, color: '80' }, // Lime
+    { name: 'PDF Tools', slug: 'pdf-tools', icon: FileText, color: '346' },
+    { name: 'Image Tools', slug: 'image-tools', icon: Image, color: '210' },
+    { name: 'Document & File Converters', slug: 'document-file-converters', icon: ArrowRightLeft, color: '158' },
+    { name: 'Text & Writing Tools', slug: 'text-writing-tools', icon: PenLine, color: '260' },
+    { name: 'SEO & Website Tools', slug: 'seo-website-tools', icon: Globe, color: '180' },
+    { name: 'Finance & Business Calculators', slug: 'finance-business-calculators', icon: Calculator, color: '30' },
+    { name: 'Math, Science & Academic', slug: 'math-science-academic', icon: FlaskConical, color: '240' }, // Indigo
+    { name: 'Data & Developer Utilities', slug: 'data-developer-utilities', icon: Code, color: '280' },
+    { name: 'Web & URL Utilities', slug: 'web-url-utilities', icon: LinkIcon, color: '220' }, // Dark Blue
+    { name: 'Security, Privacy & Hashing', slug: 'security-privacy-hashing', icon: Lock, color: '0' }, // Maroon/Burgundy
+    { name: 'Productivity & Planning', slug: 'productivity-planning', icon: CheckSquare, color: '320' },
+    { name: 'Networking & Diagnostics', slug: 'networking-diagnostics', icon: Network, color: '230' }, // Navy Blue
+    { name: 'Color, Design & Branding', slug: 'color-design-branding', icon: Palette, color: '300' },
+    { name: 'OCR, Language & Localization', slug: 'ocr-language-localization', icon: ScanText, color: '50' },
+    { name: 'System & File Management', slug: 'system-file-management', icon: Folder, color: '80' }, // Olive Green
 ];
 
 
