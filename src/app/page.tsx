@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, Star, Wand2, Users, FileIcon, Smartphone, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, Star, Wand2, Users, FileText, Smartphone, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools, getCategoryBySlug } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
@@ -24,7 +24,7 @@ export default function Home() {
   const features = [
       { text: '100% Secure', icon: <ShieldCheck className="w-5 h-5 text-orange-400" /> },
       { text: 'Lightning Fast', icon: <Star className="w-5 h-5 text-orange-400" /> },
-      { text: 'No Registration', icon: <FileIcon className="w-5 h-5 text-orange-400" /> },
+      { text: 'No Registration', icon: <FileText className="w-5 h-5 text-orange-400" /> },
       { text: 'Mobile Friendly', icon: <Smartphone className="w-5 h-5 text-orange-400" /> },
   ]
 
@@ -51,13 +51,13 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in-up animation-delay-500">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-fade-in-up animation-delay-500">
               {stats.map((stat) => (
-                <div key={stat.value} className="p-4 rounded-full shadow-lg flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:shadow-xl transition-shadow cursor-pointer">
-                  <div className="p-3 bg-primary/10 rounded-full">{stat.icon}</div>
+                <div key={stat.value} className="p-4 rounded-full shadow-lg flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:shadow-xl transition-shadow cursor-pointer">
+                  <div className="p-2.5 bg-primary/10 rounded-full">{stat.icon}</div>
                   <div className="text-left">
-                    <p className="font-semibold text-lg text-gray-800">{stat.value}</p>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
+                    <p className="font-semibold text-base text-gray-800">{stat.value}</p>
+                    <p className="text-xs text-gray-500">{stat.label}</p>
                   </div>
                 </div>
               ))}

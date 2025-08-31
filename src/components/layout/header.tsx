@@ -83,7 +83,7 @@ export default function Header() {
                                 <p className="text-xs text-muted-foreground">Most popular and frequently used tools by our users. <ExternalLink className="inline-block h-3 w-3" /></p>
                             </Link>
                         </div>
-                        <div className="flex flex-col gap-0.5">
+                        <div className="flex flex-col gap-1">
                            <div className="relative">
                             <div className="flex flex-col gap-0 pr-4">
                                 {topTools.map((tool, index) => (
@@ -95,12 +95,12 @@ export default function Header() {
                                     </Link>
                                 ))}
                             </div>
-                            <div className="absolute bottom-0 right-0">
-                               <Button asChild size="sm" className="rounded-full group btn-gradient">
+                           </div>
+                           <div className="mt-4">
+                                <Button asChild size="sm" className="rounded-full group btn-gradient">
                                   <Link href="/tools/top-50"><span className="text-white group-hover:text-black transition-colors duration-300">View All Top 50 Tools</span> <ArrowRight className="ml-2 h-4 w-4 text-white group-hover:text-black transition-colors duration-300" /></Link>
                                 </Button>
                             </div>
-                           </div>
                         </div>
                     </div>
                     <div className="md:col-span-2">
