@@ -20,7 +20,7 @@ export default function PopularToolsPage() {
         </p>
       </div>
 
-      <RotatingToolCarousel tools={popularTools} itemsPerPage={50} itemsToUpdate={7} tag="Popular" />
+      <RotatingToolCarousel tools={popularTools} itemsPerPage={50} itemsToUpdate={8} interval={15000} tag="Popular" />
     </div>
   );
 }

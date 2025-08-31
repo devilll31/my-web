@@ -19,7 +19,7 @@ export default function Top50ToolsPage() {
         </p>
       </div>
       
-      <RotatingToolCarousel tools={top50Tools} itemsPerPage={50} itemsToUpdate={7} tag="Popular" showRank={true} />
+      <RotatingToolCarousel tools={top50Tools} itemsPerPage={50} itemsToUpdate={8} interval={15000} tag="Popular" showRank={true} />
     </div>
   );
 }

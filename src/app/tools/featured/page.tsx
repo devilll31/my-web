@@ -20,7 +20,7 @@ export default function FeaturedToolsPage() {
         </p>
       </div>
 
-      <RotatingToolCarousel tools={featuredTools} itemsPerPage={50} itemsToUpdate={7} tag="Featured" />
+      <RotatingToolCarousel tools={featuredTools} itemsPerPage={50} itemsToUpdate={8} interval={15000} tag="Featured" />
     </div>
   );
 }
