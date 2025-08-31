@@ -94,7 +94,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-10 font-headline">
               Related Tools
             </h2>
-            <RotatingToolCarousel tools={relatedTools} itemsPerPage={10} />
+            <RotatingToolCarousel tools={relatedTools} itemsPerPage={10} itemsToUpdate={10} interval={10000}/>
           </div>
         </div>
       )}
@@ -105,7 +105,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-10 font-headline">
               Suggested Tools
             </h2>
-            <RotatingToolCarousel tools={suggestedTools} itemsPerPage={10} />
+            <RotatingToolCarousel tools={suggestedTools} itemsPerPage={10} itemsToUpdate={10} interval={10000}/>
           </div>
         </div>
       )}
