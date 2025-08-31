@@ -593,7 +593,7 @@ const categories: Omit<Category, 'tools'>[] = [
     { name: 'Math, Science & Academic', slug: 'math-science-academic', icon: FlaskConical, color: '200' }, // Sky
     { name: 'Data & Developer Utilities', slug: 'data-developer-utilities', icon: Code, color: '240' }, // Indigo
     { name: 'Web & URL Utilities', slug: 'web-url-utilities', icon: LinkIcon, color: '280' }, // Violet
-    { name: 'Security, Privacy & Hashing', slug: 'security-privacy-hashing', icon: Lock, color: '350' }, // Darker Red/Crimson
+    { name: 'Security, Privacy & Hashing', slug: 'security-privacy-hashing', icon: Lock, color: '0' }, // New Red for Security
     { name: 'Productivity & Planning', slug: 'productivity-planning', icon: CheckSquare, color: '320' }, // Pink
     { name: 'Networking & Diagnostics', slug: 'networking-diagnostics', icon: Network, color: '220' }, // Slate
     { name: 'Color, Design & Branding', slug: 'color-design-branding', icon: Palette, color: '300' }, // Magenta

@@ -55,8 +55,6 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
       <div 
         className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:-translate-y-1 overflow-hidden"
         style={{ '--category-color': `hsl(${categoryColor})` } as React.CSSProperties}
-        onMouseOver={e => e.currentTarget.style.borderColor = `var(--category-color)`}
-        onMouseOut={e => e.currentTarget.style.borderColor = 'hsl(var(--border))'}
       >
         <div className="flex flex-col justify-between h-full">
           <div>
@@ -69,7 +67,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
               <div className="flex flex-col items-end gap-1">
                 {rank && (
                     <div 
-                      className="text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
+                      className="text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
                       style={{ backgroundColor: 'var(--category-color)' }}
                     >
                       {rank}
