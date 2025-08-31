@@ -36,7 +36,7 @@ export default function Header() {
   const topTools = getTop50Tools().slice(0, 20);
 
   const categoriesCol1 = categories.slice(0, 8);
-  const categoriesCol2 = categories.slice(8);
+  const categoriesCol2 = categories.slice(8, 15);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
@@ -81,9 +81,9 @@ export default function Header() {
                             <p className="text-sm font-semibold text-primary group-hover:underline">Most popular tools</p>
                             <p className="text-xs text-muted-foreground">Most popular and frequently used tools by our users. <ExternalLink className="inline-block h-3 w-3" /></p>
                         </Link>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-0.5">
                           {topTools.map((tool, index) => (
-                              <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-sm text-muted-foreground transition-colors p-1 rounded-md">
+                              <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-xs text-muted-foreground transition-colors p-1 rounded-md">
                                 <span className="flex items-center gap-2">
                                   <span className="text-xs w-5 text-center font-mono text-muted-foreground/70">{index + 1}.</span>
                                   <span className="tool-link-text">{tool.name}</span>
