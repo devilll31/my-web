@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -83,14 +82,17 @@ export default function Header() {
                             <p className="text-xs text-muted-foreground">Most popular and frequently used tools by our users. <ExternalLink className="inline-block h-3 w-3" /></p>
                         </Link>
                         <div className="flex flex-col gap-1">
-                          {topTools.map(tool => (
+                          {topTools.map((tool, index) => (
                               <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group tool-link block text-sm text-muted-foreground transition-colors p-1 rounded-md">
-                                <span className="tool-link-text">{tool.name}</span>
+                                <span className="flex items-center gap-2">
+                                  <span className="text-xs w-5 text-center font-mono text-muted-foreground/70">{index + 1}.</span>
+                                  <span className="tool-link-text">{tool.name}</span>
+                                </span>
                               </Link>
                           ))}
                         </div>
-                        <Button asChild variant="link" className="p-0 h-auto mt-4">
-                        <Link href="/tools/top-50">View All Top 50 Tools <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        <Button asChild size="sm" className="rounded-full group btn-gradient mt-4">
+                          <Link href="/tools/top-50"><span className="text-white group-hover:text-black transition-colors duration-300">View All Top 50 Tools</span> <ArrowRight className="ml-2 h-4 w-4 text-white group-hover:text-black transition-colors duration-300" /></Link>
                         </Button>
                     </div>
                     <div className="md:col-span-2">
@@ -107,7 +109,7 @@ export default function Header() {
                                     href={`/tools#${category.slug}`}
                                     className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
                                 >
-                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 70%, 50%, 0.15)` }}>
+                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 80%, 60%, 0.25)` }}>
                                         <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }}/>
                                     </div>
                                     <div>
@@ -123,7 +125,7 @@ export default function Header() {
                                     href={`/tools#${category.slug}`}
                                     className="group flex items-center gap-3 p-2 rounded-md hover:bg-accent/10 transition-colors"
                                 >
-                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 70%, 50%, 0.15)`}}>
+                                    <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${category.color}, 80%, 60%, 0.25)`}}>
                                     <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }} />
                                     </div>
                                     <div>
