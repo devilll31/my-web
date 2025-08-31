@@ -65,7 +65,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
       <div 
-        className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:border-foreground/20 hover:-translate-y-1 overflow-hidden"
+        className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border border-transparent transition-all duration-300 ease-in-out hover:shadow-md hover:border-foreground/20 hover:-translate-y-1 overflow-hidden"
         style={{ '--category-color': `hsl(${categoryColor})` } as React.CSSProperties}
       >
         <div className="flex flex-col justify-between h-full">
@@ -84,7 +84,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
                          getRankCircleColor(tag)
                       )}
                     >
-                      {rank}
+                      #{rank}
                     </div>
                 )}
                 {tag && <Badge variant={getTagVariant(tag)} className={cn(getTagClass(tag))}>{tag}</Badge>}
