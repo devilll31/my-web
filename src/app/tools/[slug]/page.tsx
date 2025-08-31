@@ -1,10 +1,10 @@
-import { getToolBySlug, getTools } from '@/lib/tools-data';
+import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { UploadCloud } from 'lucide-react';
-import SuggestedTools from '@/components/suggested-tools';
+import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -27,14 +27,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-
 export default function ToolPage({ params }: { params: { slug: string } }) {
   const tool = getToolBySlug(params.slug);
-  const allTools = getTools();
-
+  
   if (!tool) {
     notFound();
   }
+
+  const relatedTools = getToolsByCategory(tool.category).filter(t => t.slug !== tool.slug);
+  const suggestedTools = getToolsByOtherCategories(tool.category);
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
@@ -86,9 +87,28 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             </Card>
         </div>
       </div>
-      <div className="mt-16">
-        <SuggestedTools currentToolName={tool.name} allTools={allTools} />
-      </div>
+      
+      {relatedTools.length > 0 && (
+        <div className="mt-16">
+           <div className="bg-secondary/50 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-10 font-headline">
+              Related Tools
+            </h2>
+            <RotatingToolCarousel tools={relatedTools} itemsPerPage={10} />
+          </div>
+        </div>
+      )}
+
+      {suggestedTools.length > 0 && (
+        <div className="mt-16">
+          <div className="bg-secondary/50 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-10 font-headline">
+              Suggested Tools
+            </h2>
+            <RotatingToolCarousel tools={suggestedTools} itemsPerPage={10} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
