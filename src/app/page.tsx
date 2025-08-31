@@ -6,6 +6,7 @@ import { getAllToolsByCategories, Category, getTools, getCategoryBySlug } from '
 import TypingAnimation from '@/components/typing-animation';
 import Slogan from '@/components/slogan';
 import ToolCard from '@/components/tool-card';
+import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 
 export default function Home() {
   const allTools = getTools();
@@ -92,9 +93,7 @@ export default function Home() {
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {trendingTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Trending" rank={index + 1} />)}
-            </div>
+            <RotatingToolCarousel tools={trendingTools} itemsPerPage={20} itemsToUpdate={4} tag="Trending" showRank={true} />
             <div className="text-center mt-12">
               <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/trending"><span className="text-white group-hover:text-black transition-colors duration-300">View All Trending Tools</span></Link>
@@ -110,9 +109,7 @@ export default function Home() {
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {popularTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Popular" rank={index + 1} />)}
-            </div>
+            <RotatingToolCarousel tools={popularTools} itemsPerPage={20} itemsToUpdate={4} tag="Popular" showRank={true} />
             <div className="text-center mt-12">
                <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/popular"><span className="text-white group-hover:text-black transition-colors duration-300">View All Popular Tools</span></Link>
@@ -128,9 +125,7 @@ export default function Home() {
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-              {featuredTools.map((tool, index) => <ToolCard key={tool.slug} tool={tool} tag="Featured" rank={index + 1} />)}
-            </div>
+            <RotatingToolCarousel tools={featuredTools} itemsPerPage={20} itemsToUpdate={4} tag="Featured" showRank={true} />
             <div className="text-center mt-12">
                <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/featured"><span className="text-white group-hover:text-black transition-colors duration-300">View All Featured Tools</span></Link>

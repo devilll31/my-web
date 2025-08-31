@@ -1,5 +1,5 @@
 
-import ToolCard from '@/components/tool-card';
+import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import { getTools } from '@/lib/tools-data';
 
 export const metadata = {
@@ -20,11 +20,7 @@ export default function FeaturedToolsPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {featuredTools.map((tool) => (
-          <ToolCard key={tool.slug} tool={tool} tag="Featured" />
-        ))}
-      </div>
+      <RotatingToolCarousel tools={featuredTools} itemsPerPage={50} itemsToUpdate={7} tag="Featured" />
     </div>
   );
 }

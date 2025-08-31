@@ -11,6 +11,8 @@ interface RotatingToolCarouselProps {
   itemsPerPage?: number;
   interval?: number;
   itemsToUpdate?: number;
+  tag?: string;
+  showRank?: boolean;
 }
 
 const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
@@ -18,8 +20,11 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   itemsPerPage = 10,
   interval = 15000,
   itemsToUpdate = 4,
+  tag,
+  showRank = false,
 }) => {
   const [displayedTools, setDisplayedTools] = useState<Tool[]>([]);
+  const [initialToolMap, setInitialToolMap] = useState<Map<string, number>>(new Map());
 
   const shuffleArray = (array: Tool[]) => {
     let currentIndex = array.length, randomIndex;
@@ -40,11 +45,14 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   useEffect(() => {
     const shuffledTools = shuffleArray([...tools]);
     setDisplayedTools(shuffledTools.slice(0, itemsPerPage));
-  }, [tools, itemsPerPage]);
+    if (showRank) {
+      const toolMap = new Map(tools.map((tool, index) => [tool.slug, index + 1]));
+      setInitialToolMap(toolMap);
+    }
+  }, [tools, itemsPerPage, showRank]);
 
   useEffect(() => {
     if (tools.length <= itemsPerPage) {
-      // No rotation if there aren't enough tools to rotate
       setDisplayedTools(tools);
       return;
     }
@@ -61,18 +69,16 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
           }
         }
         
-        // Ensure no duplicates in the final list
         const finalToolsMap = new Map(newTools.map(t => [t.slug, t]));
         let finalTools = Array.from(finalToolsMap.values());
 
-        // If we somehow have fewer than itemsPerPage, fill it up
         if (finalTools.length < itemsPerPage) {
           const needed = itemsPerPage - finalTools.length;
           const filler = getNextBatch(finalTools, tools, needed);
           finalTools.push(...filler);
         }
 
-        return finalTools;
+        return finalTools.slice(0, itemsPerPage);
       });
     }, interval);
 
@@ -80,22 +86,28 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   }, [tools, itemsPerPage, interval, itemsToUpdate, getNextBatch]);
 
   if (!displayedTools.length) {
-    return null; // Or a loading skeleton
+    return null; 
   }
   
+  const gridColsClass = itemsPerPage === 20 || itemsPerPage === 50 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5' : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5';
+
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    <div className={`grid ${gridColsClass} gap-6`}>
       <AnimatePresence>
-        {displayedTools.map((tool, index) => (
+        {displayedTools.map((tool) => (
           <motion.div
             key={tool.slug}
             layout
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5, delay: (index % itemsToUpdate) * 0.1 }}
+            transition={{ duration: 0.5 }}
           >
-            <ToolCard tool={tool} />
+            <ToolCard 
+              tool={tool} 
+              tag={tag}
+              rank={showRank ? initialToolMap.get(tool.slug) : undefined} 
+            />
           </motion.div>
         ))}
       </AnimatePresence>

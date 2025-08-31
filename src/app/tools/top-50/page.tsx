@@ -1,5 +1,5 @@
 
-import ToolCard from '@/components/tool-card';
+import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import { getTop50Tools } from '@/lib/tools-data';
 
 export const metadata = {
@@ -18,12 +18,8 @@ export default function Top50ToolsPage() {
           The community's favorite tools. Explore the 50 most popular utilities on D2ools, ranked by usage.
         </p>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {top50Tools.map((tool, index) => (
-          <ToolCard key={tool.slug} tool={tool} rank={index + 1} tag="Popular" />
-        ))}
-      </div>
+      
+      <RotatingToolCarousel tools={top50Tools} itemsPerPage={50} itemsToUpdate={7} tag="Popular" showRank={true} />
     </div>
   );
 }
