@@ -58,23 +58,25 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
         onMouseOver={e => e.currentTarget.style.borderColor = `var(--category-color)`}
         onMouseOut={e => e.currentTarget.style.borderColor = 'hsl(var(--border))'}
       >
-        {rank && (
-            <div 
-              className="absolute top-2 right-2 text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
-              style={{ backgroundColor: 'var(--category-color)' }}
-            >
-              #{rank}
-            </div>
-        )}
         <div className="flex flex-col justify-between h-full">
           <div>
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-start justify-between mb-3 min-h-[34px]">
                {category.icon && (
-                <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${categoryColor}, 70%, 50%, 0.15)`}}>
+                <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${categoryColor}, 70%, 50%, 0.2)`}}>
                   <category.icon className="h-5 w-5" style={{ color: 'var(--category-color)' }} />
                 </div>
               )}
-              {tag && <Badge variant={getTagVariant(tag)} className={cn(getTagClass(tag))}>{tag}</Badge>}
+              <div className="flex flex-col items-end gap-1">
+                {rank && (
+                    <div 
+                      className="text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
+                      style={{ backgroundColor: 'var(--category-color)' }}
+                    >
+                      {rank}
+                    </div>
+                )}
+                {tag && <Badge variant={getTagVariant(tag)} className={cn(getTagClass(tag))}>{tag}</Badge>}
+              </div>
             </div>
             <h3 className="text-sm font-bold font-headline mb-1">{tool.name}</h3>
             <p className="text-xs text-muted-foreground line-clamp-2 min-h-[30px]">
