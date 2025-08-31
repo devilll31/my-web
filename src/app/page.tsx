@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Check, Star, Wand2, Users, FileText, Smartphone, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, Star, Wand2, Users, FileText, Smartphone, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools, getCategoryBySlug } from '@/lib/tools-data';
 import TypingAnimation from '@/components/typing-animation';
@@ -18,7 +18,7 @@ export default function Home() {
   const stats = [
     { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
     { value: '100k+ Users', label: 'Trusted Worldwide', icon: <Users className="w-6 h-6 text-primary" /> },
-    { value: '100% Free', label: 'No Limits', icon: <Star className="w-6 h-6 text-primary" /> },
+    { value: '100% Free', label: 'No Limits', icon: <Zap className="w-6 h-6 text-primary" /> },
   ];
 
   const features = [
