@@ -21,7 +21,6 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
 
   if (!category) return null;
 
-  const isAiTool = tool.slug.includes('-ai');
   const categoryColor = category.color;
 
   const getTagVariant = (tagName?: string) => {
@@ -53,7 +52,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
   return (
     <Link href={`/tools/${tool.slug}`} className={cn("group block", className)}>
       <div 
-        className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border border-transparent transition-all duration-300 ease-in-out hover:shadow-md hover:border-primary/50 hover:-translate-y-1 overflow-hidden"
+        className="relative w-full h-full p-4 bg-card rounded-lg shadow-sm border transition-all duration-300 ease-in-out hover:shadow-md hover:border-foreground/20 hover:-translate-y-1 overflow-hidden"
         style={{ '--category-color': `hsl(${categoryColor})` } as React.CSSProperties}
       >
         <div className="flex flex-col justify-between h-full">
@@ -67,7 +66,7 @@ export default function ToolCard({ tool, className, tag, rank }: ToolCardProps) 
               <div className="flex flex-col items-end gap-1">
                 {rank && (
                     <div 
-                      className="text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
+                      className="text-primary-foreground text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-md z-10"
                       style={{ backgroundColor: 'var(--category-color)' }}
                     >
                       {rank}
