@@ -2,9 +2,9 @@ import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories 
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { UploadCloud } from 'lucide-react';
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
+import ImageBackgroundRemoverTool from '@/components/tools/image-background-remover-tool';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -27,6 +27,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
+const ToolComponent = ({ slug }: { slug: string }) => {
+  switch (slug) {
+    case 'image-background-remover-ai':
+      return <ImageBackgroundRemoverTool />;
+    // Other tools will be added here
+    default:
+      return (
+        <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
+          <h3 className="text-lg font-medium text-foreground">Tool interface coming soon!</h3>
+          <p className="mt-1 text-sm text-muted-foreground">This tool is under construction.</p>
+        </div>
+      );
+  }
+};
+
 export default function ToolPage({ params }: { params: { slug: string } }) {
   const tool = getToolBySlug(params.slug);
   
@@ -47,17 +62,9 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
               <CardDescription className="text-lg">{tool.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
-                <UploadCloud className="mx-auto h-12 w-12 text-muted-foreground" />
-                <h3 className="mt-4 text-lg font-medium text-foreground">Drag & drop your files here</h3>
-                <p className="mt-1 text-sm text-muted-foreground">or</p>
-                <Button className="mt-4">
-                  Choose Files
-                </Button>
-                <p className="mt-2 text-xs text-muted-foreground">
-                    Your files are secure and processed locally.
-                </p>
-              </div>
+              <Suspense fallback={<div>Loading tool...</div>}>
+                <ToolComponent slug={params.slug} />
+              </Suspense>
             </CardContent>
           </Card>
         </div>
