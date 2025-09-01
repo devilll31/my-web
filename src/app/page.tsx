@@ -11,10 +11,6 @@ import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 export default function Home() {
   const allTools = getTools();
   const categoriesWithTools = getAllToolsByCategories().slice(0, 15);
-
-  const trendingTools = allTools.slice(0, 100);
-  const popularTools = allTools.slice(0, 100);
-  const featuredTools = allTools.slice(0, 100);
   
   const stats = [
     { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
@@ -93,7 +89,7 @@ export default function Home() {
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Most popular tools uploaded in real-time based on user activity.</p>
-            <RotatingToolCarousel tools={trendingTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Trending" showRank={true} />
+            <RotatingToolCarousel tools={allTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Trending" showRank={true} />
             <div className="text-center mt-12">
               <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/trending"><span className="text-white group-hover:text-black transition-colors duration-300">View All Trending Tools</span></Link>
@@ -109,7 +105,7 @@ export default function Home() {
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Tools with highest user satisfaction and engagement.</p>
-            <RotatingToolCarousel tools={popularTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Popular" showRank={true} />
+            <RotatingToolCarousel tools={allTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Popular" showRank={true} />
             <div className="text-center mt-12">
                <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/popular"><span className="text-white group-hover:text-black transition-colors duration-300">View All Popular Tools</span></Link>
@@ -125,7 +121,7 @@ export default function Home() {
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>
             <p className="text-center text-muted-foreground max-w-xl mx-auto mb-10">Handpicked advanced, automated, and AI capabilities.</p>
-            <RotatingToolCarousel tools={featuredTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Featured" showRank={true} />
+            <RotatingToolCarousel tools={allTools} itemsPerPage={20} itemsToUpdate={10} interval={10000} tag="Featured" showRank={true} />
             <div className="text-center mt-12">
                <Button asChild className="rounded-full group btn-gradient">
                 <Link href="/tools/featured"><span className="text-white group-hover:text-black transition-colors duration-300">View All Featured Tools</span></Link>
@@ -171,5 +167,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 

@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function FeaturedToolsPage() {
   const allTools = getTools();
-  const featuredTools = allTools.filter(t => ['image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'meta-description-generator', 'paraphraser', 'pdf-background-remover-ai', 'grammar-checker', 'spelling-checker', 'image-background-remover-ai', 'handwriting-ocr', 'table-ocr', 'math-ocr', 'language-detector', 'keyword-extractor', 'suggest-related-tools', 'image-watermark-remover', 'remove-image-noise', 'sharpen-image', 'image-to-text-ocr', 'pdf-to-text-ocr', 'slug-generator', 'case-converter', 'word-counter', 'character-counter', 'sentence-counter', 'reading-time-estimator', 'readability-checker', 'punctuation-fixer', 'remove-extra-spaces', 'remove-line-breaks', 'sort-lines', 'unique-lines', 'find-and-replace', 'url-extractor', 'email-extractor', 'lorem-ipsum-generator', 'hashtag-generator', 'text-diff', 'html-entities-encoder-decoder', 'base64-text-encoder-decoder', 'rot13-encoder-decoder', 'utm-builder', 'stopwords-remover', 'case-style-converter', 'diacritics-remover', 'json-escape-unescape', 'csv-escape-unescape']).slice(0, 50);
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
@@ -20,7 +19,7 @@ export default function FeaturedToolsPage() {
         </p>
       </div>
 
-      <RotatingToolCarousel tools={featuredTools} itemsPerPage={50} itemsToUpdate={20} interval={10000} tag="Featured" />
+      <RotatingToolCarousel tools={allTools} itemsPerPage={50} itemsToUpdate={20} interval={10000} tag="Featured" />
     </div>
   );
 }
