@@ -20,7 +20,9 @@ export default function TrendingToolsPage() {
         </p>
       </div>
 
-      <RotatingToolCarousel tools={trendingTools} itemsPerPage={50} itemsToUpdate={10} interval={10000} tag="Trending" />
+      <RotatingToolCarousel tools={trendingTools} itemsPerPage={50} itemsToUpdate={20} interval={10000} tag="Trending" />
     </div>
   );
 }
+
+    

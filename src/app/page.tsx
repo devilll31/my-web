@@ -12,9 +12,9 @@ export default function Home() {
   const allTools = getTools();
   const categoriesWithTools = getAllToolsByCategories().slice(0, 15);
 
-  const trendingTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
-  const popularTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
-  const featuredTools = allTools.filter(t => ['pdf-to-word', 'word-to-pdf', 'pdf-to-excel', 'excel-to-pdf', 'pdf-to-powerpoint', 'powerpoint-to-pdf', 'pdf-to-jpg', 'jpg-to-pdf', 'pdf-to-png', 'png-to-pdf', 'pdf-to-html', 'html-to-pdf', 'pdf-to-txt', 'txt-to-pdf', 'pdf-to-epub', 'epub-to-pdf', 'pdf-to-rtf', 'rtf-to-pdf', 'merge-pdf', 'split-pdf']).slice(0, 20);
+  const trendingTools = allTools.filter(t => ['pdf-to-word', 'background-remover', 'image-compressor', 'json-to-csv', 'domain-availability-checker', 'emi-calculator', 'qr-code-generator', 'image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-excel', 'password-generator', 'image-to-text-ocr']).slice(0, 20);
+  const popularTools = allTools.filter(t => ['image-resizer', 'word-to-pdf', 'split-pdf', 'image-to-pdf', 'unlock-pdf', 'pdf-to-word', 'background-remover', 'image-compressor', 'pdf-to-jpg', 'merge-pdf', 'image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'csv-to-json', 'xml-to-json', 'whois-lookup', 'dns-lookup', 'url-shortener']).slice(0, 20);
+  const featuredTools = allTools.filter(t => ['image-upscaler-ai', 'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer', 'meta-description-generator', 'paraphraser', 'pdf-background-remover-ai', 'grammar-checker', 'spelling-checker', 'image-background-remover-ai', 'handwriting-ocr', 'table-ocr', 'math-ocr', 'language-detector', 'keyword-extractor', 'suggest-related-tools', 'image-watermark-remover', 'remove-image-noise', 'sharpen-image']).slice(0, 20);
   
   const stats = [
     { value: '500+ Tools', label: 'Premium Quality', icon: <Star className="w-6 h-6 text-primary" /> },
@@ -171,3 +171,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
