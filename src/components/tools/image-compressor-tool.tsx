@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { UploadCloud, Image as ImageIcon, Download, X, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
