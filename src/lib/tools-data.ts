@@ -24,6 +24,7 @@ export interface Tool {
   slug: string;
   description: string;
   category: string;
+  isImplemented?: boolean;
 }
 
 export interface Category {
@@ -84,7 +85,7 @@ const tools: Tool[] = [
   
   // 2) Image Tools
   { name: 'Background Remover', slug: 'background-remover', description: 'Remove the background from any image.', category: 'image-tools' },
-  { name: 'Image Compressor', slug: 'image-compressor', description: 'Compress images to reduce file size.', category: 'image-tools' },
+  { name: 'Image Compressor', slug: 'image-compressor', description: 'Compress images to reduce file size.', category: 'image-tools', isImplemented: true },
   { name: 'Image Resizer', slug: 'image-resizer', description: 'Resize images to your desired dimensions.', category: 'image-tools' },
   { name: 'Image Cropper', slug: 'image-cropper', description: 'Crop images to a specific area.', category: 'image-tools' },
   { name: 'Image Rotator', slug: 'image-rotator', description: 'Rotate images by a specified angle.', category: 'image-tools' },
@@ -120,10 +121,10 @@ const tools: Tool[] = [
   { name: 'Image Annotation Tool', slug: 'image-annotation-tool', description: 'Annotate images with text, arrows, and shapes.', category: 'image-tools' },
   { name: 'Transparent PNG Maker', slug: 'transparent-png-maker', description: 'Create a transparent PNG from an image.', category: 'image-tools' },
   { name: 'Image Background Color Changer', slug: 'image-background-color-changer', description: 'Change the background color of an image.', category: 'image-tools' },
-  { name: 'Image Upscaler (AI)', slug: 'image-upscaler-ai', description: 'Upscale and enhance images with AI.', category: 'image-tools' },
-  { name: 'Face Retouch (AI)', slug: 'face-retouch-ai', description: 'Retouch faces in photos using AI.', category: 'image-tools' },
-  { name: 'Generative Fill (AI Inpainting)', slug: 'generative-fill-ai', description: 'Use AI to fill in parts of an image.', category: 'image-tools' },
-  { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools' },
+  { name: 'Image Upscaler (AI)', slug: 'image-upscaler-ai', description: 'Upscale and enhance images with AI.', category: 'image-tools', isImplemented: true },
+  { name: 'Face Retouch (AI)', slug: 'face-retouch-ai', description: 'Retouch faces in photos using AI.', category: 'image-tools', isImplemented: true },
+  { name: 'Generative Fill (AI Inpainting)', slug: 'generative-fill-ai', description: 'Use AI to fill in parts of an image.', category: 'image-tools', isImplemented: true },
+  { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Watermark Adder (pro variant)', slug: 'image-watermark-adder-pro', description: 'Advanced image watermarking options.', category: 'image-tools' },
   { name: 'Image Noise Reduction (dedicated tool)', slug: 'image-noise-reduction', description: 'Advanced noise reduction for images.', category: 'image-tools' },
   { name: 'Image Rotate & Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },

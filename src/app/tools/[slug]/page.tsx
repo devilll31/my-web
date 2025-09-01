@@ -8,6 +8,7 @@ import ImageBackgroundRemoverTool from '@/components/tools/image-background-remo
 import ImageUpscalerTool from '@/components/tools/image-upscaler-tool';
 import FaceRetouchTool from '@/components/tools/face-retouch-tool';
 import GenerativeFillTool from '@/components/tools/generative-fill-tool';
+import ImageCompressorTool from '@/components/tools/image-compressor-tool';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
@@ -41,6 +42,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <FaceRetouchTool />;
     case 'generative-fill-ai':
       return <GenerativeFillTool />;
+    case 'image-compressor':
+        return <ImageCompressorTool />;
     // Other tools will be added here
     default:
       return (
