@@ -1,3 +1,4 @@
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -5,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import ImageBackgroundRemoverTool from '@/components/tools/image-background-remover-tool';
 import ImageUpscalerTool from '@/components/tools/image-upscaler-tool';
+import FaceRetouchTool from '@/components/tools/face-retouch-tool';
+import GenerativeFillTool from '@/components/tools/generative-fill-tool';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
@@ -34,6 +37,10 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ImageBackgroundRemoverTool />;
     case 'image-upscaler-ai':
       return <ImageUpscalerTool />;
+    case 'face-retouch-ai':
+      return <FaceRetouchTool />;
+    case 'generative-fill-ai':
+      return <GenerativeFillTool />;
     // Other tools will be added here
     default:
       return (
