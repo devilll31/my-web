@@ -1,6 +1,6 @@
 
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
-import { getTop50Tools } from '@/lib/tools-data';
+import { getTools } from '@/lib/tools-data';
 
 export const metadata = {
   title: 'Top 50 Most Popular Tools | D2ools',
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default function Top50ToolsPage() {
-  const top50Tools = getTop50Tools();
+  const allTools = getTools();
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
@@ -19,9 +19,7 @@ export default function Top50ToolsPage() {
         </p>
       </div>
       
-      <RotatingToolCarousel tools={top50Tools} itemsPerPage={50} itemsToUpdate={20} interval={10000} tag="Popular" showRank={true} />
+      <RotatingToolCarousel tools={allTools} itemsPerPage={50} itemsToUpdate={20} interval={10000} tag="Popular" showRank={true} />
     </div>
   );
 }
-
-    

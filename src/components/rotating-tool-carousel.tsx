@@ -24,7 +24,6 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   showRank = false,
 }) => {
   const [displayedTools, setDisplayedTools] = useState<Tool[]>([]);
-  const [initialToolMap, setInitialToolMap] = useState<Map<string, number>>(new Map());
 
   const shuffleArray = (array: Tool[]) => {
     let currentIndex = array.length, randomIndex;
@@ -37,7 +36,8 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   };
 
   const getNextBatch = useCallback((currentTools: Tool[], allTools: Tool[], count: number): Tool[] => {
-    const remainingTools = allTools.filter(tool => !currentTools.some(t => t.slug === tool.slug));
+    const currentSlugs = new Set(currentTools.map(t => t.slug));
+    const remainingTools = allTools.filter(tool => !currentSlugs.has(tool.slug));
     const shuffledRemaining = shuffleArray(remainingTools);
     return shuffledRemaining.slice(0, count);
   }, []);
@@ -45,11 +45,7 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   useEffect(() => {
     const shuffledTools = shuffleArray([...tools]);
     setDisplayedTools(shuffledTools.slice(0, itemsPerPage));
-    if (showRank) {
-      const toolMap = new Map(tools.map((tool, index) => [tool.slug, index + 1]));
-      setInitialToolMap(toolMap);
-    }
-  }, [tools, itemsPerPage, showRank]);
+  }, [tools, itemsPerPage]);
 
   useEffect(() => {
     if (tools.length <= itemsPerPage) {
@@ -59,26 +55,24 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
 
     const timer = setInterval(() => {
       setDisplayedTools(prevTools => {
-        const newTools = [...prevTools];
-        const newBatch = getNextBatch(newTools, tools, itemsToUpdate);
+        const indicesToReplace = new Set<number>();
+        while(indicesToReplace.size < itemsToUpdate) {
+            indicesToReplace.add(Math.floor(Math.random() * prevTools.length));
+        }
+
+        const newBatch = getNextBatch(prevTools, tools, itemsToUpdate);
         
+        let newTools = [...prevTools];
+        const batchIndices = Array.from(indicesToReplace);
+
         for (let i = 0; i < itemsToUpdate; i++) {
-          const randomIndex = Math.floor(Math.random() * newTools.length);
+          const toolIndex = batchIndices[i];
           if (newBatch[i]) {
-            newTools[randomIndex] = newBatch[i];
+            newTools[toolIndex] = newBatch[i];
           }
         }
         
-        const finalToolsMap = new Map(newTools.map(t => [t.slug, t]));
-        let finalTools = Array.from(finalToolsMap.values());
-
-        if (finalTools.length < itemsPerPage) {
-          const needed = itemsPerPage - finalTools.length;
-          const filler = getNextBatch(finalTools, tools, needed);
-          finalTools.push(...filler);
-        }
-
-        return finalTools.slice(0, itemsPerPage);
+        return newTools;
       });
     }, interval);
 
@@ -94,9 +88,9 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
   return (
     <div className={`grid ${gridColsClass} gap-6`}>
       <AnimatePresence>
-        {displayedTools.map((tool) => (
+        {displayedTools.map((tool, index) => (
           <motion.div
-            key={tool.slug}
+            key={`${tool.slug}-${index}`}
             layout
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -106,7 +100,7 @@ const RotatingToolCarousel: React.FC<RotatingToolCarouselProps> = ({
             <ToolCard 
               tool={tool} 
               tag={tag}
-              rank={showRank ? initialToolMap.get(tool.slug) : undefined} 
+              rank={showRank ? index + 1 : undefined} 
             />
           </motion.div>
         ))}
