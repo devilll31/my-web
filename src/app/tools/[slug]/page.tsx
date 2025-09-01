@@ -4,6 +4,7 @@ import { type Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import ImageBackgroundRemoverTool from '@/components/tools/image-background-remover-tool';
+import ImageUpscalerTool from '@/components/tools/image-upscaler-tool';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
@@ -31,6 +32,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
   switch (slug) {
     case 'image-background-remover-ai':
       return <ImageBackgroundRemoverTool />;
+    case 'image-upscaler-ai':
+      return <ImageUpscalerTool />;
     // Other tools will be added here
     default:
       return (
