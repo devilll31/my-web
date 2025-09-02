@@ -13,6 +13,7 @@ import PdfToWordTool from '@/components/tools/pdf-to-word-tool';
 import WordToPdfTool from '@/components/tools/word-to-pdf-tool';
 import PdfToExcelTool from '@/components/tools/pdf-to-excel-tool';
 import ExcelToPdfTool from '@/components/tools/excel-to-pdf-tool';
+import EmiCalculatorTool from '@/components/tools/emi-calculator-tool';
 import { Suspense } from 'react';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -58,6 +59,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <PdfToExcelTool />;
     case 'excel-to-pdf':
       return <ExcelToPdfTool />;
+    case 'emi-calculator':
+      return <EmiCalculatorTool />;
     // Other tools will be added here
     default:
       return (
@@ -94,7 +97,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-2">{tool.description}</p>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto bg-card p-4 sm:p-8 rounded-2xl shadow-lg border">
+      <div className="w-full max-w-5xl mx-auto">
         <Suspense fallback={<div className="text-center p-20">Loading tool...</div>}>
           <ToolComponent slug={params.slug} />
         </Suspense>

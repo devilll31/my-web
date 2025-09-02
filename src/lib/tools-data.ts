@@ -249,7 +249,7 @@ const tools: Tool[] = [
   { name: 'Canonical/Duplicate Content Finder', slug: 'duplicate-content-finder', description: 'Find duplicate content on your website.', category: 'seo-website-tools' },
 
   // 6) Finance & Business Calculators
-  { name: 'EMI Calculator', slug: 'emi-calculator', description: 'Calculate Equated Monthly Installments for loans.', category: 'finance-business-calculators' },
+  { name: 'EMI Calculator', slug: 'emi-calculator', description: 'Calculate Equated Monthly Installments for loans.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility-calculator', description: 'Check your eligibility for a home loan.', category: 'finance-business-calculators' },
   { name: 'Car Loan EMI Calculator', slug: 'car-loan-emi-calculator', description: 'Calculate EMI for your car loan.', category: 'finance-business-calculators' },
   { name: 'Education Loan EMI Calculator', slug: 'education-loan-emi-calculator', description: 'Calculate EMI for your education loan.', category: 'finance-business-calculators' },
