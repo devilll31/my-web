@@ -14,6 +14,8 @@ import WordToPdfTool from '@/components/tools/word-to-pdf-tool';
 import PdfToExcelTool from '@/components/tools/pdf-to-excel-tool';
 import ExcelToPdfTool from '@/components/tools/excel-to-pdf-tool';
 import { Suspense } from 'react';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -79,45 +81,23 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-2">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-headline">{tool.name}</CardTitle>
-              <CardDescription className="text-lg">{tool.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Suspense fallback={<div>Loading tool...</div>}>
-                <ToolComponent slug={params.slug} />
-              </Suspense>
-            </CardContent>
-          </Card>
-        </div>
-        <div className="space-y-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>How to use {tool.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
-                        <li>Upload your file using the panel.</li>
-                        <li>Adjust settings if available.</li>
-                        <li>Click the process button.</li>
-                        <li>Download your resulting file.</li>
-                    </ol>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle>Why use our tool?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-muted-foreground">
-                    <p>✓ Free to use, no account needed.</p>
-                    <p>✓ Fast and reliable processing.</p>
-                    <p>✓ Secure and private.</p>
-                </CardContent>
-            </Card>
-        </div>
+      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+        <Link href="/" className="hover:text-primary">Home</Link>
+        <ChevronRight className="h-4 w-4" />
+        <Link href="/tools" className="hover:text-primary">Tools</Link>
+        <ChevronRight className="h-4 w-4" />
+        <span className="font-medium text-foreground">{tool.name}</span>
+      </div>
+      
+      <div className="text-center mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline">{tool.name}</h1>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-2">{tool.description}</p>
+      </div>
+
+      <div className="w-full max-w-5xl mx-auto">
+        <Suspense fallback={<div className="text-center p-20">Loading tool...</div>}>
+          <ToolComponent slug={params.slug} />
+        </Suspense>
       </div>
       
       {relatedTools.length > 0 && (
