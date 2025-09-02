@@ -9,6 +9,10 @@ import ImageUpscalerTool from '@/components/tools/image-upscaler-tool';
 import FaceRetouchTool from '@/components/tools/face-retouch-tool';
 import GenerativeFillTool from '@/components/tools/generative-fill-tool';
 import ImageCompressorTool from '@/components/tools/image-compressor-tool';
+import PdfToWordTool from '@/components/tools/pdf-to-word-tool';
+import WordToPdfTool from '@/components/tools/word-to-pdf-tool';
+import PdfToExcelTool from '@/components/tools/pdf-to-excel-tool';
+import ExcelToPdfTool from '@/components/tools/excel-to-pdf-tool';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
@@ -44,6 +48,14 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <GenerativeFillTool />;
     case 'image-compressor':
         return <ImageCompressorTool />;
+    case 'pdf-to-word':
+      return <PdfToWordTool />;
+    case 'word-to-pdf':
+      return <WordToPdfTool />;
+    case 'pdf-to-excel':
+      return <PdfToExcelTool />;
+    case 'excel-to-pdf':
+      return <ExcelToPdfTool />;
     // Other tools will be added here
     default:
       return (
