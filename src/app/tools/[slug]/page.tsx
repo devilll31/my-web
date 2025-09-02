@@ -94,7 +94,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-2">{tool.description}</p>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto">
+      <div className="w-full max-w-5xl mx-auto bg-card p-4 sm:p-8 rounded-2xl shadow-lg border">
         <Suspense fallback={<div className="text-center p-20">Loading tool...</div>}>
           <ToolComponent slug={params.slug} />
         </Suspense>

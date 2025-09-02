@@ -8,21 +8,6 @@ import { useToast } from '@/hooks/use-toast';
 import { pdfToWord } from '@/ai/flows/pdf-to-word';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ConversionIcon = () => (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 4H34L44 14V40H14V4Z" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-    <path d="M13.9999 40H44V54L34 64H14L4 54V40H13.9999Z" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-    <path d="M34 4V14H44" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-    <path d="M4 40V54H14" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-    <path d="M44 54H34V64" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
-    <path d="M22 22H36" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M22 30H36" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M50 30L58 22L50 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M50 42L58 50L50 58" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-
 export default function PdfToWordTool() {
   const [originalFile, setOriginalFile] = useState<{ name: string; dataUri: string } | null>(null);
   const [convertedFile, setConvertedFile] = useState<string | null>(null);
@@ -62,6 +47,9 @@ export default function PdfToWordTool() {
       setOriginalFile({ name: file.name, dataUri });
       try {
         const result = await pdfToWord({ pdfDataUri: dataUri });
+        if (!result || !result.wordDataUri) {
+          throw new Error('Conversion failed: The service did not return a file.');
+        }
         setConvertedFile(result.wordDataUri);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
@@ -119,8 +107,10 @@ export default function PdfToWordTool() {
             >
               <div className="flex flex-col items-center justify-center text-primary">
                 <FileUp className="h-16 w-16 mb-4 text-primary/80" />
-                <h3 className="text-2xl font-bold text-foreground">Choose a PDF file</h3>
-                <p className="mt-2 text-muted-foreground">or drop it here</p>
+                <Button size="lg" className="btn-gradient text-white font-bold text-lg px-8 py-6">
+                  Choose PDF file
+                </Button>
+                <p className="mt-4 text-muted-foreground">or drop PDF here</p>
               </div>
             </div>
             <input
@@ -159,7 +149,7 @@ export default function PdfToWordTool() {
             className="text-center"
           >
             {isLoading && (
-              <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl shadow-lg border">
+              <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl">
                 <Loader2 className="h-16 w-16 animate-spin text-primary mb-4" />
                 <p className="text-xl font-semibold">Converting your file...</p>
                 <p className="text-muted-foreground mt-1">{originalFile.name}</p>
@@ -167,7 +157,7 @@ export default function PdfToWordTool() {
             )}
 
             {!isLoading && convertedFile && (
-               <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl shadow-lg border">
+               <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl">
                   <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
                   <p className="text-2xl font-bold">Conversion complete!</p>
                   <p className="text-muted-foreground mt-1">Your file is ready to download.</p>
@@ -186,7 +176,7 @@ export default function PdfToWordTool() {
             )}
             
             {!isLoading && error && (
-              <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl shadow-lg border border-destructive/50 text-destructive">
+              <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl border border-destructive/50 text-destructive">
                 <X className="h-16 w-16 mb-4" />
                 <p className="text-2xl font-bold">Conversion Failed</p>
                 <p className="mt-1 max-w-md">{error}</p>
