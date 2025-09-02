@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { UploadCloud, FileText, Download, X, ArrowRight } from 'lucide-react';
+import { FileText, Download, X, Loader2, CheckCircle, FileUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { wordToPdf } from '@/ai/flows/word-to-pdf';
@@ -38,14 +38,15 @@ export default function WordToPdfTool() {
       toast({ title: 'Invalid File Type', description: 'Please upload a Word file (.doc, .docx).', variant: 'destructive' });
       return;
     }
+
     setError(null);
     setConvertedFile(null);
+    setIsLoading(true);
 
     const reader = new FileReader();
     reader.onload = async (e) => {
       const dataUri = e.target?.result as string;
       setOriginalFile({ name: file.name, dataUri });
-      setIsLoading(true);
       try {
         const result = await wordToPdf({ wordDataUri: dataUri });
         setConvertedFile(result.pdfDataUri);
@@ -89,75 +90,103 @@ export default function WordToPdfTool() {
 
   return (
     <div className="w-full">
-      {!originalFile && (
-        <div
-          className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50 cursor-pointer hover:border-primary transition-colors"
-          onClick={() => fileInputRef.current?.click()}
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-        >
-          <UploadCloud className="mx-auto h-12 w-12 text-muted-foreground" />
-          <h3 className="mt-4 text-lg font-medium text-foreground">Drag & drop your Word file here</h3>
-          <p className="mt-1 text-sm text-muted-foreground">or</p>
-          <Button className="mt-4">Choose File</Button>
-          <p className="mt-2 text-xs text-muted-foreground">Supports .doc and .docx files.</p>
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            className="hidden"
-            accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-          />
-        </div>
-      )}
-      
-      <AnimatePresence>
-        {originalFile && (
+      <AnimatePresence mode="wait">
+        {!originalFile ? (
           <motion.div
+            key="upload"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center"
           >
-            <div className="flex flex-col items-center p-4 border rounded-lg">
-                <FileText className="h-16 w-16 text-blue-500" />
-                <p className="mt-2 text-sm font-semibold truncate" title={originalFile.name}>{originalFile.name}</p>
-                <p className="text-xs text-muted-foreground">Original Word</p>
+            <div
+              className="relative w-full border-2 border-dashed border-primary/50 rounded-2xl p-12 text-center bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer"
+              onClick={() => fileInputRef.current?.click()}
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+            >
+              <div className="flex flex-col items-center justify-center text-primary">
+                <FileUp className="h-16 w-16 mb-4 text-primary/80" />
+                <Button size="lg" className="btn-gradient text-white font-bold text-lg px-8 py-6">
+                  Choose Word file
+                </Button>
+                <p className="mt-4 text-muted-foreground">or drop Word file here</p>
+              </div>
             </div>
-            
-            <div className="flex justify-center">
-              {isLoading ? (
-                  <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-primary"></div>
-              ) : (
-                  <ArrowRight className="h-12 w-12 text-muted-foreground" />
-              )}
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              className="hidden"
+              accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            />
+             <div className="mt-8 text-center">
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Convert your Word documents to high-quality PDF files that are perfect for sharing and printing, while preserving original formatting.
+                </p>
+                <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-4">
+                    <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <span className="font-medium">Perfect formatting preservation</span>
+                    </div>
+                     <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <span className="font-medium">Accessible on Mac, Windows, and mobile</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <span className="font-medium">Secure and private processing</span>
+                    </div>
+                </div>
             </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="result"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="text-center"
+          >
+            {isLoading && (
+              <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl">
+                <Loader2 className="h-16 w-16 animate-spin text-primary mb-4" />
+                <p className="text-xl font-semibold">Converting your file...</p>
+                <p className="text-muted-foreground mt-1">{originalFile.name}</p>
+              </div>
+            )}
 
-            <div className="flex flex-col items-center p-4 border rounded-lg bg-muted/20">
-                <FileText className="h-16 w-16 text-red-500" />
-                <p className="mt-2 text-sm font-semibold truncate">{convertedFile ? originalFile.name.replace(/\.docx?$/i, '.pdf') : '...'}</p>
-                <p className="text-xs text-muted-foreground">Converted PDF</p>
-            </div>
+            {!isLoading && convertedFile && (
+               <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl">
+                  <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                  <p className="text-2xl font-bold">Conversion complete!</p>
+                  <p className="text-muted-foreground mt-1">Your file is ready to download.</p>
+                  <p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.docx?$/i, '.pdf')}</p>
+                  <div className="mt-8 flex flex-wrap justify-center gap-4">
+                     <Button size="lg" onClick={handleDownload} className="btn-gradient text-white">
+                        <Download className="mr-2" />
+                        Download PDF
+                     </Button>
+                     <Button size="lg" onClick={handleReset} variant="outline">
+                        <X className="mr-2" />
+                        Convert Another File
+                    </Button>
+                  </div>
+              </div>
+            )}
+            
+            {!isLoading && error && (
+              <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl border border-destructive/50 text-destructive">
+                <X className="h-16 w-16 mb-4" />
+                <p className="text-2xl font-bold">Conversion Failed</p>
+                <p className="mt-1 max-w-md">{error}</p>
+                 <Button size="lg" onClick={handleReset} variant="destructive" className="mt-8">
+                    Try Again
+                </Button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
-
-      {originalFile && (
-        <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <Button onClick={handleReset} variant="outline">
-            <X className="mr-2" />
-            Convert Another File
-          </Button>
-          <Button onClick={handleDownload} disabled={!convertedFile || isLoading}>
-            <Download className="mr-2" />
-            Download PDF
-          </Button>
-        </div>
-      )}
-
-      {error && (
-        <p className="text-destructive text-center mt-4">{error}</p>
-      )}
     </div>
   );
 }

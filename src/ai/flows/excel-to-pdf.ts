@@ -52,8 +52,8 @@ const excelToPdfFlow = ai.defineFlow(
   async input => {
     const llmResponse = await prompt(input);
     const output = llmResponse.output;
-     if (!output) {
-      throw new Error('Failed to get a response from the model.');
+    if (!output?.pdfDataUri) {
+      throw new Error('Conversion failed: The service did not return a valid PDF file.');
     }
     return output;
   }

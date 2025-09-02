@@ -52,8 +52,8 @@ const pdfToWordFlow = ai.defineFlow(
   async input => {
     const llmResponse = await prompt(input);
     const output = llmResponse.output;
-    if (!output) {
-      throw new Error('Failed to get a response from the model.');
+    if (!output?.wordDataUri) {
+      throw new Error('Conversion failed: The service did not return a valid Word file.');
     }
     return output;
   }
