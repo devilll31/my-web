@@ -18,10 +18,6 @@ export default function EmiCalculatorTool() {
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalPayment, setTotalPayment] = useState<number>(0);
 
-  useEffect(() => {
-    calculateEmi();
-  }, [loanAmount, interestRate, loanTenure]);
-
   const calculateEmi = () => {
     const principal = loanAmount;
     const rate = interestRate / 12 / 100;
@@ -41,6 +37,11 @@ export default function EmiCalculatorTool() {
       setTotalInterest(0);
     }
   };
+
+  useEffect(() => {
+    calculateEmi();
+  }, [loanAmount, interestRate, loanTenure]);
+
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(value);

@@ -37,10 +37,10 @@ export interface Category {
 
 const tools: Tool[] = [
   // 1) PDF Tools
-  { name: 'PDF to Word', slug: 'pdf-to-word', description: 'Convert PDF files to editable Word documents.', category: 'pdf-tools' },
-  { name: 'Word to PDF', slug: 'word-to-pdf', description: 'Convert Word documents to PDF files.', category: 'pdf-tools' },
-  { name: 'PDF to Excel', slug: 'pdf-to-excel', description: 'Convert PDF tables to Excel spreadsheets.', category: 'pdf-tools' },
-  { name: 'Excel to PDF', slug: 'excel-to-pdf', description: 'Convert Excel spreadsheets to PDF files.', category: 'pdf-tools' },
+  { name: 'PDF to Word', slug: 'pdf-to-word', description: 'Convert PDF files to editable Word documents.', category: 'pdf-tools', isImplemented: true },
+  { name: 'Word to PDF', slug: 'word-to-pdf', description: 'Convert Word documents to PDF files.', category: 'pdf-tools', isImplemented: true },
+  { name: 'PDF to Excel', slug: 'pdf-to-excel', description: 'Convert PDF tables to Excel spreadsheets.', category: 'pdf-tools', isImplemented: true },
+  { name: 'Excel to PDF', slug: 'excel-to-pdf', description: 'Convert Excel spreadsheets to PDF files.', category: 'pdf-tools', isImplemented: true },
   { name: 'PDF to PowerPoint', slug: 'pdf-to-powerpoint', description: 'Convert PDFs to PowerPoint presentations.', category: 'pdf-tools' },
   { name: 'PowerPoint to PDF', slug: 'powerpoint-to-pdf', description: 'Convert PowerPoint presentations to PDF.', category: 'pdf-tools' },
   { name: 'PDF to JPG', slug: 'pdf-to-jpg', description: 'Convert each PDF page to a JPG image.', category: 'pdf-tools' },
@@ -290,7 +290,7 @@ const tools: Tool[] = [
   { name: 'Net Worth Tracker', slug: 'net-worth-tracker', description: 'Track your net worth over time.', category: 'finance-business-calculators' },
   { name: 'Budget Planner', slug: 'budget-planner', description: 'Plan your monthly budget.', category: 'finance-business-calculators' },
   { name: 'GST Calculator (quick mode)', slug: 'gst-calculator-quick', description: 'A faster version of the GST calculator.', category: 'finance-business-calculators' },
-  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'Calculate tips and split bills easily.', category: 'finance-business-calculators' },
+  { name: 'Tip Calculator (standalone)', slug: 'tip-calculator', description: 'A simple tip calculator.', category: 'finance-business-calculators' },
   { name: 'Simple Interest Calculator (quick mode)', slug: 'simple-interest-calculator-quick', description: 'A faster version of the simple interest calculator.', category: 'finance-business-calculators' },
   { name: 'Compound Interest Calculator (quick mode)', slug: 'compound-interest-calculator-quick', description: 'A faster version of the compound interest calculator.', category: 'finance-business-calculators' },
   { name: 'Age Difference Calculator', slug: 'age-difference-calculator', description: 'Calculate the age difference between two dates.', category: 'finance-business-calculators' },
