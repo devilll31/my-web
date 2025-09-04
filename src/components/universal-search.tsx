@@ -7,14 +7,15 @@ import { getTools, getCategories, Tool, Category } from '@/lib/tools-data';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
+// Moved outside the component to prevent re-creation on every render
+const allTools = getTools();
+const allCategories = getCategories();
+
 const UniversalSearch = () => {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState<(Tool | Category)[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
-
-  const allTools = getTools();
-  const allCategories = getCategories();
 
   useEffect(() => {
     if (query.length > 0) {
@@ -48,7 +49,7 @@ const UniversalSearch = () => {
     } else {
       setShowSuggestions(false);
     }
-  }, [query, allTools, allCategories]);
+  }, [query]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
