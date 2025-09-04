@@ -30,7 +30,7 @@ export type WordToPdfOutput = z.infer<typeof WordToPdfOutputSchema>;
  * If the model returns anything else or an empty value, we throw a clear error.
  */
 export async function wordToPdf(
-  input: WordToTdfInput
+  input: WordToPdfInput
 ): Promise<WordToPdfOutput> {
   const parsed = WordToPdfInputSchema.parse(input);
 
