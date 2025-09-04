@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FileText, Download, X, Loader2, CheckCircle, FileUp } from 'lucide-react';
+import { FileUp, Download, X, Loader2, CheckCircle, ArrowLeft, Eye, Share2, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { pdfToWord } from '@/ai/flows/pdf-to-word';
@@ -89,6 +89,35 @@ export default function PdfToWordTool() {
     }
   };
 
+  const handlePreview = () => {
+    if (convertedFile) {
+      window.open(convertedFile, '_blank');
+    }
+  };
+
+  const handleShare = async () => {
+    if (convertedFile && originalFile) {
+      try {
+        const response = await fetch(convertedFile);
+        const blob = await response.blob();
+        const originalName = originalFile.name.substring(0, originalFile.name.lastIndexOf('.'));
+        const file = new File([blob], `${originalName}.docx`, { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+
+        if (navigator.share) {
+          await navigator.share({
+            title: 'Converted Word File',
+            text: `Here is the converted file: ${file.name}`,
+            files: [file],
+          });
+        } else {
+          toast({ title: 'Sharing not supported', description: 'Your browser does not support the Web Share API.' });
+        }
+      } catch (e) {
+        toast({ title: 'Sharing Failed', description: 'Could not share the file.', variant: 'destructive' });
+      }
+    }
+  };
+
   return (
     <div className="w-full">
       <AnimatePresence mode="wait">
@@ -163,13 +192,29 @@ export default function PdfToWordTool() {
                   <p className="text-muted-foreground mt-1">Your file is ready to download.</p>
                   <p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.pdf$/i, '.docx')}</p>
                   <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    <Button size="lg" onClick={handleReset} variant="outline">
+                        <ArrowLeft />
+                        Back
+                     </Button>
+                     <Button size="lg" onClick={handlePreview} variant="outline">
+                        <Eye />
+                        Preview
+                     </Button>
+                     <Button size="lg" onClick={handleShare} variant="outline">
+                        <Share2 />
+                        Share
+                     </Button>
                      <Button size="lg" onClick={handleDownload} className="btn-gradient text-white">
-                        <Download className="mr-2" />
+                        <Download />
                         Download DOCX
                      </Button>
-                     <Button size="lg" onClick={handleReset} variant="outline">
-                        <X className="mr-2" />
+                      <Button size="lg" onClick={handleReset} variant="outline">
+                        <X />
                         Convert Another File
+                    </Button>
+                    <Button size="lg" onClick={handleReset} variant="destructive">
+                        <Trash2 />
+                        Delete
                     </Button>
                   </div>
               </div>
