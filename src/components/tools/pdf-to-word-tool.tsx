@@ -92,8 +92,17 @@ export default function PdfToWordTool() {
   const handleShare = async () => {
     if (convertedFile && originalFile) {
       try {
-        const response = await fetch(convertedFile);
-        const blob = await response.blob();
+        // Convert data URI to Blob
+        const parts = convertedFile.split(',');
+        const mimeType = parts[0].match(/:(.*?);/)?.[1];
+        const bstr = atob(parts[1]);
+        let n = bstr.length;
+        const u8arr = new Uint8Array(n);
+        while (n--) {
+          u8arr[n] = bstr.charCodeAt(n);
+        }
+        const blob = new Blob([u8arr], { type: mimeType });
+        
         const originalName = originalFile.name.substring(0, originalFile.name.lastIndexOf('.'));
         const file = new File([blob], `${originalName}.docx`, { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
 
@@ -111,6 +120,7 @@ export default function PdfToWordTool() {
       }
     }
   };
+
 
   return (
     <div className="w-full">
