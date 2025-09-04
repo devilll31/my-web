@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FileUp, Download, X, Loader2, CheckCircle, ArrowLeft, Eye, Share2, Trash2 } from 'lucide-react';
+import { FileUp, Download, X, Loader2, CheckCircle, ArrowLeft, Share2, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { pdfToWord } from '@/ai/flows/pdf-to-word';
@@ -89,12 +89,6 @@ export default function PdfToWordTool() {
     }
   };
 
-  const handlePreview = () => {
-    if (convertedFile) {
-      window.open(convertedFile, '_blank');
-    }
-  };
-
   const handleShare = async () => {
     if (convertedFile && originalFile) {
       try {
@@ -103,14 +97,14 @@ export default function PdfToWordTool() {
         const originalName = originalFile.name.substring(0, originalFile.name.lastIndexOf('.'));
         const file = new File([blob], `${originalName}.docx`, { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
 
-        if (navigator.share) {
+        if (navigator.share && navigator.canShare({ files: [file] })) {
           await navigator.share({
             title: 'Converted Word File',
             text: `Here is the converted file: ${file.name}`,
             files: [file],
           });
         } else {
-          toast({ title: 'Sharing not supported', description: 'Your browser does not support the Web Share API.' });
+          toast({ title: 'Sharing Not Supported', description: 'Your browser does not support sharing files.' });
         }
       } catch (e) {
         toast({ title: 'Sharing Failed', description: 'Could not share the file.', variant: 'destructive' });
@@ -195,10 +189,6 @@ export default function PdfToWordTool() {
                     <Button size="lg" onClick={handleReset} variant="outline">
                         <ArrowLeft />
                         Back
-                     </Button>
-                     <Button size="lg" onClick={handlePreview} variant="outline">
-                        <Eye />
-                        Preview
                      </Button>
                      <Button size="lg" onClick={handleShare} variant="outline">
                         <Share2 />
