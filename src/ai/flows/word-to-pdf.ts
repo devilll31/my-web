@@ -1,34 +1,11 @@
-
 'use server';
 
-import { z } from 'zod';
-import { ai } from '@/ai/genkit'; 
-
-export const WordToPdfInputSchema = z.object({
-  wordDataUri: z
-    .string()
-    .min(1, 'wordDataUri is required')
-    .refine((s) => s.startsWith('data:'), 'wordDataUri must be a data URI'),
-});
-
-export const WordToPdfOutputSchema = z.object({
-  pdfDataUri: z
-    .string()
-    .min(1, 'pdfDataUri is required')
-    .refine(
-      (s) => /^data:application\/pdf;base64,/.test(s),
-      'pdfDataUri must be a PDF data URI'
-    ),
-});
-
-export type WordToPdfInput = z.infer<typeof WordToPdfInputSchema>;
-export type WordToPdfOutput = z.infer<typeof WordToPdfOutputSchema>;
-
-export async function wordToPdf(
-  input: WordToPdfInput
-): Promise<WordToPdfOutput> {
-  return wordToPdfFlow(input);
-}
+import { ai } from '@/ai/genkit';
+import {
+  WordToPdfInput,
+  WordToPdfInputSchema,
+  WordToPdfOutputSchema,
+} from '@/ai/schemas/word-to-pdf';
 
 const prompt = ai.definePrompt({
   name: 'wordToPdfPrompt',
@@ -60,3 +37,7 @@ const wordToPdfFlow = ai.defineFlow(
     return output;
   }
 );
+
+export async function wordToPdf(input: WordToPdfInput) {
+  return await wordToPdfFlow(input);
+}

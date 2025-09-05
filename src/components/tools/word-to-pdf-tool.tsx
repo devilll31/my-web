@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useCallback, useRef, useState } from 'react';
@@ -12,9 +11,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast'; 
+import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
-import { wordToPdf } from '@/ai/flows/word-to-pdf'; 
+import { wordToPdf } from '@/ai/flows/word-to-pdf';
 
 type Stage = 'idle' | 'processing' | 'success' | 'error';
 
