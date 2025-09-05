@@ -250,7 +250,7 @@ const tools: Tool[] = [
 
   // 6) Finance & Business Calculators
   { name: 'EMI Calculator', slug: 'emi-calculator', description: 'Calculate Equated Monthly Installments for loans.', category: 'finance-business-calculators', isImplemented: true },
-  { name: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility-calculator', description: 'Check your eligibility for a home loan.', category: 'finance-business-calculators' },
+  { name: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility-calculator', description: 'Check your eligibility for a home loan.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Car Loan EMI Calculator', slug: 'car-loan-emi-calculator', description: 'Calculate EMI for your car loan.', category: 'finance-business-calculators' },
   { name: 'Education Loan EMI Calculator', slug: 'education-loan-emi-calculator', description: 'Calculate EMI for your education loan.', category: 'finance-business-calculators' },
   { name: 'Personal Loan EMI Calculator', slug: 'personal-loan-emi-calculator', description: 'Calculate EMI for your personal loan.', category: 'finance-business-calculators' },
@@ -290,7 +290,7 @@ const tools: Tool[] = [
   { name: 'Net Worth Tracker', slug: 'net-worth-tracker', description: 'Track your net worth over time.', category: 'finance-business-calculators' },
   { name: 'Budget Planner', slug: 'budget-planner', description: 'Plan your monthly budget.', category: 'finance-business-calculators' },
   { name: 'GST Calculator (quick mode)', slug: 'gst-calculator-quick', description: 'A faster version of the GST calculator.', category: 'finance-business-calculators' },
-  { name: 'Tip Calculator (standalone)', slug: 'tip-calculator', description: 'A simple tip calculator.', category: 'finance-business-calculators' },
+  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'A simple tip calculator.', category: 'finance-business-calculators' },
   { name: 'Simple Interest Calculator (quick mode)', slug: 'simple-interest-calculator-quick', description: 'A faster version of the simple interest calculator.', category: 'finance-business-calculators' },
   { name: 'Compound Interest Calculator (quick mode)', slug: 'compound-interest-calculator-quick', description: 'A faster version of the compound interest calculator.', category: 'finance-business-calculators' },
   { name: 'Age Difference Calculator', slug: 'age-difference-calculator', description: 'Calculate the age difference between two dates.', category: 'finance-business-calculators' },

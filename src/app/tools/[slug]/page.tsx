@@ -14,6 +14,7 @@ import WordToPdfTool from '@/components/tools/word-to-pdf-tool';
 import PdfToExcelTool from '@/components/tools/pdf-to-excel-tool';
 import ExcelToPdfTool from '@/components/tools/excel-to-pdf-tool';
 import EmiCalculatorTool from '@/components/tools/emi-calculator-tool';
+import HomeLoanEligibilityCalculatorTool from '@/components/tools/home-loan-eligibility-calculator-tool';
 import { Suspense } from 'react';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -61,6 +62,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ExcelToPdfTool />;
     case 'emi-calculator':
       return <EmiCalculatorTool />;
+    case 'home-loan-eligibility-calculator':
+      return <HomeLoanEligibilityCalculatorTool />;
     // Other tools will be added here
     default:
       return (
