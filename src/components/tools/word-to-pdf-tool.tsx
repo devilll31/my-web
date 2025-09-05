@@ -27,7 +27,7 @@ function isValidWordFile(file: File) {
   const name = file.name.toLowerCase();
   const hasValidExt = ACCEPTED_EXTS.some((ext) => name.endsWith(ext));
   const hasValidMime = ACCEPTED_MIME.has(file.type);
-  // Some browsers may report empty type for local files; allow by extension.
+  // Some browsers may give empty mime for local files => fall back to extension
   return hasValidExt || hasValidMime;
 }
 
@@ -54,6 +54,9 @@ export default function WordToPdfTool() {
     setFileName('');
     setPdfDataUri('');
     setErrorMsg('');
+    if (inputRef.current) {
+        inputRef.current.value = '';
+    }
   };
 
   const handleFiles = useCallback(
@@ -77,6 +80,7 @@ export default function WordToPdfTool() {
 
         const wordDataUri = await fileToDataUri(file);
 
+        // call server action directly
         const result = await wordToPdf({ wordDataUri });
 
         if (!result?.pdfDataUri) {

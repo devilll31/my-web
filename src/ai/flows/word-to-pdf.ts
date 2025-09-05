@@ -4,6 +4,7 @@ import { ai } from '@/ai/genkit';
 import {
   WordToPdfInput,
   WordToPdfInputSchema,
+  WordToPdfOutput,
   WordToPdfOutputSchema,
 } from '@/ai/schemas/word-to-pdf';
 
@@ -38,6 +39,6 @@ const wordToPdfFlow = ai.defineFlow(
   }
 );
 
-export async function wordToPdf(input: WordToPdfInput) {
+export async function wordToPdf(input: WordToPdfInput): Promise<WordToPdfOutput> {
   return await wordToPdfFlow(input);
 }
