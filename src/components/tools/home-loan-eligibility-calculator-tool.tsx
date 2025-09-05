@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { AnimatePresence, motion } from "framer-motion";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { Input } from '@/components/ui/input';
 
 const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(value);
@@ -49,8 +50,21 @@ export default function HomeLoanEligibilityCalculatorTool() {
   
   const pieData = [
     { name: 'Principal Loan', value: eligibleLoan, color: 'hsl(var(--primary))' },
-    { name: 'Total Interest', value: (eligibleEMI * loanTenure * 12) - eligibleLoan, color: 'hsl(var(--accent))' },
+    { name: 'Total Interest', value: Math.max(0, (eligibleEMI * loanTenure * 12) - eligibleLoan), color: 'hsl(var(--accent))' },
   ];
+
+  const handleInputChange = (setter: (value: number) => void, min: number, max: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (value === '') {
+        setter(0);
+    } else {
+        const numValue = parseFloat(value);
+        if (!isNaN(numValue) && numValue <= max) {
+            setter(Math.max(min, numValue));
+        }
+    }
+  };
+
 
   return (
     <div className="w-full">
@@ -60,9 +74,15 @@ export default function HomeLoanEligibilityCalculatorTool() {
             <div>
               <div className="flex justify-between items-center mb-2">
                 <Label htmlFor="monthlyIncome" className="text-base font-medium">Gross Monthly Income</Label>
-                <div className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm">
-                  {formatCurrency(monthlyIncome)}
-                </div>
+                <div className="w-40">
+                    <Input 
+                        type="number" 
+                        id="monthlyIncome"
+                        value={monthlyIncome} 
+                        onChange={handleInputChange(setMonthlyIncome, 10000, 500000)}
+                        className="text-right font-bold"
+                    />
+                 </div>
               </div>
               <Slider id="monthlyIncome" min={10000} max={500000} step={5000} value={[monthlyIncome]} onValueChange={(val) => setMonthlyIncome(val[0])} />
                <div className="flex justify-between text-xs text-muted-foreground mt-1"><span>₹10,000</span><span>₹5,00,000</span></div>
@@ -71,9 +91,15 @@ export default function HomeLoanEligibilityCalculatorTool() {
             <div>
                <div className="flex justify-between items-center mb-2">
                 <Label htmlFor="existingEMI" className="text-base font-medium">Other Existing EMIs</Label>
-                 <div className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm">
-                  {formatCurrency(existingEMI)}
-                </div>
+                <div className="w-40">
+                    <Input 
+                        type="number" 
+                        id="existingEMI"
+                        value={existingEMI} 
+                        onChange={handleInputChange(setExistingEMI, 0, 100000)}
+                        className="text-right font-bold"
+                    />
+                 </div>
               </div>
               <Slider id="existingEMI" min={0} max={100000} step={1000} value={[existingEMI]} onValueChange={(val) => setExistingEMI(val[0])} />
                <div className="flex justify-between text-xs text-muted-foreground mt-1"><span>₹0</span><span>₹1,00,000</span></div>
@@ -82,9 +108,15 @@ export default function HomeLoanEligibilityCalculatorTool() {
             <div>
                <div className="flex justify-between items-center mb-2">
                   <Label htmlFor="loanTenure" className="text-base font-medium">Loan Tenure</Label>
-                  <div className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm">
-                    {loanTenure} Years
-                  </div>
+                  <div className="w-40">
+                    <Input 
+                        type="number" 
+                        id="loanTenure"
+                        value={loanTenure} 
+                        onChange={handleInputChange(setLoanTenure, 1, 30)}
+                        className="text-right font-bold"
+                    />
+                 </div>
               </div>
               <Slider id="loanTenure" min={1} max={30} step={1} value={[loanTenure]} onValueChange={(val) => setLoanTenure(val[0])} />
               <div className="flex justify-between text-xs text-muted-foreground mt-1"><span>1 Year</span><span>30 Years</span></div>
@@ -93,9 +125,16 @@ export default function HomeLoanEligibilityCalculatorTool() {
             <div>
                <div className="flex justify-between items-center mb-2">
                 <Label htmlFor="interestRate" className="text-base font-medium">Interest Rate</Label>
-                 <div className="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm">
-                  {interestRate.toFixed(2)} %
-                </div>
+                <div className="w-40">
+                    <Input 
+                        type="number" 
+                        id="interestRate"
+                        value={interestRate} 
+                        onChange={handleInputChange(setInterestRate, 6, 15)}
+                        className="text-right font-bold"
+                        step="0.05"
+                    />
+                 </div>
               </div>
               <Slider id="interestRate" min={6} max={15} step={0.05} value={[interestRate]} onValueChange={(val) => setInterestRate(val[0])} />
                <div className="flex justify-between text-xs text-muted-foreground mt-1"><span>6%</span><span>15%</span></div>

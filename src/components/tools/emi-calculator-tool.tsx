@@ -46,6 +46,18 @@ export default function EmiCalculatorTool() {
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(value);
   };
+  
+  const handleInputChange = (setter: (value: number) => void, min: number, max: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (value === '') {
+        setter(0);
+    } else {
+        const numValue = parseFloat(value);
+        if (!isNaN(numValue) && numValue <= max) {
+            setter(Math.max(min, numValue));
+        }
+    }
+  };
 
   return (
     <div className="w-full">
@@ -55,12 +67,18 @@ export default function EmiCalculatorTool() {
             <div>
               <div className="flex justify-between items-center mb-2">
                 <Label htmlFor="loanAmount" className="text-lg font-medium">Loan Amount</Label>
-                <div className="px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold">
-                  {formatCurrency(loanAmount)}
-                </div>
+                 <div className="w-40">
+                    <Input 
+                        type="number" 
+                        id="loanAmount"
+                        value={loanAmount} 
+                        onChange={handleInputChange(setLoanAmount, 100000, 50000000)}
+                        className="text-right font-bold"
+                        prefix="₹"
+                    />
+                 </div>
               </div>
               <Slider
-                id="loanAmount"
                 min={100000}
                 max={50000000}
                 step={100000}
@@ -76,12 +94,19 @@ export default function EmiCalculatorTool() {
             <div>
                <div className="flex justify-between items-center mb-2">
                 <Label htmlFor="interestRate" className="text-lg font-medium">Interest Rate</Label>
-                 <div className="px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold">
-                  {interestRate.toFixed(2)} %
-                </div>
+                 <div className="w-40">
+                    <Input 
+                        type="number"
+                        id="interestRate"
+                        value={interestRate}
+                        onChange={handleInputChange(setInterestRate, 1, 20)}
+                        className="text-right font-bold"
+                        suffix="%"
+                        step="0.05"
+                    />
+                 </div>
               </div>
               <Slider
-                id="interestRate"
                 min={1}
                 max={20}
                 step={0.05}
@@ -97,8 +122,15 @@ export default function EmiCalculatorTool() {
             <div>
                <div className="flex justify-between items-center mb-2">
                   <Label htmlFor="loanTenure" className="text-lg font-medium">Loan Tenure</Label>
-                  <div className="px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold">
-                    {loanTenure} Years
+                  <div className="w-40">
+                    <Input
+                        type="number"
+                        id="loanTenure"
+                        value={loanTenure}
+                        onChange={handleInputChange(setLoanTenure, 1, 30)}
+                        className="text-right font-bold"
+                        suffix="Years"
+                    />
                   </div>
               </div>
               <Slider
