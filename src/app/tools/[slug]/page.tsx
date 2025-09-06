@@ -24,6 +24,13 @@ import PersonalLoanEmiCalculatorTool from '@/components/tools/personal-loan-emi-
 import BusinessLoanEmiCalculatorTool from '@/components/tools/business-loan-emi-calculator-tool';
 import LoanAmortizationScheduleTool from '@/components/tools/loan-amortization-schedule-tool';
 import CompareLoansTool from '@/components/tools/compare-loans-tool';
+import SIPCalculatorTool from '@/components/tools/sip-calculator-tool';
+import LumpsumCalculatorTool from '@/components/tools/lumpsum-calculator-tool';
+import MutualFundReturnsCalculatorTool from '@/components/tools/mutual-fund-returns-calculator-tool';
+import NpsCalculatorTool from '@/components/tools/nps-calculator-tool';
+import FdCalculatorTool from '@/components/tools/fd-calculator-tool';
+import RdCalculatorTool from '@/components/tools/rd-calculator-tool';
+import CompoundInterestCalculatorTool from '@/components/tools/compound-interest-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -82,6 +89,20 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <LoanAmortizationScheduleTool />;
     case 'compare-loans':
         return <CompareLoansTool />;
+    case 'sip-calculator':
+        return <SIPCalculatorTool />;
+    case 'lumpsum-investment-calculator':
+        return <LumpsumCalculatorTool />;
+    case 'mutual-fund-returns-calculator':
+        return <MutualFundReturnsCalculatorTool />;
+    case 'nps-returns-calculator':
+        return <NpsCalculatorTool />;
+    case 'fd-calculator':
+        return <FdCalculatorTool />;
+    case 'rd-calculator':
+        return <RdCalculatorTool />;
+    case 'compound-interest-calculator':
+        return <CompoundInterestCalculatorTool />;
     // Other tools will be added here
     default:
       return (
