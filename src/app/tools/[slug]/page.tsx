@@ -31,6 +31,16 @@ import NpsCalculatorTool from '@/components/tools/nps-calculator-tool';
 import FdCalculatorTool from '@/components/tools/fd-calculator-tool';
 import RdCalculatorTool from '@/components/tools/rd-calculator-tool';
 import CompoundInterestCalculatorTool from '@/components/tools/compound-interest-calculator-tool';
+import SimpleInterestCalculatorTool from '@/components/tools/simple-interest-calculator-tool';
+import CagrCalculatorTool from '@/components/tools/cagr-calculator-tool';
+import InflationAdjustedReturnsCalculatorTool from '@/components/tools/inflation-adjusted-returns-calculator-tool';
+import IncomeTaxCalculatorTool from '@/components/tools/income-tax-calculator-tool';
+import HraExemptionCalculatorTool from '@/components/tools/hra-exemption-calculator-tool';
+import GstCalculatorTool from '@/components/tools/gst-calculator-tool';
+import VatSalesTaxCalculatorTool from '@/components/tools/vat-sales-tax-calculator-tool';
+import CurrencyConverterTool from '@/components/tools/currency-converter-tool';
+import UnitPriceCalculatorTool from '@/components/tools/unit-price-calculator-tool';
+import DiscountCalculatorTool from '@/components/tools/discount-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -103,6 +113,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <RdCalculatorTool />;
     case 'compound-interest-calculator':
         return <CompoundInterestCalculatorTool />;
+    case 'simple-interest-calculator':
+        return <SimpleInterestCalculatorTool />;
+    case 'cagr-calculator':
+        return <CagrCalculatorTool />;
+    case 'inflation-adjusted-returns':
+        return <InflationAdjustedReturnsCalculatorTool />;
+    case 'income-tax-calculator':
+        return <IncomeTaxCalculatorTool />;
+    case 'hra-exemption-calculator':
+        return <HraExemptionCalculatorTool />;
+    case 'gst-calculator':
+        return <GstCalculatorTool />;
+    case 'vat-sales-tax-calculator':
+        return <VatSalesTaxCalculatorTool />;
+    case 'currency-converter':
+        return <CurrencyConverterTool />;
+    case 'unit-price-calculator':
+        return <UnitPriceCalculatorTool />;
+    case 'discount-calculator':
+        return <DiscountCalculatorTool />;
     // Other tools will be added here
     default:
       return (
