@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { AnimatePresence, motion } from "framer-motion";
+import HowToUseGuide from '@/components/how-to-use-guide';
+import { CheckCircle, SlidersHorizontal, BarChart } from 'lucide-react';
 
 export default function EmiCalculatorTool() {
   const [loanAmount, setLoanAmount] = useState<number>(1000000);
@@ -59,150 +61,162 @@ export default function EmiCalculatorTool() {
     }
   };
 
+  const guideProps = {
+    title: "How to Use the EMI Calculator",
+    steps: [
+      { title: "Enter Loan Amount", description: "Input the total loan principal you wish to borrow." },
+      { title: "Set Interest Rate", description: "Provide the annual interest rate for the loan." },
+      { title: "Define Loan Tenure", description: "Specify the loan repayment period in years to see your EMI." }
+    ],
+    features: [
+      { icon: SlidersHorizontal, title: "Interactive Sliders", description: "Use the sliders for a quick visual adjustment or type in the exact numbers for precision." },
+      { icon: BarChart, title: "Instant Calculation", description: "Get immediate results for your monthly EMI, total interest, and total payment as you adjust the values." },
+      { icon: CheckCircle, title: "Simple & Accurate", description: "Our calculator provides a clear and accurate breakdown of your loan repayment, helping you plan your finances effectively." }
+    ]
+  };
+
   return (
-    <div className="w-full">
-      <Card className="bg-card shadow-lg border-border/50">
-        <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-6">
-            <div>
-              <div className="flex justify-between items-center mb-2">
-                <Label htmlFor="loanAmount" className="text-lg font-medium">Loan Amount</Label>
-                 <div className="w-40">
-                    <Input 
-                        type="number" 
-                        id="loanAmount"
-                        value={loanAmount} 
-                        onChange={handleInputChange(setLoanAmount, 100000, 50000000)}
-                        className="text-right font-bold"
-                        prefix="₹"
-                    />
-                 </div>
-              </div>
-              <Slider
-                min={100000}
-                max={50000000}
-                step={100000}
-                value={[loanAmount]}
-                onValueChange={(val) => setLoanAmount(val[0])}
-              />
-               <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                <span>₹1 Lakh</span>
-                <span>₹5 Crore</span>
-              </div>
-            </div>
-
-            <div>
-               <div className="flex justify-between items-center mb-2">
-                <Label htmlFor="interestRate" className="text-lg font-medium">Interest Rate</Label>
-                 <div className="w-40">
-                    <Input 
-                        type="number"
-                        id="interestRate"
-                        value={interestRate}
-                        onChange={handleInputChange(setInterestRate, 1, 20)}
-                        className="text-right font-bold"
-                        suffix="%"
-                        step="0.05"
-                    />
-                 </div>
-              </div>
-              <Slider
-                min={1}
-                max={20}
-                step={0.05}
-                value={[interestRate]}
-                onValueChange={(val) => setInterestRate(val[0])}
-              />
-               <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                <span>1%</span>
-                <span>20%</span>
-              </div>
-            </div>
-
-            <div>
-               <div className="flex justify-between items-center mb-2">
-                  <Label htmlFor="loanTenure" className="text-lg font-medium">Loan Tenure</Label>
-                  <div className="w-40">
-                    <Input
-                        type="number"
-                        id="loanTenure"
-                        value={loanTenure}
-                        onChange={handleInputChange(setLoanTenure, 1, 30)}
-                        className="text-right font-bold"
-                        suffix="Years"
-                    />
-                  </div>
-              </div>
-              <Slider
-                id="loanTenure"
-                min={1}
-                max={30}
-                step={1}
-                value={[loanTenure]}
-                onValueChange={(val) => setLoanTenure(val[0])}
-              />
-              <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                <span>1 Year</span>
-                <span>30 Years</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-primary/5 rounded-lg p-6 flex flex-col items-center justify-center border border-primary/20">
-              <div className="text-center">
-                <p className="text-lg text-muted-foreground">Monthly EMI</p>
-                 <AnimatePresence mode="wait">
-                  <motion.p 
-                    key={emi}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-4xl lg:text-5xl font-bold text-primary my-2"
-                  >
-                    {formatCurrency(emi)}
-                  </motion.p>
-                </AnimatePresence>
+    <>
+      <div className="w-full">
+        <Card className="bg-card shadow-lg border-border/50">
+          <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <Label htmlFor="loanAmount" className="text-lg font-medium">Loan Amount</Label>
+                   <div className="w-40">
+                      <Input 
+                          type="number" 
+                          id="loanAmount"
+                          value={loanAmount} 
+                          onChange={handleInputChange(setLoanAmount, 100000, 50000000)}
+                          className="text-right font-bold"
+                          prefix="₹"
+                      />
+                   </div>
+                </div>
+                <Slider
+                  min={100000}
+                  max={50000000}
+                  step={100000}
+                  value={[loanAmount]}
+                  onValueChange={(val) => setLoanAmount(val[0])}
+                />
+                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>₹1 Lakh</span>
+                  <span>₹5 Crore</span>
+                </div>
               </div>
 
-              <div className="w-full mt-6 space-y-4">
-                  <div className="flex justify-between items-center text-lg">
-                      <p className="text-muted-foreground">Total Interest</p>
-                      <AnimatePresence mode="wait">
-                        <motion.p
-                           key={`interest-${totalInterest}`}
-                           initial={{ opacity: 0 }}
-                           animate={{ opacity: 1 }}
-                           transition={{ duration: 0.5 }}
-                           className="font-semibold text-foreground"
-                        >
-                          {formatCurrency(totalInterest)}
-                        </motion.p>
-                      </AnimatePresence>
-                  </div>
-                   <div className="flex justify-between items-center text-lg">
-                      <p className="text-muted-foreground">Total Payment</p>
-                      <AnimatePresence mode="wait">
-                        <motion.p
-                           key={`payment-${totalPayment}`}
-                           initial={{ opacity: 0 }}
-                           animate={{ opacity: 1 }}
-                           transition={{ duration: 0.5 }}
-                           className="font-semibold text-foreground"
-                        >
-                            {formatCurrency(totalPayment)}
-                        </motion.p>
-                      </AnimatePresence>
-                  </div>
+              <div>
+                 <div className="flex justify-between items-center mb-2">
+                  <Label htmlFor="interestRate" className="text-lg font-medium">Interest Rate</Label>
+                   <div className="w-40">
+                      <Input 
+                          type="number"
+                          id="interestRate"
+                          value={interestRate}
+                          onChange={handleInputChange(setInterestRate, 1, 20)}
+                          className="text-right font-bold"
+                          suffix="%"
+                          step="0.05"
+                      />
+                   </div>
+                </div>
+                <Slider
+                  min={1}
+                  max={20}
+                  step={0.05}
+                  value={[interestRate]}
+                  onValueChange={(val) => setInterestRate(val[0])}
+                />
+                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>1%</span>
+                  <span>20%</span>
+                </div>
               </div>
-          </div>
-        </CardContent>
-      </Card>
-       <div className="mt-8 text-center">
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-                Use our EMI Calculator to easily compute your Equated Monthly Installment for any loan. Adjust the loan amount, interest rate, and tenure to see how it affects your monthly payments and total interest.
-            </p>
-        </div>
-    </div>
+
+              <div>
+                 <div className="flex justify-between items-center mb-2">
+                    <Label htmlFor="loanTenure" className="text-lg font-medium">Loan Tenure</Label>
+                    <div className="w-40">
+                      <Input
+                          type="number"
+                          id="loanTenure"
+                          value={loanTenure}
+                          onChange={handleInputChange(setLoanTenure, 1, 30)}
+                          className="text-right font-bold"
+                          suffix="Years"
+                      />
+                    </div>
+                </div>
+                <Slider
+                  id="loanTenure"
+                  min={1}
+                  max={30}
+                  step={1}
+                  value={[loanTenure]}
+                  onValueChange={(val) => setLoanTenure(val[0])}
+                />
+                <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>1 Year</span>
+                  <span>30 Years</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-primary/5 rounded-lg p-6 flex flex-col items-center justify-center border border-primary/20">
+                <div className="text-center">
+                  <p className="text-lg text-muted-foreground">Monthly EMI</p>
+                   <AnimatePresence mode="wait">
+                    <motion.p 
+                      key={emi}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-4xl lg:text-5xl font-bold text-primary my-2"
+                    >
+                      {formatCurrency(emi)}
+                    </motion.p>
+                  </AnimatePresence>
+                </div>
+
+                <div className="w-full mt-6 space-y-4">
+                    <div className="flex justify-between items-center text-lg">
+                        <p className="text-muted-foreground">Total Interest</p>
+                        <AnimatePresence mode="wait">
+                          <motion.p
+                             key={`interest-${totalInterest}`}
+                             initial={{ opacity: 0 }}
+                             animate={{ opacity: 1 }}
+                             transition={{ duration: 0.5 }}
+                             className="font-semibold text-foreground"
+                          >
+                            {formatCurrency(totalInterest)}
+                          </motion.p>
+                        </AnimatePresence>
+                    </div>
+                     <div className="flex justify-between items-center text-lg">
+                        <p className="text-muted-foreground">Total Payment</p>
+                        <AnimatePresence mode="wait">
+                          <motion.p
+                             key={`payment-${totalPayment}`}
+                             initial={{ opacity: 0 }}
+                             animate={{ opacity: 1 }}
+                             transition={{ duration: 0.5 }}
+                             className="font-semibold text-foreground"
+                          >
+                              {formatCurrency(totalPayment)}
+                          </motion.p>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+      <HowToUseGuide {...guideProps} />
+    </>
   );
 }

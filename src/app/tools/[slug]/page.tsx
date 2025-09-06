@@ -18,6 +18,12 @@ import HomeLoanEligibilityCalculatorTool from '@/components/tools/home-loan-elig
 import { Suspense } from 'react';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import CarLoanEmiCalculatorTool from '@/components/tools/car-loan-emi-calculator-tool';
+import EducationLoanEmiCalculatorTool from '@/components/tools/education-loan-emi-calculator-tool';
+import PersonalLoanEmiCalculatorTool from '@/components/tools/personal-loan-emi-calculator-tool';
+import BusinessLoanEmiCalculatorTool from '@/components/tools/business-loan-emi-calculator-tool';
+import LoanAmortizationScheduleTool from '@/components/tools/loan-amortization-schedule-tool';
+import CompareLoansTool from '@/components/tools/compare-loans-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -64,6 +70,18 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <EmiCalculatorTool />;
     case 'home-loan-eligibility-calculator':
       return <HomeLoanEligibilityCalculatorTool />;
+    case 'car-loan-emi-calculator':
+      return <CarLoanEmiCalculatorTool />;
+    case 'education-loan-emi-calculator':
+      return <EducationLoanEmiCalculatorTool />;
+    case 'personal-loan-emi-calculator':
+        return <PersonalLoanEmiCalculatorTool />;
+    case 'business-loan-emi-calculator':
+        return <BusinessLoanEmiCalculatorTool />;
+    case 'loan-amortization-schedule':
+        return <LoanAmortizationScheduleTool />;
+    case 'compare-loans':
+        return <CompareLoansTool />;
     // Other tools will be added here
     default:
       return (
