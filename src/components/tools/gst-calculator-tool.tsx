@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { AnimatePresence, motion } from "framer-motion";
 import HowToUseGuide from '@/components/how-to-use-guide';
 import { IndianRupee, Percent, Plus, Minus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 2 }).format(value);

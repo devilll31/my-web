@@ -41,6 +41,16 @@ import VatSalesTaxCalculatorTool from '@/components/tools/vat-sales-tax-calculat
 import CurrencyConverterTool from '@/components/tools/currency-converter-tool';
 import UnitPriceCalculatorTool from '@/components/tools/unit-price-calculator-tool';
 import DiscountCalculatorTool from '@/components/tools/discount-calculator-tool';
+import MarginMarkupCalculatorTool from '@/components/tools/margin-markup-calculator-tool';
+import BreakEvenPointCalculatorTool from '@/components/tools/break-even-point-calculator-tool';
+import ProfitLossCalculatorTool from '@/components/tools/profit-loss-calculator-tool';
+import FreelanceHourlyRateCalculatorTool from '@/components/tools/freelance-hourly-rate-calculator-tool';
+import SalaryToHourlyConverterTool from '@/components/tools/salary-to-hourly-converter-tool';
+import OvertimePayCalculatorTool from '@/components/tools/overtime-pay-calculator-tool';
+import RetirementCorpusCalculatorTool from '@/components/tools/retirement-corpus-calculator-tool';
+import FireCalculatorTool from '@/components/tools/fire-calculator-tool';
+import GratuityCalculatorTool from '@/components/tools/gratuity-calculator-tool';
+import LoanVsLeaseCalculatorTool from '@/components/tools/loan-vs-lease-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -133,6 +143,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <UnitPriceCalculatorTool />;
     case 'discount-calculator':
         return <DiscountCalculatorTool />;
+    case 'margin-markup-calculator':
+      return <MarginMarkupCalculatorTool />;
+    case 'break-even-point-calculator':
+      return <BreakEvenPointCalculatorTool />;
+    case 'profit-loss-calculator':
+      return <ProfitLossCalculatorTool />;
+    case 'freelance-hourly-rate-calculator':
+      return <FreelanceHourlyRateCalculatorTool />;
+    case 'salary-to-hourly-converter':
+      return <SalaryToHourlyConverterTool />;
+    case 'overtime-pay-calculator':
+      return <OvertimePayCalculatorTool />;
+    case 'retirement-corpus-calculator':
+      return <RetirementCorpusCalculatorTool />;
+    case 'fire-calculator':
+      return <FireCalculatorTool />;
+    case 'gratuity-calculator':
+      return <GratuityCalculatorTool />;
+    case 'loan-vs-lease-calculator':
+      return <LoanVsLeaseCalculatorTool />;
     // Other tools will be added here
     default:
       return (
