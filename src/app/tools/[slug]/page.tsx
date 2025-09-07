@@ -1,4 +1,5 @@
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -96,6 +97,16 @@ import ExponentPowerCalculatorTool from '@/components/tools/exponent-power-calcu
 import LogarithmCalculatorTool from '@/components/tools/logarithm-calculator-tool';
 import AngleConverterTool from '@/components/tools/angle-converter-tool';
 import ScientificNotationConverterTool from '@/components/tools/scientific-notation-converter-tool';
+import PomodoroTimerTool from '@/components/tools/pomodoro-timer-tool';
+import HabitTrackerTool from '@/components/tools/habit-tracker-tool';
+import GoalTrackerTool from '@/components/tools/goal-tracker-tool';
+import EisenhowerMatrixTool from '@/components/tools/eisenhower-matrix-tool';
+import KanbanBoardTool from '@/components/tools/kanban-board-tool';
+import MeetingAgendaGeneratorTool from '@/components/tools/meeting-agenda-generator-tool';
+import MeetingMinutesTemplateTool from '@/components/tools/meeting-minutes-template-tool';
+import TimeZoneConverterTool from '@/components/tools/time-zone-converter-tool';
+import WorldClockBoardTool from '@/components/tools/world-clock-board-tool';
+import CalendarEventBuilderTool from '@/components/tools/calendar-event-builder-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -300,6 +311,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <ScientificNotationConverterTool />;
     case 'bmr-calculator':
         return <BmrTdeeCalculatorTool />;
+    case 'pomodoro-timer':
+      return <PomodoroTimerTool />;
+    case 'habit-tracker':
+      return <HabitTrackerTool />;
+    case 'goal-tracker':
+      return <GoalTrackerTool />;
+    case 'eisenhower-matrix-tool':
+      return <EisenhowerMatrixTool />;
+    case 'kanban-board':
+      return <KanbanBoardTool />;
+    case 'meeting-agenda-generator':
+      return <MeetingAgendaGeneratorTool />;
+    case 'meeting-minutes-template':
+      return <MeetingMinutesTemplateTool />;
+    case 'time-zone-converter':
+      return <TimeZoneConverterTool />;
+    case 'world-clock-board':
+      return <WorldClockBoardTool />;
+    case 'calendar-event-builder':
+      return <CalendarEventBuilderTool />;
     // Other tools will be added here
     default:
       return (

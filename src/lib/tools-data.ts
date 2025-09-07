@@ -439,16 +439,16 @@ const tools: Tool[] = [
   { name: 'To-Do List', slug: 'to-do-list', description: 'A lightweight to-do list.', category: 'security-privacy-hashing' },
   
   // 11) Productivity & Planning
-  { name: 'Pomodoro Timer', slug: 'pomodoro-timer', description: 'A timer for the Pomodoro Technique.', category: 'productivity-planning' },
-  { name: 'Habit Tracker', slug: 'habit-tracker', description: 'Track your daily habits.', category: 'productivity-planning' },
-  { name: 'Goal Tracker', slug: 'goal-tracker', description: 'Track your long-term goals.', category: 'productivity-planning' },
-  { name: 'Eisenhower Matrix Tool', slug: 'eisenhower-matrix-tool', description: 'Organize your tasks using the Eisenhower Matrix.', category: 'productivity-planning' },
-  { name: 'Kanban Board', slug: 'kanban-board', description: 'A lightweight Kanban board.', category: 'productivity-planning' },
-  { name: 'Meeting Agenda Generator', slug: 'meeting-agenda-generator', description: 'Generate agendas for your meetings.', category: 'productivity-planning' },
-  { name: 'Meeting Minutes Template', slug: 'meeting-minutes-template', description: 'A template for taking meeting minutes.', category: 'productivity-planning' },
-  { name: 'Time Zone Converter', slug: 'time-zone-converter', description: 'Convert between different time zones.', category: 'productivity-planning' },
-  { name: 'World Clock Board', slug: 'world-clock-board', description: 'A world clock board.', category: 'productivity-planning' },
-  { name: 'Calendar Event Builder', slug: 'calendar-event-builder', description: 'Build calendar events (ICS).', category: 'productivity-planning' },
+  { name: 'Pomodoro Timer', slug: 'pomodoro-timer', description: 'A timer for the Pomodoro Technique.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Habit Tracker', slug: 'habit-tracker', description: 'Track your daily habits.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Goal Tracker', slug: 'goal-tracker', description: 'Track your long-term goals.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Eisenhower Matrix Tool', slug: 'eisenhower-matrix-tool', description: 'Organize your tasks using the Eisenhower Matrix.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Kanban Board', slug: 'kanban-board', description: 'A lightweight Kanban board.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Meeting Agenda Generator', slug: 'meeting-agenda-generator', description: 'Generate agendas for your meetings.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Meeting Minutes Template', slug: 'meeting-minutes-template', description: 'A template for taking meeting minutes.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Time Zone Converter', slug: 'time-zone-converter', description: 'Convert between different time zones.', category: 'productivity-planning', isImplemented: true },
+  { name: 'World Clock Board', slug: 'world-clock-board', description: 'A world clock board.', category: 'productivity-planning', isImplemented: true },
+  { name: 'Calendar Event Builder', slug: 'calendar-event-builder', description: 'Build calendar events (ICS).', category: 'productivity-planning', isImplemented: true },
   { name: 'Birthday Reminder', slug: 'birthday-reminder', description: 'A local birthday reminder.', category: 'productivity-planning' },
   { name: 'Random Name Picker', slug: 'random-name-picker', description: 'Pick a random name from a list.', category: 'productivity-planning' },
   { name: 'Seating Chart Generator', slug: 'seating-chart-generator', description: 'Generate seating charts.', category: 'productivity-planning' },
@@ -617,7 +617,8 @@ export const getCategories = (): (Omit<Category, 'tools' | 'color'> & { icon: Lu
 };
 
 export const getCategoryBySlug = (slug: string): (Omit<Category, 'tools' | 'color'> & { icon: LucideIcon, color:string }) | undefined => {
-  return getCategories().find(cat => cat.slug === slug);
+  const cats = getCategories();
+  return cats.find(cat => cat.slug === slug);
 };
 
 export const getToolsByCategory = (categorySlug: string): Tool[] => {
