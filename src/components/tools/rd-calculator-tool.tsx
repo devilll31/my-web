@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -28,41 +27,50 @@ export default function RdCalculatorTool() {
     const P = monthlyInvestment;
     const r = rate / 100;
     const t = tenure; // in years
-    const n = 4; // Compounded quarterly
+    const n = 4; // Compounding frequency (quarterly)
+    const N = t * 12; // total number of installments
 
-    let maturity = 0;
-    const totalMonths = t * 12;
-
-    for (let i = 1; i <= totalMonths; i++) {
-        const monthsRemaining = totalMonths - (i - 1);
-        maturity += P * Math.pow(1 + r / n, (n * monthsRemaining) / 12);
+    let M = 0;
+    // M = P * [((1 + i)^n - 1) / i] where i is rate per period, n is number of periods
+    // This formula is for end-of-period payments.
+    const i = r / n;
+    for (let k = 1; k <= N; k++) {
+        M += P * Math.pow(1 + i, (n * (N - k + 1)) / 12);
     }
     
-    // RD maturity formula is complex. A simpler approximation is often used:
-    const N = tenure * 12;
-    const i = r / 12;
-    // M = P * [((1 + i)^N - 1) / i]
-    // This is future value of annuity. But RD is compounded quarterly.
-    // The precise formula is more complex, let's use a standard one for web calculators.
-    const principalInvested = P * N;
-    const ratePerQuarter = r / 4;
-    const quarters = N / 3;
-    const M = P * (Math.pow(1 + ratePerQuarter, quarters) - 1) / (1 - Math.pow(1 + ratePerQuarter, -1/3));
+    // A more standard formula used by banks in India for RD:
+    // M = P * (N) + P * N * (N + 1) * r / 24
+    // This is an approximation and might not be fully accurate. Let's use a more precise future value of annuity formula.
+    const n_comp = tenure * 4;
+    const i_rate = rate / 100 / 4;
+    
+    const calculatedMaturity = P * ( (Math.pow(1+i_rate, n_comp) - 1) / i_rate) * (1 / (1 - Math.pow(1+i_rate, -1/3)));
+    
+    // Let's use a loop for accuracy with quarterly compounding which is standard for RDs
+    let futureValue = 0;
+    const monthlyRate = r / 12;
+    for(let m = 0; m < N; m++){
+        futureValue = (futureValue + P) * (1 + monthlyRate);
+    }
+    
+    const invested = P * N;
 
-    // A simpler, more common formula: M = P * [((1 + R)^n - 1) / R] where R is rate per period and n is number of periods.
+    // The most accurate way is to calculate maturity for each installment.
     let finalValue = 0;
-    const i_quarterly = (rate/100)/4;
-    for(let j=N; j>0; j--) {
-        finalValue += P * Math.pow(1 + i_quarterly, j/3);
+    for (let i = 0; i < N; i++) {
+      // Months remaining for this installment
+      const monthsLeft = N - i;
+      // Calculate future value of this single installment
+      finalValue += P * Math.pow(1 + r/12, monthsLeft);
     }
     
-    const principal = P * N;
-    const interest = finalValue - principal;
+    // Simplified standard formula often used:
+    const finalAmount = P * (((Math.pow(1 + r/4, tenure * 4)) - 1) / (1 - Math.pow(1 + r/4, -1/3)));
 
 
-    setMaturityValue(finalValue);
-    setTotalInvestment(principal);
-    setTotalInterest(interest);
+    setMaturityValue(finalAmount);
+    setTotalInvestment(invested);
+    setTotalInterest(finalAmount - invested);
   }, [monthlyInvestment, rate, tenure]);
 
   const handleInputChange = (setter: (value: number) => void, min: number, max: number) => (e: React.ChangeEvent<HTMLInputElement>) => {

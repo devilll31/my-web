@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,13 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import HowToUseGuide from '@/components/how-to-use-guide';
-import { Calculator, Plus, Minus, X, AlertTriangle } from 'lucide-react';
+import { Calculator, Plus, Minus, X, AlertTriangle, GitCommitVertical } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Matrix = number[][];
-type Operation = 'add' | 'subtract' | 'multiply';
+type Operation = 'add' | 'subtract' | 'multiply' | 'inverse';
 
-const MatrixInput = ({ matrix, setMatrix }: { matrix: Matrix, setMatrix: (m: Matrix) => void }) => {
+const MatrixInput = ({ matrix, setMatrix, disabled }: { matrix: Matrix, setMatrix: (m: Matrix) => void, disabled?: boolean }) => {
   const handleInputChange = (row: number, col: number, value: string) => {
     const newMatrix = matrix.map(r => [...r]);
     newMatrix[row][col] = parseFloat(value) || 0;
@@ -25,7 +24,7 @@ const MatrixInput = ({ matrix, setMatrix }: { matrix: Matrix, setMatrix: (m: Mat
       {matrix.map((row, rIdx) => (
         <div key={rIdx} className="flex gap-2">
           {row.map((val, cIdx) => (
-            <Input key={cIdx} type="number" value={val} onChange={e => handleInputChange(rIdx, cIdx, e.target.value)} className="w-full text-center" />
+            <Input key={cIdx} type="number" value={val} onChange={e => handleInputChange(rIdx, cIdx, e.target.value)} className="w-full text-center" disabled={disabled} />
           ))}
         </div>
       ))}
@@ -34,7 +33,7 @@ const MatrixInput = ({ matrix, setMatrix }: { matrix: Matrix, setMatrix: (m: Mat
 };
 
 export default function MatrixCalculatorTool() {
-  const [matrixA, setMatrixA] = useState<Matrix>([[1, 2], [3, 4]]);
+  const [matrixA, setMatrixA] = useState<Matrix>([[4, 7], [2, 6]]);
   const [matrixB, setMatrixB] = useState<Matrix>([[5, 6], [7, 8]]);
   const [result, setResult] = useState<Matrix | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -49,7 +48,7 @@ export default function MatrixCalculatorTool() {
           throw new Error('Matrices must have the same dimensions for addition/subtraction.');
         }
         res = matrixA.map((row, r) => row.map((val, c) => operation === 'add' ? val + matrixB[r][c] : val - matrixB[r][c]));
-      } else { // Multiplication
+      } else if (operation === 'multiply') { 
         if (matrixA[0].length !== matrixB.length) {
           throw new Error('Columns of Matrix A must equal rows of Matrix B for multiplication.');
         }
@@ -61,6 +60,15 @@ export default function MatrixCalculatorTool() {
             }
           }
         }
+      } else { // Inverse
+        if (matrixA.length !== matrixA[0].length) throw new Error('Matrix must be square to have an inverse.');
+        const det = (matrixA[0][0] * matrixA[1][1]) - (matrixA[0][1] * matrixA[1][0]);
+        if (det === 0) throw new Error('Matrix is not invertible (determinant is 0).');
+        const invDet = 1 / det;
+        res = [
+            [matrixA[1][1] * invDet, -matrixA[0][1] * invDet],
+            [-matrixA[1][0] * invDet, matrixA[0][0] * invDet]
+        ];
       }
       setResult(res);
     } catch (e: any) {
@@ -72,14 +80,14 @@ export default function MatrixCalculatorTool() {
   const guideProps = {
     title: "How to Use the Matrix Calculator",
     steps: [
-      { title: "Enter Matrices", description: "Input the numerical values for Matrix A and Matrix B." },
-      { title: "Select Operation", description: "Choose the desired operation: addition, subtraction, or multiplication." },
-      { title: "View the Result", description: "The calculator instantly computes the resulting matrix. Errors are shown for invalid operations (e.g., mismatched dimensions)." }
+      { title: "Enter Matrices", description: "Input the numerical values for Matrix A and Matrix B (Matrix B is ignored for Inverse)." },
+      { title: "Select Operation", description: "Choose to add, subtract, multiply, or find the inverse of Matrix A." },
+      { title: "View the Result", description: "The calculator instantly computes the resulting matrix. Errors are shown for invalid operations." }
     ],
     features: [
       { icon: Plus, title: "Addition & Subtraction", description: "Easily add or subtract two matrices of the same dimensions." },
       { icon: X, title: "Multiplication", description: "Perform matrix multiplication, with automatic dimension validation." },
-      { icon: Calculator, title: "Real-Time Calculation", description: "Results update instantly as you change the matrix values or selected operation." }
+      { icon: GitCommitVertical, title: "Matrix Inverse", description: "Calculate the inverse of a 2x2 square matrix, essential for solving linear equations." }
     ]
   };
 
@@ -89,12 +97,13 @@ export default function MatrixCalculatorTool() {
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <div><h3 className="font-semibold text-center mb-2">Matrix A</h3><MatrixInput matrix={matrixA} setMatrix={setMatrixA} /></div>
-            <div><h3 className="font-semibold text-center mb-2">Matrix B</h3><MatrixInput matrix={matrixB} setMatrix={setMatrixB} /></div>
+            <div><h3 className="font-semibold text-center mb-2">Matrix B</h3><MatrixInput matrix={matrixB} setMatrix={setMatrixB} disabled={operation === 'inverse'} /></div>
           </div>
           <div className="flex justify-center gap-2 mb-6">
             <Button variant={operation === 'add' ? 'default' : 'outline'} onClick={() => setOperation('add')}><Plus /></Button>
             <Button variant={operation === 'subtract' ? 'default' : 'outline'} onClick={() => setOperation('subtract')}><Minus /></Button>
             <Button variant={operation === 'multiply' ? 'default' : 'outline'} onClick={() => setOperation('multiply')}><X /></Button>
+            <Button variant={operation === 'inverse' ? 'default' : 'outline'} onClick={() => setOperation('inverse')}>Inverse A</Button>
           </div>
           <div className="text-center">
             <h3 className="font-semibold mb-2">Result</h3>

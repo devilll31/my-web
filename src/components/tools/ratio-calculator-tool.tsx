@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -31,7 +30,7 @@ export default function RatioCalculatorTool() {
   }, [a, b]);
 
   const handleInputChange = (setter: (value: number) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setter(Math.max(0, parseInt(e.target.value, 10)) || 0);
+    setter(parseFloat(e.target.value) || 0);
   };
 
   const guideProps = {
