@@ -78,6 +78,16 @@ import VectorCalculatorTool from '@/components/tools/vector-calculator-tool';
 import UnitConverterTool from '@/components/tools/unit-converter-tool';
 import TimeDurationCalculatorTool from '@/components/tools/time-duration-calculator-tool';
 import SpeedDistanceTimeCalculatorTool from '@/components/tools/speed-distance-time-calculator-tool';
+import DensityCalculatorTool from '@/components/tools/density-calculator-tool';
+import BmiCalculatorTool from '@/components/tools/bmi-calculator-tool';
+import BmrTdeeCalculatorTool from '@/components/tools/bmr-tdee-calculator-tool';
+import BodyFatEstimatorTool from '@/components/tools/body-fat-estimator-tool';
+import CalorieTrackerTool from '@/components/tools/calorie-tracker-tool';
+import ProbabilityCalculatorTool from '@/components/tools/probability-calculator-tool';
+import PermutationCombinationCalculatorTool from '@/components/tools/permutation-combination-calculator-tool';
+import PrimeNumberCheckerTool from '@/components/tools/prime-number-checker-tool';
+import FactorizationTool from '@/components/tools/factorization-tool';
+import LcmGcdCalculatorTool from '@/components/tools/lcm-gcd-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -169,7 +179,7 @@ const ToolComponent = ({ slug }: { slug: string }) => {
     case 'unit-price-calculator':
         return <UnitPriceCalculatorTool />;
     case 'discount-calculator':
-        return <DiscountCalculatorTool />;
+      return <DiscountCalculatorTool />;
     case 'margin-markup-calculator':
       return <MarginMarkupCalculatorTool />;
     case 'break-even-point-calculator':
@@ -244,6 +254,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <TimeDurationCalculatorTool />;
     case 'speed-distance-time-calculator':
       return <SpeedDistanceTimeCalculatorTool />;
+    case 'density-calculator':
+        return <DensityCalculatorTool />;
+    case 'bmi-calculator':
+        return <BmiCalculatorTool />;
+    case 'bmr-tdee-calculator':
+        return <BmrTdeeCalculatorTool />;
+    case 'body-fat-estimator':
+        return <BodyFatEstimatorTool />;
+    case 'calorie-tracker':
+        return <CalorieTrackerTool />;
+    case 'probability-calculator':
+        return <ProbabilityCalculatorTool />;
+    case 'permutation-combination-calculator':
+        return <PermutationCombinationCalculatorTool />;
+    case 'prime-number-checker':
+        return <PrimeNumberCheckerTool />;
+    case 'factorization-tool':
+        return <FactorizationTool />;
+    case 'lcm-gcd-calculator':
+        return <LcmGcdCalculatorTool />;
     // Other tools will be added here
     default:
       return (

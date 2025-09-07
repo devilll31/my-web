@@ -313,16 +313,16 @@ const tools: Tool[] = [
   { name: 'Unit Converter', slug: 'unit-converter', description: 'Convert between different units of measurement.', category: 'math-science-academic', isImplemented: true },
   { name: 'Time Duration Calculator', slug: 'time-duration-calculator', description: 'Calculate the duration between two times.', category: 'math-science-academic', isImplemented: true },
   { name: 'Speed–Distance–Time Calculator', slug: 'speed-distance-time-calculator', description: 'Calculate speed, distance, or time.', category: 'math-science-academic', isImplemented: true },
-  { name: 'Density Calculator', slug: 'density-calculator', description: 'Calculate density.', category: 'math-science-academic' },
-  { name: 'BMI Calculator', slug: 'bmi-calculator', description: 'Calculate your Body Mass Index.', category: 'math-science-academic' },
-  { name: 'BMR/TDEE Calculator', slug: 'bmr-tdee-calculator', description: 'Calculate your Basal Metabolic Rate and Total Daily Energy Expenditure.', category: 'math-science-academic' },
-  { name: 'Body Fat % Estimator', slug: 'body-fat-estimator', description: 'Estimate your body fat percentage.', category: 'math-science-academic' },
-  { name: 'Calorie Tracker', slug: 'calorie-tracker', description: 'Track your daily calorie intake.', category: 'math-science-academic' },
-  { name: 'Probability Calculator', slug: 'probability-calculator', description: 'Calculate probabilities.', category: 'math-science-academic' },
-  { name: 'Permutation/Combination Calculator', slug: 'permutation-combination-calculator', description: 'Calculate permutations and combinations.', category: 'math-science-academic' },
-  { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is prime.', category: 'math-science-academic' },
-  { name: 'Factorization Tool', slug: 'factorization-tool', description: 'Find the prime factors of a number.', category: 'math-science-academic' },
-  { name: 'LCM & GCD Calculator', slug: 'lcm-gcd-calculator', description: 'Calculate the Least Common Multiple and Greatest Common Divisor.', category: 'math-science-academic' },
+  { name: 'Density Calculator', slug: 'density-calculator', description: 'Calculate density.', category: 'math-science-academic', isImplemented: true },
+  { name: 'BMI Calculator', slug: 'bmi-calculator', description: 'Calculate your Body Mass Index.', category: 'math-science-academic', isImplemented: true },
+  { name: 'BMR/TDEE Calculator', slug: 'bmr-tdee-calculator', description: 'Calculate your Basal Metabolic Rate and Total Daily Energy Expenditure.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Body Fat % Estimator', slug: 'body-fat-estimator', description: 'Estimate your body fat percentage.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Calorie Tracker', slug: 'calorie-tracker', description: 'Track your daily calorie intake.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Probability Calculator', slug: 'probability-calculator', description: 'Calculate probabilities.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Permutation/Combination Calculator', slug: 'permutation-combination-calculator', description: 'Calculate permutations and combinations.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is prime.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Factorization Tool', slug: 'factorization-tool', description: 'Find the prime factors of a number.', category: 'math-science-academic', isImplemented: true },
+  { name: 'LCM & GCD Calculator', slug: 'lcm-gcd-calculator', description: 'Calculate the Least Common Multiple and Greatest Common Divisor.', category: 'math-science-academic', isImplemented: true },
   { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to Roman numerals.', category: 'math-science-academic' },
   { name: 'Base Converter', slug: 'base-converter', description: 'Convert numbers between different bases.', category: 'math-science-academic' },
   { name: 'Significant Figures Calculator', slug: 'significant-figures-calculator', description: 'Calculate significant figures.', category: 'math-science-academic' },
@@ -654,3 +654,5 @@ export const getTop50Tools = (): Tool[] => {
     
     return popularToolSlugs.map(slug => getToolBySlug(slug)).filter((t): t is Tool => !!t);
 };
+
+    

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -7,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import HowToUseGuide from '@/components/how-to-use-guide';
 import { Calculator, FunctionSquare, Sigma } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 type Operator = '+' | '-' | '*' | '/';
 
@@ -163,13 +163,20 @@ export default function ScientificCalculatorTool() {
           <div className="grid grid-cols-10 gap-2">
             {buttons.map((btn, i) => {
               const colSpan = (btn.label === '0' || btn.label === '=') ? 'col-span-2' : '';
-              let bgColor = 'bg-secondary hover:bg-secondary/80';
-              if (btn.type === 'op') bgColor = 'bg-primary/20 hover:bg-primary/30';
-              if (btn.type === 'num') bgColor = 'bg-muted hover:bg-muted/80';
-              if (btn.label === '=') bgColor = 'bg-primary hover:bg-primary/80 text-primary-foreground';
+              
+              const buttonClasses = cn(
+                'text-lg h-14',
+                colSpan,
+                {
+                  'bg-primary/20 hover:bg-primary/30 text-primary': btn.type === 'op' && btn.label !== '=',
+                  'bg-muted hover:bg-muted/80 text-foreground': btn.type === 'num',
+                  'bg-secondary hover:bg-secondary/80 text-secondary-foreground': btn.type === 'func',
+                  'bg-primary hover:bg-primary/80 text-primary-foreground': btn.label === '=',
+                }
+              );
               
               return (
-                  <Button key={i} onClick={btn.action} className={`text-lg h-14 ${colSpan} ${bgColor}`}>
+                  <Button key={i} onClick={btn.action} className={buttonClasses}>
                     {btn.label}
                   </Button>
               )
