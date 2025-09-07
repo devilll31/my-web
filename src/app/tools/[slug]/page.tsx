@@ -51,6 +51,16 @@ import RetirementCorpusCalculatorTool from '@/components/tools/retirement-corpus
 import FireCalculatorTool from '@/components/tools/fire-calculator-tool';
 import GratuityCalculatorTool from '@/components/tools/gratuity-calculator-tool';
 import LoanVsLeaseCalculatorTool from '@/components/tools/loan-vs-lease-calculator-tool';
+import RentVsBuyCalculatorTool from '@/components/tools/rent-vs-buy-calculator-tool';
+import CreditCardPayoffCalculatorTool from '@/components/tools/credit-card-payoff-calculator-tool';
+import MortgageRefinanceSavingsTool from '@/components/tools/mortgage-refinance-savings-tool';
+import NetWorthTrackerTool from '@/components/tools/net-worth-tracker-tool';
+import BudgetPlannerTool from '@/components/tools/budget-planner-tool';
+import GstCalculatorQuickTool from '@/components/tools/gst-calculator-quick-tool';
+import TipCalculatorTool from '@/components/tools/tip-calculator-tool';
+import SimpleInterestCalculatorQuickTool from '@/components/tools/simple-interest-calculator-quick-tool';
+import CompoundInterestCalculatorQuickTool from '@/components/tools/compound-interest-calculator-quick-tool';
+import AgeDifferenceCalculatorTool from '@/components/tools/age-difference-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -163,6 +173,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <GratuityCalculatorTool />;
     case 'loan-vs-lease-calculator':
       return <LoanVsLeaseCalculatorTool />;
+    case 'rent-vs-buy-calculator':
+      return <RentVsBuyCalculatorTool />;
+    case 'credit-card-payoff-calculator':
+      return <CreditCardPayoffCalculatorTool />;
+    case 'mortgage-refinance-savings':
+        return <MortgageRefinanceSavingsTool />;
+    case 'net-worth-tracker':
+        return <NetWorthTrackerTool />;
+    case 'budget-planner':
+        return <BudgetPlannerTool />;
+    case 'gst-calculator-quick':
+        return <GstCalculatorQuickTool />;
+    case 'tip-calculator':
+        return <TipCalculatorTool />;
+    case 'simple-interest-calculator-quick':
+        return <SimpleInterestCalculatorQuickTool />;
+    case 'compound-interest-calculator-quick':
+        return <CompoundInterestCalculatorQuickTool />;
+    case 'age-difference-calculator':
+        return <AgeDifferenceCalculatorTool />;
     // Other tools will be added here
     default:
       return (
