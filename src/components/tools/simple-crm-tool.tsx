@@ -17,7 +17,7 @@ interface Contact {
 }
 
 export default function SimpleCrmTool() {
-  const [contacts, setContacts = useState<Contact[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
 
   useEffect(() => {
