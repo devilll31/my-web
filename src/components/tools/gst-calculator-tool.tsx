@@ -75,6 +75,7 @@ export default function GstCalculatorTool() {
                         <Button key={r} variant={rate === r ? "default" : "outline"} onClick={() => setRate(r)}>{r}%</Button>
                     ))}
                 </div>
+                 <Input type="number" className="mt-2" value={rate || ''} onChange={handleInputChange(setRate)} placeholder="Custom Rate"/>
             </div>
             <div>
               <Label>GST Type</Label>
