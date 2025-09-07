@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,14 +7,14 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { PlusCircle, Trash2 } from 'lucide-react';
-import { format, zonedTimeToUtc, utcToZonedTime } from 'date-fns-tz';
+import { format, zonedTimeToUtc, toZonedTime } from 'date-fns-tz';
 
 const timezones = Intl.supportedValuesOf('timeZone');
 
 const TimezoneRow = ({ baseTime, baseTz, thisTz, onRemove }: { baseTime: Date, baseTz: string, thisTz: string, onRemove: () => void }) => {
     if(!baseTime || isNaN(baseTime.getTime())) return null;
 
-    const localTime = utcToZonedTime(baseTime, thisTz);
+    const localTime = toZonedTime(baseTime, thisTz);
     
     return (
         <div className="grid grid-cols-[1fr_auto_auto] gap-2 items-center p-3 bg-secondary/30 rounded-lg">

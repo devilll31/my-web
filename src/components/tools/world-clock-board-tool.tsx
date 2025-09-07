@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -6,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { PlusCircle, Trash2 } from 'lucide-react';
-import { format, utcToZonedTime } from 'date-fns-tz';
+import { format, toZonedTime } from 'date-fns-tz';
 
 const timezones = Intl.supportedValuesOf('timeZone');
 
@@ -18,7 +17,7 @@ const ClockCard = ({ timezone, onRemove }: { timezone: string, onRemove: (tz: st
     return () => clearInterval(timer);
   }, []);
   
-  const zonedTime = utcToZonedTime(time, timezone);
+  const zonedTime = toZonedTime(time, timezone);
   const formattedTime = format(zonedTime, 'HH:mm:ss', { timeZone: timezone });
   const formattedDate = format(zonedTime, 'MMM d, yyyy', { timeZone: timezone });
 
