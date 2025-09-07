@@ -19,7 +19,7 @@ export default function TypingSpeedTestTool() {
   const [userInput, setUserInput] = useState('');
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [results, setResults<{ wpm: number, accuracy: number } | null>(null);
+  const [results, setResults] = useState<{ wpm: number, accuracy: number } | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const startTest = () => {
