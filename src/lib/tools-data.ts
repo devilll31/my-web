@@ -323,15 +323,15 @@ const tools: Tool[] = [
   { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is prime.', category: 'math-science-academic', isImplemented: true },
   { name: 'Factorization Tool', slug: 'factorization-tool', description: 'Find the prime factors of a number.', category: 'math-science-academic', isImplemented: true },
   { name: 'LCM & GCD Calculator', slug: 'lcm-gcd-calculator', description: 'Calculate the Least Common Multiple and Greatest Common Divisor.', category: 'math-science-academic', isImplemented: true },
-  { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to Roman numerals.', category: 'math-science-academic' },
-  { name: 'Base Converter', slug: 'base-converter', description: 'Convert numbers between different bases.', category: 'math-science-academic' },
-  { name: 'Significant Figures Calculator', slug: 'significant-figures-calculator', description: 'Calculate significant figures.', category: 'math-science-academic' },
-  { name: 'Percentage Change/Difference', slug: 'percentage-change-difference', description: 'Calculate percentage change or difference.', category: 'math-science-academic' },
-  { name: 'Exponent/Power Calculator', slug: 'exponent-power-calculator', description: 'Calculate exponents and powers.', category: 'math-science-academic' },
-  { name: 'Logarithm Calculator', slug: 'logarithm-calculator', description: 'Calculate logarithms.', category: 'math-science-academic' },
-  { name: 'Angle Converter', slug: 'angle-converter', description: 'Convert angles between degrees, radians, and grads.', category: 'math-science-academic' },
-  { name: 'Scientific Notation Converter', slug: 'scientific-notation-converter', description: 'Convert numbers to scientific notation.', category: 'math-science-academic' },
-  { name: 'BMR Calculator', slug: 'bmr-calculator', description: 'Calculate your Basal Metabolic Rate.', category: 'math-science-academic' },
+  { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to Roman numerals.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Base Converter', slug: 'base-converter', description: 'Convert numbers between different bases.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Significant Figures Calculator', slug: 'significant-figures-calculator', description: 'Calculate significant figures.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Percentage Change/Difference', slug: 'percentage-change-difference', description: 'Calculate percentage change or difference.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Exponent/Power Calculator', slug: 'exponent-power-calculator', description: 'Calculate exponents and powers.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Logarithm Calculator', slug: 'logarithm-calculator', description: 'Calculate logarithms.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Angle Converter', slug: 'angle-converter', description: 'Convert angles between degrees, radians, and grads.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Scientific Notation Converter', slug: 'scientific-notation-converter', description: 'Convert numbers to scientific notation.', category: 'math-science-academic', isImplemented: true },
+  { name: 'BMR Calculator', slug: 'bmr-calculator', description: 'Calculate your Basal Metabolic Rate.', category: 'math-science-academic', isImplemented: true },
 
   // 8) Data & Developer Utilities
   { name: 'JSON Formatter/Beautifier', slug: 'json-formatter', description: 'Format and beautify JSON data.', category: 'data-developer-utilities' },
@@ -654,5 +654,3 @@ export const getTop50Tools = (): Tool[] => {
     
     return popularToolSlugs.map(slug => getToolBySlug(slug)).filter((t): t is Tool => !!t);
 };
-
-    

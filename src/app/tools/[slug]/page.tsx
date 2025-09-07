@@ -88,6 +88,14 @@ import PermutationCombinationCalculatorTool from '@/components/tools/permutation
 import PrimeNumberCheckerTool from '@/components/tools/prime-number-checker-tool';
 import FactorizationTool from '@/components/tools/factorization-tool';
 import LcmGcdCalculatorTool from '@/components/tools/lcm-gcd-calculator-tool';
+import RomanNumeralConverterTool from '@/components/tools/roman-numeral-converter-tool';
+import BaseConverterTool from '@/components/tools/base-converter-tool';
+import SignificantFiguresCalculatorTool from '@/components/tools/significant-figures-calculator-tool';
+import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference-tool';
+import ExponentPowerCalculatorTool from '@/components/tools/exponent-power-calculator-tool';
+import LogarithmCalculatorTool from '@/components/tools/logarithm-calculator-tool';
+import AngleConverterTool from '@/components/tools/angle-converter-tool';
+import ScientificNotationConverterTool from '@/components/tools/scientific-notation-converter-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -274,6 +282,24 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <FactorizationTool />;
     case 'lcm-gcd-calculator':
         return <LcmGcdCalculatorTool />;
+    case 'roman-numeral-converter':
+        return <RomanNumeralConverterTool />;
+    case 'base-converter':
+        return <BaseConverterTool />;
+    case 'significant-figures-calculator':
+        return <SignificantFiguresCalculatorTool />;
+    case 'percentage-change-difference':
+        return <PercentageChangeDifferenceTool />;
+    case 'exponent-power-calculator':
+        return <ExponentPowerCalculatorTool />;
+    case 'logarithm-calculator':
+        return <LogarithmCalculatorTool />;
+    case 'angle-converter':
+        return <AngleConverterTool />;
+    case 'scientific-notation-converter':
+        return <ScientificNotationConverterTool />;
+    case 'bmr-calculator':
+        return <BmrTdeeCalculatorTool />;
     // Other tools will be added here
     default:
       return (
