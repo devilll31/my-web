@@ -117,6 +117,15 @@ import NotesMarkdownPadTool from '@/components/tools/notes-markdown-pad-tool';
 import StickyNotesBoardTool from '@/components/tools/sticky-notes-board-tool';
 import FocusNoiseTool from '@/components/tools/focus-noise-tool';
 import BreakReminderTool from '@/components/tools/break-reminder-tool';
+import TravelPackingListGeneratorTool from '@/components/tools/travel-packing-list-generator-tool';
+import ShoppingListMakerTool from '@/components/tools/shopping-list-maker-tool';
+import InvoiceGeneratorTool from '@/components/tools/invoice-generator-tool';
+import QuoteEstimateBuilderTool from '@/components/tools/quote-estimate-builder-tool';
+import ExpenseSplitterTool from '@/components/tools/expense-splitter-tool';
+import SimpleCrmTool from '@/components/tools/simple-crm-tool';
+import LeadCaptureFormBuilderTool from '@/components/tools/lead-capture-form-builder-tool';
+import StepCounterTool from '@/components/tools/step-counter-tool';
+import TypingSpeedTestTool from '@/components/tools/typing-speed-test-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -361,6 +370,24 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <FocusNoiseTool />;
     case 'break-reminder':
       return <BreakReminderTool />;
+    case 'travel-packing-list-generator':
+      return <TravelPackingListGeneratorTool />;
+    case 'shopping-list-maker':
+      return <ShoppingListMakerTool />;
+    case 'invoice-generator':
+      return <InvoiceGeneratorTool />;
+    case 'quote-estimate-builder':
+      return <QuoteEstimateBuilderTool />;
+    case 'expense-splitter':
+      return <ExpenseSplitterTool />;
+    case 'simple-crm-contacts':
+      return <SimpleCrmTool />;
+    case 'lead-capture-form-builder':
+      return <LeadCaptureFormBuilderTool />;
+    case 'step-counter':
+      return <StepCounterTool />;
+    case 'typing-speed-test':
+      return <TypingSpeedTestTool />;
     // Other tools will be added here
     default:
       return (
