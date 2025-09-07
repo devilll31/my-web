@@ -49,7 +49,7 @@ export default function GstCalculatorTool() {
     title: "How to Use the GST Calculator",
     steps: [
       { title: "Enter Amount", description: "Input the transaction amount." },
-      { title: "Set GST Rate", description: "Select or enter the applicable GST rate (e.g., 5%, 12%, 18%, 28%)." },
+      { title: "Set GST Rate", description: "Select or enter the applicable GST rate (e.g., 5%, 18%)." },
       { title: "Choose GST Type", description: "Select if the GST is exclusive (added on top) or inclusive (part of the total amount)." }
     ],
     features: [
@@ -70,8 +70,8 @@ export default function GstCalculatorTool() {
             </div>
             <div>
               <Label>GST Rate</Label>
-                <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    {[5, 12, 18, 28].map(r => (
+                <div className="mt-2 grid grid-cols-2 sm:grid-cols-2 gap-2">
+                    {[5, 18].map(r => (
                         <Button key={r} variant={rate === r ? "default" : "outline"} onClick={() => setRate(r)}>{r}%</Button>
                     ))}
                 </div>
