@@ -107,6 +107,16 @@ import MeetingMinutesTemplateTool from '@/components/tools/meeting-minutes-templ
 import TimeZoneConverterTool from '@/components/tools/time-zone-converter-tool';
 import WorldClockBoardTool from '@/components/tools/world-clock-board-tool';
 import CalendarEventBuilderTool from '@/components/tools/calendar-event-builder-tool';
+import BirthdayReminderTool from '@/components/tools/birthday-reminder-tool';
+import RandomNamePickerTool from '@/components/tools/random-name-picker-tool';
+import SeatingChartGeneratorTool from '@/components/tools/seating-chart-generator-tool';
+import ChecklistMakerTool from '@/components/tools/checklist-maker-tool';
+import DecisionCoinSpinnerTool from '@/components/tools/decision-coin-spinner-tool';
+import MindMapTool from '@/components/tools/mind-map-tool';
+import NotesMarkdownPadTool from '@/components/tools/notes-markdown-pad-tool';
+import StickyNotesBoardTool from '@/components/tools/sticky-notes-board-tool';
+import FocusNoiseTool from '@/components/tools/focus-noise-tool';
+import BreakReminderTool from '@/components/tools/break-reminder-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -331,6 +341,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <WorldClockBoardTool />;
     case 'calendar-event-builder':
       return <CalendarEventBuilderTool />;
+    case 'birthday-reminder':
+      return <BirthdayReminderTool />;
+    case 'random-name-picker':
+      return <RandomNamePickerTool />;
+    case 'seating-chart-generator':
+      return <SeatingChartGeneratorTool />;
+    case 'checklist-maker':
+      return <ChecklistMakerTool />;
+    case 'decision-coin-spinner':
+      return <DecisionCoinSpinnerTool />;
+    case 'mind-map':
+      return <MindMapTool />;
+    case 'notes-markdown-pad':
+      return <NotesMarkdownPadTool />;
+    case 'sticky-notes-board':
+      return <StickyNotesBoardTool />;
+    case 'focus-noise':
+      return <FocusNoiseTool />;
+    case 'break-reminder':
+      return <BreakReminderTool />;
     // Other tools will be added here
     default:
       return (
