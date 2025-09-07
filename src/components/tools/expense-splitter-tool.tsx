@@ -20,7 +20,7 @@ export default function ExpenseSplitterTool() {
     { id: 2, name: 'Bob', amount: 20 },
     { id: 3, name: 'Charlie', amount: 30 },
   ]);
-  const [transactions, setTransactions = useState<string[]>([]);
+  const [transactions, setTransactions] = useState<string[]>([]);
   
   const addPerson = () => {
     setPeople([...people, { id: Date.now(), name: '', amount: 0 }]);
@@ -65,7 +65,7 @@ export default function ExpenseSplitterTool() {
     }
     setTransactions(newTransactions);
 
-  }, [people]);
+  }, [people, setTransactions]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
