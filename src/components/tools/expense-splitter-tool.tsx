@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from '@/components/ui/label';
-import { PlusCircle, Trash2, Users } from 'lucide-react';
+import { PlusCircle, Trash2, Users, IndianRupee } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import HowToUseGuide from '@/components/how-to-use-guide';
 
 interface Person {
   id: number;
@@ -14,11 +14,15 @@ interface Person {
   amount: number;
 }
 
+const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 2 }).format(value);
+};
+
 export default function ExpenseSplitterTool() {
   const [people, setPeople] = useState<Person[]>([
-    { id: 1, name: 'Alice', amount: 50 },
-    { id: 2, name: 'Bob', amount: 20 },
-    { id: 3, name: 'Charlie', amount: 30 },
+    { id: 1, name: 'Alice', amount: 500 },
+    { id: 2, name: 'Bob', amount: 200 },
+    { id: 3, name: 'Charlie', amount: 300 },
   ]);
   const [transactions, setTransactions] = useState<string[]>([]);
   
@@ -55,7 +59,7 @@ export default function ExpenseSplitterTool() {
         const credit = creditors[j].balance;
         const payment = Math.min(debt, credit);
         
-        newTransactions.push(`${debtors[i].name} owes ${creditors[j].name} $${payment.toFixed(2)}`);
+        newTransactions.push(`${debtors[i].name} owes ${creditors[j].name} ${formatCurrency(payment)}`);
         
         debtors[i].balance += payment;
         creditors[j].balance -= payment;
@@ -65,9 +69,24 @@ export default function ExpenseSplitterTool() {
     }
     setTransactions(newTransactions);
 
-  }, [people, setTransactions]);
+  }, [people]);
+
+  const guideProps = {
+    title: "How to Use the Expense Splitter",
+    steps: [
+      { title: "Add People", description: "Add each person involved and enter the total amount each person paid." },
+      { title: "View the Plan", description: "The calculator figures out the simplest way for everyone to settle up." },
+      { title: "Settle Debts", description: "Follow the transaction list to easily pay back what is owed." }
+    ],
+    features: [
+      { icon: Users, title: "Group Expenses", description: "Perfect for trips with friends, shared housing bills, or any group activity involving shared costs." },
+      { icon: IndianRupee, title: "Simplify Debt", description: "Calculates the most efficient way to settle debts, minimizing the number of transactions needed." },
+      { icon: PlusCircle, title: "Dynamic & Easy", description: "Add or remove people on the fly. The settlement plan updates instantly." }
+    ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <CardHeader>
@@ -78,8 +97,8 @@ export default function ExpenseSplitterTool() {
                 {people.map(person => (
                     <motion.div layout key={person.id} className="flex gap-2 items-center">
                         <Input value={person.name} onChange={e => handlePersonChange(person.id, 'name', e.target.value)} placeholder="Name"/>
-                        <Input type="number" value={person.amount} onChange={e => handlePersonChange(person.id, 'amount', parseFloat(e.target.value) || 0)} placeholder="Amount Paid"/>
-                        <Button variant="ghost" size="icon" onClick={() => removePerson(person.id)}><Trash2 className="w-4 h-4"/></Button>
+                        <Input type="number" value={person.amount || ''} onChange={e => handlePersonChange(person.id, 'amount', parseFloat(e.target.value) || 0)} placeholder="Amount Paid"/>
+                        <Button variant="ghost" size="icon" onClick={() => removePerson(person.id)} disabled={people.length <=1}><Trash2 className="w-4 h-4"/></Button>
                     </motion.div>
                 ))}
             </AnimatePresence>
@@ -93,7 +112,7 @@ export default function ExpenseSplitterTool() {
         <CardContent>
             {transactions.length > 0 ? (
                 <ul className="space-y-2">
-                    {transactions.map((t,i) => <li key={i} className="p-2 bg-secondary rounded-md text-sm">{t}</li>)}
+                    {transactions.map((t,i) => <li key={i} className="p-2 bg-secondary rounded-md text-sm font-medium">{t}</li>)}
                 </ul>
             ) : (
                 <div className="text-center text-muted-foreground py-8">
@@ -104,5 +123,7 @@ export default function ExpenseSplitterTool() {
         </CardContent>
       </Card>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

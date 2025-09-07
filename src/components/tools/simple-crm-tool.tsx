@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from '@/components/ui/textarea';
 import { PlusCircle, Trash2, Edit, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HowToUseGuide from '@/components/how-to-use-guide';
 
 interface Contact {
   id: number;
@@ -56,7 +57,22 @@ export default function SimpleCrmTool() {
     }
   };
 
+  const guideProps = {
+    title: "How to Use the Simple CRM",
+    steps: [
+      { title: "Add a Contact", description: "Click the '+' button to add a new contact to your list." },
+      { title: "Select to Edit", description: "Click on any contact in the list to view and edit their details in the main panel." },
+      { title: "Save and Manage", description: "All changes are saved automatically to your browser. Use the delete button to remove contacts." }
+    ],
+    features: [
+      { icon: User, title: "Contact Management", description: "A simple, lightweight tool to keep track of your customer or personal contacts without a complex system." },
+      { icon: Trash2, title: "Local Storage", description: "Your contact data is saved securely in your browser's local storage and is not sent to any server, ensuring your privacy." },
+      { icon: Edit, title: "Quick & Easy Editing", description: "A clean, two-panel layout makes it fast and easy to add, view, and update contact information." }
+    ]
+  };
+
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[70vh]">
       <Card className="md:col-span-1 flex flex-col">
         <CardHeader className="flex flex-row items-center justify-between">
@@ -119,5 +135,8 @@ export default function SimpleCrmTool() {
         </CardContent>
       </Card>
     </div>
+     <p className="text-xs text-center text-muted-foreground pt-4">Your data is saved in your browser.</p>
+     <HowToUseGuide {...guideProps} />
+    </>
   );
 }
