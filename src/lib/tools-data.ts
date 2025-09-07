@@ -1,4 +1,3 @@
-
 import {
   FileText,
   Image,
@@ -127,7 +126,7 @@ const tools: Tool[] = [
   { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Watermark Adder (pro variant)', slug: 'image-watermark-adder-pro', description: 'Advanced image watermarking options.', category: 'image-tools' },
   { name: 'Image Noise Reduction (dedicated tool)', slug: 'image-noise-reduction', description: 'Advanced noise reduction for images.', category: 'image-tools' },
-  { name: 'Image Rotate & Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },
+  { name: 'Image Rotate &amp; Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },
   { name: 'SVG Optimizer', slug: 'svg-optimizer', description: 'Optimize SVG files for smaller size.', category: 'image-tools' },
 
   // 3) Document & File Converters
@@ -162,7 +161,7 @@ const tools: Tool[] = [
   { name: 'GPX to KML', slug: 'gpx-to-kml', description: 'Convert GPX files to KML format.', category: 'document-file-converters' },
   { name: 'KML to GPX', slug: 'kml-to-gpx', description: 'Convert KML files to GPX format.', category: 'document-file-converters' },
   { name: 'ICS Cleaner', slug: 'ics-cleaner', description: 'Deduplicate events in iCalendar files.', category: 'document-file-converters' },
-  { name: 'CSV Dedupe & Merge', slug: 'csv-dedupe-merge', description: 'Deduplicate and merge CSV files.', category: 'document-file-converters' },
+  { name: 'CSV Dedupe &amp; Merge', slug: 'csv-dedupe-merge', description: 'Deduplicate and merge CSV files.', category: 'document-file-converters' },
   { name: 'Encode/Decode URL List to CSV', slug: 'url-list-to-csv', description: 'Process a list of URLs from/to a CSV.', category: 'document-file-converters' },
   { name: 'Batch File Renamer', slug: 'batch-file-renamer', description: 'Rename multiple files based on rules.', category: 'document-file-converters' },
   { name: 'Case-Sensitive Filename Normalizer', slug: 'filename-normalizer', description: 'Normalize filenames for case sensitivity.', category: 'document-file-converters' },
@@ -188,7 +187,7 @@ const tools: Tool[] = [
   { name: 'Remove Line Breaks', slug: 'remove-line-breaks', description: 'Remove line breaks from a text.', category: 'text-writing-tools' },
   { name: 'Sort Lines', slug: 'sort-lines', description: 'Sort lines of text alphabetically.', category: 'text-writing-tools' },
   { name: 'Unique Lines (dedupe)', slug: 'unique-lines', description: 'Remove duplicate lines from a text.', category: 'text-writing-tools' },
-  { name: 'Find & Replace', slug: 'find-and-replace', description: 'Find and replace text in bulk.', category: 'text-writing-tools' },
+  { name: 'Find &amp; Replace', slug: 'find-and-replace', description: 'Find and replace text in bulk.', category: 'text-writing-tools' },
   { name: 'URL Extractor from Text', slug: 'url-extractor', description: 'Extract all URLs from a block of text.', category: 'text-writing-tools' },
   { name: 'Email Extractor from Text', slug: 'email-extractor', description: 'Extract all email addresses from a block of text.', category: 'text-writing-tools' },
   { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', category: 'text-writing-tools' },
@@ -218,7 +217,7 @@ const tools: Tool[] = [
   { name: 'DNS Lookup', slug: 'dns-lookup', description: 'Look up DNS records for a domain.', category: 'seo-website-tools' },
   { name: 'Reverse DNS Lookup', slug: 'reverse-dns-lookup', description: 'Perform a reverse DNS lookup.', category: 'seo-website-tools' },
   { name: 'SSL Certificate Checker', slug: 'ssl-certificate-checker', description: 'Check the SSL certificate of a website.', category: 'seo-website-tools' },
-  { name: 'HTTP/2 & HTTPS Status Checker', slug: 'http2-https-checker', description: 'Check if a website supports HTTP/2 and HTTPS.', category: 'seo-website-tools' },
+  { name: 'HTTP/2 &amp; HTTPS Status Checker', slug: 'http2-https-checker', description: 'Check if a website supports HTTP/2 and HTTPS.', category: 'seo-website-tools' },
   { name: 'Website Speed Test', slug: 'website-speed-test', description: 'Test the speed of your website.', category: 'seo-website-tools' },
   { name: 'Mobile-Friendly Test', slug: 'mobile-friendly-test', description: 'Test if your website is mobile-friendly.', category: 'seo-website-tools' },
   { name: 'Redirect Chain Checker', slug: 'redirect-chain-checker', description: 'Check for redirect chains on a URL.', category: 'seo-website-tools' },
@@ -232,7 +231,7 @@ const tools: Tool[] = [
   { name: 'Canonical URL Auditor', slug: 'canonical-url-auditor', description: 'Audit canonical URLs on your website.', category: 'seo-website-tools' },
   { name: 'Keyword Density Checker', slug: 'keyword-density-checker', description: 'Check the keyword density of a webpage.', category: 'seo-website-tools' },
   { name: 'Structured Data (Schema) Tester', slug: 'structured-data-tester', description: 'Test the structured data of a webpage.', category: 'seo-website-tools' },
-  { name: 'Favicons & App Manifest Generator', slug: 'favicons-app-manifest-generator', description: 'Generate favicons and an app manifest.', category: 'seo-website-tools' },
+  { name: 'Favicons &amp; App Manifest Generator', slug: 'favicons-app-manifest-generator', description: 'Generate favicons and an app manifest.', category: 'seo-website-tools' },
   { name: 'Page Size Checker', slug: 'page-size-checker', description: 'Check the size of a webpage.', category: 'seo-website-tools' },
   { name: 'Page Header Analyzer', slug: 'page-header-analyzer', description: 'Analyze the headers of a webpage.', category: 'seo-website-tools' },
   { name: 'Server Status Checker', slug: 'server-status-checker', description: 'Check the status of a web server.', category: 'seo-website-tools' },
@@ -274,7 +273,7 @@ const tools: Tool[] = [
   { name: 'Currency Converter', slug: 'currency-converter', description: 'Convert between different currencies.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Unit Price Calculator', slug: 'unit-price-calculator', description: 'Compare prices of products with different unit sizes.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Discount Calculator', slug: 'discount-calculator', description: 'Calculate the final price after a discount.', category: 'finance-business-calculators', isImplemented: true },
-  { name: 'Margin & Markup Calculator', slug: 'margin-markup-calculator', description: 'Calculate profit margin and markup.', category: 'finance-business-calculators', isImplemented: true },
+  { name: 'Margin &amp; Markup Calculator', slug: 'margin-markup-calculator', description: 'Calculate profit margin and markup.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Break-Even Point Calculator', slug: 'break-even-point-calculator', description: 'Calculate the break-even point for your business.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Profit/Loss Calculator', slug: 'profit-loss-calculator', description: 'Calculate profit or loss on a transaction.', category: 'finance-business-calculators', isImplemented: true },
   { name: 'Freelance Hourly Rate Calculator', slug: 'freelance-hourly-rate-calculator', description: 'Determine your hourly rate as a freelancer.', category: 'finance-business-calculators', isImplemented: true },
@@ -298,7 +297,7 @@ const tools: Tool[] = [
   // 7) Math, Science & Academic
   { name: 'Percentage Calculator', slug: 'percentage-calculator', description: 'Calculate percentages.', category: 'math-science-academic', isImplemented: true },
   { name: 'Average/Mean Calculator', slug: 'average-mean-calculator', description: 'Calculate the average of a set of numbers.', category: 'math-science-academic', isImplemented: true },
-  { name: 'Median & Mode Calculator', slug: 'median-mode-calculator', description: 'Calculate the median and mode of a set of numbers.', category: 'math-science-academic', isImplemented: true },
+  { name: 'Median &amp; Mode Calculator', slug: 'median-mode-calculator', description: 'Calculate the median and mode of a set of numbers.', category: 'math-science-academic', isImplemented: true },
   { name: 'Ratio Calculator', slug: 'ratio-calculator', description: 'Calculate ratios.', category: 'math-science-academic', isImplemented: true },
   { name: 'Proportion Calculator', slug: 'proportion-calculator', description: 'Calculate proportions.', category: 'math-science-academic', isImplemented: true },
   { name: 'Standard Deviation Calculator', slug: 'standard-deviation-calculator', description: 'Calculate the standard deviation of a set of numbers.', category: 'math-science-academic', isImplemented: true },
@@ -322,7 +321,7 @@ const tools: Tool[] = [
   { name: 'Permutation/Combination Calculator', slug: 'permutation-combination-calculator', description: 'Calculate permutations and combinations.', category: 'math-science-academic', isImplemented: true },
   { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is prime.', category: 'math-science-academic', isImplemented: true },
   { name: 'Factorization Tool', slug: 'factorization-tool', description: 'Find the prime factors of a number.', category: 'math-science-academic', isImplemented: true },
-  { name: 'LCM & GCD Calculator', slug: 'lcm-gcd-calculator', description: 'Calculate the Least Common Multiple and Greatest Common Divisor.', category: 'math-science-academic', isImplemented: true },
+  { name: 'LCM &amp; GCD Calculator', slug: 'lcm-gcd-calculator', description: 'Calculate the Least Common Multiple and Greatest Common Divisor.', category: 'math-science-academic', isImplemented: true },
   { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to Roman numerals.', category: 'math-science-academic', isImplemented: true },
   { name: 'Base Converter', slug: 'base-converter', description: 'Convert numbers between different bases.', category: 'math-science-academic', isImplemented: true },
   { name: 'Significant Figures Calculator', slug: 'significant-figures-calculator', description: 'Calculate significant figures.', category: 'math-science-academic', isImplemented: true },
@@ -406,7 +405,7 @@ const tools: Tool[] = [
   { name: 'Passphrase Generator', slug: 'passphrase-generator', description: 'Generate memorable passphrases.', category: 'web-url-utilities' },
   { name: 'Password Strength Checker', slug: 'password-strength-checker', description: 'Check the strength of your passwords.', category: 'web-url-utilities' },
 
-  // 10) Security, Privacy & Hashing
+  // 10) Security, Privacy &amp; Hashing
   { name: 'Have I Been Pwned Email Checker', slug: 'have-i-been-pwned-checker', description: 'Check if your email has been compromised in a data breach.', category: 'security-privacy-hashing' },
   { name: 'Salt Generator', slug: 'salt-generator', description: 'Generate random salts for hashing.', category: 'security-privacy-hashing' },
   { name: 'Hash File', slug: 'hash-file', description: 'Generate hashes for files (MD5, SHA-1, SHA-256).', category: 'security-privacy-hashing' },
@@ -438,7 +437,7 @@ const tools: Tool[] = [
   { name: 'Daily Planner Generator', slug: 'daily-planner-generator', description: 'Generate a daily planner.', category: 'security-privacy-hashing' },
   { name: 'To-Do List', slug: 'to-do-list', description: 'A lightweight to-do list.', category: 'security-privacy-hashing' },
   
-  // 11) Productivity & Planning
+  // 11) Productivity &amp; Planning
   { name: 'Pomodoro Timer', slug: 'pomodoro-timer', description: 'A timer for the Pomodoro Technique.', category: 'productivity-planning', isImplemented: true },
   { name: 'Habit Tracker', slug: 'habit-tracker', description: 'Track your daily habits.', category: 'productivity-planning', isImplemented: true },
   { name: 'Goal Tracker', slug: 'goal-tracker', description: 'Track your long-term goals.', category: 'productivity-planning', isImplemented: true },
@@ -470,7 +469,7 @@ const tools: Tool[] = [
   { name: 'Step Counter (Manual Input)', slug: 'step-counter', description: 'Manually input your daily steps.', category: 'productivity-planning', isImplemented: true },
   { name: 'Typing Speed Test', slug: 'typing-speed-test', description: 'Test your typing speed.', category: 'productivity-planning', isImplemented: true },
   
-  // 12) Networking & Diagnostics
+  // 12) Networking &amp; Diagnostics
   { name: 'Ping Test', slug: 'ping-test', description: 'Test the reachability of a host.', category: 'networking-diagnostics' },
   { name: 'Traceroute Visualizer', slug: 'traceroute-visualizer', description: 'Visualize the path of packets across a network.', category: 'networking-diagnostics' },
   { name: 'Port Scanner', slug: 'port-scanner', description: 'Scan for open ports on a host.', category: 'networking-diagnostics' },
@@ -483,7 +482,7 @@ const tools: Tool[] = [
   { name: 'SPF/DMARC Analyzer', slug: 'spf-dmarc-analyzer', description: 'Analyze SPF and DMARC records.', category: 'networking-diagnostics' },
   { name: 'DKIM Record Checker', slug: 'dkim-record-checker', description: 'Check DKIM records for a domain.', category: 'networking-diagnostics' },
   { name: 'HTTP/HTTPS Redirect Tester', slug: 'http-https-redirect-tester', description: 'Test HTTP/HTTPS redirects.', category: 'networking-diagnostics' },
-  { name: 'TLS Version & Cipher Checker', slug: 'tls-version-cipher-checker', description: 'Check TLS versions and cipher suites.', category: 'networking-diagnostics' },
+  { name: 'TLS Version &amp; Cipher Checker', slug: 'tls-version-cipher-checker', description: 'Check TLS versions and cipher suites.', category: 'networking-diagnostics' },
   { name: 'IPv4/IPv6 Compatibility Test', slug: 'ipv4-ipv6-compatibility-test', description: 'Test for IPv4/IPv6 compatibility.', category: 'networking-diagnostics' },
   { name: 'WebSocket Echo Tester', slug: 'websocket-echo-tester', description: 'Test WebSocket connections.', category: 'networking-diagnostics' },
   { name: 'gZIP/Brotli Compression Checker', slug: 'gzip-brotli-compression-checker', description: 'Check for gZIP/Brotli compression.', category: 'networking-diagnostics' },
@@ -497,17 +496,17 @@ const tools: Tool[] = [
   { name: 'NAT Type Guess', slug: 'nat-type-guess', description: 'Guess your NAT type.', category: 'networking-diagnostics' },
   { name: 'DNS over HTTPS Test', slug: 'dns-over-https-test', description: 'Test for DNS over HTTPS.', category: 'networking-diagnostics' },
 
-  // 13) Color, Design & Branding
-  { name: 'IP Location Finder (end-user friendly wrapper)', slug: 'ip-location-finder', description: 'Find the location of an IP address.', category: 'color-design-branding' },
-  { name: 'Color Picker (HEX/RGB/HSL)', slug: 'color-picker', description: 'Pick colors and get their values in HEX, RGB, and HSL.', category: 'color-design-branding' },
-  { name: 'Contrast Checker (WCAG)', slug: 'contrast-checker', description: 'Check color contrast for WCAG compliance.', category: 'color-design-branding' },
-  { name: 'Palette Generator from Image', slug: 'palette-generator-from-image', description: 'Generate a color palette from an image.', category: 'color-design-branding' },
-  { name: 'Palette Harmonies', slug: 'palette-harmonies', description: 'Generate color harmonies (monochromatic, triadic, etc.).', category: 'color-design-branding' },
-  { name: 'Gradient Generator', slug: 'gradient-generator', description: 'Generate CSS gradients.', category: 'color-design-branding' },
-  { name: 'Glassmorphism Generator', slug: 'glassmorphism-generator', description: 'Generate CSS for the glassmorphism effect.', category: 'color-design-branding' },
-  { name: 'Neumorphism Generator', slug: 'neumorphism-generator', description: 'Generate CSS for the neumorphism effect.', category: 'color-design-branding' },
-  { name: 'Shadow Generator', slug: 'shadow-generator', description: 'Generate CSS for box and text shadows.', category: 'color-design-branding' },
-  { name: 'Border-Radius Visualizer', slug: 'border-radius-visualizer', description: 'Visualize and generate CSS for border-radius.', category: 'color-design-branding' },
+  // 13) Color, Design &amp; Branding
+  { name: 'IP Location Finder (end-user friendly wrapper)', slug: 'ip-location-finder', description: 'Find the location of an IP address.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Color Picker (HEX/RGB/HSL)', slug: 'color-picker', description: 'Pick colors and get their values in HEX, RGB, and HSL.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Contrast Checker (WCAG)', slug: 'contrast-checker', description: 'Check color contrast for WCAG compliance.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Palette Generator from Image', slug: 'palette-generator-from-image', description: 'Generate a color palette from an image.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Palette Harmonies', slug: 'palette-harmonies', description: 'Generate color harmonies (monochromatic, triadic, etc.).', category: 'color-design-branding', isImplemented: true },
+  { name: 'Gradient Generator', slug: 'gradient-generator', description: 'Generate CSS gradients.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Glassmorphism Generator', slug: 'glassmorphism-generator', description: 'Generate CSS for the glassmorphism effect.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Neumorphism Generator', slug: 'neumorphism-generator', description: 'Generate CSS for the neumorphism effect.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Shadow Generator', slug: 'shadow-generator', description: 'Generate CSS for box and text shadows.', category: 'color-design-branding', isImplemented: true },
+  { name: 'Border-Radius Visualizer', slug: 'border-radius-visualizer', description: 'Visualize and generate CSS for border-radius.', category: 'color-design-branding', isImplemented: true },
   { name: 'CSS Clip-Path Maker', slug: 'css-clip-path-maker', description: 'Create CSS clip-paths.', category: 'color-design-branding' },
   { name: 'SVG Wave/Blob Generator', slug: 'svg-wave-blob-generator', description: 'Generate SVG waves and blobs.', category: 'color-design-branding' },
   { name: 'Favicon Generator (ICO/PNG)', slug: 'favicon-generator', description: 'Generate favicons in ICO and PNG formats.', category: 'color-design-branding' },
@@ -524,7 +523,7 @@ const tools: Tool[] = [
   { name: 'CSS Variable Palette Exporter', slug: 'css-variable-palette-exporter', description: 'Export color palettes as CSS variables.', category: 'color-design-branding' },
   { name: 'Accessibility Landmarks Checker', slug: 'accessibility-landmarks-checker', description: 'Check for accessibility landmarks.', category: 'color-design-branding' },
 
-  // 14) OCR, Language & Localization
+  // 14) OCR, Language &amp; Localization
   { name: 'Printable QR Poster Creator', slug: 'printable-qr-poster-creator', description: 'Create printable QR posters.', category: 'ocr-language-localization' },
   { name: 'Image to Text (OCR)', slug: 'image-to-text-ocr', description: 'Extract text from images using OCR.', category: 'ocr-language-localization' },
   { name: 'PDF to Text (OCR)', slug: 'pdf-to-text-ocr', description: 'Extract text from PDFs using OCR.', category: 'ocr-language-localization' },
@@ -537,7 +536,7 @@ const tools: Tool[] = [
   { name: 'Language Detector', slug: 'language-detector', description: 'Detect the language of a text.', category: 'ocr-language-localization' },
   { name: 'Transliteration Tool', slug: 'transliteration-tool', description: 'Transliterate text between different scripts.', category: 'ocr-language-localization' },
   { name: 'Slugify International Characters', slug: 'slugify-international-characters', description: 'Slugify international characters.', category: 'ocr-language-localization' },
-  { name: 'Plurals & Inflections Helper', slug: 'plurals-inflections-helper', description: 'A helper for plurals and inflections.', category: 'ocr-language-localization' },
+  { name: 'Plurals &amp; Inflections Helper', slug: 'plurals-inflections-helper', description: 'A helper for plurals and inflections.', category: 'ocr-language-localization' },
   { name: 'Spell-Out Numbers', slug: 'spell-out-numbers', description: 'Spell out numbers in different languages.', category: 'ocr-language-localization' },
   { name: 'Number-to-Words Converter', slug: 'number-to-words-converter', description: 'Convert numbers to words.', category: 'ocr-language-localization' },
   { name: 'Words-to-Number Converter', slug: 'words-to-number-converter', description: 'Convert words to numbers.', category: 'ocr-language-localization' },
@@ -551,7 +550,7 @@ const tools: Tool[] = [
   { name: 'ICU Message Previewer', slug: 'icu-message-previewer', description: 'Preview ICU messages.', category: 'ocr-language-localization' },
   { name: 'CSV Language Columns Merger', slug: 'csv-language-columns-merger', description: 'Merge language columns in a CSV.', category: 'ocr-language-localization' },
   
-  // 15) System & File Management
+  // 15) System &amp; File Management
   { name: 'Subtitle Language Mapper', slug: 'subtitle-language-mapper', description: 'Map subtitle languages.', category: 'system-file-management' },
   { name: 'ZIP Archive Creator', slug: 'zip-archive-creator', description: 'Create ZIP archives.', category: 'system-file-management' },
   { name: 'Unzip Files', slug: 'unzip-files', description: 'Unzip files from an archive.', category: 'system-file-management' },

@@ -14,3 +14,4 @@ import '@/ai/flows/pdf-to-word.ts';
 import '@/ai/flows/word-to-pdf.ts';
 import '@/ai/flows/pdf-to-excel.ts';
 import '@/ai/flows/excel-to-pdf.ts';
+import '@/ai/flows/palette-extractor-from-image.ts';

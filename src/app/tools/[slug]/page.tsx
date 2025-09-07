@@ -126,6 +126,16 @@ import SimpleCrmTool from '@/components/tools/simple-crm-tool';
 import LeadCaptureFormBuilderTool from '@/components/tools/lead-capture-form-builder-tool';
 import StepCounterTool from '@/components/tools/step-counter-tool';
 import TypingSpeedTestTool from '@/components/tools/typing-speed-test-tool';
+import IpLocationFinderTool from '@/components/tools/ip-location-finder-tool';
+import ColorPickerTool from '@/components/tools/color-picker-tool';
+import ContrastCheckerTool from '@/components/tools/contrast-checker-tool';
+import PaletteGeneratorFromImageTool from '@/components/tools/palette-generator-from-image-tool';
+import PaletteHarmoniesTool from '@/components/tools/palette-harmonies-tool';
+import GradientGeneratorTool from '@/components/tools/gradient-generator-tool';
+import GlassmorphismGeneratorTool from '@/components/tools/glassmorphism-generator-tool';
+import NeumorphismGeneratorTool from '@/components/tools/neumorphism-generator-tool';
+import ShadowGeneratorTool from '@/components/tools/shadow-generator-tool';
+import BorderRadiusVisualizerTool from '@/components/tools/border-radius-visualizer-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -388,6 +398,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <StepCounterTool />;
     case 'typing-speed-test':
       return <TypingSpeedTestTool />;
+    case 'ip-location-finder':
+        return <IpLocationFinderTool />;
+    case 'color-picker':
+        return <ColorPickerTool />;
+    case 'contrast-checker':
+        return <ContrastCheckerTool />;
+    case 'palette-generator-from-image':
+        return <PaletteGeneratorFromImageTool />;
+    case 'palette-harmonies':
+        return <PaletteHarmoniesTool />;
+    case 'gradient-generator':
+        return <GradientGeneratorTool />;
+    case 'glassmorphism-generator':
+        return <GlassmorphismGeneratorTool />;
+    case 'neumorphism-generator':
+        return <NeumorphismGeneratorTool />;
+    case 'shadow-generator':
+        return <ShadowGeneratorTool />;
+    case 'border-radius-visualizer':
+        return <BorderRadiusVisualizerTool />;
     // Other tools will be added here
     default:
       return (
