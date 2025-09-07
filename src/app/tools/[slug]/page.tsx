@@ -61,6 +61,13 @@ import TipCalculatorTool from '@/components/tools/tip-calculator-tool';
 import SimpleInterestCalculatorQuickTool from '@/components/tools/simple-interest-calculator-quick-tool';
 import CompoundInterestCalculatorQuickTool from '@/components/tools/compound-interest-calculator-quick-tool';
 import AgeDifferenceCalculatorTool from '@/components/tools/age-difference-calculator-tool';
+import PercentageCalculatorTool from '@/components/tools/percentage-calculator-tool';
+import AverageMeanCalculatorTool from '@/components/tools/average-mean-calculator-tool';
+import MedianModeCalculatorTool from '@/components/tools/median-mode-calculator-tool';
+import RatioCalculatorTool from '@/components/tools/ratio-calculator-tool';
+import ProportionCalculatorTool from '@/components/tools/proportion-calculator-tool';
+import StandardDeviationCalculatorTool from '@/components/tools/standard-deviation-calculator-tool';
+import VarianceCalculatorTool from '@/components/tools/variance-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -193,6 +200,20 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <CompoundInterestCalculatorQuickTool />;
     case 'age-difference-calculator':
         return <AgeDifferenceCalculatorTool />;
+    case 'percentage-calculator':
+      return <PercentageCalculatorTool />;
+    case 'average-mean-calculator':
+      return <AverageMeanCalculatorTool />;
+    case 'median-mode-calculator':
+      return <MedianModeCalculatorTool />;
+    case 'ratio-calculator':
+      return <RatioCalculatorTool />;
+    case 'proportion-calculator':
+      return <ProportionCalculatorTool />;
+    case 'standard-deviation-calculator':
+      return <StandardDeviationCalculatorTool />;
+    case 'variance-calculator':
+      return <VarianceCalculatorTool />;
     // Other tools will be added here
     default:
       return (
