@@ -19,7 +19,7 @@ export default function QuoteEstimateBuilderTool() {
   const [quoteNumber, setQuoteNumber] = useState('QUOTE-001');
   const [from, setFrom] = useState('Your Company\n123 Street, City');
   const [to, setTo] = useState('Potential Client\n456 Avenue, Town');
-  const [lineItems, setLineItems = useState<LineItem[]>([{ id: 1, description: 'Initial Consultation & Design', quantity: 1, price: 1500 }]);
+  const [lineItems, setLineItems] = useState<LineItem[]>([{ id: 1, description: 'Initial Consultation & Design', quantity: 1, price: 1500 }]);
   
   const total = lineItems.reduce((sum, item) => sum + item.quantity * item.price, 0);
 

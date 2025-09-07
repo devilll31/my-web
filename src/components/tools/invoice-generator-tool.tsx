@@ -19,7 +19,7 @@ export default function InvoiceGeneratorTool() {
   const [invoiceNumber, setInvoiceNumber] = useState('INV-001');
   const [from, setFrom] = useState('Your Company Name\n123 Street, City');
   const [to, setTo] = useState('Client Company Name\n456 Avenue, Town');
-  const [lineItems, setLineItems = useState<LineItem[]>([{ id: 1, description: 'Website Development', quantity: 1, price: 5000 }]);
+  const [lineItems, setLineItems] = useState<LineItem[]>([{ id: 1, description: 'Website Development', quantity: 1, price: 5000 }]);
   
   const total = lineItems.reduce((sum, item) => sum + item.quantity * item.price, 0);
 
