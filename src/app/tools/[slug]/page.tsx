@@ -68,6 +68,16 @@ import RatioCalculatorTool from '@/components/tools/ratio-calculator-tool';
 import ProportionCalculatorTool from '@/components/tools/proportion-calculator-tool';
 import StandardDeviationCalculatorTool from '@/components/tools/standard-deviation-calculator-tool';
 import VarianceCalculatorTool from '@/components/tools/variance-calculator-tool';
+import ZScoreCalculatorTool from '@/components/tools/z-score-calculator-tool';
+import LinearInterpolationCalculatorTool from '@/components/tools/linear-interpolation-calculator-tool';
+import ScientificCalculatorTool from '@/components/tools/scientific-calculator-tool';
+import QuadraticEquationSolverTool from '@/components/tools/quadratic-equation-solver-tool';
+import MatrixCalculatorTool from '@/components/tools/matrix-calculator-tool';
+import DeterminantCalculatorTool from '@/components/tools/determinant-calculator-tool';
+import VectorCalculatorTool from '@/components/tools/vector-calculator-tool';
+import UnitConverterTool from '@/components/tools/unit-converter-tool';
+import TimeDurationCalculatorTool from '@/components/tools/time-duration-calculator-tool';
+import SpeedDistanceTimeCalculatorTool from '@/components/tools/speed-distance-time-calculator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -214,6 +224,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <StandardDeviationCalculatorTool />;
     case 'variance-calculator':
       return <VarianceCalculatorTool />;
+    case 'z-score-calculator':
+      return <ZScoreCalculatorTool />;
+    case 'linear-interpolation-calculator':
+      return <LinearInterpolationCalculatorTool />;
+    case 'scientific-calculator':
+      return <ScientificCalculatorTool />;
+    case 'quadratic-equation-solver':
+      return <QuadraticEquationSolverTool />;
+    case 'matrix-calculator':
+      return <MatrixCalculatorTool />;
+    case 'determinant-calculator':
+      return <DeterminantCalculatorTool />;
+    case 'vector-calculator':
+      return <VectorCalculatorTool />;
+    case 'unit-converter':
+      return <UnitConverterTool />;
+    case 'time-duration-calculator':
+      return <TimeDurationCalculatorTool />;
+    case 'speed-distance-time-calculator':
+      return <SpeedDistanceTimeCalculatorTool />;
     // Other tools will be added here
     default:
       return (
