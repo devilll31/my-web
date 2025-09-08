@@ -155,6 +155,9 @@ import PrintableQrPosterCreatorTool from '@/components/tools/printable-qr-poster
 import ImageToTextOcrTool from '@/components/tools/image-to-text-ocr-tool';
 import PdfToTextOcrTool from '@/components/tools/pdf-to-text-ocr-tool';
 import BusinessCardOcrTool from '@/components/tools/business-card-ocr-tool';
+import LanguageDetectorTool from '@/components/tools/language-detector-tool';
+import TransliterationTool from '@/components/tools/transliteration-tool';
+import NumberToWordsConverterTool from '@/components/tools/number-to-words-converter-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -477,6 +480,12 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ImageToTextOcrTool />; // Reusing the same component
     case 'business-card-ocr-to-vcf':
       return <BusinessCardOcrTool />;
+    case 'language-detector':
+      return <LanguageDetectorTool />;
+    case 'transliteration-tool':
+      return <TransliterationTool />;
+    case 'number-to-words-converter':
+      return <NumberToWordsConverterTool />;
     // Other tools will be added here
     default:
       return (

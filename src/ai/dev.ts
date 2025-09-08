@@ -18,3 +18,6 @@ import '@/ai/flows/palette-extractor-from-image.ts';
 import '@/ai/flows/image-to-text-flow.ts';
 import '@/ai/flows/pdf-to-text-flow.ts';
 import '@/ai/flows/business-card-ocr-flow.ts';
+import '@/ai/flows/language-detector-flow.ts';
+import '@/ai/flows/transliteration-flow.ts';
+import '@/ai/flows/number-to-words-flow.ts';
