@@ -50,7 +50,7 @@ export default function BrandStyleGuideStarterTool() {
           </div>
           
            <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily headlineFont }}>Typography</h2>
+            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: headlineFont }}>Typography</h2>
             <div className="space-y-2">
                 <p className="text-lg" style={{ fontFamily: headlineFont }}>Headline Font: {headlineFont}</p>
                 <p style={{ fontFamily: bodyFont }}>Body Font: {bodyFont}</p>
