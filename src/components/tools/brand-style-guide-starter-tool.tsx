@@ -58,7 +58,7 @@ export default function BrandStyleGuideStarterTool() {
           <h1 className="text-4xl font-bold border-b pb-4" style={{ fontFamily: headlineFont, color: primaryColor }}>{brandName}</h1>
           
           <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: headlineFont }}>Colors</h2>
+            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: headlineFont, color: secondaryColor }}>Colors</h2>
             <div className="grid grid-cols-3 gap-4">
                 <ColorSwatch color={primaryColor} name="Primary" />
                 <ColorSwatch color={secondaryColor} name="Secondary" />
@@ -67,7 +67,7 @@ export default function BrandStyleGuideStarterTool() {
           </div>
           
            <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: headlineFont }}>Typography</h2>
+            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: headlineFont, color: secondaryColor }}>Typography</h2>
             <div className="space-y-2">
                 <p className="text-lg" style={{ fontFamily: headlineFont }}>Headline Font: {headlineFont}</p>
                 <p style={{ fontFamily: bodyFont }}>Body Font: {bodyFont}</p>
