@@ -126,7 +126,7 @@ const tools: Tool[] = [
   { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Watermark Adder (pro variant)', slug: 'image-watermark-adder-pro', description: 'Advanced image watermarking options.', category: 'image-tools' },
   { name: 'Image Noise Reduction (dedicated tool)', slug: 'image-noise-reduction', description: 'Advanced noise reduction for images.', category: 'image-tools' },
-  { name: 'Image Rotate &amp; Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },
+  { name: 'Image Rotate & Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },
   { name: 'SVG Optimizer', slug: 'svg-optimizer', description: 'Optimize SVG files for smaller size.', category: 'image-tools' },
 
   // 3) Document & File Converters
