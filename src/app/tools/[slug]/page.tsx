@@ -151,6 +151,10 @@ import WireframeBlocksLibraryTool from '@/components/tools/wireframe-blocks-libr
 import UiComponentShadowTokensTool from '@/components/tools/ui-component-shadow-tokens-tool';
 import CssVariablePaletteExporterTool from '@/components/tools/css-variable-palette-exporter-tool';
 import AccessibilityLandmarksCheckerTool from '@/components/tools/accessibility-landmarks-checker-tool';
+import PrintableQrPosterCreatorTool from '@/components/tools/printable-qr-poster-creator-tool';
+import ImageToTextOcrTool from '@/components/tools/image-to-text-ocr-tool';
+import PdfToTextOcrTool from '@/components/tools/pdf-to-text-ocr-tool';
+import BusinessCardOcrTool from '@/components/tools/business-card-ocr-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -463,6 +467,16 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <CssVariablePaletteExporterTool />;
     case 'accessibility-landmarks-checker':
         return <AccessibilityLandmarksCheckerTool />;
+    case 'printable-qr-poster-creator':
+      return <PrintableQrPosterCreatorTool />;
+    case 'image-to-text-ocr':
+      return <ImageToTextOcrTool />;
+    case 'pdf-to-text-ocr':
+      return <PdfToTextOcrTool />;
+    case 'handwriting-ocr':
+      return <ImageToTextOcrTool />; // Reusing the same component
+    case 'business-card-ocr-to-vcf':
+      return <BusinessCardOcrTool />;
     // Other tools will be added here
     default:
       return (
