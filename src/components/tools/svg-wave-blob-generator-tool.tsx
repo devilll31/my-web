@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Input } from '@/components/ui/input';
 
 const generateBlob = (complexity: number, contrast: number): string => {
   const numPoints = 6 + Math.floor(complexity * 6);
@@ -51,6 +52,7 @@ export default function SvgWaveBlobGeneratorTool() {
       return `${x},${y}`;
     }).join(' ');
     return `M 0 150 C ${points} L 300 300 L 0 300 Z`;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shape, complexity, contrast, key]);
   
   const svgString = `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><path d="${svgPath}" fill="${color}"></path></svg>`;
