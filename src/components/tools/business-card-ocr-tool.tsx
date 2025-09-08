@@ -94,7 +94,7 @@ export default function BusinessCardOcrTool() {
           {!image && (
             <div className="text-center text-muted-foreground cursor-pointer" onClick={() => fileInputRef.current?.click()}>
               <UploadCloud className="mx-auto h-12 w-12" />
-              <p className="mt-2">Drag &amp; drop or click to upload business card</p>
+              <p className="mt-2">Drag & drop or click to upload business card</p>
             </div>
           )}
           {image && <Image src={image} alt="Uploaded Business Card" layout="fill" objectFit="contain" />}
