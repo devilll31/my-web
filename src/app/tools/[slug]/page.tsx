@@ -144,6 +144,7 @@ import SocialMediaBannerResizerTool from '@/components/tools/social-media-banner
 import LogoSketchPadTool from '@/components/tools/logo-sketch-pad-tool';
 import BrandStyleGuideStarterTool from '@/components/tools/brand-style-guide-starter-tool';
 import FontPairingSuggestionsTool from '@/components/tools/font-pairing-suggestions-tool';
+import WebfontConverterTool from '@/components/tools/webfont-converter-tool';
 import PlaceholderImageGeneratorTool from '@/components/tools/placeholder-image-generator-tool';
 import PlaceholderTextAvatarGeneratorTool from '@/components/tools/placeholder-text-avatar-generator-tool';
 import WireframeBlocksLibraryTool from '@/components/tools/wireframe-blocks-library-tool';
@@ -448,6 +449,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <BrandStyleGuideStarterTool />;
     case 'font-pairing-suggestions':
         return <FontPairingSuggestionsTool />;
+    case 'webfont-converter':
+        return <WebfontConverterTool />;
     case 'placeholder-image-generator':
         return <PlaceholderImageGeneratorTool />;
     case 'placeholder-text-avatar-generator':

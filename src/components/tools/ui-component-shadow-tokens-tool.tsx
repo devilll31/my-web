@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Layers, Copy } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Input } from '@/components/ui/input';
 
 const shadowStyles = {
   sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
