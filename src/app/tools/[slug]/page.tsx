@@ -158,6 +158,16 @@ import BusinessCardOcrTool from '@/components/tools/business-card-ocr-tool';
 import LanguageDetectorTool from '@/components/tools/language-detector-tool';
 import TransliterationTool from '@/components/tools/transliteration-tool';
 import NumberToWordsConverterTool from '@/components/tools/number-to-words-converter-tool';
+import WordsToNumberConverterTool from '@/components/tools/words-to-number-converter-tool';
+import DateLocalizationFormatterTool from '@/components/tools/date-localization-formatter-tool';
+import CurrencyLocalizationFormatterTool from '@/components/tools/currency-localization-formatter-tool';
+import RightToLeftLayoutTesterTool from '@/components/tools/right-to-left-layout-tester-tool';
+import PunycodeConverterTool from '@/components/tools/punycode-converter-tool';
+import UnicodeGraphemeSplitterTool from '@/components/tools/unicode-grapheme-splitter-tool';
+import EmojiStripperNormalizerTool from '@/components/tools/emoji-stripper-normalizer-tool';
+import RegexAccentInsensitiveHelperTool from '@/components/tools/regex-accent-insensitive-helper-tool';
+import IcuMessagePreviewerTool from '@/components/tools/icu-message-previewer-tool';
+import CsvLanguageColumnsMergerTool from '@/components/tools/csv-language-columns-merger-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -486,6 +496,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <TransliterationTool />;
     case 'number-to-words-converter':
       return <NumberToWordsConverterTool />;
+    case 'words-to-number-converter':
+      return <WordsToNumberConverterTool />;
+    case 'date-localization-formatter':
+      return <DateLocalizationFormatterTool />;
+    case 'currency-localization-formatter':
+      return <CurrencyLocalizationFormatterTool />;
+    case 'right-to-left-layout-tester':
+      return <RightToLeftLayoutTesterTool />;
+    case 'punycode-converter':
+      return <PunycodeConverterTool />;
+    case 'unicode-grapheme-splitter':
+      return <UnicodeGraphemeSplitterTool />;
+    case 'emoji-stripper-normalizer':
+      return <EmojiStripperNormalizerTool />;
+    case 'regex-accent-insensitive-helper':
+      return <RegexAccentInsensitiveHelperTool />;
+    case 'icu-message-previewer':
+      return <IcuMessagePreviewerTool />;
+    case 'csv-language-columns-merger':
+      return <CsvLanguageColumnsMergerTool />;
     // Other tools will be added here
     default:
       return (
