@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef } from 'react';
@@ -9,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Download } from 'lucide-react';
 import Image from 'next/image';
 import HowToUseGuide from '../how-to-use-guide';
-import { AspectRatio, Crop, Share2 } from 'lucide-react';
+import { Ratio, Crop, Share2 } from 'lucide-react';
 
 const bannerSizes = {
   'facebook': { width: 820, height: 312, name: 'Facebook Cover' },
@@ -76,7 +77,7 @@ export default function SocialMediaBannerResizerTool() {
         features: [
             { icon: Share2, title: "Preset Sizes", description: "Includes standard banner dimensions for popular platforms like Facebook, Twitter, and LinkedIn." },
             { icon: Crop, title: "Automatic Cropping", description: "Intelligently center-crops your image to fit the required aspect ratio, saving you time." },
-            { icon: AspectRatio, title: "Perfect Fit", description: "A quick and easy way to ensure your social media profiles look professional." }
+            { icon: Ratio, title: "Perfect Fit", description: "A quick and easy way to ensure your social media profiles look professional." }
         ]
     };
 
