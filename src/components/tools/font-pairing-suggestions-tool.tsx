@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
+import HowToUseGuide from '../how-to-use-guide';
+import { Type, Link as LinkIcon, RefreshCw } from 'lucide-react';
 
 const fontPairings = [
     { headline: 'Playfair Display', body: 'Source Sans Pro', link: 'https://fonts.google.com/specimen/Playfair+Display' },
@@ -20,8 +22,23 @@ export default function FontPairingSuggestionsTool() {
     const nextIndex = (currentIndex + 1) % fontPairings.length;
     setCurrentPairing(fontPairings[nextIndex]);
   };
+  
+  const guideProps = {
+      title: "How to Use the Font Pairing Tool",
+      steps: [
+          { title: "View Suggestion", description: "The tool presents a professionally curated headline and body font pairing." },
+          { title: "Get New Ideas", description: "Click 'Show Next Pairing' to cycle through different combinations for inspiration." },
+          { title: "Find on Google Fonts", description: "Use the link to go directly to the Google Fonts page for the headline font to download or embed it." }
+      ],
+      features: [
+          { icon: Type, title: "Curated Pairs", description: "Provides a set of well-regarded font combinations to ensure typographic harmony in your designs." },
+          { icon: RefreshCw, title: "Inspiration Engine", description: "A quick and easy way to discover new font pairings you might not have considered." },
+          { icon: LinkIcon, title: "Direct Links", description: "Conveniently links to Google Fonts so you can easily access and use the suggested fonts in your projects." }
+      ]
+  };
 
   return (
+    <>
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-center">Font Pairing Suggestions</CardTitle>
@@ -43,5 +60,7 @@ export default function FontPairingSuggestionsTool() {
         </div>
       </CardContent>
     </Card>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

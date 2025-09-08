@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from '@/components/ui/label';
+import HowToUseGuide from '@/components/how-to-use-guide';
+import { Palette, Type, Brush } from 'lucide-react';
 
 const ColorSwatch = ({ color, name }: { color: string, name: string }) => (
     <div className="text-center">
@@ -21,8 +23,23 @@ export default function BrandStyleGuideStarterTool() {
   const [neutralColor, setNeutralColor] = useState('#f0f4f8');
   const [headlineFont, setHeadlineFont] = useState('Inter');
   const [bodyFont, setBodyFont] = useState('Inter');
+  
+  const guideProps = {
+      title: "How to Use the Brand Style Guide Starter",
+      steps: [
+          { title: "Enter Brand Details", description: "Fill in your brand name, select your primary, secondary, and neutral colors using the color pickers." },
+          { title: "Choose Fonts", description: "Specify the font families you want to use for headlines and body text." },
+          { title: "Preview Your Guide", description: "The right panel provides a live preview of your basic brand style guide, which you can use as a starting point." }
+      ],
+      features: [
+          { icon: Palette, title: "Color Palette", description: "Visually define your brand's core color scheme." },
+          { icon: Type, title: "Typography Set", description: "Establish a consistent look and feel with defined headline and body fonts." },
+          { icon: Brush, title: "Quick Prototyping", description: "A simple tool to quickly prototype a brand's visual identity for presentations or initial client discussions." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Brand Details</CardTitle></CardHeader>
@@ -31,8 +48,8 @@ export default function BrandStyleGuideStarterTool() {
             <div><Label>Primary Color</Label><Input type="color" value={primaryColor} onChange={e => setPrimaryColor(e.target.value)} className="w-full"/></div>
             <div><Label>Secondary Color</Label><Input type="color" value={secondaryColor} onChange={e => setSecondaryColor(e.target.value)} className="w-full"/></div>
             <div><Label>Neutral Color</Label><Input type="color" value={neutralColor} onChange={e => setNeutralColor(e.target.value)} className="w-full"/></div>
-            <div><Label>Headline Font</Label><Input value={headlineFont} onChange={e => setHeadlineFont(e.target.value)} /></div>
-            <div><Label>Body Font</Label><Input value={bodyFont} onChange={e => setBodyFont(e.target.value)} /></div>
+            <div><Label>Headline Font</Label><Input value={headlineFont} onChange={e => setHeadlineFont(e.target.value)} placeholder="e.g., Poppins" /></div>
+            <div><Label>Body Font</Label><Input value={bodyFont} onChange={e => setBodyFont(e.target.value)} placeholder="e.g., Lato" /></div>
         </CardContent>
       </Card>
       <Card className="md:col-span-2">
@@ -60,5 +77,7 @@ export default function BrandStyleGuideStarterTool() {
         </CardContent>
       </Card>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

@@ -8,6 +8,9 @@ import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import HowToUseGuide from '../how-to-use-guide';
+import { Layers, Lightbulb, Code } from 'lucide-react';
+
 
 export default function NeumorphismGeneratorTool() {
   const [size, setSize] = useState(200);
@@ -31,7 +34,22 @@ export default function NeumorphismGeneratorTool() {
     toast({ title: 'Copied CSS to clipboard!' });
   };
   
+  const guideProps = {
+      title: "How to Use the Neumorphism Generator",
+      steps: [
+          { title: "Adjust Properties", description: "Use the sliders to control the size, radius, shadow distance, and blur." },
+          { title: "Choose Background Color", description: "Select a background color. Neumorphism works best with light, off-white, or grayish colors." },
+          { title: "Copy the CSS", description: "Click the copy button to get the generated CSS code for your project." }
+      ],
+      features: [
+          { icon: Layers, title: "Soft UI", description: "Create the popular 'soft UI' or Neumorphism effect where elements extrude from the background." },
+          { icon: Lightbulb, title: "Interactive Controls", description: "Visually tune the shadow properties to achieve the perfect soft, plastic-like aesthetic for your components." },
+          { icon: Code, title: "Ready-to-Use CSS", description: "Generates the complex `box-shadow` property needed for the effect, ready to be pasted into your code." }
+      ]
+  };
+  
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Settings</CardTitle></CardHeader>
@@ -72,5 +90,7 @@ export default function NeumorphismGeneratorTool() {
         </Card>
       </div>
     </div>
+     <HowToUseGuide {...guideProps} />
+    </>
   );
 }

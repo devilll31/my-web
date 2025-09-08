@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { UploadCloud, Loader2 } from 'lucide-react';
+import { UploadCloud, Loader2, Palette, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
 import { AnimatePresence, motion } from 'framer-motion';
 import { extractPaletteFromImage } from '@/ai/flows/palette-extractor-from-image';
+import HowToUseGuide from '../how-to-use-guide';
+import { Check, Copy } from 'lucide-react';
 
 export default function PaletteGeneratorFromImageTool() {
   const [image, setImage] = useState<string | null>(null);
@@ -54,8 +56,23 @@ export default function PaletteGeneratorFromImageTool() {
     navigator.clipboard.writeText(text);
     toast({ title: 'Copied!', description: `${text} copied to clipboard.` });
   };
+  
+  const guideProps = {
+      title: "How to Use the Palette Generator",
+      steps: [
+          { title: "Upload an Image", description: "Drag and drop an image or click to select a file from your device." },
+          { title: "AI Analysis", description: "Our AI will analyze the image to identify the most prominent and harmonious colors." },
+          { title: "Copy Palette Colors", description: "Click on any of the generated color hex codes to copy them to your clipboard." }
+      ],
+      features: [
+          { icon: Upload, title: "Easy Upload", description: "A simple drag-and-drop interface makes it easy to get started." },
+          { icon: Palette, title: "Harmonious Palettes", description: "The AI is trained to extract color palettes that are visually appealing and work well together." },
+          { icon: Copy, title: "One-Click Copy", description: "Quickly grab the hex codes you need for your design projects." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <div
         className="w-full aspect-square border-2 border-dashed rounded-lg flex items-center justify-center bg-muted/50 relative overflow-hidden"
@@ -103,5 +120,7 @@ export default function PaletteGeneratorFromImageTool() {
         )}
       </div>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

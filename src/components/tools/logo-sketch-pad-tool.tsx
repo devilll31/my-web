@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Eraser, Pencil, Palette } from 'lucide-react';
+import HowToUseGuide from '../how-to-use-guide';
+import { Brush, Paintbrush, Download } from 'lucide-react';
 
 export default function LogoSketchPadTool() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -55,9 +57,35 @@ export default function LogoSketchPadTool() {
       if(context && canvas) {
           context.clearRect(0,0, canvas.width, canvas.height);
       }
-  }
+  };
+  
+  const downloadSketch = () => {
+      const canvas = canvasRef.current;
+      if(canvas) {
+          const image = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = image;
+          link.download = 'logo-sketch.png';
+          link.click();
+      }
+  };
+  
+  const guideProps = {
+      title: "How to Use the Logo Sketch Pad",
+      steps: [
+          { title: "Select Your Tool", description: "Choose your brush color and size from the control panel." },
+          { title: "Start Sketching", description: "Click and drag on the canvas to draw your logo idea. Use the eraser color to correct mistakes." },
+          { title: "Download Your Sketch", description: "When you're done, click the 'Download Sketch' button to save your creation as a PNG file." }
+      ],
+      features: [
+          { icon: Brush, title: "Simple Drawing Tools", description: "Basic controls for brush color and size allow for quick and easy sketching." },
+          { icon: Paintbrush, title: "Creative Canvas", description: "A freeform digital canvas perfect for brainstorming and visualizing initial logo concepts." },
+          { icon: Download, title: "Export as PNG", description: "Easily save your sketch as a transparent PNG file to share or use in other applications." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Tools</CardTitle></CardHeader>
@@ -75,6 +103,7 @@ export default function LogoSketchPadTool() {
             <Input type="range" min="1" max="50" value={brushSize} onChange={e => setBrushSize(Number(e.target.value))} />
           </div>
           <Button onClick={clearCanvas} variant="destructive" className="w-full">Clear Canvas</Button>
+          <Button onClick={downloadSketch} className="w-full">Download Sketch</Button>
         </CardContent>
       </Card>
       <Card className="md:col-span-2">
@@ -93,5 +122,7 @@ export default function LogoSketchPadTool() {
         </CardContent>
       </Card>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

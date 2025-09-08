@@ -9,6 +9,8 @@ import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Input } from '@/components/ui/input';
+import HowToUseGuide from '../how-to-use-guide';
+import { Waves, CircleDot, Code } from 'lucide-react';
 
 const generateBlob = (complexity: number, contrast: number): string => {
   const numPoints = 6 + Math.floor(complexity * 6);
@@ -63,8 +65,23 @@ export default function SvgWaveBlobGeneratorTool() {
   };
   
   const randomize = () => setKey(k => k + 1);
+  
+  const guideProps = {
+      title: "How to Use the SVG Wave & Blob Generator",
+      steps: [
+          { title: "Choose a Shape", description: "Select whether you want to generate a wave or a blob." },
+          { title: "Customize", description: "Use the sliders to adjust the complexity and contrast (or sharpness) of the shape. Pick a color to fill it." },
+          { title: "Copy the SVG", description: "Click the copy button to get the full SVG code, ready to be embedded in your website or design file." }
+      ],
+      features: [
+          { icon: Waves, title: "Organic Shapes", description: "Create beautiful, organic-looking waves and blobs to add a modern touch to your designs." },
+          { icon: CircleDot, title: "Randomize", description: "Not sure where to start? Use the 'Randomize' button to generate new and unique blob shapes." },
+          { icon: Code, title: "Vector & Scalable", description: "The output is in SVG format, meaning it's a vector that can be scaled to any size without losing quality." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Controls</CardTitle></CardHeader>
@@ -104,5 +121,7 @@ export default function SvgWaveBlobGeneratorTool() {
         </Card>
       </div>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

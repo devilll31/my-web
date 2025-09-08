@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Copy, Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Checkbox } from '@/components/ui/checkbox';
+import HowToUseGuide from '../how-to-use-guide';
+import { Layers, Palette, Code } from 'lucide-react';
 
 export default function ShadowGeneratorTool() {
   const [hOffset, setHOffset] = useState(10);
@@ -27,7 +29,22 @@ export default function ShadowGeneratorTool() {
     toast({ title: 'Copied CSS to clipboard!' });
   };
 
+  const guideProps = {
+      title: "How to Use the Shadow Generator",
+      steps: [
+          { title: "Adjust Shadow Properties", description: "Use the sliders to control the horizontal and vertical offsets, blur, and spread of the shadow." },
+          { title: "Set Color and Opacity", description: "Choose a shadow color and adjust its opacity to create the perfect look for your design." },
+          { title: "Copy the CSS", description: "Click the copy button to get the `box-shadow` CSS property to use in your projects." }
+      ],
+      features: [
+          { icon: Layers, title: "Full Control", description: "Fine-tune every aspect of your box shadow, including offsets, blur, spread, color, and opacity." },
+          { icon: Palette, title: "Inset Shadows", description: "Easily switch between standard outset shadows and inset shadows with a single checkbox." },
+          { icon: Code, title: "Ready-to-Use CSS", description: "Generates clean and efficient CSS code, including RGBA for color opacity, ready to be pasted into your stylesheet." }
+      ]
+  };
+
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Shadow Controls</CardTitle></CardHeader>
@@ -76,5 +93,7 @@ export default function ShadowGeneratorTool() {
         </Card>
       </div>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Globe } from 'lucide-react';
+import { Globe, MapPin, Wifi } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
+import HowToUseGuide from '../how-to-use-guide';
 
 export default function IpLocationFinderTool() {
   const [ipData, setIpData] = useState<{ ip: string; city: string; region: string; country: string; } | null>(null);
@@ -27,8 +28,23 @@ export default function IpLocationFinderTool() {
         setLoading(false);
       });
   }, []);
+  
+  const guideProps = {
+      title: "How to Use the IP Location Finder",
+      steps: [
+          { title: "Load the Tool", description: "The tool automatically fetches your public IP address and its estimated location upon loading." },
+          { title: "View Your IP", description: "Your public IP address is displayed prominently." },
+          { title: "See Location", description: "The estimated city, region, and country based on your IP are shown below." }
+      ],
+      features: [
+          { icon: Wifi, title: "Automatic Detection", description: "No input required. The tool instantly finds your public IP address." },
+          { icon: MapPin, title: "Geolocation Data", description: "Provides an approximate geographical location based on your IP, useful for checking your network's public presence." },
+          { icon: Globe, title: "Simple & Fast", description: "A quick and easy way to find your IP address and see how it's perceived geographically on the internet." }
+      ]
+  };
 
   return (
+    <>
     <Card className="w-full max-w-lg mx-auto bg-card shadow-lg border-border/50">
       <CardHeader>
         <CardTitle className="text-center text-2xl font-headline flex items-center justify-center gap-2">
@@ -54,5 +70,7 @@ export default function IpLocationFinderTool() {
         )}
       </CardContent>
     </Card>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

@@ -8,6 +8,9 @@ import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import HowToUseGuide from '../how-to-use-guide';
+import { Eye, Droplet, Code } from 'lucide-react';
+
 
 export default function GlassmorphismGeneratorTool() {
   const [blur, setBlur] = useState(10);
@@ -30,8 +33,23 @@ export default function GlassmorphismGeneratorTool() {
     navigator.clipboard.writeText(cssString);
     toast({ title: 'Copied CSS to clipboard!' });
   };
+  
+  const guideProps = {
+      title: "How to Use the Glassmorphism Generator",
+      steps: [
+          { title: "Adjust Settings", description: "Use the sliders to control the blur and transparency levels of the glass effect." },
+          { title: "Pick a Color", description: "Choose a base color for the glass to give it a subtle tint." },
+          { title: "Copy the CSS", description: "Click the copy button to get the generated CSS code for your project." }
+      ],
+      features: [
+          { icon: Eye, title: "Visual Control", description: "Instantly see the effect of your changes on the preview element." },
+          { icon: Droplet, title: "Customizable Tint", description: "Easily adjust the color and transparency to match your design's aesthetic." },
+          { icon: Code, title: "Ready-to-Use CSS", description: "Generates clean, cross-browser compatible CSS, including the necessary `-webkit-` prefix for `backdrop-filter`." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Settings</CardTitle></CardHeader>
@@ -64,5 +82,7 @@ export default function GlassmorphismGeneratorTool() {
         </Card>
       </div>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }

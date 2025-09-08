@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import HowToUseGuide from '../how-to-use-guide';
+import { Shapes, Code, Scissors } from 'lucide-react';
 
 const shapes = {
   circle: 'circle(50% at 50% 50%)',
@@ -26,8 +28,23 @@ export default function CssClipPathMakerTool() {
     navigator.clipboard.writeText(`clip-path: ${clipPathValue};`);
     toast({ title: 'Copied CSS to clipboard!' });
   };
+  
+  const guideProps = {
+      title: "How to Use the CSS Clip-Path Maker",
+      steps: [
+          { title: "Select a Shape", description: "Choose a preset shape from the dropdown menu to apply to the preview element." },
+          { title: "Preview the Result", description: "Instantly see how the selected clip-path affects the element in the preview area." },
+          { title: "Copy the CSS", description: "Click the copy button to grab the CSS code for the `clip-path` property to use in your own projects." }
+      ],
+      features: [
+          { icon: Shapes, title: "Preset Shapes", description: "Quickly generate complex shapes like stars, triangles, and rhombuses without writing manual polygons." },
+          { icon: Scissors, title: "Visual Feedback", description: "An immediate visual representation of how clip-path can mask elements to create interesting designs." },
+          { icon: Code, title: "Ready-to-Use CSS", description: "Get clean, cross-browser compatible CSS code that you can drop directly into your stylesheets." }
+      ]
+  };
 
   return (
+    <>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-1">
         <CardHeader><CardTitle>Shape</CardTitle></CardHeader>
@@ -56,5 +73,7 @@ export default function CssClipPathMakerTool() {
         </Card>
       </div>
     </div>
+    <HowToUseGuide {...guideProps} />
+    </>
   );
 }
