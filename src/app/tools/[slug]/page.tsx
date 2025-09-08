@@ -136,6 +136,14 @@ import GlassmorphismGeneratorTool from '@/components/tools/glassmorphism-generat
 import NeumorphismGeneratorTool from '@/components/tools/neumorphism-generator-tool';
 import ShadowGeneratorTool from '@/components/tools/shadow-generator-tool';
 import BorderRadiusVisualizerTool from '@/components/tools/border-radius-visualizer-tool';
+import CssClipPathMakerTool from '@/components/tools/css-clip-path-maker-tool';
+import SvgWaveBlobGeneratorTool from '@/components/tools/svg-wave-blob-generator-tool';
+import FaviconGeneratorTool from '@/components/tools/favicon-generator-tool';
+import AppIconGeneratorTool from '@/components/tools/app-icon-generator-tool';
+import SocialMediaBannerResizerTool from '@/components/tools/social-media-banner-resizer-tool';
+import LogoSketchPadTool from '@/components/tools/logo-sketch-pad-tool';
+import BrandStyleGuideStarterTool from '@/components/tools/brand-style-guide-starter-tool';
+import FontPairingSuggestionsTool from '@/components/tools/font-pairing-suggestions-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -418,6 +426,22 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <ShadowGeneratorTool />;
     case 'border-radius-visualizer':
         return <BorderRadiusVisualizerTool />;
+    case 'css-clip-path-maker':
+        return <CssClipPathMakerTool />;
+    case 'svg-wave-blob-generator':
+        return <SvgWaveBlobGeneratorTool />;
+    case 'favicon-generator':
+        return <FaviconGeneratorTool />;
+    case 'app-icon-generator':
+        return <AppIconGeneratorTool />;
+    case 'social-media-banner-resizer':
+        return <SocialMediaBannerResizerTool />;
+    case 'logo-sketch-pad':
+        return <LogoSketchPadTool />;
+    case 'brand-style-guide-starter':
+        return <BrandStyleGuideStarterTool />;
+    case 'font-pairing-suggestions':
+        return <FontPairingSuggestionsTool />;
     // Other tools will be added here
     default:
       return (
