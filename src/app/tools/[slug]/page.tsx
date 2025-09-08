@@ -144,6 +144,12 @@ import SocialMediaBannerResizerTool from '@/components/tools/social-media-banner
 import LogoSketchPadTool from '@/components/tools/logo-sketch-pad-tool';
 import BrandStyleGuideStarterTool from '@/components/tools/brand-style-guide-starter-tool';
 import FontPairingSuggestionsTool from '@/components/tools/font-pairing-suggestions-tool';
+import PlaceholderImageGeneratorTool from '@/components/tools/placeholder-image-generator-tool';
+import PlaceholderTextAvatarGeneratorTool from '@/components/tools/placeholder-text-avatar-generator-tool';
+import WireframeBlocksLibraryTool from '@/components/tools/wireframe-blocks-library-tool';
+import UiComponentShadowTokensTool from '@/components/tools/ui-component-shadow-tokens-tool';
+import CssVariablePaletteExporterTool from '@/components/tools/css-variable-palette-exporter-tool';
+import AccessibilityLandmarksCheckerTool from '@/components/tools/accessibility-landmarks-checker-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -442,6 +448,18 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <BrandStyleGuideStarterTool />;
     case 'font-pairing-suggestions':
         return <FontPairingSuggestionsTool />;
+    case 'placeholder-image-generator':
+        return <PlaceholderImageGeneratorTool />;
+    case 'placeholder-text-avatar-generator':
+        return <PlaceholderTextAvatarGeneratorTool />;
+    case 'wireframe-blocks-library':
+        return <WireframeBlocksLibraryTool />;
+    case 'ui-component-shadow-tokens':
+        return <UiComponentShadowTokensTool />;
+    case 'css-variable-palette-exporter':
+        return <CssVariablePaletteExporterTool />;
+    case 'accessibility-landmarks-checker':
+        return <AccessibilityLandmarksCheckerTool />;
     // Other tools will be added here
     default:
       return (

@@ -515,7 +515,6 @@ const tools: Tool[] = [
   { name: 'Logo Sketch Pad', slug: 'logo-sketch-pad', description: 'A basic sketch pad for logo ideas.', category: 'color-design-branding', isImplemented: true },
   { name: 'Brand Style Guide Starter', slug: 'brand-style-guide-starter', description: 'A starter template for brand style guides.', category: 'color-design-branding', isImplemented: true },
   { name: 'Font Pairing Suggestions', slug: 'font-pairing-suggestions', description: 'Get suggestions for font pairings.', category: 'color-design-branding', isImplemented: true },
-  { name: 'Webfont Converter', slug: 'webfont-converter', description: 'Convert fonts to webfont formats (TTF, WOFF, WOFF2).', category: 'color-design-branding' },
   { name: 'Placeholder Image Generator', slug: 'placeholder-image-generator', description: 'Generate placeholder images.', category: 'color-design-branding' },
   { name: 'Placeholder Text/Avatar Generator', slug: 'placeholder-text-avatar-generator', description: 'Generate placeholder text and avatars.', category: 'color-design-branding' },
   { name: 'Wireframe Blocks Library', slug: 'wireframe-blocks-library', description: 'A library of wireframe blocks.', category: 'color-design-branding' },
