@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useRef } from 'react';
@@ -107,7 +106,7 @@ export default function SocialMediaBannerResizerTool() {
             <Card className="md:col-span-2">
                  <CardHeader><CardTitle>Preview ({bannerSizes[platform].name})</CardTitle></CardHeader>
                  <CardContent>
-                     <div className="p-4 border rounded-lg bg-muted flex items-center justify-center" style={{aspectRatio: `${bannerSizes[platform].width}/${bannerSizes[platform].height}`}}>
+                     <div className="p-4 border rounded-lg bg-muted flex items-center justify-center relative" style={{aspectRatio: `${bannerSizes[platform].width}/${bannerSizes[platform].height}`}}>
                         {sourceImage ? (
                             <Image src={sourceImage} alt="Preview" layout="fill" style={{objectFit: 'cover'}}/>
                         ) : (
