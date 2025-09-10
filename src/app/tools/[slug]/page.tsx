@@ -3,6 +3,7 @@
 
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -182,6 +183,14 @@ import TextAnalyzerTool from '@/components/tools/text-analyzer-tool';
 import ReadabilityCheckerTool from '@/components/tools/readability-checker-tool';
 import GrammarCheckerTool from '@/components/tools/grammar-checker-tool';
 import SpellingCheckerTool from '@/components/tools/spelling-checker-tool';
+import PunctuationFixerTool from '@/components/tools/punctuation-fixer-tool';
+import CaseConverterTool from '@/components/tools/case-converter-tool';
+import RemoveExtraSpacesTool from '@/components/tools/remove-extra-spaces-tool';
+import RemoveLineBreaksTool from '@/components/tools/remove-line-breaks-tool';
+import SortLinesTool from '@/components/tools/sort-lines-tool';
+import UniqueLinesTool from '@/components/tools/unique-lines-tool';
+import FindReplaceTool from '@/components/tools/find-replace-tool';
+import UrlExtractorTool from '@/components/tools/url-extractor-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -558,6 +567,22 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <GrammarCheckerTool />;
     case 'spelling-checker':
       return <SpellingCheckerTool />;
+    case 'punctuation-fixer':
+      return <PunctuationFixerTool />;
+    case 'case-converter':
+      return <CaseConverterTool />;
+    case 'remove-extra-spaces':
+      return <RemoveExtraSpacesTool />;
+    case 'remove-line-breaks':
+      return <RemoveLineBreaksTool />;
+    case 'sort-lines':
+      return <SortLinesTool />;
+    case 'unique-lines':
+      return <UniqueLinesTool />;
+    case 'find-and-replace':
+      return <FindReplaceTool />;
+    case 'url-extractor':
+      return <UrlExtractorTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
