@@ -2,6 +2,7 @@
 
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -544,8 +545,11 @@ const ToolComponent = ({ slug }: { slug: string }) => {
     case 'spell-out-numbers':
         return <SpellOutNumbersTool />;
     case 'word-counter':
+      return <TextAnalyzerTool highlight="words" />;
     case 'character-counter':
+      return <TextAnalyzerTool highlight="characters" />;
     case 'sentence-counter':
+      return <TextAnalyzerTool highlight="sentences" />;
     case 'reading-time-estimator':
       return <TextAnalyzerTool />;
     case 'readability-checker':
