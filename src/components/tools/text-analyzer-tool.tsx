@@ -74,7 +74,7 @@ export default function TextAnalyzerTool({ highlight = 'words' }: TextAnalyzerTo
           id="text-input"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="min-h-[350px] text-base"
+          className="min-h-[450px] text-base"
           placeholder="Paste your text here..."
         />
       </div>
