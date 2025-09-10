@@ -1,4 +1,3 @@
-
 import {
   FileText,
   Image,
@@ -180,9 +179,9 @@ const tools: Tool[] = [
   { name: 'Sentence Counter', slug: 'sentence-counter', description: 'Count the number of sentences in a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Reading Time Estimator', slug: 'reading-time-estimator', description: 'Estimate the reading time for a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Readability Checker', slug: 'readability-checker', description: 'Check the readability of a text (FK, SMOG).', category: 'text-writing-tools', isImplemented: true },
-  { name: 'Grammar Checker', slug: 'grammar-checker', description: 'Check text for grammatical errors.', category: 'text-writing-tools', isImplemented: false },
-  { name: 'Spelling Checker', slug: 'spelling-checker', description: 'Check text for spelling mistakes.', category: 'text-writing-tools', isImplemented: false },
-  { name: 'Punctuation Fixer', slug: 'punctuation-fixer', description: 'Automatically fix punctuation in a text.', category: 'text-writing-tools', isImplemented: false },
+  { name: 'Grammar Checker', slug: 'grammar-checker', description: 'Check text for grammatical errors.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Spelling Checker', slug: 'spelling-checker', description: 'Check text for spelling mistakes.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Punctuation Fixer', slug: 'punctuation-fixer', description: 'Automatically fix punctuation in a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to different cases (upper, lower, etc.).', category: 'text-writing-tools', isImplemented: true },
   { name: 'Remove Extra Spaces', slug: 'remove-extra-spaces', description: 'Remove extra spaces from a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Remove Line Breaks', slug: 'remove-line-breaks', description: 'Remove line breaks from a text.', category: 'text-writing-tools', isImplemented: true },
@@ -190,15 +189,16 @@ const tools: Tool[] = [
   { name: 'Unique Lines (dedupe)', slug: 'unique-lines', description: 'Remove duplicate lines from a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Find & Replace', slug: 'find-and-replace', description: 'Find and replace text in bulk.', category: 'text-writing-tools', isImplemented: true },
   { name: 'URL Extractor from Text', slug: 'url-extractor', description: 'Extract all URLs from a block of text.', category: 'text-writing-tools', isImplemented: true },
-  { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', category: 'text-writing-tools' },
-  { name: 'Blog Title Generator', slug: 'blog-title-generator', description: 'Generate blog titles with AI.', category: 'text-writing-tools' },
-  { name: 'Meta Description Generator', slug: 'meta-description-generator', description: 'Generate meta descriptions with AI.', category: 'text-writing-tools' },
-  { name: 'Paraphraser', slug: 'paraphraser', description: 'Paraphrase text using AI.', category: 'text-writing-tools' },
-  { name: 'Summarizer', slug: 'summarizer', description: 'Summarize text using AI.', category: 'text-writing-tools' },
-  { name: 'Keyword Extractor', slug: 'keyword-extractor', description: 'Extract keywords from text using NLP.', category: 'text-writing-tools' },
-  { name: 'Hashtag Generator', slug: 'hashtag-generator', description: 'Generate hashtags for social media.', category: 'text-writing-tools' },
-  { name: 'Slug Generator', slug: 'slug-generator', description: 'Create SEO-friendly URL slugs.', category: 'text-writing-tools' },
-  { name: 'Text Diff', slug: 'text-diff', description: 'Compare two texts side-by-side.', category: 'text-writing-tools' },
+  { name: 'Email Extractor from Text', slug: 'email-extractor', description: 'Extract all email addresses from a block of text.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Blog Title Generator', slug: 'blog-title-generator', description: 'Generate blog titles with AI.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Meta Description Generator', slug: 'meta-description-generator', description: 'Generate meta descriptions with AI.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Paraphraser', slug: 'paraphraser', description: 'Paraphrase text using AI.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Summarizer', slug: 'summarizer', description: 'Summarize text using AI.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Keyword Extractor', slug: 'keyword-extractor', description: 'Extract keywords from text using NLP.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Hashtag Generator', slug: 'hashtag-generator', description: 'Generate hashtags for social media.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Slug Generator', slug: 'slug-generator', description: 'Create SEO-friendly URL slugs.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Text Diff', slug: 'text-diff', description: 'Compare two texts side-by-side.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Markdown Editor', slug: 'markdown-editor', description: 'A what-you-see-is-what-you-get Markdown editor.', category: 'text-writing-tools' },
   { name: 'HTML Entities Encoder/Decoder', slug: 'html-entities-encoder-decoder', description: 'Encode or decode HTML entities.', category: 'text-writing-tools' },
   { name: 'Base64 Text Encoder/Decoder', slug: 'base64-text-encoder-decoder', description: 'Encode or decode text in Base64.', category: 'text-writing-tools' },
@@ -654,5 +654,3 @@ export const getTop50Tools = (): Tool[] => {
     
     return popularToolSlugs.map(slug => getToolBySlug(slug)).filter((t): t is Tool => !!t);
 };
-
-    

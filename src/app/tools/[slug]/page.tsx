@@ -4,6 +4,7 @@
 
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -191,6 +192,16 @@ import SortLinesTool from '@/components/tools/sort-lines-tool';
 import UniqueLinesTool from '@/components/tools/unique-lines-tool';
 import FindReplaceTool from '@/components/tools/find-replace-tool';
 import UrlExtractorTool from '@/components/tools/url-extractor-tool';
+import EmailExtractorTool from '@/components/tools/email-extractor-tool';
+import LoremIpsumGeneratorTool from '@/components/tools/lorem-ipsum-generator-tool';
+import BlogTitleGeneratorTool from '@/components/tools/blog-title-generator-tool';
+import MetaDescriptionGeneratorTool from '@/components/tools/meta-description-generator-tool';
+import ParaphraserTool from '@/components/tools/paraphraser-tool';
+import SummarizerTool from '@/components/tools/summarizer-tool';
+import KeywordExtractorTool from '@/components/tools/keyword-extractor-tool';
+import HashtagGeneratorTool from '@/components/tools/hashtag-generator-tool';
+import SlugGeneratorTool from '@/components/tools/slug-generator-tool';
+import TextDiffTool from '@/components/tools/text-diff-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -583,6 +594,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <FindReplaceTool />;
     case 'url-extractor':
       return <UrlExtractorTool />;
+    case 'email-extractor':
+        return <EmailExtractorTool />;
+    case 'lorem-ipsum-generator':
+        return <LoremIpsumGeneratorTool />;
+    case 'blog-title-generator':
+        return <BlogTitleGeneratorTool />;
+    case 'meta-description-generator':
+        return <MetaDescriptionGeneratorTool />;
+    case 'paraphraser':
+        return <ParaphraserTool />;
+    case 'summarizer':
+        return <SummarizerTool />;
+    case 'keyword-extractor':
+        return <KeywordExtractorTool />;
+    case 'hashtag-generator':
+        return <HashtagGeneratorTool />;
+    case 'slug-generator':
+        return <SlugGeneratorTool />;
+    case 'text-diff':
+        return <TextDiffTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
@@ -648,5 +679,3 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
-    
