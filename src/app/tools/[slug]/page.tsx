@@ -1,5 +1,6 @@
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -168,6 +169,13 @@ import EmojiStripperNormalizerTool from '@/components/tools/emoji-stripper-norma
 import RegexAccentInsensitiveHelperTool from '@/components/tools/regex-accent-insensitive-helper-tool';
 import IcuMessagePreviewerTool from '@/components/tools/icu-message-previewer-tool';
 import CsvLanguageColumnsMergerTool from '@/components/tools/csv-language-columns-merger-tool';
+import TableOcrTool from '@/components/tools/table-ocr-tool';
+import MathOcrTool from '@/components/tools/math-ocr-tool';
+import PassportMrzReaderTool from '@/components/tools/passport-mrz-reader-tool';
+import IdCardOcrRedactorTool from '@/components/tools/id-card-ocr-redactor-tool';
+import SlugifyInternationalCharactersTool from '@/components/tools/slugify-international-characters-tool';
+import PluralsInflectionsHelperTool from '@/components/tools/plurals-inflections-helper-tool';
+import SpellOutNumbersTool from '@/components/tools/spell-out-numbers-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -516,7 +524,20 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <IcuMessagePreviewerTool />;
     case 'csv-language-columns-merger':
       return <CsvLanguageColumnsMergerTool />;
-    // Other tools will be added here
+    case 'table-ocr':
+        return <TableOcrTool />;
+    case 'math-ocr':
+        return <MathOcrTool />;
+    case 'passport-mrz-reader':
+        return <PassportMrzReaderTool />;
+    case 'id-card-ocr-redactor':
+        return <IdCardOcrRedactorTool />;
+    case 'slugify-international-characters':
+        return <SlugifyInternationalCharactersTool />;
+    case 'plurals-inflections-helper':
+        return <PluralsInflectionsHelperTool />;
+    case 'spell-out-numbers':
+        return <SpellOutNumbersTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
@@ -582,3 +603,5 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+    

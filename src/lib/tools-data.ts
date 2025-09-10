@@ -28,7 +28,7 @@ export interface Tool {
 }
 
 export interface Category {
-  name: string;
+  name:string;
   slug: string;
   icon: LucideIcon;
   tools: Tool[];
@@ -498,7 +498,7 @@ const tools: Tool[] = [
   { name: 'DNS over HTTPS Test', slug: 'dns-over-https-test', description: 'Test for DNS over HTTPS.', category: 'networking-diagnostics' },
 
   // 13) Color, Design & Branding
-  { name: 'IP Location Finder (end-user friendly wrapper)', slug: 'ip-location-finder', description: 'Find the location of an IP address.', category: 'color-design-branding', isImplemented: true },
+  { name: 'IP Location Finder', slug: 'ip-location-finder', description: 'Find the location of an IP address.', category: 'color-design-branding', isImplemented: true },
   { name: 'Color Picker (HEX/RGB/HSL)', slug: 'color-picker', description: 'Pick colors and get their values in HEX, RGB, and HSL.', category: 'color-design-branding', isImplemented: true },
   { name: 'Contrast Checker (WCAG)', slug: 'contrast-checker', description: 'Check color contrast for WCAG compliance.', category: 'color-design-branding', isImplemented: true },
   { name: 'Palette Generator from Image', slug: 'palette-generator-from-image', description: 'Generate a color palette from an image.', category: 'color-design-branding', isImplemented: true },
@@ -529,16 +529,16 @@ const tools: Tool[] = [
   { name: 'Image to Text (OCR)', slug: 'image-to-text-ocr', description: 'Extract text from images using OCR.', category: 'ocr-language-localization', isImplemented: true },
   { name: 'PDF to Text (OCR)', slug: 'pdf-to-text-ocr', description: 'Extract text from PDFs using OCR.', category: 'ocr-language-localization', isImplemented: true },
   { name: 'Handwriting OCR', slug: 'handwriting-ocr', description: 'Extract text from handwritten notes.', category: 'ocr-language-localization', isImplemented: true },
-  { name: 'Table OCR', slug: 'table-ocr', description: 'Extract tables from images and PDFs.', category: 'ocr-language-localization' },
-  { name: 'Math OCR', slug: 'math-ocr', description: 'Extract mathematical equations from images.', category: 'ocr-language-localization' },
+  { name: 'Table OCR', slug: 'table-ocr', description: 'Extract tables from images and PDFs.', category: 'ocr-language-localization', isImplemented: false },
+  { name: 'Math OCR', slug: 'math-ocr', description: 'Extract mathematical equations from images.', category: 'ocr-language-localization', isImplemented: false },
   { name: 'Business Card OCR to VCF', slug: 'business-card-ocr-to-vcf', description: 'Convert business cards to VCF files.', category: 'ocr-language-localization', isImplemented: true },
-  { name: 'Passport/MRZ Reader', slug: 'passport-mrz-reader', description: 'Read Machine-Readable Zones from passports.', category: 'ocr-language-localization' },
-  { name: 'ID Card OCR Redactor', slug: 'id-card-ocr-redactor', description: 'Redact sensitive information from ID cards.', category: 'ocr-language-localization' },
+  { name: 'Passport/MRZ Reader', slug: 'passport-mrz-reader', description: 'Read Machine-Readable Zones from passports.', category: 'ocr-language-localization', isImplemented: false },
+  { name: 'ID Card OCR Redactor', slug: 'id-card-ocr-redactor', description: 'Redact sensitive information from ID cards.', category: 'ocr-language-localization', isImplemented: false },
   { name: 'Language Detector', slug: 'language-detector', description: 'Detect the language of a text.', category: 'ocr-language-localization', isImplemented: true },
   { name: 'Transliteration Tool', slug: 'transliteration-tool', description: 'Transliterate text between different scripts.', category: 'ocr-language-localization', isImplemented: true },
-  { name: 'Slugify International Characters', slug: 'slugify-international-characters', description: 'Slugify international characters.', category: 'ocr-language-localization' },
-  { name: 'Plurals & Inflections Helper', slug: 'plurals-inflections-helper', description: 'A helper for plurals and inflections.', category: 'ocr-language-localization' },
-  { name: 'Spell-Out Numbers', slug: 'spell-out-numbers', description: 'Spell out numbers in different languages.', category: 'ocr-language-localization' },
+  { name: 'Slugify International Characters', slug: 'slugify-international-characters', description: 'Slugify international characters.', category: 'ocr-language-localization', isImplemented: false },
+  { name: 'Plurals & Inflections Helper', slug: 'plurals-inflections-helper', description: 'A helper for plurals and inflections.', category: 'ocr-language-localization', isImplemented: false },
+  { name: 'Spell-Out Numbers', slug: 'spell-out-numbers', description: 'Spell out numbers in different languages.', category: 'ocr-language-localization', isImplemented: false },
   { name: 'Number-to-Words Converter', slug: 'number-to-words-converter', description: 'Convert numbers to words.', category: 'ocr-language-localization', isImplemented: true },
   { name: 'Words-to-Number Converter', slug: 'words-to-number-converter', description: 'Convert words to numbers.', category: 'ocr-language-localization', isImplemented: true },
   { name: 'Date Localization Formatter', slug: 'date-localization-formatter', description: 'Format dates for different locales.', category: 'ocr-language-localization', isImplemented: true },
@@ -655,3 +655,5 @@ export const getTop50Tools = (): Tool[] => {
     
     return popularToolSlugs.map(slug => getToolBySlug(slug)).filter((t): t is Tool => !!t);
 };
+
+    
