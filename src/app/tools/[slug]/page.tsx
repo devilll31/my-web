@@ -1,6 +1,7 @@
 
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -176,6 +177,10 @@ import IdCardOcrRedactorTool from '@/components/tools/id-card-ocr-redactor-tool'
 import SlugifyInternationalCharactersTool from '@/components/tools/slugify-international-characters-tool';
 import PluralsInflectionsHelperTool from '@/components/tools/plurals-inflections-helper-tool';
 import SpellOutNumbersTool from '@/components/tools/spell-out-numbers-tool';
+import TextAnalyzerTool from '@/components/tools/text-analyzer-tool';
+import ReadabilityCheckerTool from '@/components/tools/readability-checker-tool';
+import GrammarCheckerTool from '@/components/tools/grammar-checker-tool';
+import SpellingCheckerTool from '@/components/tools/spelling-checker-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -538,6 +543,17 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <PluralsInflectionsHelperTool />;
     case 'spell-out-numbers':
         return <SpellOutNumbersTool />;
+    case 'word-counter':
+    case 'character-counter':
+    case 'sentence-counter':
+    case 'reading-time-estimator':
+      return <TextAnalyzerTool />;
+    case 'readability-checker':
+      return <ReadabilityCheckerTool />;
+    case 'grammar-checker':
+      return <GrammarCheckerTool />;
+    case 'spelling-checker':
+      return <SpellingCheckerTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
