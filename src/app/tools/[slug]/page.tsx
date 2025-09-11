@@ -90,7 +90,7 @@ import LcmGcdCalculatorTool from '@/components/tools/lcm-gcd-calculator-tool';
 import RomanNumeralConverterTool from '@/components/tools/roman-numeral-converter-tool';
 import BaseConverterTool from '@/components/tools/base-converter-tool';
 import SignificantFiguresCalculatorTool from '@/components/tools/significant-figures-calculator-tool';
-import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference-tool';
+import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference';
 import ExponentPowerCalculatorTool from '@/components/tools/exponent-power-calculator-tool';
 import LogarithmCalculatorTool from '@/components/tools/logarithm-calculator-tool';
 import AngleConverterTool from '@/components/tools/angle-converter-tool';
@@ -212,6 +212,14 @@ import DnsLookupTool from '@/components/tools/dns-lookup-tool';
 import ReverseDnsLookupTool from '@/components/tools/reverse-dns-lookup-tool';
 import SslCertificateCheckerTool from '@/components/tools/ssl-certificate-checker-tool';
 import Http2HttpsCheckerTool from '@/components/tools/http2-https-checker-tool';
+import WebsiteSpeedTestTool from '@/components/tools/website-speed-test-tool';
+import MobileFriendlyTestTool from '@/components/tools/mobile-friendly-test-tool';
+import RedirectChainCheckerTool from '@/components/tools/redirect-chain-checker-tool';
+import BrokenLinkCheckerTool from '@/components/tools/broken-link-checker-tool';
+import SitemapGeneratorTool from '@/components/tools/sitemap-generator-tool';
+import RobotsTxtGeneratorTool from '@/components/tools/robots-txt-generator-tool';
+import HreflangGeneratorTool from '@/components/tools/hreflang-generator-tool';
+import MetaTagAnalyzerTool from '@/components/tools/meta-tag-analyzer-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -658,6 +666,22 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <SslCertificateCheckerTool />;
     case 'http2-https-checker':
       return <Http2HttpsCheckerTool />;
+    case 'website-speed-test':
+      return <WebsiteSpeedTestTool />;
+    case 'mobile-friendly-test':
+      return <MobileFriendlyTestTool />;
+    case 'redirect-chain-checker':
+      return <RedirectChainCheckerTool />;
+    case 'broken-link-checker':
+      return <BrokenLinkCheckerTool />;
+    case 'sitemap-generator':
+      return <SitemapGeneratorTool />;
+    case 'robots-txt-generator':
+      return <RobotsTxtGeneratorTool />;
+    case 'hreflang-generator':
+      return <HreflangGeneratorTool />;
+    case 'meta-tag-analyzer':
+      return <MetaTagAnalyzerTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
