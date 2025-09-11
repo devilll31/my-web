@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -213,6 +205,13 @@ import CaseStyleConverterTool from '@/components/tools/case-style-converter-tool
 import DiacriticsRemoverTool from '@/components/tools/diacritics-remover-tool';
 import JsonEscapeTool from '@/components/tools/json-escape-tool';
 import CsvEscapeTool from '@/components/tools/csv-escape-tool';
+import DomainAvailabilityCheckerTool from '@/components/tools/domain-availability-checker-tool';
+import DomainAgeCheckerTool from '@/components/tools/domain-age-checker-tool';
+import WhoisLookupTool from '@/components/tools/whois-lookup-tool';
+import DnsLookupTool from '@/components/tools/dns-lookup-tool';
+import ReverseDnsLookupTool from '@/components/tools/reverse-dns-lookup-tool';
+import SslCertificateCheckerTool from '@/components/tools/ssl-certificate-checker-tool';
+import Http2HttpsCheckerTool from '@/components/tools/http2-https-checker-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -645,6 +644,20 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <JsonEscapeTool />;
     case 'csv-escape-unescape':
         return <CsvEscapeTool />;
+    case 'domain-availability-checker':
+      return <DomainAvailabilityCheckerTool />;
+    case 'domain-age-checker':
+      return <DomainAgeCheckerTool />;
+    case 'whois-lookup':
+      return <WhoisLookupTool />;
+    case 'dns-lookup':
+      return <DnsLookupTool />;
+    case 'reverse-dns-lookup':
+      return <ReverseDnsLookupTool />;
+    case 'ssl-certificate-checker':
+      return <SslCertificateCheckerTool />;
+    case 'http2-https-checker':
+      return <Http2HttpsCheckerTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
