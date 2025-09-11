@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { UploadCloud, Download, Image as ImageIcon } from 'lucide-react';
 import Image from 'next/image';
 import HowToUseGuide from '../how-to-use-guide';
-import { Crop, AspectRatio } from 'lucide-react';
+import { Crop, Ratio } from 'lucide-react';
 
 export default function ImageResizerTool() {
     const [sourceImage, setSourceImage] = useState<string | null>(null);
@@ -75,7 +75,7 @@ export default function ImageResizerTool() {
         ],
         features: [
             { icon: Crop, title: "Custom Dimensions", description: "Easily resize any image to the exact pixel dimensions you need." },
-            { icon: AspectRatio, title: "Maintain Aspect Ratio", description: "Optionally lock the aspect ratio to scale your image without stretching or squishing it." },
+            { icon: Ratio, title: "Maintain Aspect Ratio", description: "Optionally lock the aspect ratio to scale your image without stretching or squishing it." },
         ]
     };
 
