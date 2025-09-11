@@ -236,6 +236,16 @@ const tools: Tool[] = [
   { name: 'Page Header Analyzer', slug: 'page-header-analyzer', description: 'Analyze the headers of a webpage.', category: 'seo-website-tools', isImplemented: true },
   { name: 'Server Status Checker', slug: 'server-status-checker', description: 'Check the status of a web server.', category: 'seo-website-tools', isImplemented: true },
   { name: 'Host Location Finder', slug: 'host-location-finder', description: 'Find the location of a web host.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Uptime Monitor', slug: 'uptime-monitor', description: 'Monitor the uptime of your website.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'SERP Snippet Preview', slug: 'serp-snippet-preview', description: 'Preview how your website will appear in search results.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'AMP Validator Helper', slug: 'amp-validator-helper', description: 'A helper for validating AMP pages.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Core Web Vitals Hints', slug: 'core-web-vitals-hints', description: 'Get hints for improving Core Web Vitals.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Link Extractor', slug: 'link-extractor', description: 'Extract internal and external links from a webpage.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'XML Sitemap Splitter/Merger', slug: 'xml-sitemap-splitter-merger', description: 'Split or merge XML sitemaps.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Nofollow/Follow Link Highlighter', slug: 'nofollow-link-highlighter', description: 'Highlight nofollow and follow links on a page.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Heading Structure Analyzer', slug: 'heading-structure-analyzer', description: 'Analyze the heading structure (H1-H6) of a page.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Image ALT Auditor', slug: 'image-alt-auditor', description: 'Audit image ALT text on a page.', category: 'seo-website-tools', isImplemented: true },
+  { name: 'Canonical/Duplicate Content Finder', slug: 'duplicate-content-finder', description: 'Find duplicate content issues on your site.', category: 'seo-website-tools', isImplemented: true },
 
   // 6) Finance & Business Calculators
   { name: 'EMI Calculator', slug: 'emi-calculator', description: 'Calculate Equated Monthly Installments for loans.', category: 'finance-business-calculators', isImplemented: true },

@@ -230,6 +230,16 @@ import PageSizeCheckerTool from '@/components/tools/page-size-checker-tool';
 import PageHeaderAnalyzerTool from '@/components/tools/page-header-analyzer-tool';
 import ServerStatusCheckerTool from '@/components/tools/server-status-checker-tool';
 import HostLocationFinderTool from '@/components/tools/host-location-finder-tool';
+import UptimeMonitorTool from '@/components/tools/uptime-monitor-tool';
+import SerpSnippetPreviewTool from '@/components/tools/serp-snippet-preview-tool';
+import AmpValidatorHelperTool from '@/components/tools/amp-validator-helper-tool';
+import CoreWeb vitalsHintsTool from '@/components/tools/core-web-vitals-hints-tool';
+import LinkExtractorTool from '@/components/tools/link-extractor-tool';
+import XmlSitemapSplitterMergerTool from '@/components/tools/xml-sitemap-splitter-merger-tool';
+import NofollowLinkHighlighterTool from '@/components/tools/nofollow-link-highlighter-tool';
+import HeadingStructureAnalyzerTool from '@/components/tools/heading-structure-analyzer-tool';
+import ImageAltAuditorTool from '@/components/tools/image-alt-auditor-tool';
+import DuplicateContentFinderTool from '@/components/tools/duplicate-content-finder-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -712,6 +722,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ServerStatusCheckerTool />;
     case 'host-location-finder':
       return <HostLocationFinderTool />;
+    case 'uptime-monitor':
+      return <UptimeMonitorTool />;
+    case 'serp-snippet-preview':
+      return <SerpSnippetPreviewTool />;
+    case 'amp-validator-helper':
+      return <AmpValidatorHelperTool />;
+    case 'core-web-vitals-hints':
+      return <CoreWebvitalsHintsTool />;
+    case 'link-extractor':
+      return <LinkExtractorTool />;
+    case 'xml-sitemap-splitter-merger':
+      return <XmlSitemapSplitterMergerTool />;
+    case 'nofollow-link-highlighter':
+      return <NofollowLinkHighlighterTool />;
+    case 'heading-structure-analyzer':
+      return <HeadingStructureAnalyzerTool />;
+    case 'image-alt-auditor':
+      return <ImageAltAuditorTool />;
+    case 'duplicate-content-finder':
+      return <DuplicateContentFinderTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
