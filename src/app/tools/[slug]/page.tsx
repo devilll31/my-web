@@ -240,6 +240,10 @@ import NofollowLinkHighlighterTool from '@/components/tools/nofollow-link-highli
 import HeadingStructureAnalyzerTool from '@/components/tools/heading-structure-analyzer-tool';
 import ImageAltAuditorTool from '@/components/tools/image-alt-auditor-tool';
 import DuplicateContentFinderTool from '@/components/tools/duplicate-content-finder-tool';
+import ImageResizerTool from '@/components/tools/image-resizer-tool';
+import ImageCropperTool from '@/components/tools/image-cropper-tool';
+import JsonFormatterTool from '@/components/tools/json-formatter-tool';
+import PasswordGeneratorTool from '@/components/tools/password-generator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -742,6 +746,14 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ImageAltAuditorTool />;
     case 'duplicate-content-finder':
       return <DuplicateContentFinderTool />;
+    case 'image-resizer':
+      return <ImageResizerTool />;
+    case 'image-cropper':
+      return <ImageCropperTool />;
+    case 'json-formatter':
+      return <JsonFormatterTool />;
+    case 'password-generator':
+      return <PasswordGeneratorTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">

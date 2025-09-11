@@ -85,8 +85,8 @@ const tools: Tool[] = [
   // 2) Image Tools
   { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Compressor', slug: 'image-compressor', description: 'Compress images to reduce file size.', category: 'image-tools', isImplemented: true },
-  { name: 'Image Resizer', slug: 'image-resizer', description: 'Resize images to your desired dimensions.', category: 'image-tools' },
-  { name: 'Image Cropper', slug: 'image-cropper', description: 'Crop images to a specific area.', category: 'image-tools' },
+  { name: 'Image Resizer', slug: 'image-resizer', description: 'Resize images to your desired dimensions.', category: 'image-tools', isImplemented: true },
+  { name: 'Image Cropper', slug: 'image-cropper', description: 'Crop images to a specific area.', category: 'image-tools', isImplemented: true },
   { name: 'Image Rotator', slug: 'image-rotator', description: 'Rotate images by a specified angle.', category: 'image-tools' },
   { name: 'Image Flipper', slug: 'image-flipper', description: 'Flip images horizontally or vertically.', category: 'image-tools' },
   { name: 'Convert JPG to PNG', slug: 'jpg-to-png', description: 'Convert JPG images to PNG format.', category: 'image-tools' },
@@ -332,7 +332,7 @@ const tools: Tool[] = [
   { name: 'BMR Calculator', slug: 'bmr-calculator', description: 'Calculate your Basal Metabolic Rate.', category: 'math-science-academic', isImplemented: true },
 
   // 8) Data & Developer Utilities
-  { name: 'JSON Formatter/Beautifier', slug: 'json-formatter', description: 'Format and beautify JSON data.', category: 'data-developer-utilities' },
+  { name: 'JSON Formatter/Beautifier', slug: 'json-formatter', description: 'Format and beautify JSON data.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'JSON Validator', slug: 'json-validator', description: 'Validate JSON data.', category: 'data-developer-utilities' },
   { name: 'JSON Minifier', slug: 'json-minifier', description: 'Minify JSON data.', category: 'data-developer-utilities' },
   { name: 'XML Formatter/Beautifier', slug: 'xml-formatter', description: 'Format and beautify XML data.', category: 'data-developer-utilities' },
@@ -400,7 +400,7 @@ const tools: Tool[] = [
   { name: 'URL Safe Filename Maker', slug: 'url-safe-filename-maker', description: 'Create URL-safe filenames.', category: 'web-url-utilities' },
   { name: 'QR Code Generator (with Logo)', slug: 'qr-code-generator-with-logo', description: 'Generate QR codes with a logo.', category: 'web-url-utilities' },
   { name: 'URL Expander/Shortener (combined)', slug: 'url-expander-shortener', description: 'A combined tool for expanding and shortening URLs.', category: 'web-url-utilities' },
-  { name: 'Password Generator', slug: 'password-generator', description: 'Generate strong, random passwords.', category: 'web-url-utilities' },
+  { name: 'Password Generator', slug: 'password-generator', description: 'Generate strong, random passwords.', category: 'web-url-utilities', isImplemented: true },
   { name: 'Passphrase Generator', slug: 'passphrase-generator', description: 'Generate memorable passphrases.', category: 'web-url-utilities' },
   { name: 'Password Strength Checker', slug: 'password-strength-checker', description: 'Check the strength of your passwords.', category: 'web-url-utilities' },
 
@@ -606,7 +606,7 @@ export const getToolBySlug = (slug: string): Tool | undefined => {
   return tools.find(tool => tool.slug === slug);
 };
 
-export const getCategories = (): (Omit<Category, 'tools' | 'color'> & { icon: LucideIcon; color: string; })[] => {
+export const getCategories = (): (Omit<Category, 'tools'> & { icon: LucideIcon })[] => {
     return categories.map(cat => ({
         ...cat,
         icon: cat.icon as LucideIcon 
