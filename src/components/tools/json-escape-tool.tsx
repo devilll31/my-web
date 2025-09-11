@@ -6,22 +6,26 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { Code } from 'lucide-react';
+import { Code, Shield } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export default function JsonEscapeTool() {
   const [text, setText] = useState('{"message": "This is a string with a \\"quote\\" and a newline\\ncharacter."}');
+  const { toast } = useToast();
 
   const escapeJson = () => {
     // Escaping a string to be embedded in another JSON string
     setText(JSON.stringify(text));
+     toast({ title: 'Escaped!', description: 'String has been safely escaped for JSON embedding.' });
   };
   
   const unescapeJson = () => {
     try {
       // Unescaping a string that was previously stringified
       setText(JSON.parse(text));
+      toast({ title: 'Unescaped!', description: 'JSON string has been parsed.' });
     } catch(e) {
-      alert("Invalid JSON string to unescape.");
+      toast({ title: 'Error', description: 'Invalid JSON string to unescape.', variant: 'destructive'});
     }
   };
   
@@ -34,6 +38,7 @@ export default function JsonEscapeTool() {
     ],
     features: [
       { icon: Code, title: "Embed Strings Safely", description: "Crucial for when you need to place a string that itself contains special characters (or is a JSON string) as a value within another JSON object." },
+      { icon: Shield, title: "Data Integrity", description: "Ensures that your JSON remains valid and parsable after embedding complex string data." },
     ]
   };
 

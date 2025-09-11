@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { Key } from 'lucide-react';
+import { Key, RotateCw } from 'lucide-react';
 
 export default function Rot13EncoderDecoderTool() {
   const [text, setText] = useState('Why did the chicken cross the road?');
@@ -31,7 +31,8 @@ export default function Rot13EncoderDecoderTool() {
       { title: "Simple Cipher", description: "ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet." }
     ],
     features: [
-      { icon: Key, title: "Simple Obfuscation", description: "A fun and simple way to hide text, often used in online forums to hide spoilers or puzzle solutions." },
+      { icon: Key, title: "Simple Obfuscation", description: "A fun and simple way to hide text, often used in online forums to hide spoilers, punchlines, or puzzle solutions." },
+      { icon: RotateCw, title: "Reversible Cipher", description: "Applying the ROT13 cipher twice to a piece of text will restore it to its original form." },
     ]
   };
 

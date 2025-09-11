@@ -6,13 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { Wand2 } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { Type } from 'lucide-react';
+import { Type, Globe } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export default function DiacriticsRemoverTool() {
   const [text, setText] = useState('déjà vu, jalapeño, crème brûlée, façade');
+  const { toast } = useToast();
 
   const removeDiacritics = () => {
-    setText(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+    // Unicode normalization to separate base characters from combining marks
+    const newText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    setText(newText);
+    toast({ title: 'Accents Removed!', description: 'All diacritical marks have been stripped from the text.' });
   };
   
   const guideProps = {
@@ -24,6 +29,7 @@ export default function DiacriticsRemoverTool() {
     ],
     features: [
       { icon: Type, title: "Normalize Text", description: "A simple way to clean up text for systems that do not support diacritics or for creating URL slugs and identifiers." },
+      { icon: Globe, title: "International Support", description: "Uses Unicode normalization to handle a wide range of accented characters from various languages." },
     ]
   };
 

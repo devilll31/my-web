@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Copy, Code2 } from 'lucide-react';
+import { Copy, Code2, CaseSensitive } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import HowToUseGuide from '../how-to-use-guide';
 
@@ -39,6 +39,7 @@ export default function CaseStyleConverterTool() {
     ],
     features: [
       { icon: Code2, title: "For Developers", description: "Quickly convert variable or file names to the case style required by your project's coding standards." },
+      { icon: CaseSensitive, title: "Multiple Styles", description: "Supports the most common case styles used in various programming languages and frameworks." },
     ]
   };
 

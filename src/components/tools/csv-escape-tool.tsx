@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { FileText } from 'lucide-react';
+import { FileText, Shield } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export default function CsvEscapeTool() {
   const [text, setText] = useState('This field contains a comma, and "quotes".');
+  const { toast } = useToast();
 
   const escapeCsv = () => {
     // Basic CSV escaping: if a field contains a comma, newline, or double quote, enclose it in double quotes.
@@ -17,6 +19,9 @@ export default function CsvEscapeTool() {
     if (text.includes(',') || text.includes('\n') || text.includes('"')) {
       const escapedText = text.replace(/"/g, '""');
       setText(`"${escapedText}"`);
+      toast({ title: 'Escaped!', description: 'Field has been escaped for CSV.' });
+    } else {
+      toast({ title: 'No change', description: 'Field does not require escaping.' });
     }
   };
   
@@ -25,6 +30,9 @@ export default function CsvEscapeTool() {
       const innerText = text.substring(1, text.length - 1);
       const unescapedText = innerText.replace(/""/g, '"');
       setText(unescapedText);
+      toast({ title: 'Unescaped!', description: 'CSV field has been unescaped.' });
+    } else {
+        toast({ title: 'No change', description: 'Field does not appear to be escaped.' });
     }
   };
   
@@ -37,6 +45,7 @@ export default function CsvEscapeTool() {
     ],
     features: [
       { icon: FileText, title: "Ensure CSV Integrity", description: "Properly escape fields to ensure your CSV file is parsed correctly by applications like Excel or database importers." },
+      { icon: Shield, title: "Handle Special Characters", description: "Safely include commas, quotes, and line breaks within your data fields without breaking the CSV structure." },
     ]
   };
 

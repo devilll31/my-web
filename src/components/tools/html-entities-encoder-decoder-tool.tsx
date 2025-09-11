@@ -6,22 +6,28 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { Code } from 'lucide-react';
+import { Code, Shield } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 export default function HtmlEntitiesEncoderDecoderTool() {
   const [inputText, setInputText] = useState('<p>This is a "test" & it\'s working!</p>');
   const [outputText, setOutputText] = useState('');
+  const { toast } = useToast();
 
   const encode = () => {
+    // This is a client-side only way to do it without extra libraries
     const element = document.createElement('div');
     element.innerText = inputText;
     setOutputText(element.innerHTML);
+    toast({ title: 'Encoded!', description: 'Text converted to HTML entities.' });
   };
   
   const decode = () => {
+    // This is a client-side only way to do it without extra libraries
     const element = document.createElement('div');
     element.innerHTML = inputText;
     setOutputText(element.textContent || '');
+    toast({ title: 'Decoded!', description: 'HTML entities converted to text.' });
   };
 
   const guideProps = {
@@ -33,6 +39,7 @@ export default function HtmlEntitiesEncoderDecoderTool() {
     ],
     features: [
       { icon: Code, title: "Safe HTML Display", description: "Encode text to safely display it as code on a webpage without it being rendered as HTML." },
+      { icon: Shield, title: "Prevent XSS", description: "Encoding user-generated content before displaying it is a key step in preventing Cross-Site Scripting (XSS) attacks." },
     ]
   };
 

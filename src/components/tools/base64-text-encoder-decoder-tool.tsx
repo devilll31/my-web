@@ -16,7 +16,8 @@ export default function Base64TextEncoderDecoderTool() {
 
   const encode = () => {
     try {
-      setOutputText(btoa(inputText));
+      setOutputText(btoa(unescape(encodeURIComponent(inputText))));
+      toast({ title: "Encoded!", description: "Text successfully encoded to Base64." });
     } catch (e) {
       toast({ title: 'Error', description: 'Could not encode text. Invalid characters detected.', variant: 'destructive'});
     }
@@ -24,7 +25,8 @@ export default function Base64TextEncoderDecoderTool() {
   
   const decode = () => {
     try {
-      setOutputText(atob(inputText));
+      setOutputText(decodeURIComponent(escape(atob(inputText))));
+      toast({ title: "Decoded!", description: "Base64 successfully decoded." });
     } catch (e) {
        toast({ title: 'Error', description: 'Could not decode text. Invalid Base64 string.', variant: 'destructive'});
     }
@@ -38,7 +40,7 @@ export default function Base64TextEncoderDecoderTool() {
       { title: "Use the Result", description: "The converted text appears in the output box, ready to be copied." }
     ],
     features: [
-      { icon: Lock, title: "Data Encoding", description: "Base64 is a common encoding scheme used to represent binary data in an ASCII string format." },
+      { icon: Lock, title: "Data Encoding", description: "Base64 is a common encoding scheme used to represent binary data in an ASCII string format, making it safe for transmission over text-based protocols." },
       { icon: Code, title: "Developer Utility", description: "Useful for developers working with APIs, data URIs, or any system that transmits data as text." }
     ]
   };

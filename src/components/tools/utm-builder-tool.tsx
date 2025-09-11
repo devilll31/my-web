@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Copy, Link2 } from 'lucide-react';
+import { Copy, Link2, TrendingUp, BarChart } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import HowToUseGuide from '../how-to-use-guide';
 
@@ -21,7 +21,12 @@ export default function UtmBuilderTool() {
 
   useEffect(() => {
     try {
-      const base = new URL(url);
+      // Ensure URL has a protocol
+      let fullUrl = url;
+      if (!/^https?:\/\//i.test(url)) {
+          fullUrl = 'http://' + url;
+      }
+      const base = new URL(fullUrl);
       if (source) base.searchParams.set('utm_source', source);
       if (medium) base.searchParams.set('utm_medium', medium);
       if (campaign) base.searchParams.set('utm_campaign', campaign);
@@ -34,6 +39,10 @@ export default function UtmBuilderTool() {
   }, [url, source, medium, campaign, term, content]);
   
   const copyUrl = () => {
+    if (finalUrl === 'Invalid base URL') {
+         toast({ title: 'Error', description: 'Cannot copy an invalid URL.', variant: 'destructive'});
+        return;
+    }
     navigator.clipboard.writeText(finalUrl);
     toast({ title: 'UTM URL copied to clipboard!' });
   };
@@ -46,7 +55,9 @@ export default function UtmBuilderTool() {
       { title: "Copy the Final URL", description: "The tool generates a complete URL with all your UTM parameters, ready to be used in your marketing campaigns." }
     ],
     features: [
-      { icon: Link2, title: "Track Your Campaigns", description: "Create URLs with UTM parameters to accurately track the performance of your marketing campaigns in analytics platforms like Google Analytics." },
+      { icon: TrendingUp, title: "Track Your Campaigns", description: "Create URLs with UTM parameters to accurately track the performance of your marketing campaigns in analytics platforms like Google Analytics." },
+      { icon: BarChart, title: "Data-Driven Decisions", description: "Understand which channels, campaigns, and ads are driving the most traffic and conversions." },
+      { icon: Link2, title: "Standardized Tracking", description: "Uses the industry-standard Urchin Tracking Module (UTM) format recognized by all major analytics tools." },
     ]
   };
 
@@ -58,29 +69,29 @@ export default function UtmBuilderTool() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-2">
               <Label htmlFor="url">Website URL *</Label>
               <Input id="url" value={url} onChange={e => setUrl(e.target.value)} placeholder="https://example.com" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="source">Campaign Source *</Label>
+              <Label htmlFor="source">Campaign Source (utm_source) *</Label>
               <Input id="source" value={source} onChange={e => setSource(e.target.value)} placeholder="e.g., google, newsletter" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="medium">Campaign Medium *</Label>
+              <Label htmlFor="medium">Campaign Medium (utm_medium) *</Label>
               <Input id="medium" value={medium} onChange={e => setMedium(e.target.value)} placeholder="e.g., cpc, email" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="campaign">Campaign Name *</Label>
-              <Input id="campaign" value={campaign} onChange={e => setCampaign(e.target.value)} placeholder="e.g., summer_sale" />
+            <div className="space-y-2 md:col-span-2">
+              <Label htmlFor="campaign">Campaign Name (utm_campaign) *</Label>
+              <Input id="campaign" value={campaign} onChange={e => setCampaign(e.target.value)} placeholder="e.g., summer_sale_2024" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="term">Campaign Term</Label>
-              <Input id="term" value={term} onChange={e => setTerm(e.target.value)} placeholder="(keywords)" />
+              <Label htmlFor="term">Campaign Term (utm_term)</Label>
+              <Input id="term" value={term} onChange={e => setTerm(e.target.value)} placeholder="e.g., running+shoes" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="content">Campaign Content</Label>
-              <Input id="content" value={content} onChange={e => setContent(e.target.value)} placeholder="(ad name)" />
+              <Label htmlFor="content">Campaign Content (utm_content)</Label>
+              <Input id="content" value={content} onChange={e => setContent(e.target.value)} placeholder="e.g., text_ad_1" />
             </div>
           </div>
            <div className="space-y-2 pt-4">
