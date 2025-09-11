@@ -5,6 +5,7 @@
 
 
 
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -202,6 +203,16 @@ import KeywordExtractorTool from '@/components/tools/keyword-extractor-tool';
 import HashtagGeneratorTool from '@/components/tools/hashtag-generator-tool';
 import SlugGeneratorTool from '@/components/tools/slug-generator-tool';
 import TextDiffTool from '@/components/tools/text-diff-tool';
+import MarkdownEditorTool from '@/components/tools/markdown-editor-tool';
+import HtmlEntitiesEncoderDecoderTool from '@/components/tools/html-entities-encoder-decoder-tool';
+import Base64TextEncoderDecoderTool from '@/components/tools/base64-text-encoder-decoder-tool';
+import Rot13EncoderDecoderTool from '@/components/tools/rot13-encoder-decoder-tool';
+import UtmBuilderTool from '@/components/tools/utm-builder-tool';
+import StopwordsRemoverTool from '@/components/tools/stopwords-remover-tool';
+import CaseStyleConverterTool from '@/components/tools/case-style-converter-tool';
+import DiacriticsRemoverTool from '@/components/tools/diacritics-remover-tool';
+import JsonEscapeTool from '@/components/tools/json-escape-tool';
+import CsvEscapeTool from '@/components/tools/csv-escape-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -614,6 +625,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <SlugGeneratorTool />;
     case 'text-diff':
         return <TextDiffTool />;
+    case 'markdown-editor':
+        return <MarkdownEditorTool />;
+    case 'html-entities-encoder-decoder':
+        return <HtmlEntitiesEncoderDecoderTool />;
+    case 'base64-text-encoder-decoder':
+        return <Base64TextEncoderDecoderTool />;
+    case 'rot13-encoder-decoder':
+        return <Rot13EncoderDecoderTool />;
+    case 'utm-builder':
+        return <UtmBuilderTool />;
+    case 'stopwords-remover':
+        return <StopwordsRemoverTool />;
+    case 'case-style-converter':
+        return <CaseStyleConverterTool />;
+    case 'diacritics-remover':
+        return <DiacriticsRemoverTool />;
+    case 'json-escape-unescape':
+        return <JsonEscapeTool />;
+    case 'csv-escape-unescape':
+        return <CsvEscapeTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">

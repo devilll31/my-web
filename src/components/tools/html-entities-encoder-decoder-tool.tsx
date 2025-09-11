@@ -1,0 +1,67 @@
+'use client';
+
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from '@/components/ui/textarea';
+import { ArrowRightLeft } from 'lucide-react';
+import HowToUseGuide from '../how-to-use-guide';
+import { Code } from 'lucide-react';
+
+export default function HtmlEntitiesEncoderDecoderTool() {
+  const [inputText, setInputText] = useState('<p>This is a "test" & it\'s working!</p>');
+  const [outputText, setOutputText] = useState('');
+
+  const encode = () => {
+    const element = document.createElement('div');
+    element.innerText = inputText;
+    setOutputText(element.innerHTML);
+  };
+  
+  const decode = () => {
+    const element = document.createElement('div');
+    element.innerHTML = inputText;
+    setOutputText(element.textContent || '');
+  };
+
+  const guideProps = {
+    title: "How to Use the HTML Entities Encoder/Decoder",
+    steps: [
+      { title: "Enter Text", description: "Paste your string or HTML into the input box." },
+      { title: "Encode or Decode", description: "Click 'Encode' to convert characters like <, >, & to their HTML entities (e.g., &lt;, &gt;, &amp;). Click 'Decode' to convert them back." },
+      { title: "Use the Result", description: "The converted text appears in the output box, ready to be copied." }
+    ],
+    features: [
+      { icon: Code, title: "Safe HTML Display", description: "Encode text to safely display it as code on a webpage without it being rendered as HTML." },
+    ]
+  };
+
+  return (
+    <>
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-center">HTML Entities Encoder/Decoder</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Textarea 
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            className="min-h-[150px]"
+            placeholder="Input"
+          />
+          <div className="flex justify-center gap-2">
+            <Button onClick={encode}>Encode <ArrowRightLeft className="ml-2"/></Button>
+            <Button onClick={decode}>Decode <ArrowRightLeft className="ml-2"/></Button>
+          </div>
+          <Textarea 
+            value={outputText}
+            readOnly
+            className="min-h-[150px] bg-secondary"
+            placeholder="Output"
+          />
+        </CardContent>
+      </Card>
+      <HowToUseGuide {...guideProps} />
+    </>
+  );
+}
