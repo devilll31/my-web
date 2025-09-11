@@ -83,7 +83,7 @@ const tools: Tool[] = [
   { name: 'PDF Background Remover (AI)', slug: 'pdf-background-remover-ai', description: 'Use AI to intelligently remove complex backgrounds from PDFs.', category: 'pdf-tools' },
   
   // 2) Image Tools
-  { name: 'Background Remover', slug: 'background-remover', description: 'Remove the background from any image.', category: 'image-tools' },
+  { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Compressor', slug: 'image-compressor', description: 'Compress images to reduce file size.', category: 'image-tools', isImplemented: true },
   { name: 'Image Resizer', slug: 'image-resizer', description: 'Resize images to your desired dimensions.', category: 'image-tools' },
   { name: 'Image Cropper', slug: 'image-cropper', description: 'Crop images to a specific area.', category: 'image-tools' },
@@ -123,7 +123,6 @@ const tools: Tool[] = [
   { name: 'Image Upscaler (AI)', slug: 'image-upscaler-ai', description: 'Upscale and enhance images with AI.', category: 'image-tools', isImplemented: true },
   { name: 'Face Retouch (AI)', slug: 'face-retouch-ai', description: 'Retouch faces in photos using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Generative Fill (AI Inpainting)', slug: 'generative-fill-ai', description: 'Use AI to fill in parts of an image.', category: 'image-tools', isImplemented: true },
-  { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
   { name: 'Image Watermark Adder (pro variant)', slug: 'image-watermark-adder-pro', description: 'Advanced image watermarking options.', category: 'image-tools' },
   { name: 'Image Noise Reduction (dedicated tool)', slug: 'image-noise-reduction', description: 'Advanced noise reduction for images.', category: 'image-tools' },
   { name: 'Image Rotate & Flip (batch/combined)', slug: 'image-rotate-flip-batch', description: 'Rotate and flip multiple images at once.', category: 'image-tools' },
@@ -463,7 +462,6 @@ const tools: Tool[] = [
   { name: 'Invoice Generator', slug: 'invoice-generator', description: 'Generate simple invoices.', category: 'productivity-planning', isImplemented: true },
   { name: 'Quote/Estimate Builder', slug: 'quote-estimate-builder', description: 'Build quotes and estimates.', category: 'productivity-planning', isImplemented: true },
   { name: 'Expense Splitter', slug: 'expense-splitter', description: 'Split expenses with friends.', category: 'productivity-planning', isImplemented: true },
-  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'A simple tip calculator.', category: 'productivity-planning', isImplemented: true },
   { name: 'Simple CRM Contacts', slug: 'simple-crm-contacts', description: 'A simple CRM for managing contacts locally.', category: 'productivity-planning', isImplemented: true },
   { name: 'Lead Capture Form Builder', slug: 'lead-capture-form-builder', description: 'Build lead capture forms.', category: 'productivity-planning', isImplemented: true },
   { name: 'Step Counter (Manual Input)', slug: 'step-counter', description: 'Manually input your daily steps.', category: 'productivity-planning', isImplemented: true },
@@ -638,7 +636,7 @@ export const getAllToolsByCategories = (): Category[] => {
 
 export const getTop50Tools = (): Tool[] => {
     const popularToolSlugs = [
-      'pdf-to-word', 'image-compressor', 'background-remover', 'image-resizer', 
+      'pdf-to-word', 'image-compressor', 'image-background-remover-ai', 'image-resizer', 
       'merge-pdf', 'split-pdf', 'word-to-pdf', 'image-to-pdf', 'unlock-pdf',
       'password-generator', 'qr-code-generator', 'json-formatter', 'image-upscaler-ai',
       'face-retouch-ai', 'generative-fill-ai', 'blog-title-generator', 'summarizer',
