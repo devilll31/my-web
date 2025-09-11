@@ -18,7 +18,7 @@ const basicMarkdownToHtml = (text: string) => {
         .replace(/\*(.*)\*/gim, '<em>$1</em>')
         .replace(/^- (.*$)/gim, '<li>$1</li>')
         .replace(/`([^`]*)`/gim, '<code>$1</code>')
-        .replace(/\n/g, '<br />';
+        .replace(/\n/g, '<br />');
 
     // Handle lists
     html = html.replace(/((<li>.*<\/li>)+)/g, '<ul>$1</ul>');
