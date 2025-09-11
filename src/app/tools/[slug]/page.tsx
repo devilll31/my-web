@@ -220,6 +220,16 @@ import SitemapGeneratorTool from '@/components/tools/sitemap-generator-tool';
 import RobotsTxtGeneratorTool from '@/components/tools/robots-txt-generator-tool';
 import HreflangGeneratorTool from '@/components/tools/hreflang-generator-tool';
 import MetaTagAnalyzerTool from '@/components/tools/meta-tag-analyzer-tool';
+import OpenGraphGeneratorTool from '@/components/tools/open-graph-generator-tool';
+import TwitterCardValidatorTool from '@/components/tools/twitter-card-validator-tool';
+import CanonicalUrlAuditorTool from '@/components/tools/canonical-url-auditor-tool';
+import KeywordDensityCheckerTool from '@/components/tools/keyword-density-checker-tool';
+import StructuredDataTesterTool from '@/components/tools/structured-data-tester-tool';
+import FaviconsAppManifestGeneratorTool from '@/components/tools/favicons-app-manifest-generator-tool';
+import PageSizeCheckerTool from '@/components/tools/page-size-checker-tool';
+import PageHeaderAnalyzerTool from '@/components/tools/page-header-analyzer-tool';
+import ServerStatusCheckerTool from '@/components/tools/server-status-checker-tool';
+import HostLocationFinderTool from '@/components/tools/host-location-finder-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -682,6 +692,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <HreflangGeneratorTool />;
     case 'meta-tag-analyzer':
       return <MetaTagAnalyzerTool />;
+    case 'open-graph-generator':
+      return <OpenGraphGeneratorTool />;
+    case 'twitter-card-validator':
+      return <TwitterCardValidatorTool />;
+    case 'canonical-url-auditor':
+      return <CanonicalUrlAuditorTool />;
+    case 'keyword-density-checker':
+      return <KeywordDensityCheckerTool />;
+    case 'structured-data-tester':
+      return <StructuredDataTesterTool />;
+    case 'favicons-app-manifest-generator':
+      return <FaviconsAppManifestGeneratorTool />;
+    case 'page-size-checker':
+      return <PageSizeCheckerTool />;
+    case 'page-header-analyzer':
+      return <PageHeaderAnalyzerTool />;
+    case 'server-status-checker':
+      return <ServerStatusCheckerTool />;
+    case 'host-location-finder':
+      return <HostLocationFinderTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
