@@ -233,7 +233,7 @@ import HostLocationFinderTool from '@/components/tools/host-location-finder-tool
 import UptimeMonitorTool from '@/components/tools/uptime-monitor-tool';
 import SerpSnippetPreviewTool from '@/components/tools/serp-snippet-preview-tool';
 import AmpValidatorHelperTool from '@/components/tools/amp-validator-helper-tool';
-import CoreWeb vitalsHintsTool from '@/components/tools/core-web-vitals-hints-tool';
+import CoreWebVitalsHintsTool from '@/components/tools/core-web-vitals-hints-tool';
 import LinkExtractorTool from '@/components/tools/link-extractor-tool';
 import XmlSitemapSplitterMergerTool from '@/components/tools/xml-sitemap-splitter-merger-tool';
 import NofollowLinkHighlighterTool from '@/components/tools/nofollow-link-highlighter-tool';
@@ -729,7 +729,7 @@ const ToolComponent = ({ slug }: { slug: string }) => {
     case 'amp-validator-helper':
       return <AmpValidatorHelperTool />;
     case 'core-web-vitals-hints':
-      return <CoreWebvitalsHintsTool />;
+      return <CoreWebVitalsHintsTool />;
     case 'link-extractor':
       return <LinkExtractorTool />;
     case 'xml-sitemap-splitter-merger':
