@@ -90,7 +90,7 @@ import LcmGcdCalculatorTool from '@/components/tools/lcm-gcd-calculator-tool';
 import RomanNumeralConverterTool from '@/components/tools/roman-numeral-converter-tool';
 import BaseConverterTool from '@/components/tools/base-converter-tool';
 import SignificantFiguresCalculatorTool from '@/components/tools/significant-figures-calculator-tool';
-import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference-tool';
+import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference';
 import ExponentPowerCalculatorTool from '@/components/tools/exponent-power-calculator-tool';
 import LogarithmCalculatorTool from '@/components/tools/logarithm-calculator-tool';
 import AngleConverterTool from '@/components/tools/angle-converter-tool';
@@ -248,6 +248,15 @@ import HtmlMinifierTool from '@/components/tools/html-minifier-tool';
 import XmlFormatterTool from '@/components/tools/xml-formatter-tool';
 import XmlMinifierTool from '@/components/tools/xml-minifier-tool';
 import XmlValidatorTool from '@/components/tools/xml-validator-tool';
+import CssMinifierTool from '@/components/tools/css-minifier-tool';
+import JsMinifierTool from '@/components/tools/js-minifier-tool';
+import SqlFormatterTool from '@/components/tools/sql-formatter-tool';
+import YamlFormatterTool from '@/components/tools/yaml-formatter-tool';
+import TomlFormatterTool from '@/components/tools/toml-formatter-tool';
+import CsvValidatorTool from '@/components/tools/csv-validator-tool';
+import UuidGeneratorTool from '@/components/tools/uuid-generator-tool';
+import NanoIdGeneratorTool from '@/components/tools/nanoid-generator-tool';
+import UrlEncoderDecoderTool from '@/components/tools/url-encoder-decoder-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -755,6 +764,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
     case 'image-cropper':
       return <ImageCropperTool />;
     case 'json-formatter':
+    case 'json-validator':
+    case 'json-minifier':
       return <JsonFormatterTool />;
     case 'password-generator':
       return <PasswordGeneratorTool />;
@@ -766,6 +777,24 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <XmlMinifierTool />;
     case 'xml-validator':
       return <XmlValidatorTool />;
+    case 'css-minifier':
+        return <CssMinifierTool />;
+    case 'js-minifier':
+        return <JsMinifierTool />;
+    case 'sql-formatter':
+        return <SqlFormatterTool />;
+    case 'yaml-formatter':
+        return <YamlFormatterTool />;
+    case 'toml-formatter':
+        return <TomlFormatterTool />;
+    case 'csv-validator':
+        return <CsvValidatorTool />;
+    case 'uuid-generator':
+        return <UuidGeneratorTool />;
+    case 'nanoid-generator':
+        return <NanoIdGeneratorTool />;
+    case 'url-encoder-decoder':
+        return <UrlEncoderDecoderTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
