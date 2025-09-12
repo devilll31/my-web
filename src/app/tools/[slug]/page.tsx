@@ -90,7 +90,7 @@ import LcmGcdCalculatorTool from '@/components/tools/lcm-gcd-calculator-tool';
 import RomanNumeralConverterTool from '@/components/tools/roman-numeral-converter-tool';
 import BaseConverterTool from '@/components/tools/base-converter-tool';
 import SignificantFiguresCalculatorTool from '@/components/tools/significant-figures-calculator-tool';
-import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference';
+import PercentageChangeDifferenceTool from '@/components/tools/percentage-change-difference-tool';
 import ExponentPowerCalculatorTool from '@/components/tools/exponent-power-calculator-tool';
 import LogarithmCalculatorTool from '@/components/tools/logarithm-calculator-tool';
 import AngleConverterTool from '@/components/tools/angle-converter-tool';
