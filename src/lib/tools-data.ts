@@ -333,12 +333,12 @@ const tools: Tool[] = [
 
   // 8) Data & Developer Utilities
   { name: 'JSON Formatter/Beautifier', slug: 'json-formatter', description: 'Format and beautify JSON data.', category: 'data-developer-utilities', isImplemented: true },
-  { name: 'JSON Validator', slug: 'json-validator', description: 'Validate JSON data.', category: 'data-developer-utilities' },
-  { name: 'JSON Minifier', slug: 'json-minifier', description: 'Minify JSON data.', category: 'data-developer-utilities' },
-  { name: 'XML Formatter/Beautifier', slug: 'xml-formatter', description: 'Format and beautify XML data.', category: 'data-developer-utilities' },
-  { name: 'XML Validator', slug: 'xml-validator', description: 'Validate XML data.', category: 'data-developer-utilities' },
-  { name: 'XML Minifier', slug: 'xml-minifier', description: 'Minify XML data.', category: 'data-developer-utilities' },
-  { name: 'HTML Minifier', slug: 'html-minifier', description: 'Minify HTML code.', category: 'data-developer-utilities' },
+  { name: 'JSON Validator', slug: 'json-validator', description: 'Validate JSON data.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'JSON Minifier', slug: 'json-minifier', description: 'Minify JSON data.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'XML Formatter/Beautifier', slug: 'xml-formatter', description: 'Format and beautify XML data.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'XML Validator', slug: 'xml-validator', description: 'Validate XML data.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'XML Minifier', slug: 'xml-minifier', description: 'Minify XML data.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'HTML Minifier', slug: 'html-minifier', description: 'Minify HTML code.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'CSS Minifier', slug: 'css-minifier', description: 'Minify CSS code.', category: 'data-developer-utilities' },
   { name: 'JS Minifier/Uglifier', slug: 'js-minifier', description: 'Minify and uglify JavaScript code.', category: 'data-developer-utilities' },
   { name: 'SQL Formatter/Beautifier', slug: 'sql-formatter', description: 'Format and beautify SQL code.', category: 'data-developer-utilities' },
