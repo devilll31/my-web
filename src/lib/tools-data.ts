@@ -181,7 +181,7 @@ const tools: Tool[] = [
   { name: 'Grammar Checker', slug: 'grammar-checker', description: 'Check text for grammatical errors.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Spelling Checker', slug: 'spelling-checker', description: 'Check text for spelling mistakes.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Punctuation Fixer', slug: 'punctuation-fixer', description: 'Automatically fix punctuation in a text.', category: 'text-writing-tools', isImplemented: true },
-  { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to different cases (upper, lower, etc.).', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to different cases (upper, lower, title, sentence).', category: 'text-writing-tools', isImplemented: true },
   { name: 'Remove Extra Spaces', slug: 'remove-extra-spaces', description: 'Remove extra spaces from a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Remove Line Breaks', slug: 'remove-line-breaks', description: 'Remove line breaks from a text.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Sort Lines', slug: 'sort-lines', description: 'Sort lines of text alphabetically.', category: 'text-writing-tools', isImplemented: true },

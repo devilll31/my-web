@@ -28,7 +28,7 @@ export default function XmlFormatterTool() {
           <AlertCircle className="w-16 h-16 mx-auto text-yellow-500 mb-4" />
           <h3 className="text-xl font-semibold">Tool Under Development</h3>
           <p className="text-muted-foreground mt-2">
-            A reliable XML formatter requires a server-side parser to handle complex structures and is planned for a future update.
+            A reliable XML formatter requires a server-side parser to function correctly and is planned for a future update.
           </p>
         </CardContent>
       </Card>

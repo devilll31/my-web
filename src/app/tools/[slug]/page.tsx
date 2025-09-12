@@ -244,6 +244,10 @@ import ImageResizerTool from '@/components/tools/image-resizer-tool';
 import ImageCropperTool from '@/components/tools/image-cropper-tool';
 import JsonFormatterTool from '@/components/tools/json-formatter-tool';
 import PasswordGeneratorTool from '@/components/tools/password-generator-tool';
+import HtmlMinifierTool from '@/components/tools/html-minifier-tool';
+import XmlFormatterTool from '@/components/tools/xml-formatter-tool';
+import XmlMinifierTool from '@/components/tools/xml-minifier-tool';
+import XmlValidatorTool from '@/components/tools/xml-validator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -754,6 +758,14 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <JsonFormatterTool />;
     case 'password-generator':
       return <PasswordGeneratorTool />;
+    case 'html-minifier':
+      return <HtmlMinifierTool />;
+    case 'xml-formatter':
+      return <XmlFormatterTool />;
+    case 'xml-minifier':
+      return <XmlMinifierTool />;
+    case 'xml-validator':
+      return <XmlValidatorTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
