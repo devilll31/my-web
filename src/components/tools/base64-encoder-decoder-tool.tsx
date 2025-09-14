@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
-import { Code, Lock } from 'lucide-react';
+import { Code, Shield } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-export default function Base64TextEncoderDecoderTool() {
+export default function Base64EncoderDecoderTool() {
   const [inputText, setInputText] = useState('Hello World!');
   const [outputText, setOutputText] = useState('SGVsbG8gV29ybGQh');
   const { toast } = useToast();
@@ -33,15 +33,15 @@ export default function Base64TextEncoderDecoderTool() {
   };
   
   const guideProps = {
-    title: "How to Use the Base64 Text Encoder/Decoder",
+    title: "How to Use the Base64 Encoder/Decoder",
     steps: [
-      { title: "Enter Text", description: "Paste any string into the input box." },
-      { title: "Encode or Decode", description: "Click 'Encode' to convert to a Base64 string, or 'Decode' to convert from Base64 back to regular text." },
+      { title: "Enter Text or Data", description: "Paste any string or data into the input box." },
+      { title: "Encode or Decode", description: "Click 'Encode' to convert to a Base64 string, or 'Decode' to convert from Base64 back to the original data." },
       { title: "Use the Result", description: "The converted text appears in the output box, ready to be copied." }
     ],
     features: [
-      { icon: Lock, title: "Data Encoding", description: "Base64 is a common encoding scheme used to represent binary data in an ASCII string format, making it safe for transmission over text-based protocols." },
-      { icon: Code, title: "Developer Utility", description: "Useful for developers working with APIs, data URIs, or any system that transmits data as text." }
+      { icon: Code, title: "Data Encoding", description: "Base64 is a common encoding scheme used to represent binary data in an ASCII string format, making it safe for transmission over text-based protocols." },
+      { icon: Shield, title: "Safe for URLs & HTML", description: "Encode data to safely embed it within URLs or HTML data attributes without breaking the structure." },
     ]
   };
 
@@ -49,7 +49,7 @@ export default function Base64TextEncoderDecoderTool() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle className="text-center">Base64 Text Encoder/Decoder</CardTitle>
+          <CardTitle className="text-center">Base64 Encoder/Decoder</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <Textarea 
