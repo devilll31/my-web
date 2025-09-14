@@ -199,7 +199,6 @@ import MarkdownEditorTool from '@/components/tools/markdown-editor-tool';
 import HtmlEntitiesEncoderDecoderTool from '@/components/tools/html-entities-encoder-decoder-tool';
 import Base64TextEncoderDecoderTool from '@/components/tools/base64-text-encoder-decoder-tool';
 import Rot13EncoderDecoderTool from '@/components/tools/rot13-encoder-decoder-tool';
-import UtmBuilderTool from '@/components/tools/utm-builder-tool';
 import StopwordsRemoverTool from '@/components/tools/stopwords-remover-tool';
 import CaseStyleConverterTool from '@/components/tools/case-style-converter-tool';
 import DiacriticsRemoverTool from '@/components/tools/diacritics-remover-tool';
@@ -257,6 +256,7 @@ import CsvValidatorTool from '@/components/tools/csv-validator-tool';
 import UuidGeneratorTool from '@/components/tools/uuid-generator-tool';
 import NanoIdGeneratorTool from '@/components/tools/nanoid-generator-tool';
 import UrlEncoderDecoderTool from '@/components/tools/url-encoder-decoder-tool';
+import Base64EncoderDecoderTool from '@/components/tools/base64-encoder-decoder-tool';
 import HashGeneratorTool from '@/components/tools/hash-generator-tool';
 import HmacGeneratorTool from '@/components/tools/hmac-generator-tool';
 import JwtDecoderTool from '@/components/tools/jwt-decoder-tool';
@@ -267,6 +267,20 @@ import JsonpathTesterTool from '@/components/tools/jsonpath-tester-tool';
 import XpathTesterTool from '@/components/tools/xpath-tester-tool';
 import GraphqlQueryBeautifierTool from '@/components/tools/graphql-query-beautifier-tool';
 import CsvSplitterMergerTool from '@/components/tools/csv-splitter-merger-tool';
+import LargeFileChunkerTool from '@/components/tools/large-file-chunker-tool';
+import HexDumpViewerTool from '@/components/tools/hex-dump-viewer-tool';
+import BinaryViewerTool from '@/components/tools/binary-viewer-tool';
+import UnixTimestampConverterTool from '@/components/tools/unix-timestamp-converter-tool';
+import CronExpressionGeneratorTool from '@/components/tools/cron-expression-generator-tool';
+import CronExpressionParserTool from '@/components/tools/cron-expression-parser-tool';
+import UrlShortenerTool from '@/components/tools/url-shortener-tool';
+import UrlExpanderTool from '@/components/tools/url-expander-tool';
+import UtmBuilderTool from '@/components/tools/utm-builder-tool';
+import OpenRedirectCheckerTool from '@/components/tools/open-redirect-checker-tool';
+import LinkHealthCheckerTool from '@/components/tools/link-health-checker-tool';
+import BmpToPngTool from '@/components/tools/bmp-to-png-tool';
+import BlurImageTool from '@/components/tools/blur-image-tool';
+import BarcodeGeneratorTool from '@/components/tools/barcode-generator-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -687,8 +701,6 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <Base64TextEncoderDecoderTool />;
     case 'rot13-encoder-decoder':
         return <Rot13EncoderDecoderTool />;
-    case 'utm-builder':
-        return <UtmBuilderTool />;
     case 'stopwords-remover':
         return <StopwordsRemoverTool />;
     case 'case-style-converter':
@@ -805,6 +817,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <NanoIdGeneratorTool />;
     case 'url-encoder-decoder':
         return <UrlEncoderDecoderTool />;
+    case 'base64-encoder-decoder':
+        return <Base64EncoderDecoderTool />;
     case 'hash-generator':
         return <HashGeneratorTool />;
     case 'hmac-generator':
@@ -825,6 +839,34 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <GraphqlQueryBeautifierTool />;
     case 'csv-splitter-merger':
         return <CsvSplitterMergerTool />;
+    case 'large-file-chunker':
+        return <LargeFileChunkerTool />;
+    case 'hex-dump-viewer':
+        return <HexDumpViewerTool />;
+    case 'binary-viewer':
+        return <BinaryViewerTool />;
+    case 'unix-timestamp-converter':
+        return <UnixTimestampConverterTool />;
+    case 'cron-expression-generator':
+        return <CronExpressionGeneratorTool />;
+    case 'cron-expression-parser':
+        return <CronExpressionParserTool />;
+    case 'url-shortener':
+        return <UrlShortenerTool />;
+    case 'url-expander':
+        return <UrlExpanderTool />;
+    case 'utm-builder':
+        return <UtmBuilderTool />;
+    case 'open-redirect-checker':
+        return <OpenRedirectCheckerTool />;
+    case 'link-health-checker':
+        return <LinkHealthCheckerTool />;
+    case 'bmp-to-png':
+        return <BmpToPngTool />;
+    case 'blur-image':
+        return <BlurImageTool />;
+    case 'barcode-generator':
+        return <BarcodeGeneratorTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
