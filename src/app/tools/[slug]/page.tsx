@@ -257,6 +257,16 @@ import CsvValidatorTool from '@/components/tools/csv-validator-tool';
 import UuidGeneratorTool from '@/components/tools/uuid-generator-tool';
 import NanoIdGeneratorTool from '@/components/tools/nanoid-generator-tool';
 import UrlEncoderDecoderTool from '@/components/tools/url-encoder-decoder-tool';
+import HashGeneratorTool from '@/components/tools/hash-generator-tool';
+import HmacGeneratorTool from '@/components/tools/hmac-generator-tool';
+import JwtDecoderTool from '@/components/tools/jwt-decoder-tool';
+import RegexTesterTool from '@/components/tools/regex-tester-tool';
+import PrettifyCodeTool from '@/components/tools/prettify-code-tool';
+import ColorizeCodeBlocksTool from '@/components/tools/colorize-code-blocks-tool';
+import JsonpathTesterTool from '@/components/tools/jsonpath-tester-tool';
+import XpathTesterTool from '@/components/tools/xpath-tester-tool';
+import GraphqlQueryBeautifierTool from '@/components/tools/graphql-query-beautifier-tool';
+import CsvSplitterMergerTool from '@/components/tools/csv-splitter-merger-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -795,6 +805,26 @@ const ToolComponent = ({ slug }: { slug: string }) => {
         return <NanoIdGeneratorTool />;
     case 'url-encoder-decoder':
         return <UrlEncoderDecoderTool />;
+    case 'hash-generator':
+        return <HashGeneratorTool />;
+    case 'hmac-generator':
+        return <HmacGeneratorTool />;
+    case 'jwt-decoder':
+        return <JwtDecoderTool />;
+    case 'regex-tester':
+        return <RegexTesterTool />;
+    case 'prettify-code':
+        return <PrettifyCodeTool />;
+    case 'colorize-code-blocks':
+        return <ColorizeCodeBlocksTool />;
+    case 'jsonpath-tester':
+        return <JsonpathTesterTool />;
+    case 'xpath-tester':
+        return <XpathTesterTool />;
+    case 'graphql-query-beautifier':
+        return <GraphqlQueryBeautifierTool />;
+    case 'csv-splitter-merger':
+        return <CsvSplitterMergerTool />;
     default:
       return (
         <div className="w-full border-2 border-dashed border-border rounded-lg p-12 text-center bg-background/50">
