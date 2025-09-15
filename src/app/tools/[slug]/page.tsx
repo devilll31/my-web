@@ -257,7 +257,6 @@ import CsvValidatorTool from '@/components/tools/csv-validator-tool';
 import UuidGeneratorTool from '@/components/tools/uuid-generator-tool';
 import NanoIdGeneratorTool from '@/components/tools/nanoid-generator-tool';
 import UrlEncoderDecoderTool from '@/components/tools/url-encoder-decoder-tool';
-import Base64EncoderDecoderTool from '@/components/tools/base64-encoder-decoder-tool';
 import HashGeneratorTool from '@/components/tools/hash-generator-tool';
 import HmacGeneratorTool from '@/components/tools/hmac-generator-tool';
 import JwtDecoderTool from '@/components/tools/jwt-decoder-tool';
