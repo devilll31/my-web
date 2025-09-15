@@ -22,3 +22,4 @@ import '@/ai/flows/language-detector-flow.ts';
 import '@/ai/flows/transliteration-flow.ts';
 import '@/ai/flows/number-to-words-flow.ts';
 import '@/ai/flows/email-extractor-flow.ts';
+import '@/ai/flows/pdf-to-powerpoint.ts';

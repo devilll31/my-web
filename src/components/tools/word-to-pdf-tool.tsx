@@ -1,257 +1,138 @@
 'use client';
 
-import React, { useCallback, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  FileUp,
-  Loader2,
-  CheckCircle,
-  Download,
-  X as XIcon,
-} from 'lucide-react';
+import { useState, useRef } from 'react';
+import { FileUp, Download, X, Loader2, CheckCircle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
 import { wordToPdf } from '@/ai/flows/word-to-pdf';
-
-type Stage = 'idle' | 'processing' | 'success' | 'error';
-
-const ACCEPTED_MIME = new Set<string>([
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-]);
-const ACCEPTED_EXTS = ['.doc', '.docx'];
-
-function isValidWordFile(file: File) {
-  const name = file.name.toLowerCase();
-  const hasValidExt = ACCEPTED_EXTS.some((ext) => name.endsWith(ext));
-  const hasValidMime = ACCEPTED_MIME.has(file.type);
-  // Some browsers may give empty mime for local files => fall back to extension
-  return hasValidExt || hasValidMime;
-}
-
-async function fileToDataUri(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = () => reject(new Error('Failed to read file.'));
-    reader.onload = () => resolve(String(reader.result));
-    reader.readAsDataURL(file);
-  });
-}
+import { AnimatePresence, motion } from 'framer-motion';
+import HowToUseGuide from '../how-to-use-guide';
 
 export default function WordToPdfTool() {
+  const [originalFile, setOriginalFile] = useState<{ name: string; dataUri: string } | null>(null);
+  const [convertedFile, setConvertedFile] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  const [stage, setStage] = useState<Stage>('idle');
-  const [fileName, setFileName] = useState<string>('');
-  const [pdfDataUri, setPdfDataUri] = useState<string>('');
-  const [errorMsg, setErrorMsg] = useState<string>('');
-
-  const resetAll = () => {
-    setStage('idle');
-    setFileName('');
-    setPdfDataUri('');
-    setErrorMsg('');
-    if (inputRef.current) {
-        inputRef.current.value = '';
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      processFile(file);
     }
   };
 
-  const handleFiles = useCallback(
-    async (files: FileList | null) => {
-      if (!files || files.length === 0) return;
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      processFile(file);
+    }
+  };
 
-      const file = files[0];
-      if (!isValidWordFile(file)) {
-        toast({
-          title: 'Invalid file type',
-          description: 'Please select a .doc or .docx file.',
-          variant: 'destructive',
-        });
-        return;
-      }
+  const processFile = (file: File) => {
+    const validTypes = ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    if (!validTypes.includes(file.type)) {
+      toast({ title: 'Invalid File Type', description: 'Please upload a Word document (.doc, .docx).', variant: 'destructive' });
+      return;
+    }
+    setError(null);
+    setConvertedFile(null);
+    setIsLoading(true);
 
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const dataUri = e.target?.result as string;
+      setOriginalFile({ name: file.name, dataUri });
       try {
-        setErrorMsg('');
-        setStage('processing');
-        setFileName(file.name);
-
-        const wordDataUri = await fileToDataUri(file);
-
-        // call server action directly
-        const result = await wordToPdf({ wordDataUri });
-
-        if (!result?.pdfDataUri) {
-          throw new Error('Empty response from converter.');
-        }
-
-        setPdfDataUri(result.pdfDataUri);
-        setStage('success');
-      } catch (err: any) {
-        setErrorMsg(err?.message || 'Unknown error occurred.');
-        setStage('error');
+        const result = await wordToPdf({ wordDataUri: dataUri });
+        setConvertedFile(result.pdfDataUri);
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+        setError(errorMessage);
+        toast({ title: 'Error Converting File', description: errorMessage, variant: 'destructive' });
+      } finally {
+        setIsLoading(false);
       }
-    },
-    [toast]
-  );
-
-  const onDrop: React.DragEventHandler<HTMLDivElement> = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const dt = e.dataTransfer;
-    handleFiles(dt.files);
+    };
+    reader.readAsDataURL(file);
   };
 
-  const onDragOver: React.DragEventHandler<HTMLDivElement> = (e) => {
-    e.preventDefault();
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
   };
 
-  const onChooseClick = () => {
-    inputRef.current?.click();
+  const handleReset = () => {
+    setOriginalFile(null);
+    setConvertedFile(null);
+    setError(null);
+    setIsLoading(false);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
-  const newPdfName = fileName
-    ? fileName.replace(/\.(doc|docx)$/i, '') + '.pdf'
-    : 'converted.pdf';
+  const handleDownload = () => {
+    if (convertedFile && originalFile) {
+      const link = document.createElement('a');
+      link.href = convertedFile;
+      const originalName = originalFile.name.substring(0, originalFile.name.lastIndexOf('.'));
+      link.download = `${originalName}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+  
+  const guideProps = {
+    title: "How to Convert Word to PDF",
+    steps: [
+      { title: "Upload Word File", description: "Select or drag and drop your .doc or .docx file." },
+      { title: "Automatic Conversion", description: "The tool will automatically process the file and convert it into a high-quality PDF document." },
+      { title: "Download PDF", description: "Once finished, you can download your new, universally compatible PDF file." }
+    ],
+    features: [
+      { icon: FileText, title: "Universal Format", description: "Create a shareable, non-editable PDF from your Word document that preserves formatting on any device." }
+    ]
+  };
 
   return (
-    <Card className="border border-primary/30">
-      <CardContent className="p-6">
+    <>
+      <div className="w-full">
         <AnimatePresence mode="wait">
-          {stage === 'idle' && (
-            <motion.div
-              key="idle"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-            >
+          {!originalFile ? (
+            <motion.div key="upload" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <div
-                onDrop={onDrop}
-                onDragOver={onDragOver}
-                className={cn(
-                  'rounded-2xl border-2 border-dashed border-primary/50',
-                  'p-10 flex flex-col items-center justify-center text-center gap-4',
-                  'bg-muted/40'
-                )}
+                className="relative w-full border-2 border-dashed border-primary/50 rounded-2xl p-12 text-center bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer"
+                onClick={() => fileInputRef.current?.click()}
+                onDrop={handleDrop}
+                onDragOver={handleDragOver}
               >
-                <FileUp className="h-12 w-12 opacity-70" />
-                <div className="space-y-2">
-                  <Button
-                    onClick={onChooseClick}
-                    className="btn-gradient px-6"
-                    aria-label="Choose Word file"
-                  >
-                    Choose Word file
-                  </Button>
-                  <div className="text-sm text-muted-foreground">
-                    or drop Word file here
-                  </div>
-                </div>
-                <input
-                  ref={inputRef}
-                  type="file"
-                  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                  className="hidden"
-                  onChange={(e) => handleFiles(e.target.files)}
-                />
-              </div>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <FeatureItem text="Perfect formatting preservation" />
-                <FeatureItem text="Secure and private processing" />
-              </div>
-            </motion.div>
-          )}
-
-          {stage === 'processing' && (
-            <motion.div
-              key="processing"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col items-center justify-center gap-3 py-14"
-            >
-              <Loader2 className="h-8 w-8 animate-spin" />
-              <div className="text-lg font-medium">Converting your file...</div>
-              <div className="text-sm text-muted-foreground">{fileName}</div>
-            </motion.div>
-          )}
-
-          {stage === 'success' && (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col items-center gap-4 py-10"
-            >
-              <CheckCircle className="h-10 w-10 text-green-600" />
-              <div className="text-xl font-semibold">Conversion complete!</div>
-              <div className="text-sm text-muted-foreground">{newPdfName}</div>
-
-              <div className="mt-2 flex flex-wrap items-center gap-3">
-                <a
-                  href={pdfDataUri}
-                  download={newPdfName}
-                  className="inline-flex"
-                >
-                  <Button className="btn-gradient">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download PDF
-                  </Button>
-                </a>
-                <Button variant="outline" onClick={resetAll}>
-                  <XIcon className="mr-2 h-4 w-4" />
-                  Convert Another File
-                </Button>
-              </div>
-            </motion.div>
-          )}
-
-          {stage === 'error' && (
-            <motion.div
-              key="error"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="rounded-2xl border border-destructive/30 bg-destructive/10 p-6">
-                <div className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <XIcon className="h-6 w-6 text-destructive" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-semibold">Conversion Failed</div>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {errorMsg || 'An unexpected error occurred.'}
-                    </p>
-                    <div className="mt-4">
-                      <Button variant="outline" onClick={resetAll}>
-                        Try Again
-                      </Button>
-                    </div>
-                  </div>
+                <div className="flex flex-col items-center justify-center text-primary">
+                  <FileUp className="h-16 w-16 mb-4 text-primary/80" />
+                  <Button size="lg" className="btn-gradient text-white font-bold text-lg px-8 py-6">Choose Word file</Button>
+                  <p className="mt-4 text-muted-foreground">or drop file here</p>
                 </div>
               </div>
+              <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            </motion.div>
+          ) : (
+            <motion.div key="result" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center">
+              {isLoading ? (
+                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><Loader2 className="h-16 w-16 animate-spin text-primary mb-4" /><p className="text-xl font-semibold">Converting...</p><p className="text-muted-foreground mt-1">{originalFile.name}</p></div>
+              ) : error ? (
+                <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl border border-destructive/50 text-destructive"><X className="h-16 w-16 mb-4" /><p className="text-2xl font-bold">Conversion Failed</p><p className="mt-1 max-w-md">{error}</p><Button size="lg" onClick={handleReset} variant="destructive" className="mt-8">Try Again</Button></div>
+              ) : (
+                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><CheckCircle className="h-16 w-16 text-green-500 mb-4" /><p className="text-2xl font-bold">Conversion Complete!</p><p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.docx?$/i, '.pdf')}</p><div className="mt-8 flex flex-wrap justify-center gap-4"><Button size="lg" onClick={handleDownload} className="btn-gradient text-white"><Download className="mr-2" />Download PDF</Button><Button size="lg" onClick={handleReset} variant="outline"><X className="mr-2" />Convert Another</Button></div></div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
-      </CardContent>
-    </Card>
-  );
-}
-
-function FeatureItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-2 rounded-xl bg-muted/50 p-3">
-      <CheckCircle className="h-5 w-5 text-green-600" />
-      <div className="text-sm">{text}</div>
-    </div>
+      </div>
+      <HowToUseGuide {...guideProps} />
+    </>
   );
 }

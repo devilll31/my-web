@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FileUp, Download, X, Loader2, CheckCircle, FileText } from 'lucide-react';
+import { FileUp, Download, X, Loader2, CheckCircle, FilePresentation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { pdfToWord } from '@/ai/flows/pdf-to-word';
+import { pdfToPowerPoint } from '@/ai/flows/pdf-to-powerpoint';
 import { AnimatePresence, motion } from 'framer-motion';
 import HowToUseGuide from '../how-to-use-guide';
 
-export default function PdfToWordTool() {
+export default function PdfToPowerpointTool() {
   const [originalFile, setOriginalFile] = useState<{ name: string; dataUri: string } | null>(null);
   const [convertedFile, setConvertedFile] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -46,11 +46,8 @@ export default function PdfToWordTool() {
       const dataUri = e.target?.result as string;
       setOriginalFile({ name: file.name, dataUri });
       try {
-        const result = await pdfToWord({ pdfDataUri: dataUri });
-        if (!result || !result.wordDataUri) {
-          throw new Error('Conversion failed: The service did not return a file.');
-        }
-        setConvertedFile(result.wordDataUri);
+        const result = await pdfToPowerPoint({ pdfDataUri: dataUri });
+        setConvertedFile(result.powerpointDataUri);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
         setError(errorMessage);
@@ -82,7 +79,7 @@ export default function PdfToWordTool() {
       const link = document.createElement('a');
       link.href = convertedFile;
       const originalName = originalFile.name.substring(0, originalFile.name.lastIndexOf('.'));
-      link.download = `${originalName}.docx`;
+      link.download = `${originalName}.pptx`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -90,14 +87,14 @@ export default function PdfToWordTool() {
   };
   
   const guideProps = {
-    title: "How to Convert PDF to Word",
+    title: "How to Convert PDF to PowerPoint",
     steps: [
-      { title: "Upload PDF", description: "Select or drag and drop your PDF file." },
-      { title: "Automatic Conversion", description: "The tool will automatically process the file and convert it into an editable Word document." },
-      { title: "Download DOCX", description: "Once finished, you can download your new .docx file, ready for editing." }
+      { title: "Upload PDF", description: "Select or drag and drop your PDF presentation." },
+      { title: "Automatic Conversion", description: "Our AI will process the file, turning each PDF page into an editable PowerPoint slide." },
+      { title: "Download PPTX", description: "Download your new presentation, ready for edits and additions." }
     ],
     features: [
-      { icon: FileText, title: "Editable Content", description: "Unlock the text and formatting in your PDFs by converting them to fully editable Word documents." }
+      { icon: FilePresentation, title: "Editable Slides", description: "Convert static PDF pages into editable PowerPoint slides to easily update or reuse content." }
     ]
   };
 
@@ -128,7 +125,7 @@ export default function PdfToWordTool() {
               ) : error ? (
                 <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl border border-destructive/50 text-destructive"><X className="h-16 w-16 mb-4" /><p className="text-2xl font-bold">Conversion Failed</p><p className="mt-1 max-w-md">{error}</p><Button size="lg" onClick={handleReset} variant="destructive" className="mt-8">Try Again</Button></div>
               ) : (
-                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><CheckCircle className="h-16 w-16 text-green-500 mb-4" /><p className="text-2xl font-bold">Conversion Complete!</p><p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.pdf$/i, '.docx')}</p><div className="mt-8 flex flex-wrap justify-center gap-4"><Button size="lg" onClick={handleDownload} className="btn-gradient text-white"><Download className="mr-2" />Download DOCX</Button><Button size="lg" onClick={handleReset} variant="outline"><X className="mr-2" />Convert Another</Button></div></div>
+                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><CheckCircle className="h-16 w-16 text-green-500 mb-4" /><p className="text-2xl font-bold">Conversion Complete!</p><p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.pdf$/i, '.pptx')}</p><div className="mt-8 flex flex-wrap justify-center gap-4"><Button size="lg" onClick={handleDownload} className="btn-gradient text-white"><Download className="mr-2" />Download PPTX</Button><Button size="lg" onClick={handleReset} variant="outline"><X className="mr-2" />Convert Another</Button></div></div>
               )}
             </motion.div>
           )}

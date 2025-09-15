@@ -281,6 +281,7 @@ import LinkHealthCheckerTool from '@/components/tools/link-health-checker-tool';
 import BmpToPngTool from '@/components/tools/bmp-to-png-tool';
 import BlurImageTool from '@/components/tools/blur-image-tool';
 import BarcodeGeneratorTool from '@/components/tools/barcode-generator-tool';
+import PdfToPowerpointTool from '@/components/tools/pdf-to-powerpoint-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -323,6 +324,8 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <PdfToExcelTool />;
     case 'excel-to-pdf':
       return <ExcelToPdfTool />;
+    case 'pdf-to-powerpoint':
+      return <PdfToPowerpointTool />;
     case 'emi-calculator':
       return <EmiCalculatorTool />;
     case 'home-loan-eligibility-calculator':
