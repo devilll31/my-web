@@ -1,3 +1,4 @@
+
 import { getToolBySlug, getTools, getToolsByCategory, getToolsByOtherCategories } from '@/lib/tools-data';
 import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
@@ -197,7 +198,7 @@ import SlugGeneratorTool from '@/components/tools/slug-generator-tool';
 import TextDiffTool from '@/components/tools/text-diff-tool';
 import MarkdownEditorTool from '@/components/tools/markdown-editor-tool';
 import HtmlEntitiesEncoderDecoderTool from '@/components/tools/html-entities-encoder-decoder-tool';
-import Base64TextEncoderDecoderTool from '@/components/tools/base64-text-encoder-decoder-tool';
+import Base64EncoderDecoderTool from '@/components/tools/base64-encoder-decoder-tool';
 import Rot13EncoderDecoderTool from '@/components/tools/rot13-encoder-decoder-tool';
 import StopwordsRemoverTool from '@/components/tools/stopwords-remover-tool';
 import CaseStyleConverterTool from '@/components/tools/case-style-converter-tool';
@@ -269,7 +270,6 @@ import GraphqlQueryBeautifierTool from '@/components/tools/graphql-query-beautif
 import CsvSplitterMergerTool from '@/components/tools/csv-splitter-merger-tool';
 import LargeFileChunkerTool from '@/components/tools/large-file-chunker-tool';
 import HexDumpViewerTool from '@/components/tools/hex-dump-viewer-tool';
-import BinaryViewerTool from '@/components/tools/binary-viewer-tool';
 import UnixTimestampConverterTool from '@/components/tools/unix-timestamp-converter-tool';
 import CronExpressionGeneratorTool from '@/components/tools/cron-expression-generator-tool';
 import CronExpressionParserTool from '@/components/tools/cron-expression-parser-tool';
@@ -281,6 +281,7 @@ import LinkHealthCheckerTool from '@/components/tools/link-health-checker-tool';
 import BmpToPngTool from '@/components/tools/bmp-to-png-tool';
 import BlurImageTool from '@/components/tools/blur-image-tool';
 import BarcodeGeneratorTool from '@/components/tools/barcode-generator-tool';
+import BinaryViewerTool from '@/components/tools/binary-viewer-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -698,7 +699,7 @@ const ToolComponent = ({ slug }: { slug: string }) => {
     case 'html-entities-encoder-decoder':
         return <HtmlEntitiesEncoderDecoderTool />;
     case 'base64-text-encoder-decoder':
-        return <Base64TextEncoderDecoderTool />;
+        return <Base64EncoderDecoderTool />;
     case 'rot13-encoder-decoder':
         return <Rot13EncoderDecoderTool />;
     case 'stopwords-remover':
@@ -932,3 +933,5 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+    
