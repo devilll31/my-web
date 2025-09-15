@@ -23,8 +23,8 @@ export default function UtmBuilderTool() {
     try {
       // Ensure URL has a protocol
       let fullUrl = url;
-      if (!/^https?:\/\//i.test(url)) {
-          fullUrl = 'http://' + url;
+      if (url && !/^https?:\/\//i.test(url)) {
+          fullUrl = 'https://' + url;
       }
       const base = new URL(fullUrl);
       if (source) base.searchParams.set('utm_source', source);

@@ -80,7 +80,7 @@ const tools: Tool[] = [
   { name: 'PDF Merge by Page Range', slug: 'pdf-merge-by-page-range', description: 'Merge specific page ranges from multiple PDFs.', category: 'pdf-tools' },
   { name: 'EPUB to Word Converter', slug: 'epub-to-word-converter', description: 'Convert EPUB files to Word documents.', category: 'pdf-tools' },
   { name: 'PDF to XPS Converter', slug: 'pdf-to-xps-converter', description: 'Convert PDF files to XPS format.', category: 'pdf-tools' },
-  { name: 'PDF Background Remover (AI)', slug: 'pdf-background-remover-ai', description: 'Use AI to intelligently remove complex backgrounds from PDFs.', category: 'pdf-tools' },
+  { name: 'PDF Background Remover (AI)', slug: 'pdf-background-remover-ai', description: 'Use AI to intelligently remove complex backgrounds from PDFs.', category: 'pdf-tools', isImplemented: true },
   
   // 2) Image Tools
   { name: 'Image Background Remover (AI)', slug: 'image-background-remover-ai', description: 'Remove backgrounds from images using AI.', category: 'image-tools', isImplemented: true },
@@ -200,7 +200,7 @@ const tools: Tool[] = [
   { name: 'Text Diff', slug: 'text-diff', description: 'Compare two texts or code snippets.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Markdown Editor', slug: 'markdown-editor', description: 'A what-you-see-is-what-you-get Markdown editor.', category: 'text-writing-tools', isImplemented: true },
   { name: 'HTML Entities Encoder/Decoder', slug: 'html-entities-encoder-decoder', description: 'Encode or decode HTML entities.', category: 'text-writing-tools', isImplemented: true },
-  { name: 'Base64 Text Encoder/Decoder', slug: 'base64-text-encoder-decoder', description: 'Encode or decode text in Base64.', category: 'text-writing-tools', isImplemented: true },
+  { name: 'Base64 Text Encoder/Decoder', slug: 'base64-text-encoder-decoder', description: 'Encode or decode text in Base64.', category: 'text-writing-tools' },
   { name: 'ROT13 Encoder/Decoder', slug: 'rot13-encoder-decoder', description: 'Encode or decode text using ROT13.', category: 'text-writing-tools', isImplemented: true },
   { name: 'UTM Builder for URLs', slug: 'utm-builder', description: 'Build UTM tracking links for your campaigns.', category: 'text-writing-tools', isImplemented: true },
   { name: 'Stopwords Remover', slug: 'stopwords-remover', description: 'Remove common stopwords from text.', category: 'text-writing-tools', isImplemented: true },
@@ -369,9 +369,10 @@ const tools: Tool[] = [
   { name: 'Cron Expression Parser/Next Run', slug: 'cron-expression-parser', description: 'Parse cron expressions and find the next run time.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'URL Shortener', slug: 'url-shortener', description: 'Shorten long URLs.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'URL Expander', slug: 'url-expander', description: 'Expand shortened URLs.', category: 'data-developer-utilities', isImplemented: true },
+  { name: 'UTM Builder', slug: 'utm-builder', description: 'Build UTM tracking URLs.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'Open Redirect Checker', slug: 'open-redirect-checker', description: 'Check for open redirect vulnerabilities.', category: 'data-developer-utilities', isImplemented: true },
   { name: 'Link Health Checker', slug: 'link-health-checker', description: 'Check the health of a list of links.', category: 'data-developer-utilities', isImplemented: true },
-
+  
   // 9) Web & URL Utilities
   { name: 'Bulk Status Code Checker', slug: 'bulk-status-code-checker', description: 'Check the status code of multiple URLs.', category: 'web-url-utilities' },
   { name: 'HTTP Header Viewer', slug: 'http-header-viewer', description: 'View the HTTP headers of a URL.', category: 'web-url-utilities' },

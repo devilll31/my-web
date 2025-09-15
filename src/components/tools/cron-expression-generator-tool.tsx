@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '../ui/button';
-import { Copy, Clock, Calendar } from 'lucide-react';
+import { Copy, Clock } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
 
 export default function CronExpressionGeneratorTool() {

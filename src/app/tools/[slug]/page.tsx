@@ -269,6 +269,7 @@ import GraphqlQueryBeautifierTool from '@/components/tools/graphql-query-beautif
 import CsvSplitterMergerTool from '@/components/tools/csv-splitter-merger-tool';
 import LargeFileChunkerTool from '@/components/tools/large-file-chunker-tool';
 import HexDumpViewerTool from '@/components/tools/hex-dump-viewer-tool';
+import BinaryViewerTool from '@/components/tools/binary-viewer-tool';
 import UnixTimestampConverterTool from '@/components/tools/unix-timestamp-converter-tool';
 import CronExpressionGeneratorTool from '@/components/tools/cron-expression-generator-tool';
 import CronExpressionParserTool from '@/components/tools/cron-expression-parser-tool';
@@ -280,7 +281,6 @@ import LinkHealthCheckerTool from '@/components/tools/link-health-checker-tool';
 import BmpToPngTool from '@/components/tools/bmp-to-png-tool';
 import BlurImageTool from '@/components/tools/blur-image-tool';
 import BarcodeGeneratorTool from '@/components/tools/barcode-generator-tool';
-import BinaryViewerTool from '@/components/tools/binary-viewer-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -932,5 +932,3 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
-    

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from '@/components/ui/textarea';
-import { FileUp, FileCode } from 'lucide-react';
+import { FileCode } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
+import { Label } from '../ui/label';
 
 function arrayBufferToHex(buffer: ArrayBuffer) {
     return Array.from(new Uint8Array(buffer))

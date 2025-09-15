@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
@@ -29,7 +29,10 @@ export default function NanoIdGeneratorTool() {
     setNanoId(generateNanoId(size));
   };
   
-  useState(generateNewId);
+  useEffect(() => {
+    generateNewId();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [size]);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(nanoId);
@@ -64,7 +67,7 @@ export default function NanoIdGeneratorTool() {
           </div>
            <div className="space-y-2">
             <Label>ID Length: {size}</Label>
-            <Slider value={[size]} onValueChange={v => setSize(v[0])} min={8} max={36} onValueCommit={generateNewId}/>
+            <Slider value={[size]} onValueChange={v => setSize(v[0])} min={8} max={36}/>
           </div>
         </CardContent>
       </Card>

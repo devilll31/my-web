@@ -8,6 +8,7 @@ import { Copy, Key, FileJson } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import HowToUseGuide from '../how-to-use-guide';
 import { cn } from '@/lib/utils';
+import { Button } from '../ui/button';
 
 function safeJsonParse(str: string) {
     try {

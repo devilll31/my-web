@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { ArrowRightLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowRightLeft } from 'lucide-react';
 import HowToUseGuide from '../how-to-use-guide';
 
 export default function UnixTimestampConverterTool() {
@@ -23,8 +23,10 @@ export default function UnixTimestampConverterTool() {
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
       const date = new Date(e.target.value);
-      setTimestamp(Math.floor(date.getTime() / 1000));
-      setHumanDate(e.target.value);
+      if (!isNaN(date.getTime())) {
+          setTimestamp(Math.floor(date.getTime() / 1000));
+          setHumanDate(e.target.value);
+      }
     } catch(err) {
       // Ignore invalid date inputs
     }

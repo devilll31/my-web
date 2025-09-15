@@ -9,7 +9,6 @@ import { Input } from '@/components/ui/input';
 import { Copy, Lock, Hash } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import HowToUseGuide from '../how-to-use-guide';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 
 type HashAlgorithm = 'SHA-1' | 'SHA-256' | 'SHA-384' | 'SHA-512';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
@@ -16,8 +16,11 @@ export default function UuidGeneratorTool() {
     // crypto.randomUUID() is a modern, secure way to generate v4 UUIDs in the browser.
     setUuid(crypto.randomUUID());
   };
-
-  useState(generateUuid);
+  
+  // Generate a UUID on component mount
+  useEffect(() => {
+    generateUuid();
+  }, []);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(uuid);

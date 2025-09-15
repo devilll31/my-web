@@ -20,9 +20,11 @@ export default function JsonFormatterTool() {
       const formatted = JSON.stringify(parsed, null, 2);
       setFormattedJson(formatted);
       setError('');
+      toast({title: 'JSON Formatted!'});
     } catch (e: any) {
       setError('Invalid JSON: ' + e.message);
       setFormattedJson('');
+      toast({title: 'Error', description: 'Invalid JSON format.', variant: 'destructive'});
     }
   };
   
@@ -32,9 +34,11 @@ export default function JsonFormatterTool() {
       const minified = JSON.stringify(parsed);
       setFormattedJson(minified);
       setError('');
+      toast({title: 'JSON Minified!'});
     } catch (e: any) {
       setError('Invalid JSON: ' + e.message);
       setFormattedJson('');
+      toast({title: 'Error', description: 'Invalid JSON format.', variant: 'destructive'});
     }
   };
 
@@ -61,7 +65,7 @@ export default function JsonFormatterTool() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle className="text-center">JSON Formatter & Validator</CardTitle>
+          <CardTitle className="text-center">JSON Formatter, Validator & Minifier</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -74,13 +78,13 @@ export default function JsonFormatterTool() {
             <Textarea
               value={formattedJson}
               readOnly
-              placeholder="Formatted JSON will appear here"
+              placeholder="Result will appear here"
               className="min-h-[300px] bg-secondary font-mono"
             />
           </div>
           {error && <p className="text-destructive text-center text-sm">{error}</p>}
           <div className="flex justify-center gap-2">
-            <Button onClick={formatJson}>Format</Button>
+            <Button onClick={formatJson}>Format / Validate</Button>
             <Button onClick={minifyJson}>Minify</Button>
             <Button onClick={copyToClipboard} variant="outline"><Copy className="mr-2"/>Copy Result</Button>
           </div>
