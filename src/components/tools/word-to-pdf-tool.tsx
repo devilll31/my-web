@@ -49,9 +49,14 @@ export default function WordToPdfTool() {
     reader.onload = async (e) => {
       const arrayBuffer = e.target?.result as ArrayBuffer;
       try {
+        // Use mammoth to extract text content from the DOCX file
         const textContentResult = await mammoth.extractRawText({ arrayBuffer });
-        const result = await wordToPdf({ textContent: textContentResult.value });
+        const textContent = textContentResult.value;
+
+        // Send the extracted text to the AI flow
+        const result = await wordToPdf({ textContent });
         setConvertedFile(result.pdfDataUri);
+        
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
         setError(errorMessage);
