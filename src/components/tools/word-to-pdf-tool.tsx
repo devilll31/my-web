@@ -49,9 +49,13 @@ export default function WordToPdfTool() {
     reader.onload = async (e) => {
       const arrayBuffer = e.target?.result as ArrayBuffer;
       try {
-        // Use mammoth to extract text content from the DOCX file
+        // Use mammoth to extract raw text content from the DOCX file
         const textContentResult = await mammoth.extractRawText({ arrayBuffer });
         const textContent = textContentResult.value;
+
+        if (!textContent.trim()) {
+            throw new Error('Could not extract any text from the Word document.');
+        }
 
         // Send the extracted text to the AI flow
         const result = await wordToPdf({ textContent });
