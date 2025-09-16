@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef } from 'react';
@@ -7,9 +8,10 @@ import { useToast } from '@/hooks/use-toast';
 import { wordToPdf } from '@/ai/flows/word-to-pdf';
 import { AnimatePresence, motion } from 'framer-motion';
 import HowToUseGuide from '../how-to-use-guide';
+import mammoth from 'mammoth';
 
 export default function WordToPdfTool() {
-  const [originalFile, setOriginalFile] = useState<{ name: string; dataUri: string } | null>(null);
+  const [originalFile, setOriginalFile] = useState<{ name: string; } | null>(null);
   const [convertedFile, setConvertedFile] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,21 +35,22 @@ export default function WordToPdfTool() {
   };
 
   const processFile = (file: File) => {
-    const validTypes = ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const validTypes = ['application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     if (!validTypes.includes(file.type)) {
-      toast({ title: 'Invalid File Type', description: 'Please upload a Word document (.doc, .docx).', variant: 'destructive' });
+      toast({ title: 'Invalid File Type', description: 'Please upload a .docx file.', variant: 'destructive' });
       return;
     }
     setError(null);
     setConvertedFile(null);
     setIsLoading(true);
+    setOriginalFile({ name: file.name });
 
     const reader = new FileReader();
     reader.onload = async (e) => {
-      const dataUri = e.target?.result as string;
-      setOriginalFile({ name: file.name, dataUri });
+      const arrayBuffer = e.target?.result as ArrayBuffer;
       try {
-        const result = await wordToPdf({ wordDataUri: dataUri });
+        const textContentResult = await mammoth.extractRawText({ arrayBuffer });
+        const result = await wordToPdf({ textContent: textContentResult.value });
         setConvertedFile(result.pdfDataUri);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
@@ -57,7 +60,7 @@ export default function WordToPdfTool() {
         setIsLoading(false);
       }
     };
-    reader.readAsDataURL(file);
+    reader.readAsArrayBuffer(file);
   };
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
@@ -90,7 +93,7 @@ export default function WordToPdfTool() {
   const guideProps = {
     title: "How to Convert Word to PDF",
     steps: [
-      { title: "Upload Word File", description: "Select or drag and drop your .doc or .docx file." },
+      { title: "Upload Word File", description: "Select or drag and drop your .docx file." },
       { title: "Automatic Conversion", description: "The tool will automatically process the file and convert it into a high-quality PDF document." },
       { title: "Download PDF", description: "Once finished, you can download your new, universally compatible PDF file." }
     ],
@@ -117,7 +120,7 @@ export default function WordToPdfTool() {
                   <p className="mt-4 text-muted-foreground">or drop file here</p>
                 </div>
               </div>
-              <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+              <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
             </motion.div>
           ) : (
             <motion.div key="result" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center">

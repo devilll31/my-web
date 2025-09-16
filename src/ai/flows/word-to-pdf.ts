@@ -1,3 +1,4 @@
+
 'use server';
 
 import { ai } from '@/ai/genkit';
@@ -12,11 +13,12 @@ const prompt = ai.definePrompt({
   name: 'wordToPdfPrompt',
   input: {schema: WordToPdfInputSchema},
   output: {schema: WordToPdfOutputSchema},
-  prompt: `You are a document conversion expert. Convert the provided Word document into a PDF file.
+  prompt: `You are a document conversion expert. Convert the following text content into a professional, well-formatted PDF file.
 
-  Preserve the exact formatting, layout, fonts, and images of the original document.
+  Preserve the original structure, such as paragraphs and headings, as best as possible.
 
-  Word document for conversion: {{media url=wordDataUri}}
+  Text Content:
+  {{{textContent}}}
   
   Return the converted PDF document as a data URI.`,
 });

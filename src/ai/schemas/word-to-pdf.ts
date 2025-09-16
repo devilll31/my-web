@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
 export const WordToPdfInputSchema = z.object({
-  wordDataUri: z
+  textContent: z
     .string()
-    .min(1, 'wordDataUri is required')
-    .refine((s) => s.startsWith('data:'), 'wordDataUri must be a data URI'),
+    .min(1, 'textContent is required')
+    .describe('The text content extracted from the Word document.'),
 });
 
 export const WordToPdfOutputSchema = z.object({
