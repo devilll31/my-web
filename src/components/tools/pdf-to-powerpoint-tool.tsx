@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FileUp, Download, X, Loader2, CheckCircle, FilePresentation } from 'lucide-react';
+import { FileUp, Download, X, Loader2, CheckCircle, LucidePresentation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { pdfToPowerPoint } from '@/ai/flows/pdf-to-powerpoint';
@@ -94,7 +94,7 @@ export default function PdfToPowerpointTool() {
       { title: "Download PPTX", description: "Download your new presentation, ready for edits and additions." }
     ],
     features: [
-      { icon: FilePresentation, title: "Editable Slides", description: "Convert static PDF pages into editable PowerPoint slides to easily update or reuse content." }
+      { icon: LucidePresentation, title: "Editable Slides", description: "Convert static PDF pages into editable PowerPoint slides to easily update or reuse content." }
     ]
   };
 
