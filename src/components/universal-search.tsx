@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, ArrowRight, FileText, Image as ImageIcon, Star } from 'lucide-react';
-import { getTools, getCategories, Tool, Category } from '@/lib/tools-data';
+import { getTools, getCategories, Tool, Category, getCategoryBySlug } from '@/lib/tools-data';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
@@ -25,11 +25,11 @@ const UniversalSearch = () => {
         tool.name.toLowerCase().includes(lowerCaseQuery) ||
         tool.slug.toLowerCase().includes(lowerCaseQuery) ||
         tool.description.toLowerCase().includes(lowerCaseQuery)
-      ).slice(0, 5);
+      ).slice(0, 10);
 
       const categorySuggestions = allCategories.filter(category => 
         category.name.toLowerCase().includes(lowerCaseQuery)
-      ).slice(0, 2);
+      ).slice(0, 3);
 
       // Simple semantic suggestions
       if (lowerCaseQuery.startsWith('p')) {
@@ -44,7 +44,7 @@ const UniversalSearch = () => {
       const combined = [...categorySuggestions, ...toolSuggestions];
       const uniqueSuggestions = Array.from(new Map(combined.map(item => [(item as any).slug, item])).values());
       
-      setSuggestions(uniqueSuggestions.slice(0, 7));
+      setSuggestions(uniqueSuggestions.slice(0, 10));
       setShowSuggestions(true);
     } else {
       setShowSuggestions(false);
@@ -66,9 +66,9 @@ const UniversalSearch = () => {
   const isCategory = (item: Tool | Category): item is Category => 'tools' in item;
 
   const getToolIcon = (tool: Tool) => {
-    const category = allCategories.find(c => c.slug === tool.category);
+    const category = getCategoryBySlug(tool.category);
     if (category) {
-      return <category.icon className="h-5 w-5 text-secondary-foreground" />;
+      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }} />;
     }
     return <Star className="h-5 w-5 text-secondary-foreground" />;
   }
@@ -91,21 +91,22 @@ const UniversalSearch = () => {
           <ul className="divide-y divide-border/50">
             {suggestions.map(item => {
               const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
-              const icon = isCategory(item) ? <item.icon className="h-5 w-5 text-primary" /> : getToolIcon(item);
+              const categoryDetails = isCategory(item) ? item : getCategoryBySlug(item.category);
+              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color})` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
               const name = item.name;
-              const description = isCategory(item) ? 'Category' : item.description;
+              const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')}>
+                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')} style={!isCategory(item) && categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
                       {icon}
                     </div>
                     <div className="flex-1 overflow-hidden">
                        <p className="font-semibold text-sm truncate">{name}</p>
                        <p className="text-xs text-muted-foreground truncate">{description}</p>
                     </div>
-                    {!isCategory(item) && <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />}
+                    <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />
                   </Link>
                 </li>
               );
