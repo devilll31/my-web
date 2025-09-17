@@ -42,11 +42,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-6 md:gap-10">
+        <div className="flex items-center gap-10 md:gap-16">
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                 <Logo className="h-8 w-auto" />
             </Link>
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden md:flex items-center gap-x-8">
             <NavLink href="/">Home</NavLink>
             
             <Popover open={isToolsPopoverOpen} onOpenChange={setIsToolsPopoverOpen}>
@@ -152,7 +152,7 @@ export default function Header() {
             </Popover>
 
             <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/contact" className="ml-2">Contact</NavLink>
             </nav>
         </div>
         <div className="flex flex-1 justify-end">
