@@ -1,7 +1,6 @@
-
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, Star, Users, FileText, Database, Clock, Zap } from 'lucide-react';
 
 const allStats = [
@@ -16,17 +15,35 @@ const allStats = [
 
 // Function to shuffle an array
 const shuffle = (array: any[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  let currentIndex = array.length, randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
   }
+
   return array;
 };
 
 const QuickStats = () => {
-    // This will shuffle on every render, which is fine for variety across pages.
-    // For consistent stats per page load, you might use state with initial shuffle.
-    const stats = shuffle([...allStats]).slice(0, 5);
+    const [stats, setStats] = useState<typeof allStats>([]);
+
+    useEffect(() => {
+        // Shuffle and pick 5 stats only on the client-side after hydration
+        const shuffledStats = shuffle([...allStats]).slice(0, 5);
+        setStats(shuffledStats);
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+    if (stats.length === 0) {
+        // Render nothing or a placeholder on the server and initial client render to prevent mismatch
+        return null;
+    }
 
     return (
         <section className="w-full py-12 bg-secondary/50">
