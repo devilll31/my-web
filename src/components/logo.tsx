@@ -43,7 +43,7 @@ const Logo = ({ className, ...props }: React.HTMLAttributes<SVGElement>) => {
           fontSize="24"
           fontWeight="bold"
           fontFamily="Inter, sans-serif"
-          className="fill-foreground"
+          className="fill-foreground dark:fill-slate-200"
         >
           D2ools
         </text>

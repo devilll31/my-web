@@ -7,23 +7,18 @@ export default function Footer() {
   const pages = [
       { name: 'Home', href: '/' },
       { name: 'All Tools', href: '/tools' },
-      { name: 'Top 50 Tools', href: '/tools/top-50' },
-      { name: 'Top 20 Trending Tools', href: '/tools/trending' },
-      { name: 'Top 20 Most Popular Tools', href: '/tools/popular' },
-      { name: 'Top 20 Featured Tools', href: '/tools/featured' },
-      { name: 'View All Trending Tools', href: '/tools/trending' },
-      { name: 'View All Popular Tools', href: '/tools/popular' },
-      { name: 'View All Featured Tools', href: '/tools/featured' },
+      { name: 'Top 50', href: '/tools/top-50' },
       { name: 'Blog', href: '/blog' },
       { name: 'Contact', href: '/contact' },
       { name: 'About', href: '/about' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Sitemap', href: '/sitemap.xml' },
+      { name: 'FAQ', href: '/faq' },
   ];
 
-  const toolCategories = getCategories().slice(0, 15);
-  const popularTools = getTop50Tools().slice(0, 15);
+  const toolCategories = getCategories().slice(0, 10);
+  const popularTools = getTop50Tools().slice(0, 10);
 
   return (
     <footer className="bg-slate-900 text-slate-300">

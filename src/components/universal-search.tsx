@@ -68,7 +68,7 @@ const UniversalSearch = () => {
   const getToolIcon = (tool: Tool) => {
     const category = getCategoryBySlug(tool.category);
     if (category) {
-      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color})` }} />;
+      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color}, 80%, 50%)` }} />;
     }
     return <Star className="h-5 w-5 text-secondary-foreground" />;
   }
@@ -92,7 +92,7 @@ const UniversalSearch = () => {
             {suggestions.map(item => {
               const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
               const categoryDetails = isCategory(item) ? item : getCategoryBySlug(item.category);
-              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color})` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color}, 80%, 50%)` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
               const name = item.name;
               const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
 
