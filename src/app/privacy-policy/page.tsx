@@ -30,14 +30,14 @@ export default function PrivacyPolicyPage() {
             <p>
               For the vast majority of our tools, all processing happens **directly in your browser** (client-side). This is a crucial aspect of our privacy-first approach.
             </p>
-            <p>
-              This means:
+            <div>
+              <p>This means:</p>
               <ul className="list-disc list-inside mt-2 space-y-2">
                 <li>We **do not** upload, track, or store the files you use with our tools (e.g., PDFs, images, documents).</li>
                 <li>We **do not** store the content you paste into text tools.</li>
                 <li>We **do not** require you to create an account, so we do not collect personal information like your name, email address, or phone number.</li>
               </ul>
-            </p>
+            </div>
           </CardContent>
         </Card>
 
@@ -46,22 +46,22 @@ export default function PrivacyPolicyPage() {
             <CardTitle>3. Information We Collect and Why</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-lg leading-relaxed">
-            <p>
+            <div>
               <strong>a. AI-Powered Tools:</strong> A small subset of our advanced tools uses third-party AI service providers (like Google's Gemini) for features like summarization, OCR, or complex file conversions. In these cases:
               <ul className="list-disc list-inside mt-2 space-y-2">
                 <li>The data you provide (e.g., text to be summarized, an image for OCR) is sent to the AI service for processing.</li>
                 <li>This data is used solely for the purpose of providing the service and is subject to the privacy policies of the AI provider.</li>
                 <li>We **do not** store your input data or the AI-generated output on our servers.</li>
               </ul>
-            </p>
-             <p>
+            </div>
+             <div>
               <strong>b. Usage Analytics:</strong> We collect anonymous, aggregated usage data to improve our services. This includes:
               <ul className="list-disc list-inside mt-2 space-y-2">
                 <li>Which tools are most popular.</li>
                 <li>General usage patterns to identify errors or areas for improvement.</li>
               </ul>
               This data is fully anonymized and **cannot** be used to identify you personally. We use privacy-respecting analytics platforms.
-            </p>
+            </div>
           </CardContent>
         </Card>
 
