@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import Logo from '@/components/logo';
-import { getCategories, getTop50Tools } from '@/lib/tools-data';
+import { getCategories, getTools } from '@/lib/tools-data';
 
 export default function Footer() {
   const pages = [
@@ -18,7 +18,13 @@ export default function Footer() {
   ];
 
   const toolCategories = getCategories().slice(0, 10);
-  const popularTools = getTop50Tools().slice(0, 10);
+  
+  // Get one top tool from each of the first 10 categories
+  const popularTools = toolCategories.map(category => {
+    const tools = getTools().filter(t => t.category === category.slug && t.isImplemented);
+    return tools.length > 0 ? tools[0] : null;
+  }).filter((t): t is NonNullable<typeof t> => !!t).slice(0, 10);
+
 
   return (
     <footer className="bg-slate-900 text-slate-300">
