@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4 col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-auto" />
+              <Logo className="h-8 w-auto [&>g>text]:fill-white" />
             </Link>
             <p className="text-sm text-slate-400 max-w-xs">
               The next level of online utility tools. Fast, free, and easy to use for all your digital needs.

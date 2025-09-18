@@ -32,6 +32,42 @@ const faqs = [
   {
     question: "Can I suggest a new tool?",
     answer: "Of course! We are always looking for new ideas to make D2ools more useful. Please use our Contact page to send us your suggestions. We'd love to hear from you."
+  },
+  {
+    question: "How do you make money if the tools are free?",
+    answer: "We generate revenue through non-intrusive advertisements placed on the website. Our goal is to keep the tools free and accessible to everyone, and advertising helps us cover the server costs and development efforts required to maintain and expand the site."
+  },
+  {
+    question: "Are the AI tools powered by a specific model?",
+    answer: "Yes, our AI-powered features for tasks like summarization, background removal, and content generation leverage powerful models like Google's Gemini. This allows us to offer cutting-edge capabilities while maintaining a simple user interface."
+  },
+  {
+    question: "Is there a limit to how many times I can use a tool?",
+    answer: "No, there are no usage limits on any of our tools. You can use them as many times as you need, whenever you need them. We believe in providing unrestricted access to empower our users."
+  },
+  {
+    question: "Do you offer an API for your tools?",
+    answer: "Currently, we do not offer a public API for our tools. They are designed for direct use through our website. However, we may consider offering API access in the future for developers and businesses."
+  },
+  {
+    question: "Will my files be shared with third parties?",
+    answer: "Never. For tools that process files, your files are either handled directly in your browser or are sent securely to our server for processing and are deleted immediately after. We do not share your files or data with any third parties."
+  },
+  {
+    question: "How often do you add new tools?",
+    answer: "We are constantly working to expand our toolkit. We aim to release new tools and update existing ones regularly. Keep an eye on our blog and homepage for announcements about new additions!"
+  },
+  {
+    question: "I found a bug or an issue with a tool. What should I do?",
+    answer: "We appreciate your help in making D2ools better! If you encounter a bug or have any issues, please report it to us via our Contact page. Please provide as much detail as possible, including the tool you were using and the steps to reproduce the issue."
+  },
+  {
+    question: "Can I use these tools for commercial purposes?",
+    answer: "Yes, you are free to use our tools for both personal and commercial purposes. There are no restrictions on the output you generate from our utilities."
+  },
+  {
+    question: "Are the tools mobile-friendly?",
+    answer: "Absolutely. Our website is designed to be fully responsive and all our tools are optimized to work seamlessly on desktops, tablets, and smartphones, so you can get things done on any device."
   }
 ];
 
