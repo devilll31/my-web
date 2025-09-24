@@ -13,7 +13,7 @@ export default function ContactPage() {
         <Card className="overflow-hidden">
           <CardHeader className="text-center bg-muted/30 p-8">
             <Send className="mx-auto h-12 w-12 text-primary mb-4" />
-            <CardTitle className="text-3xl font-headline">Get in Touch</CardTitle>
+            <CardTitle className="text-3xl font-headline">Contact Us</CardTitle>
             <CardDescription className="text-lg">
               Have a question, a suggestion for a new tool, or need support? We'd love to hear from you.
             </CardDescription>

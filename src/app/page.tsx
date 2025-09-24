@@ -84,7 +84,7 @@ export default function Home() {
         </section>
         <section id="trending-tools" className="w-full py-8 md:py-12 bg-background">
           <div className="container px-4 md:px-6">
-            <div className="flex items-center justify-center mb-8 gap-2">
+            <div className="flex items-center justify-center mb-2 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Trending Tools</h2>
               <span className="text-sm font-bold px-2.5 py-1 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">HOT</span>
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
 
         <section id="popular-tools" className="w-full py-8 md:py-12 bg-gray-50/50 dark:bg-zinc-900/50">
           <div className="container px-4 md:px-6">
-            <div className="flex items-center justify-center mb-8 gap-2">
+            <div className="flex items-center justify-center mb-2 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Most Popular Tools</h2>
               <Check className="w-8 h-8 text-green-500" />
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
 
         <section id="featured-tools" className="w-full py-8 md:py-12 bg-background">
           <div className="container px-4 md:px-6">
-             <div className="flex items-center justify-center mb-8 gap-2">
+             <div className="flex items-center justify-center mb-2 gap-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">Top 20 Featured Tools</h2>
               <Wand2 className="w-8 h-8 text-purple-500" />
             </div>

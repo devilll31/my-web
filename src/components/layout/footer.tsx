@@ -9,7 +9,7 @@ export default function Footer() {
       { name: 'All Tools', href: '/tools' },
       { name: 'Top 50', href: '/tools/top-50' },
       { name: 'Blog', href: '/blog' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'Contact Us', href: '/contact' },
       { name: 'About', href: '/about' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
