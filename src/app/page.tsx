@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full pt-20 pb-16 md:py-24 bg-hero-gradient overflow-hidden">
+        <section className="relative w-full pt-24 pb-20 md:py-28 bg-hero-gradient overflow-hidden">
           <div className="container px-4 md:px-6 relative text-center">
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-6">
