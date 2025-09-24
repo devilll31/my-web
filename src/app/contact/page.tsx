@@ -165,7 +165,7 @@ export default function ContactPage() {
           {/* Right Column */}
           <div className="lg:col-span-2">
             <Card>
-              <Tabs defaultValue="contact">
+              <Tabs defaultValue="contact" className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="contact">Contact Form</TabsTrigger>
                   <TabsTrigger value="about">About Us</TabsTrigger>

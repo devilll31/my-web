@@ -92,14 +92,14 @@ const UniversalSearch = () => {
             {suggestions.map(item => {
               const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
               const categoryDetails = isCategory(item) ? item : getCategoryBySlug(item.category);
-              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color}, 80%, 50%)` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color}, 70%, 50%)` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
               const name = item.name;
               const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')} style={!isCategory(item) && categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
+                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
                       {icon}
                     </div>
                     <div className="flex-1 overflow-hidden">
