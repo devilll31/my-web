@@ -13,7 +13,7 @@ export default function Footer() {
       { name: 'About', href: '/about' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
-      { name: 'Sitemap', href: '/sitemap.xml' },
+      { name: 'Sitemap', href: '/sitemap' },
       { name: 'FAQ', href: '/faq' },
   ];
 
@@ -23,7 +23,7 @@ export default function Footer() {
   const popularTools = toolCategories.map(category => {
     const tools = getTools().filter(t => t.category === category.slug && t.isImplemented);
     return tools.length > 0 ? tools[0] : null;
-  }).filter((t): t is NonNullable<typeof t> => !!t).slice(0, 10);
+  }).filter((t): t is NonNullable<typeof t> => !!t);
 
 
   return (
