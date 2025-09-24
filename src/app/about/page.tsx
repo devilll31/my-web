@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">About D2ools</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">About Us</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Our mission is to provide a comprehensive suite of high-quality, fast, and free online tools that empower everyone to accomplish their digital tasks with ease and security.
           </p>

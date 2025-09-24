@@ -21,8 +21,8 @@ export default function SitemapPage() {
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <li><Link href="/" className="hover:text-primary hover:underline">Home</Link></li>
               <li><Link href="/tools" className="hover:text-primary hover:underline">All Tools</Link></li>
-              <li><Link href="/blog" className="hover:text-primary hover:underline">Blog</Link></li>
-              <li><Link href="/about" className="hover:text-primary hover:underline">About</Link></li>
+              <li><Link href="/blog" className="hover:text-primary hover:underline">Blogs</Link></li>
+              <li><Link href="/about" className="hover:text-primary hover:underline">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-primary hover:underline">Contact Us</Link></li>
               <li><Link href="/faq" className="hover:text-primary hover:underline">FAQ</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-primary hover:underline">Privacy Policy</Link></li>
