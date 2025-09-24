@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full pt-24 pb-20 md:py-28 bg-hero-gradient overflow-hidden">
+        <section className="relative w-full pt-28 pb-24 md:py-32 bg-hero-gradient overflow-hidden">
           <div className="container px-4 md:px-6 relative text-center">
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-6">
@@ -48,7 +48,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-fade-in-up animation-delay-500">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-fade-in-up animation-delay-500">
               {stats.map((stat) => (
                 <div key={stat.value} className="p-4 rounded-full shadow-lg flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-gray-200/50 hover:shadow-xl transition-shadow cursor-pointer">
                   <div className="p-2.5 bg-primary/10 rounded-full">{stat.icon}</div>
@@ -60,7 +60,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-700">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-700">
                 <Button asChild size="lg" className="rounded-full group btn-gradient shadow-lg">
                     <Link href="/tools"><span className="text-white group-hover:text-black transition-colors duration-300">Explore All 500+ Tools</span> <ArrowRight className="ml-2 text-white group-hover:text-black transition-colors duration-300" /></Link>
                 </Button>
@@ -69,7 +69,7 @@ export default function Home() {
                 </Button>
             </div>
 
-            <div className="mt-10 animate-fade-in-up animation-delay-900">
+            <div className="mt-12 animate-fade-in-up animation-delay-900">
                 <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">Trusted by professionals worldwide</p>
                 <div className="mt-4 flex flex-wrap justify-center gap-4 md:gap-8">
                     {features.map((feature) => (
