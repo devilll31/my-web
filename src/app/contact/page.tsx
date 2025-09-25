@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -31,6 +30,7 @@ const ContactForm = () => (
   <Card>
     <CardContent className="p-6">
       <form className="space-y-6">
+        <h3 className="text-xl font-bold">Send us a Message</h3>
         <p className="text-muted-foreground">
           Fill out the form below and we'll get back to you as soon as possible.
         </p>
@@ -54,7 +54,9 @@ const ContactForm = () => (
         </div>
         <div className="text-center pt-4">
           <Button type="submit" size="lg" className="w-full md:w-auto btn-gradient text-white">
-            <Send className="mr-2 h-4 w-4" /> Send Message
+            <span className="text-white group-hover:text-black transition-colors duration-300">
+              <Send className="mr-2 h-4 w-4 inline-block" /> Send Message
+            </span>
           </Button>
         </div>
       </form>
@@ -108,72 +110,72 @@ export default function ContactPage() {
   return (
     <div className="py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <Tabs defaultValue="contact" className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="contact">Contact Us</TabsTrigger>
-            <TabsTrigger value="about">About Us</TabsTrigger>
-          </TabsList>
-          <TabsContent value="contact">
-            <div className="text-center max-w-3xl mx-auto my-12">
-              <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact Us</h1>
-              <p className="text-lg text-muted-foreground mt-4">
-                Have questions, feedback, or need help? We're here to assist you. Reach out to us through any of the channels below.
-              </p>
-            </div>
-             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-              <div className="lg:col-span-1 space-y-8">
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <Mail className="w-6 h-6 text-primary mt-1"/>
-                      <div>
-                        <h4 className="font-semibold">Email Support</h4>
-                        <a href="mailto:support@d2ools.com" className="text-primary hover:underline">support@d2ools.com</a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Clock className="w-6 h-6 text-primary mt-1"/>
-                      <div>
-                        <h4 className="font-semibold">Response Time</h4>
-                        <p className="text-muted-foreground">24 to 48 hours</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <MapPin className="w-6 h-6 text-primary mt-1"/>
-                      <div>
-                        <h4 className="font-semibold">Location</h4>
-                        <p className="text-muted-foreground">San Francisco, CA</p>
-                      </div>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact Us</h1>
+          <p className="text-lg text-muted-foreground mt-4">
+            Have questions, feedback, or need help? We're here to assist you. Reach out to us through any of the channels below.
+          </p>
+        </div>
+        <Tabs defaultValue="contact" className="w-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div className="lg:col-span-1 space-y-8">
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <Mail className="w-6 h-6 text-primary mt-1"/>
+                    <div>
+                      <h4 className="font-semibold">Email Support</h4>
+                      <a href="mailto:support@d2ools.com" className="text-primary hover:underline">support@d2ools.com</a>
                     </div>
                   </div>
-                </Card>
+                  <div className="flex items-start gap-4">
+                    <Clock className="w-6 h-6 text-primary mt-1"/>
+                    <div>
+                      <h4 className="font-semibold">Response Time</h4>
+                      <p className="text-muted-foreground">24 to 48 hours</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-primary mt-1"/>
+                    <div>
+                      <h4 className="font-semibold">Location</h4>
+                      <p className="text-muted-foreground">San Francisco, CA</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
 
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><HelpCircle className="text-primary"/>Quick Help</h3>
-                    <Accordion type="single" collapsible className="w-full">
-                      {quickHelpFaqs.map((faq, index) => (
-                          <AccordionItem value={`item-${index}`} key={index}>
-                            <AccordionTrigger className="text-base text-left font-semibold">{faq.q}</AccordionTrigger>
-                            <AccordionContent className="text-sm text-muted-foreground">
-                              {faq.a}
-                            </AccordionContent>
-                          </AccordionItem>
-                      ))}
-                  </Accordion>
-                </Card>
-              </div>
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><HelpCircle className="text-primary"/>Quick Help</h3>
+                  <Accordion type="single" collapsible className="w-full">
+                    {quickHelpFaqs.map((faq, index) => (
+                        <AccordionItem value={`item-${index}`} key={index}>
+                          <AccordionTrigger className="text-base text-left font-semibold">{faq.q}</AccordionTrigger>
+                          <AccordionContent className="text-sm text-muted-foreground">
+                            {faq.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+              </Card>
+            </div>
 
-              <div className="lg:col-span-2">
+            <div className="lg:col-span-2">
+               <TabsList className="grid w-full grid-cols-2 mb-4">
+                <TabsTrigger value="contact">Contact Form</TabsTrigger>
+                <TabsTrigger value="about">About Us</TabsTrigger>
+              </TabsList>
+              <TabsContent value="contact">
                 <ContactForm />
-              </div>
+              </TabsContent>
+              <TabsContent value="about" id="about">
+                <div className="py-12">
+                  <AboutUsContent />
+                </div>
+              </TabsContent>
             </div>
-          </TabsContent>
-          <TabsContent value="about">
-             <div className="py-12">
-                <AboutUsContent />
-            </div>
-          </TabsContent>
+          </div>
         </Tabs>
       </div>
     </div>

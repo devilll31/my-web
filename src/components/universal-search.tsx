@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -83,15 +82,19 @@ const UniversalSearch = () => {
           <ul className="divide-y divide-border/50">
             {suggestions.map(item => {
               const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
-              const categoryDetails = isCategory(item) ? item : getCategoryBySlug(item.category);
-              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color})` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              const categoryDetails = getCategoryBySlug(item.category);
+              const iconColor = categoryDetails ? `hsl(${categoryDetails.color})` : 'hsl(var(--secondary-foreground))';
+              const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 70%, 50%, 0.1)` : 'hsl(var(--muted))';
+              
+              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: iconColor }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              
               const name = item.name;
               const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className={cn("p-2 rounded-md")} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 80%, 60%, 0.25)`} : {}}>
+                    <div className={cn("p-2 rounded-md")} style={{ backgroundColor: iconBgColor}}>
                       {icon}
                     </div>
                     <div className="flex-1 overflow-hidden">

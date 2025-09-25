@@ -7,9 +7,9 @@ export default function Footer() {
       { name: 'Home', href: '/' },
       { name: 'All Tools', href: '/tools' },
       { name: 'Top 50', href: '/tools/top-50' },
-      { name: 'Blogs', href: '/blogs' },
+      { name: 'Blogs', href: '/blog' },
       { name: 'Contact Us', href: '/contact' },
-      { name: 'About Us', href: '/contact' },
+      { name: 'About Us', href: '/contact#about' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Sitemap', href: '/sitemap' },
@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4 col-span-1">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-auto [&>g>text]:fill-white" />
+              <Logo className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-slate-400 max-w-xs">
               The next level of online utility tools. Fast, free, and easy to use for all your digital needs.
