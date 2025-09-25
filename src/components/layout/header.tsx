@@ -150,7 +150,7 @@ export default function Header() {
                 </PopoverContent>
             </Popover>
 
-            <NavLink href="/blog">Blogs</NavLink>
+            <NavLink href="/blogs">Blogs</NavLink>
             <NavLink href="/contact">Contact Us</NavLink>
             </nav>
         </div>
