@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import Logo from '@/components/logo';
 import { getCategories, getTools } from '@/lib/tools-data';
@@ -9,8 +8,8 @@ export default function Footer() {
       { name: 'All Tools', href: '/tools' },
       { name: 'Top 50', href: '/tools/top-50' },
       { name: 'Blogs', href: '/blog' },
-      { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact' },
+      { name: 'About Us', href: '/about' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Sitemap', href: '/sitemap' },

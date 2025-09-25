@@ -65,14 +65,6 @@ const UniversalSearch = () => {
 
   const isCategory = (item: Tool | Category): item is Category => 'tools' in item;
 
-  const getToolIcon = (tool: Tool) => {
-    const category = getCategoryBySlug(tool.category);
-    if (category) {
-      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color}, 70%, 50%)` }} />;
-    }
-    return <Star className="h-5 w-5 text-secondary-foreground" />;
-  }
-
   return (
     <div className="relative w-full max-w-xl" ref={searchContainerRef}>
       <div className="relative">
@@ -92,14 +84,14 @@ const UniversalSearch = () => {
             {suggestions.map(item => {
               const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
               const categoryDetails = isCategory(item) ? item : getCategoryBySlug(item.category);
-              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color}, 70%, 50%)` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: `hsl(${categoryDetails.color})` }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
               const name = item.name;
               const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className={cn("p-2 rounded-md")} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
+                    <div className={cn("p-2 rounded-md")} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 80%, 60%, 0.25)`} : {}}>
                       {icon}
                     </div>
                     <div className="flex-1 overflow-hidden">

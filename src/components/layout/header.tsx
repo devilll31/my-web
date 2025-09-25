@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -152,8 +151,7 @@ export default function Header() {
             </Popover>
 
             <NavLink href="/blog">Blogs</NavLink>
-            <NavLink href="/about">About Us</NavLink>
-            <NavLink href="/contact" className="ml-2">Contact Us</NavLink>
+            <NavLink href="/contact">Contact Us</NavLink>
             </nav>
         </div>
         <div className="flex flex-1 justify-end">
