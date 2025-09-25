@@ -68,7 +68,7 @@ const UniversalSearch = () => {
   const getToolIcon = (tool: Tool) => {
     const category = getCategoryBySlug(tool.category);
     if (category) {
-      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color}, 80%, 50%)` }} />;
+      return <category.icon className="h-5 w-5" style={{ color: `hsl(${category.color}, 70%, 50%)` }} />;
     }
     return <Star className="h-5 w-5 text-secondary-foreground" />;
   }
@@ -99,7 +99,7 @@ const UniversalSearch = () => {
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className={cn("p-2 rounded-md", isCategory(item) ? 'bg-primary/10' : 'bg-secondary')} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
+                    <div className={cn("p-2 rounded-md")} style={categoryDetails ? { backgroundColor: `hsla(${categoryDetails.color}, 70%, 50%, 0.1)`} : {}}>
                       {icon}
                     </div>
                     <div className="flex-1 overflow-hidden">

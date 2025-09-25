@@ -9,6 +9,7 @@ export default function Footer() {
       { name: 'All Tools', href: '/tools' },
       { name: 'Top 50', href: '/tools/top-50' },
       { name: 'Blogs', href: '/blog' },
+      { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
