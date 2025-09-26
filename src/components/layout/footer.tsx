@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Logo from '@/components/logo';
-import { getCategories, getToolsByCategory } from '@/lib/tools-data';
+import { getCategories, getToolsByCategory, getToolBySlug } from '@/lib/tools-data';
 
 export default function Footer() {
   const pages = [
@@ -18,11 +18,20 @@ export default function Footer() {
 
   const toolCategories = getCategories().slice(0, 10);
   
-  // Get one top tool from each of the first 10 categories
-  const popularTools = toolCategories.map(category => {
-    const tools = getToolsByCategory(category.slug);
-    return tools.length > 0 ? tools[0] : null;
-  }).filter((t): t is NonNullable<typeof t> => !!t);
+  const popularToolSlugs = [
+    'pdf-to-word',
+    'image-compressor',
+    'image-resizer',
+    'merge-pdf',
+    'word-to-pdf',
+    'unlock-pdf',
+    'password-generator',
+    'qr-code-generator',
+    'json-formatter',
+    'image-upscaler-ai'
+  ];
+
+  const popularTools = popularToolSlugs.map(slug => getToolBySlug(slug)).filter(Boolean) as any[];
 
 
   return (
