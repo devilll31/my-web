@@ -146,11 +146,11 @@ body {
     50% { color: inherit }
   }
 
-  .tool-link-text {
+  .tool-link-text, .footer-link-text {
     @apply relative;
   }
 
-  .tool-link-text::after {
+  .tool-link-text::after, .footer-link-text::after {
     content: '';
     position: absolute;
     width: 0;
@@ -163,12 +163,12 @@ body {
     -webkit-transition: width .3s ease;
   }
 
-  .tool-link:hover .tool-link-text {
+  .tool-link:hover .tool-link-text, .footer-link:hover .footer-link-text {
     color: hsl(var(--primary));
     text-shadow: 0 0 8px hsla(var(--primary) / 0.5);
   }
 
-  .tool-link:hover .tool-link-text::after {
+  .tool-link:hover .tool-link-text::after, .footer-link:hover .footer-link-text::after {
     width: 100%;
     left: 0;
     background-color: hsl(var(--primary));

@@ -42,7 +42,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {pages.map(page => (
                  <li key={page.name}>
-                    <Link href={page.href} className="text-sm text-slate-400 hover:text-primary">{page.name}</Link>
+                    <Link href={page.href} className="text-sm text-slate-400 hover:text-primary footer-link">
+                      <span className="footer-link-text">{page.name}</span>
+                    </Link>
                 </li>
               ))}
             </ul>
@@ -52,7 +54,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {toolCategories.map(category => (
                 <li key={category.slug}>
-                    <Link href={`/tools#${category.slug}`} className="text-sm text-slate-400 hover:text-primary">{category.name}</Link>
+                    <Link href={`/tools#${category.slug}`} className="text-sm text-slate-400 hover:text-primary footer-link">
+                      <span className="footer-link-text">{category.name}</span>
+                    </Link>
                 </li>
               ))}
             </ul>
@@ -62,7 +66,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
                 {popularTools.map(tool => (
                     <li key={tool.slug}>
-                        <Link href={`/tools/${tool.slug}`} className="text-sm text-slate-400 hover:text-primary">{tool.name}</Link>
+                        <Link href={`/tools/${tool.slug}`} className="text-sm text-slate-400 hover:text-primary footer-link">
+                          <span className="footer-link-text">{tool.name}</span>
+                        </Link>
                     </li>
                 ))}
             </ul>

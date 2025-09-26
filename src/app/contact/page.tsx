@@ -72,10 +72,10 @@ const AboutUsContent = () => (
     <div className="space-y-8">
         <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-headline gradient-text">About D2ools</h2>
-            <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
+            <p className="text-lg text-muted-foreground mt-4 leading-relaxed text-justify">
                 In a digital world cluttered with single-purpose websites, frustrating user experiences, and questionable privacy practices, D2ools was born from a simple yet powerful idea: to create a single, reliable, and beautiful destination for all the small digital tasks we face every day. Whether you're a developer, a marketer, a student, or just someone trying to convert a file, you shouldn't have to navigate a dozen ad-filled, slow, and insecure websites.
             </p>
-            <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
+            <p className="text-lg text-muted-foreground mt-4 leading-relaxed text-justify">
                 Our mission is to build the ultimate digital toolkit: a comprehensive library of over 500 tools that are not only powerful and free but also prioritize user privacy and security above all else. For many of our tools, all processing happens directly in your browser, which means your sensitive files never leave your computer. We believe in speed, security, and a user-friendly experience, and we are committed to making our tools accessible to everyone, everywhere.
             </p>
         </div>
