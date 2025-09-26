@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -52,7 +53,7 @@ const ContactForm = () => (
         </div>
         <div className="space-y-2">
           <Label htmlFor="message">Message *</Label>
-          <Textarea id="message" placeholder="Tell us more about your question or feedback..." className="min-h-[150px]" required />
+          <Textarea id="message" placeholder="Tell us more about your question or feedback..." className="min-h-[250px]" required />
         </div>
         <div className="text-center pt-4">
           <Button type="submit" size="lg" className="w-full md:w-auto btn-gradient text-white group">
@@ -69,13 +70,13 @@ const ContactForm = () => (
 
 const AboutUsContent = () => (
     <div className="space-y-8">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-headline gradient-text">About D2ools</h2>
             <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                D2ools was born from a simple yet powerful idea: to create a single, reliable destination for the countless small digital tasks we face every day. We were tired of navigating dozens of ad-filled, slow, and insecure websites just to convert a file, resize an image, or format a piece of code.
+                D2ools was born from a simple yet powerful idea: to create a single, reliable destination for the countless small digital tasks we face every day. We were tired of navigating dozens of ad-filled, slow, and insecure websites just to convert a file, resize an image, or format a piece of code. We believe that powerful utilities should be accessible to everyone—students, developers, marketers, writers, and anyone in between—without the usual frustration.
             </p>
             <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                We envisioned a world where powerful utilities were accessible to everyone—students, professional developers, marketers, writers, and anyone in between—without the frustration. We are committed to building a library of over 500 tools that are not only powerful and free but also prioritize user privacy and security above all else. For many of our tools, all processing happens directly in your browser, meaning your files never leave your computer.
+                Our mission is to build a comprehensive library of over 500 tools that are not only powerful and free but also prioritize user privacy and security above all else. For many of our tools, all processing happens directly in your browser, meaning your sensitive files never leave your computer. We are committed to creating an experience that is fast, secure, and user-friendly.
             </p>
         </div>
 
@@ -106,9 +107,10 @@ const AboutUsContent = () => (
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState("contact");
   const quickHelpFaqs = [
-    { q: "Are all tools free?", a: "Yes, all 500+ tools are completely free to use." },
-    { q: "Do I need to register?", a: "No registration required. Use tools instantly." },
-    { q: "Is my data secure?", a: "Yes, we process files securely and don't store them." },
+    { q: "Are all tools free?", a: "Yes, all 500+ tools are completely free to use without any hidden costs or feature walls." },
+    { q: "Do I need to register?", a: "No registration is required. All our tools are available for immediate, anonymous use." },
+    { q: "Is my data secure?", a: "Absolutely. Many tools run in your browser, so your data never leaves your machine. For tools that require server processing, we use secure connections and delete your files immediately after." },
+    { q: "Can I suggest a new tool?", a: "Yes, please! We are always looking to expand our toolkit. Use the contact form to send us your ideas." },
   ];
 
   useEffect(() => {
@@ -120,74 +122,78 @@ export default function ContactPage() {
   return (
     <div className="py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact Us</h1>
-          <p className="text-lg text-muted-foreground mt-4">
-            Have questions, feedback, or need help? We're here to assist you. Reach out to us through any of the channels below.
-          </p>
-        </div>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <div className="lg:col-span-1 space-y-8">
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-primary mt-1"/>
-                    <div>
-                      <h4 className="font-semibold">Email Support</h4>
-                      <a href="mailto:support@d2ools.com" className="text-primary hover:underline">support@d2ools.com</a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Clock className="w-6 h-6 text-primary mt-1"/>
-                    <div>
-                      <h4 className="font-semibold">Response Time</h4>
-                      <p className="text-muted-foreground">24 to 48 hours</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-primary mt-1"/>
-                    <div>
-                      <h4 className="font-semibold">Location</h4>
-                      <p className="text-muted-foreground">San Francisco, CA</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><HelpCircle className="text-primary"/>Quick Help</h3>
-                  <Accordion type="single" collapsible className="w-full">
-                    {quickHelpFaqs.map((faq, index) => (
-                        <AccordionItem value={`item-${index}`} key={index}>
-                          <AccordionTrigger className="text-base text-left font-semibold">{faq.q}</AccordionTrigger>
-                          <AccordionContent className="text-sm text-muted-foreground">
-                            {faq.a}
-                          </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
-              </Card>
-            </div>
-
-            <div className="lg:col-span-2">
-               <TabsList className="grid w-full grid-cols-2 mb-4">
-                <TabsTrigger value="contact">Contact Form</TabsTrigger>
-                <TabsTrigger value="about">About Us</TabsTrigger>
-              </TabsList>
-              <TabsContent value="contact">
-                <ContactForm />
-              </TabsContent>
-              <TabsContent value="about" id="about">
-                <div className="py-12">
-                  <AboutUsContent />
-                </div>
-              </TabsContent>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact & About</h1>
+            <p className="text-lg text-muted-foreground mt-4">
+              Have questions, feedback, or want to learn more about our mission? We're here to help.
+            </p>
+            <TabsList className="grid w-full grid-cols-2 mt-8">
+              <TabsTrigger value="contact">Contact Form</TabsTrigger>
+              <TabsTrigger value="about">About Us</TabsTrigger>
+            </TabsList>
           </div>
+          
+          <TabsContent value="contact">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              <div className="lg:col-span-1 space-y-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <Mail className="w-6 h-6 text-primary mt-1"/>
+                      <div>
+                        <h4 className="font-semibold">Email Support</h4>
+                        <a href="mailto:support@d2ools.com" className="text-primary hover:underline">support@d2ools.com</a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <Clock className="w-6 h-6 text-primary mt-1"/>
+                      <div>
+                        <h4 className="font-semibold">Response Time</h4>
+                        <p className="text-muted-foreground">24 to 48 hours</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <MapPin className="w-6 h-6 text-primary mt-1"/>
+                      <div>
+                        <h4 className="font-semibold">Location</h4>
+                        <p className="text-muted-foreground">San Francisco, CA</p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><HelpCircle className="text-primary"/>Quick Help</h3>
+                    <Accordion type="single" collapsible className="w-full">
+                      {quickHelpFaqs.map((faq, index) => (
+                          <AccordionItem value={`item-${index}`} key={index}>
+                            <AccordionTrigger className="text-base text-left font-semibold">{faq.q}</AccordionTrigger>
+                            <AccordionContent className="text-sm text-muted-foreground">
+                              {faq.a}
+                            </AccordionContent>
+                          </AccordionItem>
+                      ))}
+                  </Accordion>
+                </Card>
+              </div>
+
+              <div className="lg:col-span-2">
+                <ContactForm />
+              </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="about" id="about">
+            <div className="py-12">
+              <AboutUsContent />
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </div>
   );
 }
+
+    
