@@ -73,10 +73,10 @@ const AboutUsContent = () => (
         <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-headline gradient-text">About D2ools</h2>
             <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                D2ools was born from a simple yet powerful idea: to create a single, reliable destination for the countless small digital tasks we face every day. We were tired of navigating dozens of ad-filled, slow, and insecure websites just to convert a file, resize an image, or format a piece of code. We believe that powerful utilities should be accessible to everyone—students, developers, marketers, writers, and anyone in between—without the usual frustration.
+                In a digital world cluttered with single-purpose websites, frustrating user experiences, and questionable privacy practices, D2ools was born from a simple yet powerful idea: to create a single, reliable, and beautiful destination for all the small digital tasks we face every day. Whether you're a developer, a marketer, a student, or just someone trying to convert a file, you shouldn't have to navigate a dozen ad-filled, slow, and insecure websites.
             </p>
             <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-                Our mission is to build a comprehensive library of over 500 tools that are not only powerful and free but also prioritize user privacy and security above all else. For many of our tools, all processing happens directly in your browser, meaning your sensitive files never leave your computer. We are committed to creating an experience that is fast, secure, and user-friendly.
+                Our mission is to build the ultimate digital toolkit: a comprehensive library of over 500 tools that are not only powerful and free but also prioritize user privacy and security above all else. For many of our tools, all processing happens directly in your browser, which means your sensitive files never leave your computer. We believe in speed, security, and a user-friendly experience, and we are committed to making our tools accessible to everyone, everywhere.
             </p>
         </div>
 
@@ -88,17 +88,17 @@ const AboutUsContent = () => (
             <div className="text-center p-6 bg-card rounded-xl shadow-lg border border-border/20">
                 <Users className="w-12 h-12 mx-auto text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-2 font-headline">For Everyone</h4>
-                <p className="text-muted-foreground">No sign-ups, no limits. Our tools are designed to be intuitive and useful for everyone, regardless of technical skill.</p>
+                <p className="text-muted-foreground">We believe in democratizing access to great tools. That’s why there are no sign-ups, no limits, and no paywalls. Our tools are designed to be intuitive and useful for everyone, regardless of technical skill.</p>
             </div>
             <div className="text-center p-6 bg-card rounded-xl shadow-lg border border-border/20">
                 <Zap className="w-12 h-12 mx-auto text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-2 font-headline">Lightning Fast</h4>
-                <p className="text-muted-foreground">By processing data on your device where possible and using optimized server infrastructure for complex tasks, we provide instant results.</p>
+                <p className="text-muted-foreground">Your time is valuable. By processing data on your device where possible and using an optimized server infrastructure for complex tasks, we provide instant results without the wait.</p>
             </div>
             <div className="text-center p-6 bg-card rounded-xl shadow-lg border border-border/20">
                 <ShieldCheck className="w-12 h-12 mx-auto text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-2 font-headline">Privacy First</h4>
-                <p className="text-muted-foreground">Your files and data are your own. We never upload or store your sensitive information unnecessarily. Your privacy is paramount.</p>
+                <p className="text-muted-foreground">Your files and data are your own. We never upload or store your sensitive information unnecessarily. For server-side tasks, files are deleted immediately after processing. Your privacy is paramount.</p>
             </div>
         </div>
     </div>
@@ -111,6 +111,8 @@ export default function ContactPage() {
     { q: "Do I need to register?", a: "No registration is required. All our tools are available for immediate, anonymous use." },
     { q: "Is my data secure?", a: "Absolutely. Many tools run in your browser, so your data never leaves your machine. For tools that require server processing, we use secure connections and delete your files immediately after." },
     { q: "Can I suggest a new tool?", a: "Yes, please! We are always looking to expand our toolkit. Use the contact form to send us your ideas." },
+    { q: "How do you make money?", a: "We are funded through non-intrusive advertising. This allows us to keep all tools free while covering our development and server costs." },
+    { q: "What happens to my uploaded files?", a: "For tools requiring file uploads for server processing, your files are encrypted in transit, processed, and then permanently deleted from our servers immediately. We do not store your data." },
   ];
 
   useEffect(() => {
@@ -124,7 +126,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 md:px-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact & About</h1>
+            <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">Contact & About Us</h1>
             <p className="text-lg text-muted-foreground mt-4">
               Have questions, feedback, or want to learn more about our mission? We're here to help.
             </p>
@@ -195,7 +197,5 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    
 
     
