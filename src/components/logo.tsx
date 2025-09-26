@@ -1,7 +1,11 @@
 
 import { cn } from "@/lib/utils";
 
-const Logo = ({ className, ...props }: React.HTMLAttributes<SVGElement>) => {
+interface LogoProps extends React.HTMLAttributes<SVGElement> {
+    isFooter?: boolean;
+}
+
+const Logo = ({ className, isFooter = false, ...props }: LogoProps) => {
   return (
     <svg
       width="130"
@@ -43,7 +47,7 @@ const Logo = ({ className, ...props }: React.HTMLAttributes<SVGElement>) => {
           fontSize="24"
           fontWeight="bold"
           fontFamily="Inter, sans-serif"
-          className="fill-foreground dark:fill-slate-200"
+          className={cn("fill-foreground", { "dark:fill-slate-200": !isFooter, "fill-white": isFooter })}
         >
           D2ools
         </text>

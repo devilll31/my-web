@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -53,9 +55,10 @@ const ContactForm = () => (
           <Textarea id="message" placeholder="Tell us more about your question or feedback..." className="min-h-[150px]" required />
         </div>
         <div className="text-center pt-4">
-          <Button type="submit" size="lg" className="w-full md:w-auto btn-gradient text-white">
+          <Button type="submit" size="lg" className="w-full md:w-auto btn-gradient text-white group">
+            <Send className="mr-2 h-4 w-4 inline-block text-white group-hover:text-black transition-colors duration-300" /> 
             <span className="text-white group-hover:text-black transition-colors duration-300">
-              <Send className="mr-2 h-4 w-4 inline-block" /> Send Message
+              Send Message
             </span>
           </Button>
         </div>
@@ -101,11 +104,18 @@ const AboutUsContent = () => (
 );
 
 export default function ContactPage() {
+  const [activeTab, setActiveTab] = useState("contact");
   const quickHelpFaqs = [
     { q: "Are all tools free?", a: "Yes, all 500+ tools are completely free to use." },
     { q: "Do I need to register?", a: "No registration required. Use tools instantly." },
     { q: "Is my data secure?", a: "Yes, we process files securely and don't store them." },
   ];
+
+  useEffect(() => {
+    if (window.location.hash === '#about') {
+      setActiveTab('about');
+    }
+  }, []);
 
   return (
     <div className="py-12 md:py-20">
@@ -116,7 +126,7 @@ export default function ContactPage() {
             Have questions, feedback, or need help? We're here to assist you. Reach out to us through any of the channels below.
           </p>
         </div>
-        <Tabs defaultValue="contact" className="w-full max-w-6xl mx-auto">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-1 space-y-8">
               <Card className="p-6">
