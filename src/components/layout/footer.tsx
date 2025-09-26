@@ -20,7 +20,7 @@ export default function Footer() {
   
   // Get one top tool from each of the first 10 categories
   const popularTools = toolCategories.map(category => {
-    const tools = getToolsByCategory(category.slug).filter(t => t.isImplemented);
+    const tools = getToolsByCategory(category.slug);
     return tools.length > 0 ? tools[0] : null;
   }).filter((t): t is NonNullable<typeof t> => !!t);
 
