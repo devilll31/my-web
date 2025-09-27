@@ -50,8 +50,8 @@ export default function SitemapPage() {
           <div>
             <h2 className="text-2xl font-bold font-headline mb-6 border-b pb-3">All Tools by Category</h2>
             <Accordion type="single" collapsible className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {categoriesWithTools.map((category, index) => {
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+                {categoriesWithTools.map((category) => {
                   const catDetails = getCategoryBySlug(category.slug);
                   if (!catDetails) return null;
                   return (
@@ -61,7 +61,6 @@ export default function SitemapPage() {
                           <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${catDetails.color}, 80%, 60%, 0.25)` }}>
                               <category.icon className="w-5 h-5" style={{ color: `hsl(${catDetails.color})` }} />
                           </div>
-                          <span className="font-bold">{index + 1}.</span>
                           {category.name}
                         </div>
                       </AccordionTrigger>
