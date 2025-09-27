@@ -85,12 +85,11 @@ const UniversalSearch = () => {
               const isCat = isCategory(item);
               const href = isCat ? `/tools#${item.slug}` : `/tools/${item.slug}`;
               
-              // Correctly get category details for both Tools and Categories
               const categorySlug = isCat ? item.slug : item.category;
               const categoryDetails = getCategoryBySlug(categorySlug);
 
               const iconColor = categoryDetails ? `hsl(${categoryDetails.color})` : 'hsl(var(--secondary-foreground))';
-              const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 70%, 50%, 0.1)` : 'hsl(var(--muted))';
+              const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 70%, 50%, 0.15)` : 'hsla(var(--muted))';
               
               const IconComponent = categoryDetails ? categoryDetails.icon : Star;
               
