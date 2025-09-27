@@ -89,7 +89,7 @@ const UniversalSearch = () => {
               const categoryDetails = getCategoryBySlug(categorySlug);
 
               const iconColor = categoryDetails ? `hsl(${categoryDetails.color})` : 'hsl(var(--secondary-foreground))';
-              const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 70%, 50%, 0.15)` : 'hsl(var(--muted))';
+              const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 80%, 60%, 0.25)` : 'hsl(var(--muted))';
               
               const IconComponent = categoryDetails ? categoryDetails.icon : Star;
               
