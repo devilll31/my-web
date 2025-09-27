@@ -49,34 +49,37 @@ export default function SitemapPage() {
           
           <div>
             <h2 className="text-2xl font-bold font-headline mb-6 border-b pb-3">All Tools by Category</h2>
-            <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {categoriesWithTools.map((category, index) => {
-                 const catDetails = getCategoryBySlug(category.slug);
-                 if (!catDetails) return null;
-                return (
-                  <AccordionItem value={category.slug} key={category.slug} className="border bg-card rounded-lg shadow-sm">
-                    <AccordionTrigger className="text-lg text-left font-semibold p-4 hover:no-underline">
-                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${catDetails.color}, 80%, 60%, 0.25)` }}>
-                            <category.icon className="w-5 h-5" style={{ color: `hsl(${catDetails.color})` }} />
+            <Accordion type="single" collapsible className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {categoriesWithTools.map((category, index) => {
+                  const catDetails = getCategoryBySlug(category.slug);
+                  if (!catDetails) return null;
+                  return (
+                    <AccordionItem value={category.slug} key={category.slug} className="border bg-card rounded-lg shadow-sm">
+                      <AccordionTrigger className="text-lg text-left font-semibold p-4 hover:no-underline">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${catDetails.color}, 80%, 60%, 0.25)` }}>
+                              <category.icon className="w-5 h-5" style={{ color: `hsl(${catDetails.color})` }} />
+                          </div>
+                          <span className="font-bold">{index + 1}.</span>
+                          {category.name}
                         </div>
-                        <span className="font-bold">{index + 1}.</span>
-                        {category.name}
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-4">
-                      <ul className="space-y-2 text-sm max-h-60 overflow-y-auto">
-                        {category.tools.map((tool) => (
-                          <li key={tool.slug}>
-                            <Link href={`/tools/${tool.slug}`} className="text-muted-foreground hover:text-primary hover:underline">
-                              {tool.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                )})}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-4 pb-4">
+                        <ul className="space-y-2 text-sm max-h-60 overflow-y-auto">
+                          {category.tools.map((tool, toolIndex) => (
+                            <li key={tool.slug} className="flex items-start">
+                              <span className="text-muted-foreground w-6 text-right mr-2">{toolIndex + 1}.</span>
+                              <Link href={`/tools/${tool.slug}`} className="flex-1 text-muted-foreground hover:text-primary hover:underline">
+                                {tool.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  )})}
+              </div>
             </Accordion>
           </div>
         </div>
