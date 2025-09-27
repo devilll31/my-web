@@ -99,7 +99,7 @@ const UniversalSearch = () => {
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
-                    <div className="p-2 rounded-md" style={{ backgroundColor: iconBgColor}}>
+                    <div className="p-2 rounded-md" style={{ backgroundColor: iconBgColor }}>
                       <IconComponent className="h-5 w-5" style={{ color: iconColor }} />
                     </div>
                     <div className="flex-1 overflow-hidden">
