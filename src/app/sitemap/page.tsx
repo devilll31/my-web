@@ -1,6 +1,12 @@
 
 import { getAllToolsByCategories } from '@/lib/tools-data';
 import Link from 'next/link';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export default function SitemapPage() {
   const categoriesWithTools = getAllToolsByCategories();
@@ -40,27 +46,29 @@ export default function SitemapPage() {
           
           <div>
             <h2 className="text-2xl font-bold font-headline mb-6 border-b pb-3">All Tools by Category</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {categoriesWithTools.map((category) => (
-                <div key={category.slug} className="mb-6">
-                  <Link href={`/tools#${category.slug}`}>
-                    <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 hover:text-primary transition-colors">
+                <AccordionItem value={category.slug} key={category.slug} className="border bg-card rounded-lg shadow-sm">
+                  <AccordionTrigger className="text-lg text-left font-semibold p-4 hover:no-underline">
+                     <div className="flex items-center gap-3">
                       <category.icon className="w-5 h-5 text-primary" />
                       {category.name}
-                    </h3>
-                  </Link>
-                  <ul className="space-y-2 text-sm">
-                    {category.tools.map((tool) => (
-                      <li key={tool.slug}>
-                        <Link href={`/tools/${tool.slug}`} className="text-muted-foreground hover:text-primary hover:underline">
-                          {tool.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 pb-4">
+                    <ul className="space-y-2 text-sm max-h-60 overflow-y-auto">
+                      {category.tools.map((tool) => (
+                        <li key={tool.slug}>
+                          <Link href={`/tools/${tool.slug}`} className="text-muted-foreground hover:text-primary hover:underline">
+                            {tool.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </div>
