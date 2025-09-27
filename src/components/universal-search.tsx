@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -89,7 +90,7 @@ const UniversalSearch = () => {
               const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: iconColor }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
               
               const name = item.name;
-              const description = isCategory(item) ? `${item.tools.length} tools` : item.description;
+              const description = isCategory(item) ? `${(item as Category).tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
