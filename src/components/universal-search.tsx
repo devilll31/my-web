@@ -82,21 +82,26 @@ const UniversalSearch = () => {
         <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-xl border border-border/50 overflow-hidden z-50">
           <ul className="divide-y divide-border/50">
             {suggestions.map(item => {
-              const href = isCategory(item) ? `/tools#${item.slug}` : `/tools/${item.slug}`;
-              const categoryDetails = getCategoryBySlug(item.category);
+              const isCat = isCategory(item);
+              const href = isCat ? `/tools#${item.slug}` : `/tools/${item.slug}`;
+              
+              // Correctly get category details for both Tools and Categories
+              const categorySlug = isCat ? item.slug : item.category;
+              const categoryDetails = getCategoryBySlug(categorySlug);
+
               const iconColor = categoryDetails ? `hsl(${categoryDetails.color})` : 'hsl(var(--secondary-foreground))';
               const iconBgColor = categoryDetails ? `hsla(${categoryDetails.color}, 70%, 50%, 0.1)` : 'hsl(var(--muted))';
               
-              const icon = categoryDetails ? <categoryDetails.icon className="h-5 w-5" style={{ color: iconColor }} /> : <Star className="h-5 w-5 text-secondary-foreground" />;
+              const IconComponent = categoryDetails ? categoryDetails.icon : Star;
               
               const name = item.name;
-              const description = isCategory(item) ? `${(item as Category).tools.length} tools` : item.description;
+              const description = isCat ? `${(item as Category).tools.length} tools` : item.description;
 
               return (
                 <li key={item.slug}>
                   <Link href={href} onClick={() => setShowSuggestions(false)} className="flex items-center gap-4 p-3 hover:bg-primary/5 transition-colors">
                     <div className={cn("p-2 rounded-md")} style={{ backgroundColor: iconBgColor}}>
-                      {icon}
+                      <IconComponent className="h-5 w-5" style={{ color: iconColor }} />
                     </div>
                     <div className="flex-1 overflow-hidden">
                        <p className="font-semibold text-sm truncate">{name}</p>
