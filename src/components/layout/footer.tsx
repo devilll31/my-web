@@ -21,14 +21,14 @@ export default function Footer() {
   const popularToolSlugs = [
     'pdf-to-word',
     'image-compressor',
-    'image-resizer',
-    'merge-pdf',
-    'word-to-pdf',
-    'unlock-pdf',
-    'password-generator',
+    'json-to-csv',
+    'word-counter',
+    'whois-lookup',
+    'emi-calculator',
+    'percentage-calculator',
+    'json-validator',
     'qr-code-generator',
-    'json-formatter',
-    'image-upscaler-ai'
+    'verify-file-checksum'
   ];
 
   const popularTools = popularToolSlugs.map(slug => getToolBySlug(slug)).filter(Boolean) as any[];
