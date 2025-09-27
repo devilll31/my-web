@@ -1,13 +1,12 @@
 
-import { getAllToolsByCategories } from '@/lib/tools-data';
+import { getAllToolsByCategories, getCategoryBySlug } from '@/lib/tools-data';
 import Link from 'next/link';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { getCategoryBySlug } from '@/lib/tools-data';
+} from "@/components/ui/accordion";
 
 export default function SitemapPage() {
   const categoriesWithTools = getAllToolsByCategories();
@@ -84,3 +83,5 @@ export default function SitemapPage() {
     </div>
   );
 }
+
+    
