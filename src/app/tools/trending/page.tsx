@@ -13,7 +13,7 @@ export default function TrendingToolsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">Top Trending Tools</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">Top Trending Tools</h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           The hottest tools on D2ools right now. Here are the 50 most used tools by our community.
         </p>

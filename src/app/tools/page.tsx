@@ -19,7 +19,7 @@ export default function AllToolsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">All Tools by Category</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">All Tools by Category</h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Explore our comprehensive suite of over 500+ tools. Everything you need for your digital tasks, organized by category.
         </p>

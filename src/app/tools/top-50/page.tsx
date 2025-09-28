@@ -13,7 +13,7 @@ export default function Top50ToolsPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">Top 50 Most Popular Tools</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">Top 50 Most Popular Tools</h1>
         <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
           The community's favorite tools. Explore the 50 most popular utilities on D2ools, ranked by usage.
         </p>

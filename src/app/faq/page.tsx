@@ -77,7 +77,7 @@ export default function FaqPage() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <HelpCircle className="mx-auto h-12 w-12 text-primary mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4">Frequently Asked Questions</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">Frequently Asked Questions</h1>
           <p className="text-lg text-muted-foreground">Find answers to common questions about D2ools, our policies, and how our tools work.</p>
         </div>
         
