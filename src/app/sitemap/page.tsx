@@ -1,4 +1,3 @@
-
 import { getAllToolsByCategories, getCategoryBySlug } from '@/lib/tools-data';
 import Link from 'next/link';
 import {
