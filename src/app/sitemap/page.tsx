@@ -60,7 +60,6 @@ export default function SitemapPage() {
                            <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${catDetails.color}, 80%, 60%, 0.25)` }}>
                               <category.icon className="w-5 h-5" style={{ color: `hsl(${catDetails.color})` }} />
                           </div>
-                          <span className="mr-2">{categoryIndex + 1}.</span>
                           {category.name}
                         </div>
                       </AccordionTrigger>

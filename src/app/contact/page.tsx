@@ -80,7 +80,7 @@ const AboutUsContent = () => (
         </div>
 
         <div className="text-center pt-8">
-            <h3 className="text-2xl font-bold font-headline">Our Core Principles</h3>
+            <h3 className="text-2xl font-bold font-headline gradient-text">Our Core Principles</h3>
         </div>
 
         <div className="mt-8 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
