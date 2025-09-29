@@ -70,7 +70,7 @@ const ContactForm = () => (
 const AboutUsContent = () => (
     <div className="space-y-8">
         <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline gradient-text">About D2ools</h2>
+            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">About D2ools</h1>
             <p className="text-lg text-muted-foreground mt-4 leading-relaxed text-justify">
                 In a digital world cluttered with single-purpose websites, frustrating user experiences, and questionable privacy practices, D2ools was born from a simple yet powerful idea: to create a single, reliable, and beautiful destination for all the small digital tasks we face every day. Whether you're a developer, a marketer, a student, or just someone trying to convert a file, you shouldn't have to navigate a dozen ad-filled, slow, and insecure websites.
             </p>
