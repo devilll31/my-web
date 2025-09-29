@@ -37,7 +37,8 @@ We've made the process incredibly simple. Here’s how it works:
 
 Our service is built on speed, security, and simplicity. There are no sign-ups, no watermarks, and no hidden fees. Just a fast, reliable conversion every time.
 `
-  },
+  }
+  ,
   {
     slug: "guide-to-merging-splitting-pdfs",
     title: "The Ultimate Guide to Merging and Splitting PDFs",
@@ -68,7 +69,8 @@ Extracting specific pages from a large PDF is just as easy with our Split PDF to
 
 At D2ools, your privacy is paramount. All file processing is done securely, and your files are automatically deleted from our servers shortly after you're done.
 `
-  },
+  }
+  ,
   {
     slug: "compressing-pdfs-without-losing-quality",
     title: "Compressing PDFs Without Losing Quality",
@@ -97,7 +99,8 @@ Using our tool is a simple, three-step process:
 
 Like all our tools, the PDF Compressor is free, secure, and doesn't require any registration. We handle your files privately and delete them from our servers after processing.
 `
-  },
+  }
+  ,
   // Image Tools
   {
     slug: "remove-image-backgrounds-in-5-seconds",
@@ -123,7 +126,8 @@ We've designed the tool to be as simple and intuitive as possible.
 
 This powerful tool is perfect for graphic designers, marketers, social media managers, and anyone who wants to create stunning, professional-looking visuals without the hassle. It's fast, free, and respects your privacy by processing your images securely.
 `
-  },
+  }
+  ,
   {
     slug: "upscale-photos-with-ai",
     title: "Upscale Your Photos: Increase Image Resolution with AI",
@@ -154,7 +158,8 @@ The process is simple and magical.
 
 Give your old or small images a new lease on life with the power of AI. It's fast, free, and another example of how D2ools is bringing professional-grade tools to everyone.
 `
-  },
+  }
+  ,
   // Finance Tools
   {
     slug: "understanding-your-loan-emi-calculator",
@@ -188,7 +193,8 @@ Once you've entered the details, the calculator instantly provides three key pie
 
 By experimenting with different values, you can see how a larger down payment, a shorter tenure, or a lower interest rate can save you a significant amount of money in the long run. Plan your finances with confidence using the D2ools EMI Calculator.
 `
-  },
+  }
+  ,
   {
     slug: "sip-calculator-visualizing-wealth",
     title: "SIP Calculator: Visualizing Your Path to Wealth",
@@ -221,7 +227,8 @@ The calculator instantly displays your financial future:
 
 Our pie chart provides a clear visual breakdown, showing you how much of your final corpus comes from your own contributions versus the returns your money generated. See for yourself how consistency and time can turn modest savings into a significant nest egg with the D2ools SIP Calculator.
 `
-  },
+  }
+  ,
   {
     slug: "gst-calculation-made-easy",
     title: "GST Calculation Made Easy: A Beginner's Guide",
@@ -254,7 +261,8 @@ Use this when you have a final price that already includes GST, and you need to 
 
 With the D2ools GST Calculator, you can handle your tax calculations with confidence, ensuring accuracy in all your financial dealings.
 `
-  },
+  }
+  ,
   // Text & Writing Tools
   {
     slug: "mastering-text-formatting-case-converter",
@@ -286,7 +294,8 @@ The tool is designed for speed and efficiency.
 
 The D2ools Case Converter is a client-side tool, which means all processing happens securely and instantly within your browser. It's a lifesaver for editors, writers, marketers, and developers who need to quickly and accurately format text.
 `
-  },
+  }
+  ,
   {
     slug: "create-seo-friendly-urls-slug-generator",
     title: "Create SEO-Friendly URLs with the Slug Generator",
@@ -320,7 +329,8 @@ Our tool automates the process of creating a clean slug. When you enter a string
 
 This is an essential utility for bloggers, content managers, and web developers looking to follow SEO best practices.
 `
-  },
+  }
+  ,
   // Data & Developer Utilities
   {
     slug: "guide-to-json-formatter-validator",
@@ -351,7 +361,8 @@ Our tool serves three primary functions:
 
 Because this tool runs entirely in your browser, your data remains completely private and is never sent to our servers. It's a fast, secure, and indispensable part of any developer's toolkit.
 `
-  },
+  }
+  ,
   {
     slug: "generating-secure-hashes-sha-hmac",
     title: "Generating Secure Hashes: An Intro to SHA and HMAC",
@@ -394,7 +405,8 @@ Our **HMAC Generator** is crucial for securing APIs and webhooks. When your serv
 
 All calculations are performed locally in your browser for maximum security.
 `
-  },
+  }
+  ,
   {
     slug: "guide-to-using-uuids",
     title: "How to Generate and Use UUIDs in Your Application",
@@ -421,7 +433,8 @@ We've made generating UUIDs as simple as possible.
 
 Our UUID Generator is a fast, simple, and indispensable utility for any developer, database architect, or system administrator. It uses the browser's built-in \`crypto.randomUUID()\` method, which is a cryptographically secure way to generate v4 UUIDs. Stop worrying about ID collisions and start using the industry standard today.
 `
-  },
+  }
+  ,
   {
     slug: "testing-patterns-regex-tester",
     title: "Testing Your Patterns: A Guide to the Regex Tester",
@@ -452,14 +465,850 @@ The magic of our tool is the instant feedback:
 
 Whether you're a regex novice learning the ropes or a seasoned expert building a complex pattern, this live testing environment is essential for validating your expressions before deploying them in your code.
 `
-  },
+  }
+  ,
+  {
+    slug: "how-to-resize-images-perfectly",
+    title: "How to Resize Images for Any Purpose",
+    summary: "Learn how to resize your images to the exact dimensions you need without losing quality, using our simple and free Image Resizer tool.",
+    category: "Image Tools",
+    aiHint: "camera photography",
+    toolSlug: "image-resizer",
+    content: `
+Whether you're preparing images for a website, a social media post, or an email newsletter, getting the size right is crucial. Images that are too large can slow down your page load times, while images that are too small will look pixelated and unprofessional. The D2ools Image Resizer provides a simple solution to get your image dimensions perfect every time.
+
+### Why Resize Images?
+
+-   **Web Performance:** Large image files are one of the biggest culprits for slow websites. Resizing images to the exact dimensions they'll be displayed at can significantly speed up your site.
+-   **Social Media:** Each social media platform has its own optimal image sizes for posts, headers, and profile pictures. Our tool helps you meet these requirements.
+-   **Email Campaigns:** Oversized images in emails can lead to long load times and may even get caught in spam filters.
+
+### How to Use the Image Resizer
+
+1.  **Upload Your Image:** Click to select an image file from your computer. The tool will show you a preview and its original dimensions.
+2.  **Set New Dimensions:** Enter your desired new width or height in pixels.
+3.  **Lock Aspect Ratio (Recommended):** By default, the "Keep aspect ratio" option is checked. This is highly recommended to prevent your image from being stretched or distorted. When checked, changing the width will automatically update the height, and vice versa.
+4.  **Download Your Resized Image:** Click the "Download Resized Image" button. The tool processes the image right in your browser and provides a high-quality PNG file at your new dimensions.
+
+With the D2ools Image Resizer, you have full control over your image sizes, ensuring they look great and perform perfectly wherever you use them. It's fast, free, and all processing is done locally for your privacy.
+`
+  }
+  ,
+  {
+    slug: "create-strong-passwords-instantly",
+    title: "How to Create Strong, Secure Passwords Instantly",
+    summary: "In an age of constant data breaches, a strong password is your first line of defense. Our Password Generator helps you create secure, random passwords in one click.",
+    category: "Security, Privacy & Hashing",
+    aiHint: "security lock",
+    toolSlug: "password-generator",
+    content: `
+A strong, unique password for every online account is one of the most important steps you can take to protect your digital life. Weak or reused passwords are the number one cause of account takeovers. But creating and remembering complex passwords is hard. That's where the D2ools Password Generator comes in.
+
+### What Makes a Password Strong?
+
+-   **Length:** The longer, the better. A password with 16 or more characters is significantly harder to crack than one with 8.
+-   **Complexity:** A mix of uppercase letters, lowercase letters, numbers, and symbols makes a password exponentially more difficult to guess.
+-   **Randomness:** Passwords that don't contain dictionary words, names, or common patterns are the most secure.
+
+Our generator is designed to create passwords that meet all these criteria.
+
+### How to Use the Password Generator
+
+1.  **Set Your Options:**
+    -   **Length:** Use the slider to choose the desired length of your password. We recommend at least 16 characters.
+    -   **Character Types:** Use the checkboxes to include or exclude uppercase letters, lowercase letters, numbers, and symbols. Most services require a mix, so keeping them all checked is a good practice.
+2.  **Generate a Password:** A secure password that meets your criteria is automatically generated. If you don't like it, simply click the "Refresh" button to get a new one.
+3.  **Copy and Use:** Click the "Copy" button to copy the password to your clipboard. Then, paste it into the password field of the website or application you're using and save it in a secure password manager.
+
+Never use the same password on multiple sites. With our generator and a good password manager, you can easily create and manage unique, strong passwords for every one of your accounts. All generation happens locally in your browser, so your new password is never sent over the internet.
+`
+  }
+  ,
+  {
+    slug: "generate-qr-codes-for-anything",
+    title: "How to Generate QR Codes for Websites, Wi-Fi, and More",
+    summary: "QR codes are a powerful way to bridge the physical and digital worlds. Learn how to create custom QR codes for any purpose with our easy-to-use generator.",
+    category: "Web & URL Utilities",
+    aiHint: "qr code",
+    toolSlug: "qr-code-generator",
+    content: `
+QR (Quick Response) codes have become a ubiquitous tool for sharing information quickly. From restaurant menus and event tickets to marketing materials and Wi-Fi logins, a simple scan with a smartphone camera can connect users to a wealth of digital content. The D2ools QR Code Generator allows you to create your own QR codes for any purpose, instantly and for free.
+
+### What Can You Use QR Codes For?
+
+The possibilities are endless:
+-   **Website URLs:** Direct users to your homepage, a landing page, or a specific product.
+-   **Contact Information:** Create a vCard QR code that users can scan to add your contact details directly to their phone.
+-   **Wi-Fi Access:** Generate a code that allows guests to connect to your Wi-Fi network without manually typing the password.
+-   **Plain Text:** Share a simple message, a coupon code, or any other piece of text.
+-   **Event Details:** Create a calendar event that users can add with a single scan.
+
+### How to Create Your QR Code
+
+1.  **Select Content Type:** Choose what you want your QR code to do (e.g., "URL", "Text", "Wi-Fi").
+2.  **Enter Your Data:** Fill in the required information. For a URL, simply paste the web address. For Wi-Fi, enter the network name (SSID) and password.
+3.  **Customize (Optional):** Our tool allows for basic customization, like changing the color of the QR code to match your branding.
+4.  **Download Your QR Code:** The QR code is generated in real-time. You can download it as a high-quality PNG or SVG file, perfect for both digital use and high-resolution printing.
+
+All processing is done directly in your browser, ensuring your data is never sent to our servers. Create and share information seamlessly with the D2ools QR Code Generator.
+`
+  }
+  ,
+  {
+    slug: "extract-emails-from-text-instantly",
+    title: "How to Extract Email Addresses from Text Instantly",
+    summary: "Need to pull a list of email addresses from a large document or webpage? Our Email Extractor tool automates this process, saving you hours of manual work.",
+    category: "Text & Writing Tools",
+    aiHint: "email marketing",
+    toolSlug: "email-extractor",
+    content: `
+Imagine you have a long document, an email thread, or the source code of a webpage, and you need to compile a list of all the email addresses contained within it. Doing this manually is not only incredibly boring but also highly prone to error. You might miss some addresses or make typos while re-typing them. The D2ools Email Extractor solves this problem in seconds.
+
+### How Does It Work?
+
+Our tool uses a sophisticated regular expression (regex) specifically designed to identify the patterns of valid email addresses. It scans the text you provide and intelligently pulls out any string that matches the \`name@domain.com\` format, handling a wide variety of domain extensions and character types.
+
+### A Simple, Three-Step Process
+
+1.  **Paste Your Text:** Copy the entire block of text you want to scan and paste it into the input text area on the left side of the tool. It doesn't matter how long or messy the text is.
+2.  **Instant Extraction:** The moment you paste the text, the tool automatically scans it. All unique email addresses that are found are immediately displayed in the "Extracted Emails" panel on the right. The tool automatically removes any duplicate entries, so you get a clean list.
+3.  **Copy Your List:** With a single click on the "Copy All" button, the entire list of extracted email addresses is copied to your clipboard, formatted with one email per line, ready to be pasted into a spreadsheet, a database, or your email marketing software.
+
+This tool is a massive time-saver for sales professionals building prospect lists, marketers compiling contact databases, or anyone needing to quickly gather email addresses from a body of text. As a fully client-side tool, your data is processed only in your browser, ensuring complete privacy.
+`
+  }
+  ,
+  {
+    slug: "find-your-bmi-health-guide",
+    title: "Find Your BMI: A Simple Guide to Body Mass Index",
+    summary: "Body Mass Index (BMI) is a common metric used to assess health. Our calculator makes it easy to find your BMI and understand what it means.",
+    category: "Math, Science & Academic",
+    aiHint: "health fitness",
+    toolSlug: "bmi-calculator",
+    content: `
+Body Mass Index, or BMI, is a simple measure that uses your height and weight to gauge whether your weight is healthy. It's a widely used screening tool to identify potential weight-related health issues. While it doesn't tell the whole story (as it doesn't distinguish between fat and muscle), it's a great starting point for assessing your weight. The D2ools BMI Calculator provides a quick and easy way to calculate your score.
+
+### How to Calculate Your BMI
+
+Our tool makes the calculation effortless.
+
+1.  **Select Your Units:** Choose whether you prefer to enter your details in Metric (centimeters and kilograms) or Imperial (inches and pounds) units.
+2.  **Enter Your Height:** Input your height in the appropriate field.
+3.  **Enter Your Weight:** Input your current weight.
+4.  **View Your BMI:** The tool instantly calculates and displays your BMI score.
+
+### Understanding Your BMI Result
+
+The calculator also tells you which category your BMI falls into, based on standard classifications:
+
+-   **Below 18.5:** Underweight
+-   **18.5 – 24.9:** Normal weight
+-   **25.0 – 29.9:** Overweight
+-   **30.0 and Above:** Obesity
+
+Knowing your BMI can be a helpful first step in a conversation with a healthcare provider about your overall health and wellness. It provides a simple data point to help you set and track your health and fitness goals. Our calculator is private, fast, and easy to use anytime, anywhere.
+`
+  }
+  ,
+  {
+    slug: "kanban-board-visualize-workflow",
+    title: "Visualize Your Workflow with a Simple Kanban Board",
+    summary: "Overwhelmed by tasks? A Kanban board is a simple, visual way to manage your work. Learn how to use our lightweight, browser-based Kanban tool.",
+    category: "Productivity & Planning",
+    aiHint: "teamwork collaboration",
+    toolSlug: "kanban-board",
+    content: `
+The Kanban method is a popular project management technique designed to help you visualize your work, limit work-in-progress, and maximize efficiency. At its core, it's a board with columns representing different stages of a workflow. The D2ools Kanban Board provides a simple, digital version of this powerful tool that runs entirely in your browser.
+
+### The Three Basic Columns
+
+Our Kanban board starts with the three most essential columns:
+
+-   **To Do:** This is your backlog. Every new task or idea starts here.
+-   **In Progress:** When you decide to start working on a task, you move it to this column. It's a best practice to limit the number of items in this column to avoid multitasking and stay focused.
+-   **Done:** Once a task is complete, move it here. This provides a satisfying visual representation of your accomplishments.
+
+### How to Use Our Kanban Board
+
+1.  **Add Tasks:** Click the "+" button or simply type in the input box at the bottom of any column and press Enter to add a new task card.
+2.  **Drag and Drop:** The power of Kanban is in its fluidity. Simply click and drag a task card from one column to another as its status changes. For example, when you begin a 'To Do' item, drag it to the 'In Progress' column.
+3.  **Manage Your Workflow:** Use the board to get a quick overview of your entire project. You can see at a glance what needs to be done, what you're currently working on, and what you've completed.
+4.  **Local and Private:** Your board is saved automatically in your browser's local storage. Your tasks and data are never sent to our servers, ensuring your work remains private.
+
+Whether you're managing a personal project, planning your week, or collaborating with a small team, our Kanban Board is a perfect lightweight tool to stay organized and productive.
+`
+  }
+  ,
+  {
+    slug: "pomodoro-technique-guide",
+    title: "Boost Your Focus with the Pomodoro Timer",
+    summary: "The Pomodoro Technique is a simple yet effective time management method. Our timer tool helps you implement it to improve focus and reduce burnout.",
+    category: "Productivity & Planning",
+    aiHint: "focus productivity",
+    toolSlug: "pomodoro-timer",
+    content: `
+Feeling distracted and unproductive? The Pomodoro Technique can help. It's a time management method developed by Francesco Cirillo that uses a timer to break work into focused intervals, traditionally 25 minutes in length, separated by short breaks. This simple system is incredibly effective at improving concentration and preventing mental fatigue.
+
+### The Principles of Pomodoro
+
+The technique is based on a few simple principles:
+1.  **Work in Sprints:** Work on a single task with intense focus for a 25-minute interval (one "Pomodoro").
+2.  **Take Short Breaks:** After each Pomodoro, take a short 5-minute break to stretch, grab some water, or rest your eyes.
+3.  **Take Longer Breaks:** After four Pomodoros, take a longer break of 15-30 minutes. This helps you reset and prepare for the next set of tasks.
+4.  **Protect Your Pomodoro:** During a 25-minute work session, your focus should be absolute. If an interruption occurs, either deal with it quickly or make a note to handle it later.
+
+### How to Use the D2ools Pomodoro Timer
+
+Our tool is designed to make this process seamless.
+1.  **Start the Timer:** The timer is preset to 25 minutes. Simply click the "Start" button to begin your first focus session.
+2.  **Work Undistracted:** As the timer counts down, dedicate yourself completely to your chosen task. The visual progress ring helps you stay motivated.
+3.  **Take Your Break:** When the timer rings, it will automatically switch to a 5-minute break timer. Use this time to step away from your work. After four cycles, the timer will automatically set a longer 15-minute break.
+4.  **Repeat:** Once your break is over, the timer will reset for the next 25-minute Pomodoro.
+
+Our Pomodoro Timer helps you build a rhythm of focused work and regular rest, leading to higher productivity and less stress. Give it a try and transform your workday.
+`
+  }
+  ,
+  {
+    slug: "color-palette-from-image-guide",
+    title: "How to Create a Color Palette from Any Image",
+    summary: "Find inspiration in your favorite photos. Our AI-powered tool extracts a beautiful, harmonious color palette from any image you upload.",
+    category: "Color, Design & Branding",
+    aiHint: "design art",
+    toolSlug: "palette-generator-from-image",
+    content: `
+Color is one of the most powerful tools in design, but finding the right combination can be challenging. A great source of inspiration is the world around you, captured in photographs. The D2ools Palette Generator from Image uses AI to analyze any photo and extract a beautiful, harmonious color palette for you to use in your projects.
+
+### Finding Harmony in Images
+
+Nature, art, and photography are full of stunning color combinations. Our AI tool is designed to identify the most prominent and complementary colors within an image. It doesn't just pick random pixels; it understands color theory to create a palette that is visually appealing and balanced. This is perfect for:
+-   **Web Designers:** Create a website color scheme based on a client's brand imagery.
+-   **Graphic Designers:** Find the perfect colors for a poster or logo based on an inspirational photo.
+-   **Artists:** Discover new color combinations for a painting or digital illustration.
+-   **Interior Designers:** Build a room's color scheme from a piece of art or a photograph of a landscape.
+
+### How to Generate Your Palette
+
+1.  **Upload Your Image:** Drag and drop any image file (like a JPG or PNG) onto the tool's upload area, or click to select a file from your device.
+2.  **AI Analysis:** The moment you upload the image, our AI begins its analysis. It processes the colors and identifies a set of 5 harmonious hex codes.
+3.  **Copy Your Colors:** The extracted color palette is displayed alongside your image. Each color is shown with its hex code. Simply click on any color swatch or hex code to instantly copy it to your clipboard, ready to be pasted into your favorite design software like Figma, Adobe Illustrator, or even a simple CSS file.
+
+Unlock a world of color inspiration from your own photos with this simple yet powerful AI tool.
+`
+  }
+  ,
+  {
+    slug: "gradient-generator-guide",
+    title: "Create Stunning CSS Gradients with Our Generator",
+    summary: "Gradients are a fantastic way to add depth and vibrancy to your designs. Our tool lets you visually create linear gradients and instantly get the CSS code.",
+    category: "Color, Design & Branding",
+    aiHint: "design color",
+    toolSlug: "gradient-generator",
+    content: `
+Solid colors are great, but gradients can take your design to the next level. A well-crafted gradient can add depth, create a sense of mood, and make your UI elements pop. However, writing the CSS for gradients can be a bit tedious. The D2ools Gradient Generator provides a simple, visual interface to create beautiful linear gradients and get the code instantly.
+
+### Understanding Linear Gradients
+
+A linear gradient creates a smooth transition between two or more colors along a straight line. The key properties you can control are:
+-   **Colors:** You need at least two colors to create a gradient: a starting color and an ending color.
+-   **Angle:** This determines the direction of the gradient. An angle of 0deg goes from bottom to top, 90deg goes from left to right, and 180deg goes from top to bottom.
+
+Our tool makes it easy to experiment with these properties and see the results in real-time.
+
+### How to Use the Gradient Generator
+
+1.  **Choose Your Colors:** Use the color pickers to select your starting color (Color 1) and ending color (Color 2). You can see the preview update instantly as you adjust the colors.
+2.  **Set the Angle:** Use the slider to change the angle of the gradient. Watch how the direction of the color transition changes in the preview area. This is great for creating horizontal, vertical, or diagonal gradients.
+3.  **Copy the CSS:** Once you're happy with your gradient, the tool provides the exact CSS code in the output box. Simply click the "Copy" button to copy the \`background: linear-gradient(...)\` property to your clipboard and paste it into your stylesheet.
+
+This tool is perfect for web designers, front-end developers, and anyone looking to quickly create beautiful backgrounds, button styles, or other UI elements without having to manually write complex CSS.
+`
+  }
+  ,
+  {
+    slug: "how-to-extract-text-from-images",
+    title: "How to Extract Text from Images with OCR",
+    summary: "Need to get the text out of an image, screenshot, or scanned document? Our AI-powered OCR tool makes it simple to convert images into editable text.",
+    category: "OCR, Language & Localization",
+    aiHint: "scan document",
+    toolSlug: "image-to-text-ocr",
+    content: `
+Have you ever had text trapped inside an image? It could be a screenshot of an error message, a photo of a sign, or a scanned page from a book. Manually re-typing this text is slow and error-prone. With Optical Character Recognition (OCR), you can automatically convert that image into editable text. The D2ools Image to Text OCR tool uses advanced AI to make this process fast and accurate.
+
+### What is OCR?
+
+OCR is a technology that recognizes characters and words within a digital image. Our tool is powered by a sophisticated AI model that can read text in various fonts, sizes, and conditions. It's perfect for:
+-   Digitizing notes from a whiteboard or a piece of paper.
+-   Copying text from screenshots.
+-   Extracting data from scanned documents or forms.
+-   Making content from images searchable.
+
+### How to Use Our OCR Tool
+
+1.  **Upload Your Image:** Drag and drop your image file (JPG, PNG, etc.) onto the upload area, or click to select a file.
+2.  **Automatic Text Extraction:** As soon as you upload the image, our AI model gets to work. It scans the entire image, identifies any text, and extracts it. The process is completely automatic and takes just a few moments.
+3.  **Copy Your Text:** The extracted text will appear in the output text box on the right. You can then easily review it, make any necessary corrections, and click the "Copy" button to copy the entire text to your clipboard.
+
+Our OCR tool is private and secure, processing your images and returning the text without storing your data. It's a powerful utility for students, researchers, data entry professionals, and anyone who needs to quickly digitize text from an image.
+`
+  }
+  ,
+  {
+    slug: "guide-to-url-encoding",
+    title: "Why and How to Use a URL Encoder",
+    summary: "Special characters in URLs can cause them to break. Our URL Encoder/Decoder tool ensures your links are always safe and valid by converting characters into a URL-safe format.",
+    category: "Data & Developer Utilities",
+    aiHint: "web development",
+    toolSlug: "url-encoder-decoder",
+    content: `
+When you're constructing a URL, especially one with query parameters, you can't just include any character you want. Certain characters, like spaces, ampersands (&), and question marks (?), have special meanings in a URL. If you need to include these characters as part of your data, they must be 'percent-encoded'. The D2ools URL Encoder/Decoder is a simple tool to handle this process for you.
+
+### Why is URL Encoding Necessary?
+
+Imagine you have a search URL like \`https://example.com/search?q=t-shirts & hats\`. The ampersand \`&\` is used to separate different query parameters. In this case, the browser might interpret \`hats\` as a new, separate parameter instead of part of your search query.
+
+To fix this, you must encode the special characters. The space becomes \`%20\` and the ampersand becomes \`%26\`. The correct, safe URL would be: \`https://example.com/search?q=t-shirts%20%26%20hats\`. Now, the server will correctly interpret the search query as "t-shirts & hats".
+
+### How to Use the Encoder/Decoder
+
+Our tool works in both directions.
+
+1.  **To Encode:**
+    -   Paste your full URL or just the string you want to encode into the text area.
+    -   Click the "Encode" button. The tool will convert all unsafe characters into their percent-encoded equivalents.
+2.  **To Decode:**
+    -   Paste a URL or string that contains percent-encoded characters (like \`%20\` or \`%2F\`).
+    -   Click the "Decode" button. The tool will convert the encoded sequences back into their original characters, making the URL more human-readable.
+
+This tool is essential for web developers when building links programmatically, for marketers creating UTM links with complex parameters, and for anyone who needs to ensure their URLs are valid and will work correctly everywhere.
+`
+  }
+  ,
+  {
+    slug: "find-and-replace-text-guide",
+    title: "How to Find and Replace Text in Bulk",
+    summary: "Need to change a word or phrase across a large block of text? Our Find & Replace tool is a simple utility that can save you a huge amount of time.",
+    category: "Text & Writing Tools",
+    aiHint: "text document",
+    toolSlug: "find-and-replace",
+    content: `
+Editing a large document can be a repetitive task, especially when you need to change a specific name, term, or phrase that appears multiple times. Doing this manually is a recipe for missed instances and frustration. The D2ools Find & Replace tool is a simple but powerful utility that automates this process.
+
+### When to Use Find & Replace
+
+This tool is perfect for a variety of tasks:
+-   **Correcting a recurring typo:** If you misspelled a name throughout a report, you can fix all instances at once.
+-   **Updating information:** If a project name or a product feature has been updated, you can replace the old name with the new one everywhere.
+-   **Standardizing terminology:** Ensure consistent use of a term by replacing all variations with the correct one.
+-   **Basic code refactoring:** Quickly rename a variable or function in a code snippet.
+
+### How it Works
+
+1.  **Paste Your Text:** Copy the entire block of text you want to edit and paste it into the main text area.
+2.  **Enter Your Terms:**
+    -   In the "Find" field, type the exact word or phrase you want to search for. The search is case-sensitive.
+    -   In the "Replace with" field, type the text you want to substitute it with.
+3.  **Replace All:** Click the "Replace All" button. The tool will scan the entire text, replace every occurrence of the "Find" text with the "Replace with" text, and update the main text area with the result.
+
+The tool will also tell you how many instances were replaced, giving you a quick confirmation of the changes. It's a straightforward, client-side tool that makes bulk text editing quick and painless.
+`
+  }
+  ,
+  {
+    slug: "calculate-percentages-easily",
+    title: "How to Calculate Percentages for Any Situation",
+    summary: "From discounts to statistics, percentages are everywhere. Our versatile Percentage Calculator handles three common scenarios to make your math easy.",
+    category: "Math, Science & Academic",
+    aiHint: "math graph",
+    toolSlug: "percentage-calculator",
+    content: `
+Percentages are a fundamental part of everyday math, used in shopping, finance, statistics, and more. But remembering the correct formula for different scenarios can be tricky. The D2ools Percentage Calculator is a versatile tool designed to handle the three most common percentage problems with ease.
+
+### Choose Your Calculation
+
+Our tool starts with a simple dropdown menu to select the problem you're trying to solve:
+
+1.  **What is X% of Y?**
+    This is the most common calculation. It's used for finding discounts, calculating tips, or determining a portion of a whole. For example, "What is 25% of 200?". The calculator instantly gives you the answer.
+
+2.  **X is what percent of Y?**
+    This mode is used to express one number as a percentage of another. It's perfect for figuring out what percentage of a goal you've achieved or what proportion of a total a certain number represents. For example, "45 is what percent of 90?".
+
+3.  **Percentage change from X to Y?**
+    This calculation is essential for tracking growth or decline. It tells you the percentage increase or decrease from an old number to a new one. For example, "What is the percentage change from 50 to 75?".
+
+### How to Use the Calculator
+
+1.  **Select Calculation Type:** Choose the question that matches your problem from the dropdown.
+2.  **Enter Your Numbers:** The input field labels will change to guide you. Simply enter the two numbers you know.
+3.  **Get an Instant Result:** The answer is calculated and displayed automatically in real-time. No need to click a button!
+
+Whether you're a student working on a math problem, a shopper figuring out a sale, or a professional analyzing data, our Percentage Calculator provides quick and accurate answers for any scenario.
+`
+  }
+  ,
+  {
+    slug: "all-about-unit-converter",
+    title: "A Comprehensive Guide to the Unit Converter Tool",
+    summary: "Need to convert meters to feet, or kilograms to pounds? Our all-in-one Unit Converter handles length, mass, temperature, and volume with ease.",
+    category: "Math, Science & Academic",
+    aiHint: "measure convert",
+    toolSlug: "unit-converter",
+    content: `
+Whether you're following a recipe from another country, working on a science project, or planning a trip, you'll often need to convert between different units of measurement. The D2ools Unit Converter is a comprehensive tool designed to make these conversions simple and instant.
+
+### Four Tools in One
+
+Our converter is organized into four convenient tabs for the most common types of measurements:
+
+-   **Length:** Convert between meters, kilometers, centimeters, feet, and inches. Perfect for construction, design, or just figuring out heights and distances.
+-   **Mass:** Switch between kilograms, grams, milligrams, pounds, and ounces. Essential for cooking, shipping, and scientific applications.
+-   **Temperature:** Accurately convert between Celsius, Fahrenheit, and Kelvin. This is a must-have for weather, science, and cooking.
+-   **Volume:** Convert between liters, milliliters, US gallons, and US pints. Invaluable for recipes, fuel, and liquid measurements.
+
+### How to Convert Units
+
+1.  **Select a Category:** Click on the tab for the type of measurement you need to convert (e.g., "Length").
+2.  **Enter Your Value:** Type the number you want to convert into the "From" input field.
+3.  **Choose Your Units:** Use the dropdown menus to select the unit you are converting from and the unit you are converting to.
+4.  **Get the Result Instantly:** The converted value automatically appears in the "To" field as you type.
+
+Our Unit Converter uses standard conversion factors to ensure accuracy. It's a versatile, all-in-one tool that saves you from having to look up formulas or perform manual calculations, making it a must-have for students, professionals, and anyone needing quick conversions.
+`
+  }
+  ,
+  {
+    slug: "what-is-a-standard-deviation",
+    title: "Understanding Your Data: The Standard Deviation Calculator",
+    summary: "Standard deviation is a key statistical concept for understanding data spread. Our calculator makes it easy to compute for any set of numbers.",
+    category: "Math, Science & Academic",
+    aiHint: "statistics chart",
+    toolSlug: "standard-deviation-calculator",
+    content: `
+When you're analyzing a set of data, the average (or mean) only tells you part of the story. It gives you the central tendency, but it doesn't tell you how spread out or clustered your data points are. That's where standard deviation comes in. It's a measure of the amount of variation or dispersion in a set of values. A low standard deviation means the data points tend to be close to the mean, while a high standard deviation indicates that they are spread out over a wider range.
+
+### Why is Standard Deviation Useful?
+
+-   **In Finance:** It's a key measure of volatility. A stock with a high standard deviation has a price that swings wildly, indicating higher risk.
+-   **In Science:** It's used to understand the reliability of experimental data.
+-   **In Quality Control:** It helps determine if a manufacturing process is producing consistent results.
+
+### How to Use the Standard Deviation Calculator
+
+Our tool simplifies the calculation for you.
+
+1.  **Enter Your Data:** In the text area, type or paste your list of numbers. You can separate them with commas, spaces, or new lines.
+2.  **View the Results Instantly:** The calculator automatically processes your data and displays two key metrics:
+    -   **Mean:** The average of all the numbers in your dataset.
+    -   **Sample Standard Deviation:** The calculated standard deviation. We use the formula for a *sample* of a population (dividing by n-1), which is the most common use case.
+
+This tool is perfect for students, analysts, and researchers who need to quickly calculate standard deviation without performing the complex multi-step formula by hand.
+`
+  }
+  ,
+  {
+    slug: "how-to-use-a-json-formatter",
+    title: "The Developer's Best Friend: How to Use a JSON Formatter",
+    summary: "Learn how to beautify, validate, and minify your JSON data with our all-in-one formatter tool, an essential utility for any developer working with APIs.",
+    category: "Data & Developer Utilities",
+    aiHint: "programming code",
+    toolSlug: "json-formatter",
+    content: `
+JSON (JavaScript Object Notation) is the backbone of modern web APIs, but raw JSON data is often sent in a compressed, single-line format that is impossible for a human to read. This is where a JSON Formatter becomes an indispensable tool for any developer.
+
+### Why Format JSON?
+
+1.  **Readability:** A beautifier adds line breaks and indentation, turning a garbled string into a clean, nested structure that clearly shows the relationship between keys and values. This makes it easy to understand the data structure at a glance.
+2.  **Debugging:** When your code isn't working with an API response, the first step is often to check if the JSON itself is valid. A good formatter is also a validator. It will immediately alert you to syntax errors like missing commas, incorrect brackets, or unquoted strings.
+3.  **Minification:** When you are sending data from your application, you want it to be as small as possible to save bandwidth and improve speed. Minifying JSON removes all unnecessary whitespace, creating the most compact version of the data for efficient transmission.
+
+### Using the D2ools JSON Formatter
+
+Our tool is designed for maximum efficiency.
+1.  **Paste Your JSON:** Copy your raw JSON data and paste it into the left-hand input box.
+2.  **Format and Validate:** Click the "Format / Validate" button. If the JSON is valid, a beautifully formatted version will appear in the right-hand output box. If there's an error, a descriptive message will tell you what's wrong.
+3.  **Minify:** Click the "Minify" button to get a compressed, single-line version of your JSON.
+4.  **Copy Your Result:** Use the "Copy Result" button to easily grab the formatted or minified output for use in your project.
+
+All processing is done entirely within your browser, so your sensitive data is never sent to our servers. It's a secure, fast, and essential tool for your development workflow.
+`
+  }
+  ,
+  {
+    slug: "create-a-simple-invoice",
+    title: "How to Create a Simple Invoice in Minutes",
+    summary: "Need to bill a client? Our Invoice Generator provides a clean, professional template that you can fill out and print in just a few minutes.",
+    category: "Productivity & Planning",
+    aiHint: "business document",
+    toolSlug: "invoice-generator",
+    content: `
+For freelancers, consultants, and small business owners, getting paid on time starts with sending a clear, professional invoice. You don't need complicated accounting software to create one. The D2ools Invoice Generator provides a simple, intuitive template to build and print invoices quickly.
+
+### Key Components of an Invoice
+
+A professional invoice should always include a few key details:
+-   **Your Information:** Your name or company name and address.
+-   **Client Information:** The name and address of the person or company you are billing.
+-   **Invoice Number:** A unique ID for your records (e.g., INV-001).
+-   **Line Items:** A detailed breakdown of the services or products you provided, including quantity, price per item, and the total for each line.
+-   **Total Amount:** The final amount due.
+
+Our tool includes all of these essential fields.
+
+### How to Generate Your Invoice
+
+1.  **Fill in the Details:** Start by entering your company's details and your client's details in the "From" and "To" fields. Set a unique invoice number.
+2.  **Add Line Items:** The template starts with one line item. Fill in the description (e.g., "Web Design Services"), quantity, and price. The total for that line will be calculated automatically.
+3.  **Add More Items:** Click the "Add Item" button to add more rows for additional services or products. You can also remove items by clicking the trash icon.
+4.  **Check the Total:** The grand total at the bottom of the invoice will update automatically as you add or change line items.
+5.  **Print or Save as PDF:** Once your invoice is complete, click the "Print Invoice" button. This will open your browser's print dialog. From there, you can either print a physical copy or choose the "Save as PDF" option to create a digital version to email to your client.
+`
+  }
+  ,
+  {
+    slug: "how-to-split-expenses",
+    title: "Fair and Easy: How to Split Expenses with Friends",
+    summary: "Splitting bills on a group trip or with roommates can be complicated. Our Expense Splitter tool does the math for you, calculating who owes whom.",
+    category: "Productivity & Planning",
+    aiHint: "friends sharing",
+    toolSlug: "expense-splitter",
+    content: `
+Group trips, shared dinners, and household bills with roommates are fun until it's time to figure out who owes what. Manually tracking every expense and calculating the debts can be a headache. The D2ools Expense Splitter simplifies this entire process, giving you an easy-to-follow plan to settle up.
+
+### The Challenge of Group Expenses
+
+The problem gets complicated when people pay for different things. For example, Alice pays for the hotel, Bob pays for all the meals, and Charlie pays for the event tickets. At the end of the trip, how do you settle the balance with the minimum number of payments? Our tool is designed to solve exactly this problem.
+
+### How to Use the Expense Splitter
+
+1.  **Add Everyone:** Start by adding a row for each person in your group.
+2.  **Enter What Each Person Paid:** In the input fields, enter the name of each person and the total amount of money they spent on behalf of the group. For example, if Bob paid $100 for dinner and $50 for gas, you would enter "Bob" and "150".
+3.  **Add More People as Needed:** Use the "Add Person" button to add more rows for everyone in your group.
+4.  **View the Settlement Plan:** The tool instantly calculates the total expenses, the average cost per person, and creates a simple list of transactions needed to settle all debts. It will show you exactly who needs to pay whom, and how much.
+
+For instance, the result might say "Charlie owes Alice $50" and "Bob owes Alice $20". This algorithm minimizes the number of payments required, making it the most efficient way to get everyone's balance back to zero. All calculations are done in your browser, keeping your financial information private.
+`
+  }
+  ,
+  {
+    slug: "what-is-lorem-ipsum",
+    title: "What is Lorem Ipsum? A Guide for Designers",
+    summary: "Learn why designers and developers use Lorem Ipsum as placeholder text and how our generator can help you create it for your mockups.",
+    category: "Text & Writing Tools",
+    aiHint: "design typography",
+    toolSlug: "lorem-ipsum-generator",
+    content: `
+If you've ever seen a website design mockup or a new template, you've likely encountered a block of strange, Latin-looking text that starts with "Lorem ipsum dolor sit amet...". This is Lorem Ipsum, and it has been the design industry's standard placeholder text for centuries. The D2ools Lorem Ipsum Generator lets you create as much of it as you need, instantly.
+
+### Why Use Placeholder Text?
+
+When you're designing a website or a document, the final content is often not ready. However, you still need to see how the layout will look with text in it. Using placeholder text like Lorem Ipsum allows you to focus on the visual design—the typography, the spacing, the layout—without being distracted by the actual meaning of the words.
+
+Using something like "Content goes here" over and over is distracting and doesn't look like a real paragraph. Lorem Ipsum uses words of varying lengths and creates a natural-looking block of text, giving a much more realistic impression of the final design.
+
+### How to Generate Lorem Ipsum
+
+Our tool is incredibly simple.
+1.  **Set the Number of Paragraphs:** In the input field, enter how many paragraphs of Lorem Ipsum text you want to generate.
+2.  **Click 'Generate':** Press the "Generate" button.
+3.  **Copy Your Text:** The requested number of paragraphs will instantly appear in the text box below. You can then click the "Copy Text" button to copy it all to your clipboard and paste it into your design software, code editor, or word processor.
+
+It's a quick, simple tool that is essential for any designer or developer who needs to create realistic mockups and wireframes.
+`
+  }
+  ,
+  {
+    slug: "convert-numbers-to-words-easily",
+    title: "How to Convert Numbers to Words for Checks and Documents",
+    summary: "Writing out large numbers can be tricky. Our Number to Words Converter instantly spells out any number for you, perfect for filling out checks or legal documents.",
+    category: "OCR, Language & Localization",
+    aiHint: "writing check",
+    toolSlug: "number-to-words-converter",
+    content: `
+When writing a check, a legal contract, or any formal document, you're often required to write out numbers in words in addition to figures (e.g., "One Thousand Two Hundred and Thirty-Four"). This is done to prevent fraud and reduce ambiguity. However, spelling out large or complex numbers can be a challenge. The D2ools Number to Words Converter is a simple tool that does this for you instantly.
+
+### Why Convert Numbers to Words?
+
+-   **Formal Documents:** Many legal and financial documents require numbers to be written out to ensure clarity and prevent tampering.
+-   **Writing Checks:** Banks require the amount to be written in words as a security measure.
+-   **Clarity in Writing:** In formal writing or reports, spelling out numbers can sometimes improve readability.
+-   **Multi-language Support:** Our tool can even convert numbers into words in different languages, which is useful for international documents.
+
+### How to Use the Converter
+
+Our AI-powered converter makes this task effortless.
+1.  **Enter the Number:** Type the numeral you want to convert into the input field (e.g., \`12345\`).
+2.  **Select the Language:** Choose your desired language from the dropdown menu, such as English, Hindi, or Spanish.
+3.  **Click 'Convert to Words':** Press the button to process the number.
+4.  **Get the Result:** The tool will immediately display the number fully spelled out in words in the selected language (e.g., "Twelve Thousand Three Hundred Forty-Five").
+
+This simple utility saves you time and ensures accuracy when you need to write out numbers, eliminating the risk of spelling errors on important documents.
+`
+  }
+  ,
+  {
+    slug: "make-your-own-barcodes",
+    title: "A Simple Guide to Creating Your Own Barcodes",
+    summary: "Need a barcode for inventory, products, or documents? Our Barcode Generator lets you create and print standard barcodes in various formats instantly.",
+    category: "Web & URL Utilities",
+    aiHint: "barcode scan",
+    toolSlug: "barcode-generator",
+    content: `
+Barcodes are an essential tool for businesses, used for everything from tracking inventory and managing assets to pricing retail products. They provide a fast, reliable way to enter data into a system with a simple scan. With the D2ools Barcode Generator, you can easily create your own standard barcodes for any purpose.
+
+### Understanding Barcode Formats
+
+Our tool supports a variety of common barcode formats, each suited for different uses:
+-   **CODE128:** A versatile and widely used format that can encode all 128 ASCII characters. It's great for internal inventory and logistics.
+-   **CODE39:** Another popular alphanumeric format, common in industrial settings.
+-   **UPC and EAN:** These are the standard formats you see on retail products worldwide. They are numeric-only and used for checkout scanning.
+-   **ITF14:** Used to mark cartons and cases that contain products with UPC or EAN barcodes.
+
+### How to Generate a Barcode
+
+1.  **Enter Your Data:** In the "Data" field, type the text or numbers you want to encode. The data must conform to the rules of the chosen format (e.g., UPC and EAN are numeric only).
+2.  **Select the Format:** Choose the barcode format that best fits your needs from the dropdown menu. CODE128 is a good default for general-purpose use.
+3.  **Preview Your Barcode:** The tool will instantly generate a preview of your barcode.
+4.  **Print Your Barcode:** Click the "Print Barcode" button. This will open a print-friendly version of your barcode. You can print it directly to a label printer or save it as a PDF for later use.
+
+The generated barcode is a scalable SVG, which means it will print clearly at any size. It's a perfect tool for small businesses, warehouse managers, or anyone needing to create barcodes quickly and easily.
+`
+  }
+  ,
+  {
+    slug: "check-your-typing-speed",
+    title: "How Fast Can You Type? Find Out with Our Typing Speed Test",
+    summary: "Improving your typing speed can boost your productivity. Our Typing Speed Test measures your Words Per Minute (WPM) and accuracy in a quick, simple test.",
+    category: "Productivity & Planning",
+    aiHint: "typing keyboard",
+    toolSlug: "typing-speed-test",
+    content: `
+In today's digital world, typing is a fundamental skill. Whether you're writing emails, coding, or drafting reports, typing faster and more accurately can save you a significant amount of time. But how do you measure your progress? The D2ools Typing Speed Test is a fun and simple tool to benchmark your skills.
+
+### What is WPM?
+
+Your typing speed is typically measured in Words Per Minute (WPM). In standardized tests, a "word" is defined as five characters, including spaces. So, if you type 250 characters in one minute, your speed is 50 WPM. Our test also measures your accuracy, which is just as important as speed.
+
+### How to Take the Test
+
+1.  **Start Typing:** The test begins as soon as you start typing. A random sample text will be displayed. Your goal is to type it as quickly and accurately as possible in the text area below.
+2.  **Real-Time Feedback:** As you type, the tool provides live feedback. Correctly typed characters are highlighted in green, while mistakes are shown in red. This helps you see where you're going wrong.
+3.  **Finish the Text:** The timer stops automatically as soon as you type the final character of the sample text.
+4.  **See Your Results:** Your results will be displayed instantly, showing your WPM and accuracy percentage.
+5.  **Try Again:** Want to improve your score? Click the "Try Again" button to start a new test with a different sample text.
+
+Regular practice is the key to improving your typing speed. Use our tool to warm up before a long writing session, challenge your friends, or track your progress over time.
+`
+  }
+  ,
+  {
+    slug: "find-your-public-ip-address",
+    title: "What's My IP Address? A Simple Location Finder",
+    summary: "Ever wondered what your public IP address is or where it appears to be located? Our IP Location Finder tool gives you this information instantly.",
+    category: "Color, Design & Branding",
+    aiHint: "network globe",
+    toolSlug: "ip-location-finder",
+    content: `
+Your IP (Internet Protocol) address is a unique number that identifies your device on the internet, much like a mailing address identifies a house on a street. There are two types: a local IP (used within your own network) and a public IP (what the rest of the internet sees). The D2ools IP Location Finder is a simple tool to instantly show you your public IP address and its estimated geographical location.
+
+### Why Would You Need This?
+
+-   **Network Diagnostics:** If you're having trouble connecting to a service, knowing your public IP can be a crucial first step in troubleshooting.
+-   **Security:** See how your connection appears to the outside world. This can be useful for verifying if your VPN is working correctly.
+-   **Accessing Services:** Some online services may be restricted by location, and this tool helps you see what location your IP address is associated with.
+
+### How It Works
+
+Our tool is completely automatic.
+1.  **Load the Page:** As soon as you open the IP Location Finder tool, it makes a request to a geolocation service.
+2.  **View Your Details:** The service responds with your public IP address and its estimated location data. The tool then displays:
+    -   Your Public IP Address
+    -   The estimated City, Region, and Country associated with that IP.
+
+It's important to note that IP-based geolocation is an estimation. It identifies the location of your Internet Service Provider's (ISP) access point, which may be in a different city from your actual physical location, but it provides a good general idea of how your connection is seen by the internet. It's a quick, simple, and private way to get essential information about your network connection.
+`
+  }
+  ,
+  {
+    slug: "sort-and-deduplicate-text-lines",
+    title: "How to Quickly Sort and Deduplicate Lists of Text",
+    summary: "Cleaning up lists of data is a common task. Our Sort Lines and Unique Lines tools make it easy to organize and deduplicate any list of text with a single click.",
+    category: "Text & Writing Tools",
+    aiHint: "data organization",
+    toolSlug: "sort-lines",
+    content: `
+Whether you're managing a list of names, keywords, or any other data, keeping it organized is key. Manually sorting a long list or hunting for duplicate entries is a time-consuming chore. D2ools offers two simple but powerful utilities, Sort Lines and Unique Lines, to handle these tasks instantly.
+
+### Alphabetize Your Lists with Sort Lines
+
+Have a list of items in a random order? Our Sort Lines tool can fix that in a second.
+
+1.  **Paste Your List:** Enter your text into the text area, with each item on a new line.
+2.  **Choose Your Order:**
+    -   Click **"Sort A-Z"** to sort the lines in ascending alphabetical order.
+    -   Click **"Sort Z-A"** to sort the lines in descending order.
+3.  **Get Your Sorted List:** The text in the box is instantly reordered. You can then copy the clean, organized list for your use.
+
+### Remove Duplicates with Unique Lines
+
+If you have a list with repeated entries, our Unique Lines tool (or deduplicator) is the perfect solution.
+
+1.  **Paste Your List:** Enter your list, including all the duplicate lines.
+2.  **Click "Remove Duplicates":** With a single click, the tool processes the entire list and removes every duplicate entry, leaving only the unique lines. The order of the first appearance of each line is preserved.
+3.  **Copy the Clean List:** Your deduplicated list is now ready to be copied and used.
+
+Both of these tools are indispensable for data cleanup, SEO keyword management, and any task that requires organizing lists of text. They operate entirely in your browser, ensuring your data remains private and the processing is instantaneous.
+`
+  }
+  ,
+  {
+    slug: "the-art-of-color-contrast",
+    title: "The Art of Color Contrast: A Guide to Web Accessibility",
+    summary: "Good color contrast is essential for readability and web accessibility. Learn how to use our Contrast Checker to ensure your designs are usable for everyone.",
+    category: "Color, Design & Branding",
+    aiHint: "web design",
+    toolSlug: "contrast-checker",
+    content: `
+When designing a website, app, or any digital interface, choosing colors that look good together is only half the battle. You also need to ensure that there is enough contrast between your text color and your background color for it to be readable by everyone, including people with visual impairments. This is a core principle of web accessibility, and our WCAG Contrast Checker makes it easy to test your color combinations.
+
+### Understanding WCAG Standards
+
+The Web Content Accessibility Guidelines (WCAG) provide standards for color contrast, rated as AA and AAA.
+-   **AA Level:** This is the minimum standard for accessibility. It requires a contrast ratio of at least 4.5:1 for normal text.
+-   **AAA Level:** This is an enhanced standard, requiring a higher ratio of 7:1. Meeting this level provides a better experience for users with more significant visual impairments.
+
+### How to Use the Contrast Checker
+
+1.  **Select Your Colors:** Use the color pickers to choose your desired text color and background color. You can also type in the hex codes directly.
+2.  **See the Live Preview:** The tool displays a sample sentence in a large card using your chosen colors, giving you an immediate visual sense of the contrast.
+3.  **Check the Ratio:** The contrast ratio is calculated and displayed in real-time.
+4.  **Review the Results:** The tool shows you whether your color combination passes or fails both the AA and AAA level standards. A green checkmark indicates a pass, while a red 'X' indicates a fail.
+
+Using our Contrast Checker is a crucial step in the design process. It helps you create designs that are not only beautiful but also inclusive and accessible to the widest possible audience.
+`
+  }
+  ,
+  {
+    slug: "a-guide-to-css-clip-paths",
+    title: "Create Unique Shapes with the CSS Clip-Path Maker",
+    summary: "Move beyond simple squares and circles. Our CSS Clip-Path Maker lets you easily generate code for complex shapes like triangles, stars, and rhombuses.",
+    category: "Color, Design & Branding",
+    aiHint: "geometric shapes",
+    toolSlug: "css-clip-path-maker",
+    content: `
+In modern web design, breaking out of the rectangular grid can make a site feel dynamic and unique. The CSS \`clip-path\` property is a powerful tool that lets you "clip" an element to a specific shape, creating non-rectangular layouts and effects. However, writing the \`polygon()\` values for complex shapes by hand can be difficult. The D2ools CSS Clip-Path Maker provides a library of preset shapes to get you started.
+
+### What is a Clip-Path?
+
+The \`clip-path\` property creates a clipping region that defines what part of an element is visible. Everything inside the path is shown, and everything outside is hidden. While it can use basic shapes like \`circle()\` and \`ellipse()\`, the real power comes from using \`polygon()\` to define custom shapes with a series of x and y coordinates.
+
+### How to Use the Generator
+
+1.  **Select a Shape:** Our tool comes with a dropdown menu of popular preset shapes, including:
+    -   Circle & Ellipse
+    -   Triangle
+    -   Rhombus
+    -   Star
+    -   ...and more!
+2.  **Preview the Result:** As soon as you select a shape, you'll see it applied to a preview element. This gives you an immediate visual representation of what the clip-path does.
+3.  **Copy the CSS:** The corresponding CSS code is generated automatically in the output box. Simply click the "Copy" button to grab the \`clip-path\` property and paste it into your stylesheet.
+
+This tool is perfect for front-end developers and designers looking to add a creative flair to their projects. Use it to shape hero images, create unique button styles, or design interesting gallery layouts.
+`
+  }
+  ,
+  {
+    slug: "all-about-css-shadows",
+    title: "Mastering Depth: A Guide to the Shadow Generator",
+    summary: "Box shadows are key to creating depth and hierarchy in your UI. Our generator gives you full control to create the perfect shadow and get the CSS instantly.",
+    category: "Color, Design & Branding",
+    aiHint: "ui design",
+    toolSlug: "shadow-generator",
+    content: `
+A well-placed shadow can lift an element off the page, indicate its interactivity, and create a sense of depth and realism in your user interface. The CSS \`box-shadow\` property is incredibly powerful, but tuning its multiple values to get the perfect effect can be time-consuming. The D2ools Shadow Generator provides a visual interface to craft your shadows with precision.
+
+### The Anatomy of a Box Shadow
+
+Our generator gives you control over all the key properties of a box shadow:
+-   **Horizontal & Vertical Offsets:** These values control the position of the shadow relative to the element. Positive values move it right and down; negative values move it left and up.
+-   **Blur Radius:** This determines how sharp or soft the shadow is. A higher value creates a more diffused, softer shadow.
+-   **Spread Radius:** A positive value expands the shadow, making it larger than the element, while a negative value shrinks it.
+-   **Color & Opacity:** You can set the exact color of the shadow and control its transparency for a more subtle effect.
+-   **Inset:** With a single checkbox, you can change the shadow from a standard drop shadow to an inset shadow, which makes the element appear pressed into the page.
+
+### How to Use the Shadow Generator
+
+1.  **Use the Sliders:** Drag the sliders to adjust the offsets, blur, and spread. Watch the preview element update in real-time to see the effect of your changes.
+2.  **Set the Color:** Use the color picker and opacity slider to fine-tune the appearance of your shadow.
+3.  **Copy the CSS:** Once you've created the perfect shadow, click the "Copy" button. This copies the full \`box-shadow\` property to your clipboard, ready to be used in your project.
+
+This tool is a must-have for UI/UX designers and front-end developers who want to create beautiful, layered interfaces with professional-grade shadow effects.
+`
+  }
+  ,
+  {
+    slug: "what-is-a-favicon",
+    title: "What is a Favicon and How to Create One",
+    summary: "A favicon is the small icon that appears in browser tabs. Our simple generator helps you create standard PNG favicons from any image.",
+    category: "Color, Design & Branding",
+    aiHint: "logo icon",
+    toolSlug: "favicon-generator",
+    content: `
+A favicon (short for "favorite icon") is the small, iconic image that represents your website. You see them in browser tabs, bookmark lists, and history, making your site instantly recognizable among many others. While they are small, they are a crucial part of your brand's identity and a hallmark of a professional website. The D2ools Favicon Generator makes creating them simple.
+
+### Why You Need a Favicon
+
+-   **Branding:** A favicon is a visual anchor for your brand, reinforcing your logo and identity.
+-   **Usability:** It helps users quickly identify your site in a crowded browser with many open tabs.
+-   **Professionalism:** A missing favicon looks unprofessional and can suggest a lack of attention to detail.
+
+### How to Create Your Favicons
+
+While modern browsers support many formats, generating a few standard PNG sizes is a great starting point.
+1.  **Upload Your Image:** Start with a simple, high-quality square image, ideally your logo. Click "Choose File" and select your image.
+2.  **Preview Your Icon:** The tool will show you a preview of how your image looks when scaled down.
+3.  **Download Standard Sizes:** Our tool provides one-click downloads for the most common PNG favicon sizes:
+    -   \`16x16\`: The classic, standard favicon size.
+    -   \`32x32\`: A slightly larger version for higher resolution displays.
+    -   \`180x180\`: The recommended size for an Apple Touch Icon, which appears when a user saves your website to their iPhone or iPad home screen.
+4.  **Add to Your Website:** After downloading, you'll need to add the appropriate \`<link>\` tags to the \`<head>\` section of your HTML to tell browsers where to find your new favicons.
+`
+  }
+  ,
+  {
+    slug: "guide-to-robots-txt",
+    title: "A Simple Guide to Creating a robots.txt File",
+    summary: "A robots.txt file tells search engine crawlers which pages on your site to not access. Our generator helps you create one with the correct syntax.",
+    category: "SEO & Website Tools",
+    aiHint: "robot code",
+    toolSlug: "robots-txt-generator",
+    content: `
+A \`robots.txt\` file is a simple but powerful text file that lives in the root directory of your website. Its purpose is to give instructions to web crawlers (like Googlebot) about which parts of your site they should and should not access. This is a fundamental part of technical SEO.
+
+### Why Use a robots.txt File?
+
+-   **Prevent Crawling of Private Areas:** You can block bots from accessing admin login pages, user profile sections, or any other private directories.
+-   **Avoid Indexing Duplicate Content:** If you have pages with duplicate content (like print-friendly versions), you can disallow them to ensure search engines only index the main version.
+-   **Manage Crawl Budget:** For very large websites, you can use \`robots.txt\` to guide bots to your most important content, preventing them from wasting time on less important sections.
+
+### How to Use the Robots.txt Generator
+
+Our tool provides a simple interface to build your file without syntax errors.
+1.  **Add User-Agents:** A "user-agent" is the name of a specific bot. You can add rules for all bots by using \`*\`, or for a specific bot like \`Googlebot\`.
+2.  **Set 'Allow' or 'Disallow' Rules:** For each user-agent, you can add rules.
+    -   **Disallow:** This tells the bot not to crawl a specific path. For example, \`Disallow: /admin/\` would block the entire admin directory.
+    -   **Allow:** This can be used to make exceptions. For example, you might \`Disallow: /private/\` but then \`Allow: /private/public-page.html\`.
+3.  **Add a Sitemap URL (Optional):** It's a best practice to include a link to your XML sitemap at the bottom of your \`robots.txt\` file.
+4.  **Copy and Upload:** The tool generates the complete text file content. Copy the text, save it as \`robots.txt\`, and upload it to the root directory of your website (e.g., \`https://example.com/robots.txt\`).
+`
+  }
 ];
 
 
 const fullBlogPosts = blogPosts.map(post => ({
     ...post,
     date: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-    image: `https://picsum.photos/seed/${post.slug.length + Math.floor(Math.random() * 10)}/600/400`
+    image: \`https://picsum.photos/seed/\${post.slug.length + Math.floor(Math.random() * 10)}/600/400\`
   }));
 
 export const getBlogPosts = (): BlogPost[] => {
@@ -469,3 +1318,4 @@ export const getBlogPosts = (): BlogPost[] => {
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
   return fullBlogPosts.find(post => post.slug === slug);
 }
+    
