@@ -299,8 +299,8 @@ In web design and SEO, even the smallest details matter, and the structure of yo
 
 ### Why Are Slugs Important?
 
--   **SEO:** Search engines use the words in your URL as a clue to the page's content. Including relevant keywords in your slug (like `.../how-to-bake-a-cake`) can help improve your search ranking.
--   **User Experience:** A clean slug like `.../contact-us` is much more user-friendly and trustworthy than a generic one like `.../page.php?id=123`.
+-   **SEO:** Search engines use the words in your URL as a clue to the page's content. Including relevant keywords in your slug (like \`/how-to-bake-a-cake\`) can help improve your search ranking.
+-   **User Experience:** A clean slug like \`/contact-us\` is much more user-friendly and trustworthy than a generic one like \`/page.php?id=123\`.
 -   **Shareability:** Descriptive slugs are easier to read and understand when shared on social media or in emails.
 
 ### How Our Slug Generator Works
@@ -309,7 +309,7 @@ Our tool automates the process of creating a clean slug. When you enter a string
 
 1.  **Converts to Lowercase:** All text is converted to lowercase for consistency.
 2.  **Replaces Spaces with Hyphens:** Spaces are replaced with hyphens, the standard separator in URLs.
-3.  **Removes Special Characters:** Any characters that are not URL-safe (like `!`, `?`, `#`, etc.) are completely removed.
+3.  **Removes Special Characters:** Any characters that are not URL-safe (like \`!\`, \`?\`, \`#\`, etc.) are completely removed.
 4.  **Trims and Cleans:** It removes any leading or trailing hyphens and collapses multiple hyphens into a single one.
 
 ### How to Use the Tool
@@ -407,7 +407,7 @@ In software development, you often need to generate unique identifiers for datab
 
 ### What is a Version 4 UUID?
 
-A Version 4 UUID is a 128-bit number that is generated using random numbers. It's typically represented as a 32-character hexadecimal string, like `123e4567-e89b-12d3-a456-426614174000`.
+A Version 4 UUID is a 128-bit number that is generated using random numbers. It's typically represented as a 32-character hexadecimal string, like \`123e4567-e89b-12d3-a456-426614174000\`.
 
 The key advantage of a v4 UUID is that the probability of generating a duplicate is astronomically low. It's so small that for all practical purposes, you can assume every UUID you generate is globally unique. This makes them perfect for use in any application, from a small personal project to a massive, distributed enterprise system, without worrying about ID collisions.
 
@@ -419,7 +419,7 @@ We've made generating UUIDs as simple as possible.
 2.  **Generate a New One:** Need another ID? Simply click the "Refresh" button, and a brand new, unique UUID will appear.
 3.  **Copy to Clipboard:** Click the "Copy" button next to the UUID to instantly copy it to your clipboard, ready to be pasted into your code, database, or configuration file.
 
-Our UUID Generator is a fast, simple, and indispensable utility for any developer, database architect, or system administrator. It uses the browser's built-in `crypto.randomUUID()` method, which is a cryptographically secure way to generate v4 UUIDs. Stop worrying about ID collisions and start using the industry standard today.
+Our UUID Generator is a fast, simple, and indispensable utility for any developer, database architect, or system administrator. It uses the browser's built-in \`crypto.randomUUID()\` method, which is a cryptographically secure way to generate v4 UUIDs. Stop worrying about ID collisions and start using the industry standard today.
 `
   },
   {
@@ -438,10 +438,10 @@ The D2ools Regex Tester is a developer's best friend, providing an interactive s
 
 Our tool provides a simple, three-part interface for instant feedback.
 
-1.  **Enter Your Regex Pattern:** In the "Regular Expression" field, type your pattern. For example, to find an email address, you might start with something like `\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b`.
+1.  **Enter Your Regex Pattern:** In the "Regular Expression" field, type your pattern. For example, to find an email address, you might start with something like \`\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b\`.
 2.  **Add Your Flags:** In the "Flags" field, add any necessary flags. The most common are:
-    -   `g` (global): Find all matches, not just the first one.
-    -   `i` (case-insensitive): Ignore differences between uppercase and lowercase.
+    -   \`g\` (global): Find all matches, not just the first one.
+    -   \`i\` (case-insensitive): Ignore differences between uppercase and lowercase.
 3.  **Provide a Test String:** In the "Test String" area, paste the text you want to run your regex against.
 
 ### Real-Time Feedback
