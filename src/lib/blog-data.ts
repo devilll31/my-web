@@ -1670,7 +1670,7 @@ The problem occurs when a file saved in one encoding (like Windows-1252) is open
 
 ### How to Fix Encoding Issues
 1. **Upload Your File:** Upload the text file that is displaying incorrectly.
-2. **Select the *Original* Encoding:** This is the tricky part. You need to guess what encoding the file was *originally* saved in. \`Windows-1252\` and \`ISO-8859-1\` are common culprits for older files. Select one from the "From" dropdown.
+2. **Select the *Original* Encoding:** This is the tricky part. You need to guess what encoding the file was *originally* saved in. \`Windows-1252\` and \`ISO-8859-1. **Write Your Markdown:** Use the editor panel on the left to write your text using Markdown syntax. For example, use \`# Heading 1\` for a main heading or \`**bold text**\` for bold.9-1\` are common culprits for older files. Select one from the "From" dropdown.
 3. **Select the Target Encoding:** In the "To" dropdown, choose \`UTF-8\`, which is the standard you almost always want to convert *to*.
 4. **Preview and Download:** The tool will show you a preview of the converted text. If the gibberish is gone and your special characters (like accents or currency symbols) look correct, you've found the right original encoding! You can then download the properly converted file.
 
@@ -1679,11 +1679,11 @@ This tool is invaluable for developers, data analysts, and anyone who deals with
   }
 ];
 
-const fullBlogPosts = blogPosts.map(post => ({
-    ...post,
-    date: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-    image: `https://picsum.photos/seed/${post.slug.length + Math.floor(Math.random() * 10)}/600/400`
-  }));
+const fullBlogPosts = blogPosts.map((post, index) => ({
+  ...post,
+  date: "September 20, 2025",
+  image: `https://picsum.photos/seed/${post.slug.length + index}/600/400`,
+}));
 
 export { getCategories };
 
