@@ -14,6 +14,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -34,7 +35,7 @@ export default function BlogPage() {
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">D2ools blogs</h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
           Tips, tutorials, and insights from the D2ools team on how to master our suite of 500+ free online tools.
         </p>
       </div>
@@ -45,16 +46,18 @@ export default function BlogPage() {
             <input
                 type="search"
                 placeholder="Search blog posts..."
-                className="w-full rounded-full pl-12 pr-32 py-3 text-lg bg-background/50 border-2 focus:bg-white focus:border-primary/30 transition-all duration-300 shadow-md hover:shadow-lg focus:shadow-xl outline-none"
+                className="w-full rounded-full pl-12 pr-40 py-3 text-lg bg-background/50 border-2 focus:bg-white focus:border-primary/30 transition-all duration-300 shadow-md hover:shadow-lg focus:shadow-xl outline-none"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
             <div className="absolute right-2 top-1/2 -translate-y-1/2">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="rounded-full">
-                            <ListFilter className="mr-2"/>
-                            {selectedCategory === 'all' ? 'All Categories' : selectedCategory}
+                        <Button className="rounded-full btn-gradient-filter group text-white">
+                            <ListFilter className="mr-2 text-white group-hover:text-black transition-colors duration-300"/>
+                            <span className="text-white group-hover:text-black transition-colors duration-300">
+                                {selectedCategory === 'all' ? 'All Categories' : selectedCategory}
+                            </span>
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
