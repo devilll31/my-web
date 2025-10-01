@@ -84,9 +84,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         {post.toolSlug && (
           <div className="mt-12 text-center p-8 bg-secondary/50 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Ready to try it out?</h3>
-            <Button asChild size="lg" className="btn-gradient text-white">
+            <Button asChild size="lg" className="btn-gradient group">
               <Link href={`/tools/${post.toolSlug}`}>
-                Go to the {post.category} Tool <ArrowRight className="ml-2 h-5 w-5"/>
+                <span className="text-white group-hover:text-black transition-colors duration-300">Go to the {post.category} Tool</span> <ArrowRight className="ml-2 h-5 w-5 text-white group-hover:text-black transition-colors duration-300"/>
               </Link>
             </Button>
           </div>
