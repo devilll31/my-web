@@ -278,7 +278,7 @@ The main challenge in converting JSON to CSV is that JSON can have a nested, hie
 - **Nested Objects:** The converter will flatten nested objects, creating column names like 'user.address.city' to ensure all data is represented in the final table.
 
 ### How to Convert Your JSON
-1. **Paste or Upload Your JSON:** You can either paste your JSON data directly into the text area or upload a `.json` file.
+1. **Paste or Upload Your JSON:** You can either paste your JSON data directly into the text area or upload a \`.json\` file.
 2. **Review the Preview:** The tool will show you a preview of how your data will look in a table format.
 3. **Download Your CSV:** Click the "Download CSV" button to get your data in a clean, universally compatible CSV format, ready to be opened in any spreadsheet application.
 
@@ -303,7 +303,7 @@ Markdown is a lightweight markup language that allows you to add formatting elem
 Our tool supports all the standard Markdown syntax, including headings, bold and italic text, lists, links, images, and code blocks.
 
 ### How to Use the Converter
-1.  **Write Your Markdown:** Use the editor panel on the left to write your text using Markdown syntax. For example, use `# Heading 1` for a main heading or `**bold text**` for bold.
+1.  **Write Your Markdown:** Use the editor panel on the left to write your text using Markdown syntax. For example, use \`# Heading 1\` for a main heading or \`**bold text**\` for bold.
 2.  **See the Live Preview:** As you type, the panel on the right will show you a live preview of what your formatted text will look like.
 3.  **Get the HTML:** Below the preview, a separate box contains the clean, generated HTML code.
 4.  **Copy and Use:** You can copy the generated HTML and paste it directly into your website's source code, your CMS, or anywhere else you need to display formatted text.
@@ -380,7 +380,7 @@ In web design and SEO, even the smallest details matter, and the structure of yo
 
 ### Why Are Slugs Important?
 
--   **SEO:** Search engines use the words in your URL as a clue to the page's content. Including relevant keywords in your slug (like \`/how-to-bake-a-cake\`) can help improve your search ranking.
+-   **SEO:** Search engines use the words in your URL as a clue to the page's content. Including relevant keywords in your slug (like \`[example]/how-to-bake-a-cake\`) can help improve your search ranking.
 -   **User Experience:** A clean slug like \`/contact-us\` is much more user-friendly and trustworthy than a generic one like \`/page.php?id=123\`.
 -   **Shareability:** Descriptive slugs are easier to read and understand when shared on social media or in emails.
 
@@ -493,7 +493,7 @@ Your webpage's title tag and meta description are your sales pitch on the Google
 - **Visualize Your Brand:** See how your URL, title, and description work together to represent your brand on the results page.
 
 ### How to Use the Preview Tool
-1.  **Enter Your Title Tag:** Write the title of your page as it would appear in the `<title>` HTML tag. Aim for around 55-60 characters.
+1.  **Enter Your Title Tag:** Write the title of your page as it would appear in the \`<title>\` HTML tag. Aim for around 55-60 characters.
 2.  **Write Your Meta Description:** In the meta description box, write the summary you want to appear below the title. The ideal length is between 150-160 characters.
 3.  **Add Your URL:** Enter the full URL of your webpage.
 4.  **Review the Live Preview:** The preview panel on the right instantly updates to show you a realistic simulation of a Google search result. You can make adjustments to your text until it looks perfect.
@@ -543,11 +543,11 @@ If you run a website that serves content in multiple languages or to users in di
 ### How to Generate Your Hreflang Tags
 1. **List Your Page Versions:** For each piece of content, you need to list all of its alternate versions. Our tool lets you easily add a row for each one.
 2. **Enter the URL and Language Code:** For each version, provide the full URL and the correct language-country code. For example:
-    - For English in the United States: `en-us`
-    - For English in the United Kingdom: `en-gb`
-    - For just Spanish (any country): `es`
-3. **Set a Default URL:** The `x-default` tag tells search engines which page to show if a user's language doesn't match any of your specified versions. This is typically your main language page.
-4. **Generate and Copy the Tags:** The tool generates the complete set of `<link>` tags. You must copy this entire block and paste it into the `<head>` section of **every single one** of the alternate pages. Each page must reference itself and all of its other versions.
+    - For English in the United States: \`en-us\`
+    - For English in the United Kingdom: \`en-gb\`
+    - For just Spanish (any country): \`es\`
+3. **Set a Default URL:** The \`x-default\` tag tells search engines which page to show if a user's language doesn't match any of your specified versions. This is typically your main language page.
+4. **Generate and Copy the Tags:** The tool generates the complete set of \`<link>\` tags. You must copy this entire block and paste it into the \`<head>\` section of **every single one** of the alternate pages. Each page must reference itself and all of its other versions.
 `
   },
   // 6) Finance & Business Calculators
@@ -900,14 +900,14 @@ Our JWT Decoder is a simple, secure tool for developers to quickly inspect the c
 When you're developing an application that uses JWTs, you often need to check the information contained within them for debugging purposes. For instance:
 - Is the user ID correct?
 - Does the token have the right permissions (scopes)?
-- Has the token expired? (Checking the `exp` claim).
+- Has the token expired? (Checking the \`exp\` claim).
 - What algorithm was used to sign it?
 
 ### How to Use the JWT Decoder
 1. **Paste Your JWT:** Copy the entire JWT string and paste it into the main input box.
 2. **Instant Decoding:** The tool automatically decodes the token in real-time.
 3. **Inspect the Parts:**
-    - **Header:** The header (highlighted in red) typically contains the algorithm (`alg`) and token type (`typ`).
+    - **Header:** The header (highlighted in red) typically contains the algorithm (\`alg\`) and token type (\`typ\`).
     - **Payload:** The payload (highlighted in blue) contains the claims, which is the actual data about the user and their permissions.
     - **Signature:** The signature part is also displayed, but it cannot be decoded without the secret key.
 
@@ -1116,7 +1116,7 @@ A checksum (or hash) is the output of a cryptographic hash function applied to t
 
 ### How to Verify a File
 The process is simple:
-1. **Download the File:** Download the file you want to verify (e.g., `software.iso`).
+1. **Download the File:** Download the file you want to verify (e.g., \`software.iso\`).
 2. **Find the Official Checksum:** On the download page, find the official checksum string provided by the developer. Copy this string.
 3. **Use Our Tool:**
     - Drag and drop your downloaded file into our File Checksum Verifier tool.
@@ -1210,7 +1210,7 @@ The technique is based on a few simple principles:
 Our tool is designed to make this process seamless.
 1.  **Start the Timer:** The timer is preset to 25 minutes. Simply click the "Start" button to begin your first focus session.
 2.  **Work Undistracted:** As the timer counts down, dedicate yourself completely to your chosen task. The visual progress ring helps you stay motivated.
-3.  **Take Your Break:** When the timer rings, it will automatically switch to a 5-minute break timer. Use this time to step away from your work. After four cycles, the timer will automatically set a longer 15-minute break.
+3.  **Take Your Break:** When the timer rings, it will automatically switch to a 5-minute break timer. After four cycles, the timer will automatically set a longer 15-minute break.
 4.  **Repeat:** Once your break is over, the timer will reset for the next 25-minute Pomodoro.
 
 Our Pomodoro Timer helps you build a rhythm of focused work and regular rest, leading to higher productivity and less stress. Give it a try and transform your workday.
@@ -1323,8 +1323,8 @@ This tool is invaluable for web developers and system administrators during webs
 Every time your browser requests a webpage, a hidden conversation takes place between the browser and the server in the form of HTTP headers. These headers contain vital metadata that controls caching, security, redirects, and more. The D2ools HTTP Header Viewer allows you to see this hidden information for any URL.
 
 ### Key Headers to Look For
-- **Status Code:** The first line of the response. `200 OK` means success, `301 Moved Permanently` indicates a redirect, and `404 Not Found` means the page doesn't exist.
-- **Content-Type:** Tells the browser what kind of content is being sent (e.g., `text/html`, `image/jpeg`).
+- **Status Code:** The first line of the response. \`200 OK\` means success, \`301 Moved Permanently\` indicates a redirect, and \`404 Not Found\` means the page doesn't exist.
+- **Content-Type:** Tells the browser what kind of content is being sent (e.g., \`text/html\`, \`image/jpeg\`).
 - **Cache-Control:** This important header dictates how long a browser or CDN should cache the resource, affecting site speed.
 - **Location:** If the status is a 301 or 302, this header specifies the new URL to redirect to.
 - **Content-Security-Policy (CSP):** A crucial security header that helps prevent cross-site scripting (XSS) attacks.
@@ -1351,7 +1351,7 @@ Unlike traditional HTTP requests, which are a one-way street (request-response),
 An echo server is a simple WebSocket server that, upon receiving a message, immediately sends that exact same message back to the client. This is the "Hello, World!" of WebSocket development. It allows you to verify that the fundamental connection is working correctly.
 
 ### How to Use the WebSocket Tester
-1. **Enter the Server URL:** Provide the URL of your WebSocket server, which typically starts with `ws://` or `wss://` (for secure connections). Our tool defaults to a public echo server for demonstration.
+1. **Enter the Server URL:** Provide the URL of your WebSocket server, which typically starts with \`ws://\` or \`wss://\` (for secure connections). Our tool defaults to a public echo server for demonstration.
 2. **Connect:** Click the "Connect" button to establish the WebSocket connection. A status indicator will show if the connection was successful.
 3. **Send a Message:** Type any message into the message box and click "Send".
 4. **Check the Response:** If the connection is working, the server will "echo" your message back, and it will appear in the "Messages Received" log.
@@ -1588,11 +1588,11 @@ ZIP files are the standard way to bundle multiple files into a single, compresse
 Need to send multiple files to a colleague? Our ZIP Archive Creator makes it easy.
 1. **Select Your Files:** Drag and drop all the files and folders you want to include into the upload area of our ZIP creator tool.
 2. **Name Your Archive:** Give your ZIP file a name.
-3. **Create and Download:** Click the "Create ZIP" button. The tool will bundle all your files into a single `.zip` archive, which you can then download.
+3. **Create and Download:** Click the "Create ZIP" button. The tool will bundle all your files into a single \`.zip\` archive, which you can then download.
 
 ### How to Unzip an Archive
 If you've received a ZIP file and need to get the contents out, our Unzip tool handles it with ease.
-1. **Upload Your ZIP File:** Drag and drop your `.zip` archive into the Unzip tool.
+1. **Upload Your ZIP File:** Drag and drop your \`.zip\` archive into the Unzip tool.
 2. **View the Contents:** The tool will show you a list of all the files and folders contained within the archive.
 3. **Extract and Download:** You can choose to download individual files one by one, or download all the contents at once. The folder structure from the original archive will be preserved.
 
@@ -1636,8 +1636,8 @@ Organizing a large collection of files, like photos from a vacation or a series 
 ### Powerful Renaming Options
 Our tool gives you several ways to rename your files:
 - **Find and Replace:** Replace a specific word or phrase in all filenames.
-- **Add Prefix/Suffix:** Add a common prefix (like `vacation-2024-`) or suffix to all files.
-- **Add Sequential Numbers:** Rename files in a sequence, like `image-001.jpg`, `image-002.jpg`, and so on.
+- **Add Prefix/Suffix:** Add a common prefix (like \`vacation-2024-\`) or suffix to all files.
+- **Add Sequential Numbers:** Rename files in a sequence, like \`image-001.jpg\`, \`image-002.jpg\`, and so on.
 - **Change Case:** Convert all filenames to lowercase, UPPERCASE, or Title Case.
 - **Remove Characters:** Strip out unwanted characters or spaces.
 
@@ -1658,7 +1658,7 @@ Since all processing happens locally in your browser, your files are never uploa
     aiHint: 'character encoding',
     toolSlug: 'text-encoding-converter',
     content: `
-Have you ever opened a text file or a CSV and been greeted with strange symbols like `â€` or `ï¿½` instead of the characters you were expecting? This is almost always caused by a text encoding mismatch. The D2ools Text Encoding Converter is a developer utility designed to solve this exact problem.
+Have you ever opened a text file or a CSV and been greeted with strange symbols like \`â€\` or \`ï¿½\` instead of the characters you were expecting? This is almost always caused by a text encoding mismatch. The D2ools Text Encoding Converter is a developer utility designed to solve this exact problem.
 
 ### What is Text Encoding?
 Computers store text as numbers, and an encoding is simply a standard that maps those numbers to specific characters.
@@ -1670,8 +1670,8 @@ The problem occurs when a file saved in one encoding (like Windows-1252) is open
 
 ### How to Fix Encoding Issues
 1. **Upload Your File:** Upload the text file that is displaying incorrectly.
-2. **Select the *Original* Encoding:** This is the tricky part. You need to guess what encoding the file was *originally* saved in. `Windows-1252` and `ISO-8859-1` are common culprits for older files. Select one from the "From" dropdown.
-3. **Select the Target Encoding:** In the "To" dropdown, choose `UTF-8`, which is the standard you almost always want to convert *to*.
+2. **Select the *Original* Encoding:** This is the tricky part. You need to guess what encoding the file was *originally* saved in. \`Windows-1252\` and \`ISO-8859-1\` are common culprits for older files. Select one from the "From" dropdown.
+3. **Select the Target Encoding:** In the "To" dropdown, choose \`UTF-8\`, which is the standard you almost always want to convert *to*.
 4. **Preview and Download:** The tool will show you a preview of the converted text. If the gibberish is gone and your special characters (like accents or currency symbols) look correct, you've found the right original encoding! You can then download the properly converted file.
 
 This tool is invaluable for developers, data analysts, and anyone who deals with text data from various sources, helping to ensure data integrity and prevent corruption.
