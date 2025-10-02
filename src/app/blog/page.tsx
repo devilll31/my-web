@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Search, ListFilter } from "lucide-react";
 import { Suspense, useState, useMemo } from 'react';
-import { getBlogPosts, getCategories } from "@/lib/blog-data";
+import { getBlogPosts, getBlogCategories } from "@/lib/blog-data";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +19,7 @@ export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const allPosts = useMemo(() => getBlogPosts(), []);
-  const categories = useMemo(() => getCategories(), []);
+  const categories = useMemo(() => getBlogCategories(), []);
 
   const filteredPosts = useMemo(() => {
     return allPosts.filter(post => {
