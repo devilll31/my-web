@@ -180,4 +180,10 @@ body {
     left: 0;
     background-color: hsl(var(--primary));
   }
+  
+  .category-item[data-state='active'],
+  .category-item[data-highlighted] {
+    @apply text-white;
+    background-image: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
 }

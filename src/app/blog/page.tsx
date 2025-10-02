@@ -1,4 +1,3 @@
-
 'use client';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,7 +32,7 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
-      <div className="text-center mb-12">
+      <div className="text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">D2ools blogs</h1>
         <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
           Tips, tutorials, and insights from the D2ools team on how to master our suite of 500+ free online tools.
@@ -62,9 +61,9 @@ export default function BlogPage() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
                         <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory}>
-                            <DropdownMenuRadioItem value="all">All Categories</DropdownMenuRadioItem>
+                            <DropdownMenuRadioItem value="all" className="category-item">All Categories</DropdownMenuRadioItem>
                             {categories.map(cat => (
-                                <DropdownMenuRadioItem key={cat.slug} value={cat.name}>{cat.name}</DropdownMenuRadioItem>
+                                <DropdownMenuRadioItem key={cat.slug} value={cat.name} className="category-item">{cat.name}</DropdownMenuRadioItem>
                             ))}
                         </DropdownMenuRadioGroup>
                     </DropdownMenuContent>
