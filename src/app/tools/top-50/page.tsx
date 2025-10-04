@@ -1,4 +1,3 @@
-
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
 import { getTools } from '@/lib/tools-data';
 
