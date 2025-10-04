@@ -56,7 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             return `<ol class="space-y-4 mb-6">${listItems}</ol>`
         }
         // Standard paragraphs
-        return `<p class="mb-6 leading-relaxed text-lg">${paragraph}</p>`;
+        return `<p class="mb-6 leading-relaxed text-lg" style="line-height: 1.8;">${paragraph}</p>`;
       })
       .join('');
   };
