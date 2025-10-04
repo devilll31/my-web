@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { type Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, User, Folder } from 'lucide-react';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -35,35 +35,50 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  // Simple markdown-to-HTML
+  // Simple markdown-to-HTML with improved styling and structure
   const formatContent = (content: string) => {
     return content
       .split('\n\n')
       .map(paragraph => {
+        // Headings
         if (paragraph.startsWith('### ')) {
-          return `<h3 class="text-2xl font-bold font-headline mt-8 mb-4">${paragraph.substring(4)}</h3>`;
+          return `<h3 class="text-2xl font-bold font-headline mt-10 mb-4">${paragraph.substring(4)}</h3>`;
         }
-        if (paragraph.startsWith('1. ') || paragraph.startsWith('-  ')) {
-            const listItems = paragraph.split('\n').map(item => `<li class="mb-2">${item.replace(/^(1\. |-  )\s*/, '')}</li>`).join('');
-            return `<ol class="list-decimal list-inside space-y-2 mb-4">${listItems}</ol>`
+        // Numbered Lists for steps
+        if (/^\d\./.test(paragraph)) {
+            const listItems = paragraph.split('\n').map(item => {
+                const stepMatch = item.match(/^(\d+\.)\s*(.*)/);
+                if (stepMatch) {
+                  return `<li class="mb-5 leading-relaxed"><strong class="font-semibold text-lg">${stepMatch[1]}</strong> ${stepMatch[2]}</li>`;
+                }
+                return '';
+            }).join('');
+            return `<ol class="space-y-4 mb-6">${listItems}</ol>`
         }
-        return `<p class="mb-4 leading-relaxed">${paragraph}</p>`;
+        // Standard paragraphs
+        return `<p class="mb-6 leading-relaxed text-lg">${paragraph}</p>`;
       })
       .join('');
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 md:px-6">
-      <article className="max-w-3xl mx-auto">
-        <header className="mb-8">
-          <p className="text-primary font-semibold">{post.category}</p>
-          <h1 className="text-4xl md:text-5xl font-bold font-headline mt-2 mb-4">{post.title}</h1>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+    <div className="container mx-auto py-12 md:px-6">
+      <article className="max-w-4xl mx-auto bg-card shadow-lg rounded-2xl overflow-hidden py-10 px-6 md:px-12">
+        <header className="mb-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold font-headline mt-2 mb-6">{post.title}</h1>
+          <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <span>{post.date}</span>
             </div>
-            <span>by The D2ools Team</span>
+            <div className="flex items-center gap-2">
+              <User className="w-4 h-4" />
+              <span>by The D2ools Team</span>
+            </div>
+             <div className="flex items-center gap-2">
+              <Folder className="w-4 h-4" />
+              <p className="font-semibold text-primary">{post.category}</p>
+            </div>
           </div>
         </header>
 
@@ -73,7 +88,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           width={1200}
           height={600}
           data-ai-hint={post.aiHint}
-          className="w-full h-auto rounded-lg shadow-lg mb-8"
+          className="w-full h-auto rounded-xl shadow-lg mb-10"
         />
 
         <div 
