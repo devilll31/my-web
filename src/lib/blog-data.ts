@@ -177,7 +177,9 @@ Generative Fill is a cutting-edge AI technology that understands the content and
     content: `### Why Convert Between CSV and Excel?
 CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight.
 
-However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
+However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. 
+
+Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
 
 ### How to Use Our Converters in 3 Simple Steps
 1.  **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity.
@@ -794,7 +796,7 @@ A password generator, by contrast, creates truly random strings of characters th
 
 ### How to Generate a Secure Password
 1.  **Set Your Password Options:** The strength of a password is determined by its length and complexity. Our tool gives you easy control over both.
-    -   **Length:** Use the slider to set the desired password length. For modern security standards, a length of at least 16 characters is highly recommended. Longer is always better.
+    -   **Length:** Use the slider to set the desired password length. For modern security, a length of at least 16 characters is highly recommended. Longer is always better.
     -   **Character Types:** Select the character types you want to include to meet the specific requirements of any website or service. You can choose from:
         -   Uppercase letters (A-Z)
         -   Lowercase letters (a-z)
@@ -1214,13 +1216,13 @@ Our tool is designed with your privacy as the top priority. It uses a secure and
 
 const processedBlogPosts = blogPosts.map((post, index) => {
   // Generate a date within the specified range: Sept 17-25, 2025
-  const day = 17 + (index % 9); // Cycle through days 17 to 25
+  const day = 25 - (index % 9); // Cycle through days 25 down to 17
   const date = new Date(2025, 8, day); // Month is 0-indexed, so 8 is September
   
   return {
     ...post,
     date: date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-    image: `https://picsum.photos/seed/${post.slug}/600/400`
+    image: `https://picsum.photos/seed/${post.slug}/800/400`
   };
 }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

@@ -63,7 +63,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="container mx-auto py-12 md:px-6">
-      <article className="max-w-4xl mx-auto bg-card shadow-lg rounded-2xl overflow-hidden py-10 px-6 md:px-12">
+      <article className="max-w-4xl mx-auto bg-card shadow-lg rounded-2xl overflow-hidden py-10 md:px-12">
         <header className="mb-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline mt-2 mb-6">{post.title}</h1>
           <div className="flex items-center justify-center flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
