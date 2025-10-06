@@ -198,8 +198,8 @@ Our JSON to CSV converter is designed specifically to solve this problem. It int
 
 ### How to Convert Your JSON Data in 3 Easy Steps
 1.  **Paste or Upload Your JSON:** You have two convenient options to input your data. You can either paste your raw JSON data directly into the provided text area, which is great for quick conversions from an API response, or you can upload a complete \`.json\` file from your device.
-2.  **Preview Your Data Table:** As soon as you provide the data, the tool will automatically parse the JSON and generate a live preview of your data in a clean, table-based format. This allows you to quickly verify that your data is being structured correctly and that all fields are accounted for before you download.
-3.  **Download Your CSV File:** Once you are satisfied with the preview, click the 'Download CSV' button. You will receive a universally compatible CSV file, ready to be opened in Excel, Google Sheets, or imported into any database or data analysis tool.`
+2.  **Preview Your Data Table:** As soon as you provide the data, the tool will automatically parse the JSON and generate a live preview of your data in a clean, table-based format. This allows you to quickly verify that your data is being structured correctly before you download.
+3.  **Download Your CSV File:** Once you are satisfied with the preview, click the 'Download CSV' button. You'll receive a universally compatible CSV file, ready to be opened in Excel, Google Sheets, or imported into any database or data analysis tool.`
   },
   {
     slug: "mastering-markdown-to-html",
@@ -752,7 +752,7 @@ A secure hash function has several critical properties:
 - **One-Way:** It's computationally infeasible to reverse the process and get the original data from the hash.
 - **Deterministic:** The same input will always produce the exact same hash.
 - **Avalanche Effect:** A tiny, insignificant change in the input (like changing a single letter) results in a completely different and unpredictable hash.
-These properties make hashes the perfect tool for verifying data integrity. For example, when you download a large software file, the provider often publishes a checksum (a hash value). After you download the file, you can calculate its hash using our tool. If your calculated hash matches the one provided by the source, you can be confident that the file is authentic and was not corrupted or tampered with during download.
+These properties make hashes the perfect tool for verifying data integrity. For example, when you download a large software file, the provider often publishes a checksum (a hash value). After you download the file, you can calculate its hash using our tool. If your calculated hash matches the one provided by the source, you can be 100% certain that the file is authentic and has not been altered in any way.
 
 ### How to Use Our Hash Generator
 1.  **Enter Your Text:** Type or paste any text or data you want to hash into the input area.
