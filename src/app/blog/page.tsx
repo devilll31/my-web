@@ -60,7 +60,7 @@ export default function BlogPage() {
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory}>
+                        <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory} className="-my-1">
                             <DropdownMenuRadioItem value="all" className="category-item">All Categories</DropdownMenuRadioItem>
                             {categories.map(cat => (
                                 <DropdownMenuRadioItem key={cat.slug} value={cat.name} className="category-item">{cat.name}</DropdownMenuRadioItem>
