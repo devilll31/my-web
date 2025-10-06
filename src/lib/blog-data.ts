@@ -152,12 +152,20 @@ Generative Fill is a cutting-edge AI technology that understands the content of 
     aiHint: "data transfer",
     toolSlug: "csv-to-excel",
     content: `### Why Convert Between CSV and Excel?
-CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight. However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
+CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight.
 
-### How to Use Our Converters in 3 Simple Steps
-1.  **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity.
-2.  **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely, and your files are never stored or viewed.
-3.  **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. No software installation is required.`
+However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. 
+
+Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
+
+### How to Use Our Converters in 3 Simple, 
+Steps 1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity. 
+
+2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed. 
+
+3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. 
+
+No software installation is required, and the entire process is completely free.`
   },
   {
     slug: "json-to-csv-data-transformation",
@@ -536,7 +544,7 @@ Our JSON tool is designed to handle the three most common tasks developers face:
     aiHint: "security token",
     toolSlug: "jwt-decoder",
     content: `### Why Decode a JWT?
-A JSON Web Token (JWT) is a standard used to securely represent claims between two parties, and it's the most common way to handle authentication in modern web apps. When developing or debugging an authentication flow, you often need to inspect the information encoded within a token to make sure it's correct. This can include the User ID (`sub`), permissions (`scopes`), and expiration time (`exp`), which is crucial for debugging session timeout issues. Our tool lets you quickly view this information without any special software.
+A JSON Web Token (JWT) is a standard used to securely represent claims between two parties, and it's the most common way to handle authentication in modern web apps. When developing or debugging an authentication flow, you often need to inspect the information encoded within a token to make sure it's correct. This can include the User ID (\`sub\`), permissions (\`scopes\`), and expiration time (\`exp\`), which is crucial for debugging session timeout issues. Our tool lets you quickly view this information without any special software.
 
 ### How to Use the JWT Decoder
 1.  **Select the Right Tool:** Open our 'JWT Decoder'.
@@ -616,7 +624,7 @@ Humans are inherently bad at creating truly random passwords. We use predictable
     aiHint: "fingerprint security",
     toolSlug: "hash-generator",
     content: `### What is a Cryptographic Hash?
-A hash function is a one-way algorithm that takes an input and produces a unique, fixed-size string of characters, or a digital 'fingerprint' for your data. A secure hash function has the 'avalanche effect': a tiny change in the input results in a completely different hash. This makes hashes perfect for verifying data integrity. For example, you can calculate a downloaded file's hash and compare it to the one provided by the source. If they match, you know the file is authentic.
+A hash function is a one-way algorithm that takes an input and produces a unique, fixed-size string of characters, or a digital 'fingerprint' for your data. A secure hash function has the 'avalanche effect': a tiny change in the input results in a completely different hash. This makes hashes perfect for verifying data integrity. For example, you can calculate a downloaded file's hash and compare it to the one provided by the source. If they match, you can be 100% certain the file is authentic and unaltered.
 
 ### How to Use Our Hash Generator
 1.  **Select the Right Tool:** Open our 'Hash Generator'.
@@ -936,7 +944,7 @@ It's crucial to understand that **transliteration is not the same as translation
     title: "How to Create a ZIP Archive to Compress Your Files",
     summary: "A ZIP file is the perfect way to bundle multiple files into a single, smaller package for easy sharing. Learn how our ZIP Archive Creator works.",
     category: "System & File Management",
-    aiHint: "zip folder",
+aiHint: "zip folder",
     toolSlug: "zip-archive-creator",
     content: `### Why Use a ZIP File?
 ZIP files are a universally recognized standard for file compression and archiving. They solve two common problems: organization and size. Instead of sending ten separate documents in an email, you can place them all into a single, neatly organized ZIP file. ZIP files also use lossless compression to reduce the overall file size of the contents, making the archive faster to upload and download without sacrificing quality. This is perfect for bundling project files, photo albums, or a collection of reports.
