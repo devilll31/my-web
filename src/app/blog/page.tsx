@@ -23,12 +23,19 @@ export default function BlogPage() {
 
   const filteredPosts = useMemo(() => {
     return allPosts.filter(post => {
-      const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+      const categoryDetails = categories.find(c => c.name === post.category);
+      const matchesCategory = selectedCategory === 'all' || (categoryDetails && categoryDetails.slug === selectedCategory);
       const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             post.summary.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [allPosts, searchQuery, selectedCategory]);
+  }, [allPosts, searchQuery, selectedCategory, categories]);
+  
+  const getCategoryNameBySlug = (slug: string) => {
+    if (slug === 'all') return 'All Categories';
+    const category = categories.find(c => c.slug === slug);
+    return category ? category.name : 'All Categories';
+  }
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
@@ -55,15 +62,21 @@ export default function BlogPage() {
                         <Button className="rounded-full btn-gradient-filter group text-white">
                             <ListFilter className="mr-2 text-white group-hover:text-black transition-colors duration-300"/>
                             <span className="text-white group-hover:text-black transition-colors duration-300">
-                                {selectedCategory === 'all' ? 'All Categories' : selectedCategory}
+                                {getCategoryNameBySlug(selectedCategory)}
                             </span>
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
                         <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory} className="-my-1">
-                            <DropdownMenuRadioItem value="all" className="category-item">All Categories</DropdownMenuRadioItem>
+                            <DropdownMenuRadioItem value="all" className="category-item">
+                                <span className={cn('mr-2', selectedCategory === 'all' ? 'opacity-100' : 'opacity-0')}>•</span>
+                                All Categories
+                            </DropdownMenuRadioItem>
                             {categories.map(cat => (
-                                <DropdownMenuRadioItem key={cat.slug} value={cat.name} className="category-item">{cat.name}</DropdownMenuRadioItem>
+                                <DropdownMenuRadioItem key={cat.slug} value={cat.slug} className="category-item">
+                                  <span className={cn('mr-2', selectedCategory === cat.slug ? 'opacity-100' : 'opacity-0')}>•</span>
+                                  {cat.name}
+                                </DropdownMenuRadioItem>
                             ))}
                         </DropdownMenuRadioGroup>
                     </DropdownMenuContent>

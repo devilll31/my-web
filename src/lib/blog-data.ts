@@ -1,4 +1,3 @@
-
 import {
   FileText,
   Image,
@@ -215,16 +214,18 @@ It's a fun and powerful way to bring your creative ideas to life.`
     aiHint: "data transfer",
     toolSlug: "csv-to-excel",
     content: `### Why Convert Between CSV and Excel?
+
 CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight.
 
-However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations.
+However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. 
 
 Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
 
 ### How to Use Our Converters in 3 Simple Steps
-1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity.
-2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed.
-3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use.
+
+1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity. 
+2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed. 
+3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. 
 
 No software installation is required, and the entire process is completely free.`
   },
@@ -716,7 +717,7 @@ It's a must-have for anyone working with JSON.`
     title: "How to Decode and Inspect JSON Web Tokens (JWTs)",
     summary: "Our JWT Decoder lets you quickly paste a token and inspect its header and payload, a crucial step for debugging authentication in modern apps.",
     category: "Data & Developer Utilities",
-aiHint: "security token",
+    aiHint: "security token",
     toolSlug: "jwt-decoder",
     content: `### Why Decode a JWT?
 
@@ -1364,17 +1365,37 @@ export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
   return processedBlogPosts.find(post => post.slug === slug) as BlogPost | undefined;
 }
 
+// Defines the exact order for the categories on the blog page filter
+const categoryOrder: string[] = [
+  'pdf-tools',
+  'image-tools',
+  'document-file-converters',
+  'text-writing-tools',
+  'seo-website-tools',
+  'finance-business-calculators',
+  'math-science-academic',
+  'data-developer-utilities',
+  'web-url-utilities',
+  'security-privacy-hashing',
+  'productivity-planning',
+  'networking-diagnostics',
+  'color-design-branding',
+  'ocr-language-localization',
+  'system-file-management'
+];
+
 export const getBlogCategories = (): { name: string; slug: string }[] => {
   const categoryNames = [...new Set(processedBlogPosts.map(post => post.category))];
   const toolsCategories = getCategories();
   
-  return categoryNames.map(name => {
+  const categoryMap = new Map(categoryNames.map(name => {
     const categoryInfo = toolsCategories.find(c => c.name === name);
-    return {
-      name,
-      slug: categoryInfo ? categoryInfo.slug : name.toLowerCase().replace(/\s+/g, '-')
-    }
-  });
-};
+    const slug = categoryInfo ? categoryInfo.slug : name.toLowerCase().replace(/\s+/g, '-');
+    return [slug, { name, slug }];
+  }));
 
-    
+  // Sort the categories based on the predefined order
+  return categoryOrder
+    .map(slug => categoryMap.get(slug))
+    .filter((cat): cat is { name: string; slug: string } => cat !== undefined);
+};
