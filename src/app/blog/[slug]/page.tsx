@@ -35,7 +35,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  // Simple markdown-to-HTML with improved styling and structure
   const formatContent = (content: string) => {
     return content
       .split('\n\n')
