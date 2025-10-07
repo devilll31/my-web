@@ -58,11 +58,7 @@ Large PDF files are inefficient. They are slow to load, often exceed email attac
 ### A Step-by-Step Guide to Compression
 1.  **Select the Right Tool:** Navigate to our 'Compress PDF' tool.
 2.  **Upload Your File Securely:** Drag your PDF file into the upload box or click to select it from your computer. Your file is uploaded over a secure connection and processed privately.
-3.  **Choose Your Compression Level:** Our tool provides three distinct options:
-    - **Maximum Compression:** Ideal for web sharing or when file size is the top priority.
-    - **Recommended Compression:** The perfect balance for most users, offering significant size reduction with excellent clarity.
-    - **Low Compression:** Best for high-resolution print documents where quality is paramount.
-4.  **Download Your Compressed PDF Instantly:** The tool processes your file in seconds. Click 'Download' to get your new, smaller file. No software installation is required.`
+3.  **Choose Your Compression Level & Download:** Our tool automatically applies a recommended compression that balances file size and quality. Click 'Download' to get your new, smaller file. No software installation is required.`
   },
   {
     slug: "add-watermark-to-pdf-guide",
@@ -77,7 +73,7 @@ A watermark is a subtle but powerful way to protect, brand, and manage your docu
 ### How to Add Your Watermark
 1.  **Select the Right Tool:** Navigate to our 'Add Watermark to PDF' tool.
 2.  **Upload Your PDF Document:** Start by uploading the PDF you want to watermark into our secure, easy-to-use tool.
-3.  **Choose and Customize Your Watermark:** You have full flexibility to choose between a text or image watermark. For text, you can customize the font, size, and color. For an image, you can upload your company logo directly. You can also choose its position, rotation, and opacity.
+3.  **Choose and Customize Your Watermark:** You have full flexibility to choose between a text or image watermark and customize its position, rotation, and opacity.
 4.  **Download Your Watermarked PDF Instantly:** Once you are satisfied with the preview, click 'Add Watermark.' The tool will embed it into your PDF, which will then be ready for immediate download. No software installation is required.`
   },
 
@@ -87,15 +83,15 @@ A watermark is a subtle but powerful way to protect, brand, and manage your docu
     title: "Remove Image Backgrounds in 5 Seconds with AI",
     summary: "Creating professional-looking photos often requires removing distracting backgrounds. With our AI Background Remover, you can do this in just a few clicks.",
     category: "Image Tools",
-    aiHint: "photo editing software",
+    aiHint: "photo editing",
     toolSlug: "image-background-remover-ai",
     content: `### Why Remove Image Backgrounds?
-Manually removing backgrounds in photo editing software is a tedious, time-consuming task. Our AI Background Remover tool simplifies this entire process into a single click. It uses a sophisticated AI model to instantly identify the main subject in a photo—whether it's a person, a product, or a pet—and distinguish it from its surroundings. The AI intelligently erases the background while preserving fine details like wisps of hair and transparent edges. This gives you a clean, professional-looking cutout without any manual effort, perfect for e-commerce, social media profiles, or graphic design projects.
+Manually removing backgrounds in photo editing software is a tedious, time-consuming task. Our AI Background Remover tool simplifies this entire process into a single click. It uses a sophisticated AI model to instantly identify the main subject in a photo—whether it's a person, a product, or a pet—and distinguish it from its surroundings. The AI intelligently erases the background while preserving fine details like wisps of hair and transparent edges. This gives you a clean, professional-looking cutout without any manual effort.
 
 ### How to Use Our AI Background Remover
 1.  **Select the Right Tool:** On our website, navigate to the 'AI Background Remover' tool.
 2.  **Upload Your File Securely:** Drag and drop your image file (.jpg, .png, etc.) directly onto the tool's interface, or click to browse your computer and select the file.
-3.  **Automatic Processing and Download:** The moment you upload your image, our AI gets to work. In just a few seconds, a preview of your image with a transparent background will appear. Click the 'Download' button to save the high-quality, transparent PNG file to your device. No software installation is required.`
+3.  **Automatic Processing and Download:** The moment you upload your image, our AI gets to work. In just a few seconds, a preview of your image with a transparent background will appear. Click the 'Download' button to save the high-quality, transparent PNG file to your device.`
   },
   {
     slug: "upscale-photos-with-ai",
@@ -105,11 +101,11 @@ Manually removing backgrounds in photo editing software is a tedious, time-consu
     aiHint: "high definition",
     toolSlug: "image-upscaler-ai",
     content: `### Why Use AI Upscaling?
-Traditional image resizing methods simply stretch the existing pixels, resulting in a blurry, pixelated image. Our AI Image Upscaler works differently. It uses a deep learning model trained on millions of images to analyze your photo's content. It intelligently predicts what missing details should be, adding new, context-aware pixels to reconstruct fine details and sharpen edges. This creates a clear, natural-looking, and high-resolution version of your original photo, perfect for restoring old photos or preparing small images for high-quality printing.
+Traditional image resizing methods simply stretch the existing pixels, resulting in a blurry, pixelated image. Our AI Image Upscaler works differently. It uses a deep learning model trained on millions of images to analyze your photo's content. It intelligently predicts what missing details should be, adding new, context-aware pixels to reconstruct fine details and sharpen edges. This creates a clear, natural-looking, and high-resolution version of your original photo, perfect for printing or display.
 
 ### A Step-by-Step Guide to AI Upscaling
 1.  **Select the Right Tool:** Go to the 'AI Image Upscaler' tool on our website.
-2.  **Upload Your Low-Resolution Image:** Upload the small image file (.jpg, .png, etc.) that you want to enhance. For best results, use an image that is clear, even if it's small.
+2.  **Upload Your Low-Resolution Image:** Upload the small image file (.jpg, .png, etc.) that you want to enhance.
 3.  **Let the AI Work and Download:** Once uploaded, the model will begin processing your image. After a few moments, you will see a side-by-side comparison of the original and the new, upscaled version. If you're happy with the result, click 'Download' to save your new high-resolution photo.`
   },
   {
@@ -120,12 +116,12 @@ Traditional image resizing methods simply stretch the existing pixels, resulting
     aiHint: "photograph dimensions",
     toolSlug: "image-resizer",
     content: `### Why is Correct Image Resizing Important?
-Resizing images properly is a fundamental task. For websites, oversized images are a primary cause of slow page load times. For social media, each network has optimal dimensions for posts and headers. For documents, correctly sized images keep file sizes manageable. Our tool helps you meet these specific requirements perfectly, providing the flexibility to resize for any context, whether you're a web developer, a social media manager, or just someone looking to email photos to family.
+Resizing images properly is a fundamental task. For websites, oversized images are a primary cause of slow page load times. For social media, each network has optimal dimensions for posts and headers. For documents, correctly sized images keep file sizes manageable. Our tool helps you meet these specific requirements perfectly, providing the flexibility to resize for any context.
 
 ### A Quick Guide to Resizing Your Images
 1.  **Select the Right Tool:** Navigate to the 'Image Resizer' on our website.
 2.  **Upload Your Image and Set Dimensions:** Upload your image file. After uploading, enter your desired new dimensions in pixels.
-3.  **Maintain Proportions and Download:** To prevent your image from looking stretched or distorted, keep the 'Keep aspect ratio' option checked. When this is active, changing the width will automatically adjust the height to maintain the original proportions. Once set, click 'Download' to get your newly resized image. No software installation is required.`
+3.  **Maintain Proportions and Download:** To prevent your image from looking stretched or distorted, keep the 'Keep aspect ratio' option checked. When this is active, changing the width will automatically adjust the height to maintain the original proportions. Once set, click 'Download' to get your newly resized image.`
   },
   {
     slug: "generative-fill-ai-guide",
@@ -135,11 +131,11 @@ Resizing images properly is a fundamental task. For websites, oversized images a
     aiHint: "creative painting",
     toolSlug: "generative-fill-ai",
     content: `### What Can You Do with Generative Fill?
-Generative Fill is a cutting-edge AI technology that understands the content of your images and follows your written commands to modify them. The AI intelligently blends new elements into your photo, matching the existing lighting and perspective to create a seamless result. You can add new objects, change backgrounds, or remove unwanted elements simply by describing what you want. For example, 'add a small boat on the lake' or 'remove the person on the left'. This powerful capability allows you to perform incredible edits that were once only possible for professional photo editors.
+Generative Fill is a cutting-edge AI technology that understands the content of your images and follows your written commands to modify them. The AI intelligently blends new elements into your photo, matching the existing lighting and perspective to create a seamless result. You can add new objects, change backgrounds, or remove unwanted elements simply by describing what you want. This powerful capability allows you to perform incredible edits that were once only possible for professional photo editors.
 
 ### How to Use Generative Fill in 3 Simple Steps
 1.  **Select the Right Tool:** Open the 'Generative Fill' tool on our site.
-2.  **Upload Your Photo and Write a Prompt:** Upload the image you wish to edit. Then, in the text box, describe the change you want to make. The more specific your prompt, the better the result. For example, 'add a golden retriever running on the grass'.
+2.  **Upload Your Photo and Write a Prompt:** Upload the image you wish to edit. Then, in the text box, describe the change you want to make. For example, 'add a small boat on the lake'.
 3.  **Generate and Download Your New Image:** Click 'Apply Generative Fill.' The AI will process your request and create a new version of your image with your described changes. Once you're happy with the result, it's ready to download.`
   },
 
@@ -152,20 +148,12 @@ Generative Fill is a cutting-edge AI technology that understands the content of 
     aiHint: "data transfer",
     toolSlug: "csv-to-excel",
     content: `### Why Convert Between CSV and Excel?
-CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight.
+CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight. However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, and apply professional formatting. Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format.
 
-However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. 
-
-Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
-
-### How to Use Our Converters in 3 Simple, 
-Steps 1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity. 
-
-2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed. 
-
-3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. 
-
-No software installation is required, and the entire process is completely free.`
+### How to Use Our Converters in 3 Simple Steps
+1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.'
+2. **Upload Your File Securely:** Drag and drop your source file (.csv or .xlsx) directly onto the tool's interface. All conversions happen securely within your browser or on our server, and your files are never stored.
+3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use.`
   },
   {
     slug: "json-to-csv-data-transformation",
@@ -175,12 +163,12 @@ No software installation is required, and the entire process is completely free.
     aiHint: "api structure",
     toolSlug: "json-to-csv",
     content: `### From Nested JSON to a Flat CSV Table
-JSON (JavaScript Object Notation) is the standard for web APIs, but its hierarchical (nested) structure can be difficult to work with in traditional spreadsheet programs like Excel or Google Sheets. Our JSON to CSV converter is designed to solve this problem. It intelligently 'flattens' the JSON data, meaning it converts nested objects and arrays into a simple, tabular format that fits perfectly into a CSV. For example, a nested object like \`{"user": {"address": {"city": "New York"}}}\` becomes a clear column header like \`user.address.city\`. This ensures that none of your valuable data is lost in the conversion process.
+JSON (JavaScript Object Notation) is the standard for web APIs, but its hierarchical (nested) structure can be difficult to work with in traditional spreadsheet programs. Our JSON to CSV converter is designed to solve this problem. It intelligently 'flattens' the JSON data, meaning it converts nested objects and arrays into a simple, tabular format that fits perfectly into a CSV. For example, a nested object like \`{"user": {"address": {"city": "New York"}}}\` becomes a clear column header like \`user.address.city\`. This ensures that none of your valuable data is lost in the conversion process.
 
 ### How to Convert Your JSON Data in 3 Easy Steps
-1.  **Paste or Upload Your JSON:** You have two convenient options. You can either paste your raw JSON data directly into the provided text area or upload a complete \`.json\` file from your device.
-2.  **Preview Your Data Table:** The tool will automatically parse the JSON and generate a live preview of your data in a clean, table-based format. This allows you to quickly verify that your data is being structured correctly before you download.
-3.  **Download Your CSV File:** Once you are satisfied with the preview, click the 'Download CSV' button. You'll receive a universally compatible CSV file, ready to be opened in Excel, Google Sheets, or imported into any database.`
+1.  **Paste or Upload Your JSON:** You can either paste your raw JSON data directly into the provided text area or upload a complete \`.json\` file from your device.
+2.  **Preview Your Data Table:** The tool will automatically parse the JSON and generate a live preview of your data in a clean, table-based format.
+3.  **Download Your CSV File:** Once you are satisfied with the preview, click the 'Download CSV' button. You'll receive a universally compatible CSV file, ready for your spreadsheet application.`
   },
   {
     slug: "mastering-markdown-to-html",
@@ -190,12 +178,12 @@ JSON (JavaScript Object Notation) is the standard for web APIs, but its hierarch
     aiHint: "web code",
     toolSlug: "markdown-to-html",
     content: `### Why Convert Markdown to HTML?
-Markdown is beloved for its simple, readable syntax, but browsers understand HTML. Our converter is the perfect bridge for many common tasks. By allowing you to write in an easy format and instantly get the complex code needed for the web, it streamlines your entire content creation process. Use it for drafting blog posts, writing richly formatted emails, or previewing comments for online forums. It ensures your content displays correctly with all formatting—like bold text, lists, and links—intact across different platforms.
+Markdown is beloved for its simple, readable syntax, but browsers understand HTML. Our converter is the perfect bridge for many common tasks. By allowing you to write in an easy format and instantly get the complex code needed for the web, it streamlines your content creation process. Use it for drafting blog posts, writing richly formatted emails, or previewing comments for online forums. It ensures your content displays correctly with all formatting—like bold text, lists, and links—intact across different platforms.
 
 ### How to Use the Live Markdown to HTML Editor
 1.  **Select the Right Tool:** Navigate to our 'Markdown to HTML' tool.
-2.  **Write Your Markdown Text:** Use the editor panel on the left to write your content. Use standard syntax like \`# Heading\` for headings or \`*italic text*\` for italics. As you type, the panel on the right will instantly render a live preview of how your text will look.
-3.  **Copy Your HTML Code:** Below the preview, a separate box contains the clean, generated HTML source code. You can easily copy this and paste it directly into your website's source code, CMS, or anywhere else you need to display rich, formatted text.`
+2.  **Write Your Markdown Text:** Use the editor panel on the left to write your content. Use standard syntax like \`# Heading\` for headings or \`*italic text*\` for italics. The panel on the right will instantly render a live preview.
+3.  **Copy Your HTML Code:** Below the preview, a separate box contains the clean, generated HTML source code. You can easily copy this and paste it directly into your website's source code or CMS.`
   },
   {
     slug: "yaml-vs-json-converter-guide",
@@ -205,12 +193,12 @@ Markdown is beloved for its simple, readable syntax, but browsers understand HTM
     aiHint: "code configuration",
     toolSlug: "yaml-to-json",
     content: `### When and Why Should You Convert?
-YAML and JSON are powerful for structuring data but excel in different areas. YAML is designed to be human-readable, with a clean, indentation-based syntax that's ideal for writing configuration files (e.g., for Docker or Kubernetes). However, applications often require the stricter, more universally supported JSON format for processing. Our 'YAML to JSON' converter bridges this gap. Conversely, converting from JSON to YAML is helpful for developers who receive complex JSON from an API. It makes the nested structure much easier to read, understand, and debug by removing the clutter of brackets and braces.
+YAML and JSON are powerful for structuring data but excel in different areas. YAML is designed to be human-readable, with a clean, indentation-based syntax that's ideal for writing configuration files. However, applications often require the stricter, more universally supported JSON format for processing. Our 'YAML to JSON' converter bridges this gap. Conversely, converting from JSON to YAML is helpful for developers who receive complex JSON from an API. It makes the nested structure much easier to read, understand, and debug by removing the clutter of brackets and braces.
 
 ### How Our Converters Work
 1.  **Select the Right Tool:** Choose either 'YAML to JSON' or 'JSON to YAML' from our list of developer tools.
 2.  **Paste Your Source Data:** Copy your original data and paste it into the input text area on the left.
-3.  **Get Instant, Formatted Results:** The converted data appears instantly in the output text area on the right, already correctly formatted and validated. There's no 'convert' button to click. You can then copy this new data and use it immediately. No software installation is required.`
+3.  **Get Instant, Formatted Results:** The converted data appears instantly in the output text area on the right, already correctly formatted and validated. You can then copy this new data and use it immediately.`
   },
 
   // Category 4: Text & Writing Tools
@@ -222,17 +210,12 @@ YAML and JSON are powerful for structuring data but excel in different areas. YA
     aiHint: "keyboard text",
     toolSlug: "case-converter",
     content: `### Why Is Consistent Text Case Important?
-In the digital world, consistent capitalization is essential for creating professional documents and clean data. Imagine pasting text from three different sources—one in all caps, one in all lowercase, and one in title case. The result is a messy, unprofessional document. Our tool solves this problem by ensuring uniformity in seconds. It's perfect for quickly fixing messy text copied from emails, preparing headlines for a marketing campaign, or standardizing names in a database before import. A consistent case improves readability and presents your information in a polished, professional manner.
+In the digital world, consistent capitalization is essential for creating professional documents and clean data. Imagine pasting text from three different sources—one in all caps, one in all lowercase, and one in title case. The result is a messy, unprofessional document. Our tool solves this problem by ensuring uniformity in seconds. It's perfect for quickly fixing messy text copied from emails, preparing headlines for a marketing campaign, or standardizing names in a database before import.
 
 ### How to Use the Case Converter
 1.  **Select the Right Tool:** Navigate to our 'Case Converter' tool.
 2.  **Paste Your Text:** Enter any text you want to format into the main input area.
-3.  **Choose Your Desired Case Format:** With a single click on one of the conversion buttons, you can instantly apply one of several standard formats:
-    - **UPPERCASE:** Converts every letter to uppercase.
-    - **lowercase:** Converts every letter to lowercase.
-    - **Title Case:** Capitalizes the first letter of every word.
-    - **Sentence case:** Capitalizes only the first letter of each sentence.
-4.  **Copy Your Formatted Text:** The output box updates instantly with your newly formatted text, ready for you to copy. No software installation is required.`
+3.  **Choose Your Desired Case Format:** With a single click, you can instantly apply one of several standard formats: UPPERCASE, lowercase, Title Case, or Sentence case. The output box updates instantly with your newly formatted text, ready for you to copy.`
   },
   {
     slug: "create-seo-friendly-urls-slug-generator",
@@ -247,7 +230,7 @@ The 'slug' is the part of a URL that identifies a specific page. Creating clean,
 ### How to Generate a Perfect Slug in Seconds
 1.  **Select the Right Tool:** Open the 'Slug Generator' on our website.
 2.  **Enter Your Page Title or Text:** Type your blog post title or any other string you want to convert into the input field. For example: "My Awesome New Blog Post!".
-3.  **Get Your Slug Instantly and Copy:** The tool automatically generates the SEO-friendly slug in real-time. It converts everything to lowercase, replaces spaces with hyphens, and removes any special characters that are not safe for URLs. Click the copy button to grab the generated slug (e.g., "my-awesome-new-blog-post"), ready to be pasted into your website's CMS.`
+3.  **Get Your Slug Instantly and Copy:** The tool automatically generates the SEO-friendly slug in real-time. It converts everything to lowercase, replaces spaces with hyphens, and removes any special characters that are not safe for URLs. Click the copy button to grab the generated slug (e.g., "my-awesome-new-blog-post").`
   },
   {
     slug: "extract-emails-from-text-instantly",
@@ -257,12 +240,12 @@ The 'slug' is the part of a URL that identifies a specific page. Creating clean,
     aiHint: "email list",
     toolSlug: "email-extractor",
     content: `### Where Can This Email Extractor Be Used?
-This tool is a massive time-saver in many common scenarios. Imagine you have a long email thread with dozens of recipients, a webpage's source code, or a document containing contact information mixed in with other text. Manually scanning through this content to find and copy each email address is tedious and prone to error. Our tool automates this entire process. It can scan any block of text to quickly find all validly formatted email addresses and build a clean, usable list for you in seconds. This is perfect for building marketing lists, compiling contact databases, or organizing your own contacts.
+This tool is a massive time-saver in many common scenarios. Imagine you have a long email thread with dozens of recipients, a webpage's source code, or a document containing contact information mixed in with other text. Manually scanning through this content to find and copy each email address is tedious and prone to error. Our tool automates this entire process. It can scan any block of text to quickly find all validly formatted email addresses and build a clean, usable list for you in seconds.
 
 ### A Simple, Three-Step Extraction Process
 1.  **Select the Right Tool:** Navigate to our 'Email Extractor' tool.
 2.  **Paste Your Block of Text:** Copy the text you want to scan and paste it into the input text area on the left side of the tool.
-3.  **Get Your Clean Email List:** As soon as you paste the text, the tool automatically scans it and displays all unique email addresses it finds in the results panel on the right. Any duplicates are automatically removed. With a single click on 'Copy All,' the entire list is copied to your clipboard. No software installation is required.`
+3.  **Get Your Clean Email List:** As soon as you paste the text, the tool automatically scans it and displays all unique email addresses it finds in the results panel on the right. Any duplicates are automatically removed. With a single click on 'Copy All,' the entire list is copied to your clipboard.`
   },
   {
     slug: "ai-summarizer-tldr-guide",
@@ -277,7 +260,7 @@ In today's fast-paced world, we are often flooded with more information than we 
 ### How to Use the Summarizer in 3 Simple Steps
 1.  **Select the Right Tool:** Find and open the 'AI Text Summarizer' on our site.
 2.  **Paste Your Long-Form Text:** Copy the article, report, or any other text you want to summarize and paste it into the input text area on the left.
-3.  **Click to Summarize and Read:** Click the 'Summarize Text' button. Our AI will process the content and a short, easy-to-read "Too Long; Didn't Read" (TLDR) summary will appear in the output box on the right, ready for you to copy or share.`
+3.  **Click to Summarize and Read:** Click the 'Summarize Text' button. Our AI will process the content and a short, easy-to-read "Too Long; Didn't Read" (TLDR) summary will appear in the output box on the right.`
   },
 
   // Category 5: SEO & Website Tools
@@ -289,12 +272,12 @@ In today's fast-paced world, we are often flooded with more information than we 
     aiHint: "web robot",
     toolSlug: "robots-txt-generator",
     content: `### Why is a robots.txt File Important?
-A robots.txt file is a simple but powerful text file that provides instructions to web crawlers, like Googlebot. While it doesn't enforce behavior, all major search engines respect its directives. You can use it to prevent crawling of private areas like admin pages, manage your 'crawl budget' on large websites by focusing bots on your most important content, and avoid indexing of duplicate content pages like internal search results. This helps improve your overall SEO health and ensures search engines are focused on the parts of your site you want them to see.
+A robots.txt file is a simple but powerful text file that provides instructions to web crawlers, like Googlebot. While it doesn't enforce behavior, all major search engines respect its directives. You can use it to prevent crawling of private areas like admin pages, manage your 'crawl budget' on large websites by focusing bots on your most important content, and avoid indexing of duplicate content pages like internal search results. This helps improve your overall SEO health.
 
 ### How to Use Our Robots.txt Generator
 1.  **Select the Right Tool:** Open our 'Robots.txt Generator'.
 2.  **Add User-Agent Rules:** Start by specifying which bot a set of rules applies to. Use a wildcard ('*') for all bots, or be specific with user-agents like 'Googlebot'.
-3.  **Set 'Allow' or 'Disallow' Directives:** For each user-agent, add rules to either 'Allow' or 'Disallow' access to specific paths. For example, 'Disallow: /admin/' will block bots from your admin folder. You can also add your sitemap URL.
+3.  **Set 'Allow' or 'Disallow' Directives:** For each user-agent, add rules to either 'Allow' or 'Disallow' access to specific paths. For example, 'Disallow: /admin/' will block bots from your admin folder.
 4.  **Generate and Upload Your File:** The tool generates the complete text for your robots.txt file. Copy this text, save it in a file named exactly \`robots.txt\`, and upload it to the root directory of your website.`
   },
   {
@@ -305,12 +288,12 @@ A robots.txt file is a simple but powerful text file that provides instructions 
     aiHint: "google search",
     toolSlug: "serp-snippet-preview",
     content: `### Why a SERP Preview is Crucial
-Your page's title tag and meta description are your digital 'advertisement' on a Google Search Engine Results Page (SERP). A compelling, well-crafted snippet can dramatically increase your click-through rate (CTR), which not only drives more traffic but can also signal to Google that your page is a good result. Conversely, a poorly written or truncated snippet can be easily overlooked. Our SERP Snippet Preview tool lets you visualize and perfect this critical element before you hit publish, giving you full control over your first impression.
+Your page's title tag and meta description are your digital 'advertisement' on a Google Search Engine Results Page (SERP). A compelling, well-crafted snippet can dramatically increase your click-through rate (CTR), which not only drives more traffic but can also signal to Google that your page is a good result. Conversely, a poorly written or truncated snippet can be easily overlooked. Our SERP Snippet Preview tool lets you visualize and perfect this critical element before you hit publish.
 
 ### How to Use the Preview Tool
 1.  **Select the Right Tool:** Find and open our 'SERP Snippet Preview' tool.
 2.  **Enter Your Title, Description, and URL:** Write a compelling title (55-60 characters) and meta description (150-160 characters), and enter your page's URL.
-3.  **Review the Live Preview:** The tool instantly updates a realistic simulation of how your page will likely appear in a Google search result. You can then make adjustments to your title and description in real-time until the snippet is perfect. No software installation is required.`
+3.  **Review the Live Preview:** The tool instantly updates a realistic simulation of how your page will likely appear in a Google search result. You can then make adjustments to your title and description in real-time until the snippet is perfect.`
   },
   {
     slug: "dns-lookup-basics",
@@ -320,12 +303,12 @@ Your page's title tag and meta description are your digital 'advertisement' on a
     aiHint: "server network",
     toolSlug: "dns-lookup",
     content: `### Why Perform a DNS Lookup?
-The Domain Name System (DNS) translates human-readable domain names (like \`d2ools.com\`) into machine-readable IP addresses. If DNS records are configured incorrectly, it can lead to your website not loading or emails not being delivered. A DNS lookup is a fundamental first step in troubleshooting these issues. You can use it to check if your domain's **A record** points to the correct server IP, verify that your **MX records** are set up for your email provider, inspect **CNAME records** for subdomains, or check **TXT records** used for domain verification and security protocols like SPF.
+The Domain Name System (DNS) translates human-readable domain names (like \`d2ools.com\`) into machine-readable IP addresses. If DNS records are configured incorrectly, it can lead to your website not loading or emails not being delivered. A DNS lookup is a fundamental first step in troubleshooting these issues. You can use it to check if your domain's **A record** points to the correct server IP, verify that your **MX records** are set up for your email provider, or inspect **TXT records** used for domain verification.
 
 ### How to Perform a DNS Lookup
 1.  **Select the Right Tool:** Navigate to our 'DNS Lookup' tool.
 2.  **Enter a Domain and Select Record Type:** Type the domain you wish to investigate into the search box. Use the dropdown menu to choose the type of DNS record you're interested in (e.g., A, AAAA, MX, TXT).
-3.  **Analyze the Results:** Click 'Search.' Our tool queries public DNS servers and displays any matching records it finds, along with their values and TTL (Time to Live). This is invaluable for diagnosing why a website might be down or why emails are not being received.`
+3.  **Analyze the Results:** Click 'Search.' Our tool queries public DNS servers and displays any matching records it finds, along with their values and TTL (Time to Live).`
   },
   {
     slug: "hreflang-generator-international-seo",
@@ -352,15 +335,12 @@ Hreflang tags are a technical SEO solution for sites with content in multiple la
     aiHint: "signed loan",
     toolSlug: "emi-calculator",
     content: `### What is an Equated Monthly Installment (EMI)?
-An Equated Monthly Installment (EMI) is a fixed payment amount that a borrower makes to a lender each month. This payment goes towards paying off both the interest and a portion of the original principal amount. Over a set number of years, these fixed payments ensure that the loan is paid off in full. Our EMI calculator is an essential tool to instantly determine this monthly payment. By allowing you to experiment with different loan amounts, interest rates, and tenures, it helps you plan your finances with confidence and understand the total cost of your loan before you commit.
+An Equated Monthly Installment (EMI) is a fixed payment amount that a borrower makes to a lender each month. This payment goes towards paying off both the interest and a portion of the original principal amount. Over a set number of years, these fixed payments ensure that the loan is paid off in full. Our EMI calculator is an essential tool to instantly determine this monthly payment. By allowing you to experiment with different loan amounts, interest rates, and tenures, it helps you plan your finances with confidence.
 
 ### How to Use the EMI Calculator
 1.  **Select the Right Tool:** Navigate to our 'EMI Calculator'.
 2.  **Enter the Loan Amount, Rate, and Tenure:** Use our intuitive sliders or type in the exact principal amount, annual interest rate, and total repayment period in years.
-3.  **Analyze Your Results:** The calculator instantly provides a clear breakdown:
-    - **Monthly EMI:** The exact fixed amount you will need to pay each month.
-    - **Total Interest Payable:** The total cost you will pay for borrowing the money.
-    - **Total Payment:** The sum of the principal and the total interest.`
+3.  **Analyze Your Results:** The calculator instantly provides a clear breakdown: Monthly EMI, Total Interest Payable, and Total Payment.`
   },
   {
     slug: "sip-calculator-visualizing-wealth",
@@ -370,15 +350,12 @@ An Equated Monthly Installment (EMI) is a fixed payment amount that a borrower m
     aiHint: "bar chart",
     toolSlug: "sip-calculator",
     content: `### The Power of a Systematic Investment Plan (SIP)
-Compounding is the process where your investment returns start generating their own returns, leading to exponential growth. A Systematic Investment Plan (SIP) is the perfect vehicle to leverage this principle by investing a fixed amount regularly. This strategy disciplines your savings and allows you to benefit from rupee cost averaging—buying more units when prices are low and fewer when they are high. This, combined with compounding, can lead to significant wealth accumulation over the long term, turning small, regular investments into a substantial corpus.
+Compounding is the process where your investment returns start generating their own returns, leading to exponential growth. A Systematic Investment Plan (SIP) is the perfect vehicle to leverage this principle by investing a fixed amount regularly. This strategy disciplines your savings and allows you to benefit from rupee cost averaging—buying more units when prices are low and fewer when they are high. This, combined with compounding, can lead to significant wealth accumulation over the long term.
 
 ### How to Use Our SIP Calculator
 1.  **Select the Right Tool:** Open our 'SIP Calculator'.
 2.  **Set Your Monthly Investment, Return Rate, and Duration:** Enter the fixed amount you plan to invest each month, the expected annual rate of return, and the number of years you plan to invest.
-3.  **Understand Your Projected Wealth:** The tool provides a clear breakdown of your financial future:
-    - **Maturity Value:** The final projected amount your investment will grow to.
-    - **Invested Amount:** The total money you contributed.
-    - **Estimated Returns:** The wealth gained purely through compounding.`
+3.  **Understand Your Projected Wealth:** The tool provides a clear breakdown of your financial future: Maturity Value, Invested Amount, and Estimated Returns.`
   },
   {
     slug: "gst-calculation-made-easy",
@@ -396,8 +373,8 @@ This method is used when you have a pre-tax price and need to determine the fina
 ### How to Remove GST (Inclusive Price)
 This method is used when you have a final price that already includes GST and you need to determine the original price and the tax component.
 1.  **Select the Right Tool:** Open the 'GST Calculator'.
-2.  **Enter the Total Amount and GST Rate:** Input the final, GST-inclusive price (the MRP) and choose the correct tax slab.
-3.  **Choose 'Remove GST':** The calculator will work backward to show you the original Net Amount (the pre-tax value) and the exact amount of GST that was included in the final price.`
+2.  **Enter the Total Amount and GST Rate:** Input the final, GST-inclusive price and choose the correct tax slab.
+3.  **Choose 'Remove GST':** The calculator will work backward to show you the original Net Amount and the exact amount of GST that was included in the final price.`
   },
   {
     slug: "home-loan-eligibility-guide",
@@ -407,12 +384,12 @@ This method is used when you have a final price that already includes GST and yo
     aiHint: "house drawing",
     toolSlug: "home-loan-eligibility-calculator",
     content: `### Understanding Home Loan Eligibility
-When you apply for a home loan, lenders assess several factors to determine your borrowing capacity. Our calculator simplifies this by focusing on the most important variables: your monthly income, your existing EMIs (other loans), and the FOIR (Fixed Obligation to Income Ratio), which is typically around 50-60%. This ratio ensures your total monthly EMIs do not exceed a safe percentage of your income. Understanding these factors is key to knowing how much you can realistically borrow for your new home.
+When you apply for a home loan, lenders assess several factors to determine your borrowing capacity. Our calculator simplifies this by focusing on the most important variables: your monthly income, your existing EMIs (other loans), and the FOIR (Fixed Obligation to Income Ratio), which is typically around 50-60%. This ratio ensures your total monthly EMIs do not exceed a safe percentage of your income.
 
 ### How to Use the Eligibility Calculator
 1.  **Select the Right Tool:** Find and open our 'Home Loan Eligibility Calculator'.
-2.  **Enter Your Financial Details:** Input your gross monthly income and the total amount of any other EMIs you are currently paying. Be as accurate as possible.
-3.  **Define Loan Parameters and See Results:** Set your desired loan tenure (in years) and the expected annual interest rate. The calculator instantly computes the maximum home loan amount you are likely eligible for, along with the corresponding EMI you would need to pay. This provides a realistic budget for your home search.`
+2.  **Enter Your Financial Details:** Input your gross monthly income and the total amount of any other EMIs you are currently paying.
+3.  **Define Loan Parameters and See Results:** Set your desired loan tenure (in years) and the expected annual interest rate. The calculator instantly computes the maximum home loan amount you are likely eligible for, along with the corresponding EMI you would need to pay.`
   },
   
   // Category 7: Math, Science & Academic
@@ -424,13 +401,13 @@ When you apply for a home loan, lenders assess several factors to determine your
     aiHint: "health check",
     toolSlug: "bmi-calculator",
     content: `### What is Body Mass Index (BMI)?
-Body Mass Index is a simple calculation using a person's height and weight (BMI = kg/m²) to provide a general estimate of their body fat. It is a quick screening method to categorize whether a person's weight falls into a range that could pose health risks. The standard categories are underweight, healthy weight, overweight, and obesity. While it's a helpful starting point, it's important to remember that BMI doesn't distinguish between fat and muscle mass, so it may not be perfectly accurate for individuals with high muscle mass, like athletes, or for older adults.
+Body Mass Index is a simple calculation using a person's height and weight (BMI = kg/m²) to provide a general estimate of their body fat. It is a quick screening method to categorize whether a person's weight falls into a range that could pose health risks. The standard categories are underweight, healthy weight, overweight, and obesity. While it's a helpful starting point, it's important to remember that BMI doesn't distinguish between fat and muscle mass, so it may not be perfectly accurate for everyone.
 
 ### How to Calculate Your BMI with Our Tool
 1.  **Select the Right Tool:** Open our 'BMI Calculator'.
 2.  **Choose Your Preferred Unit System:** Our tool allows you to choose between Metric units (centimeters and kilograms) or Imperial units (inches and pounds).
 3.  **Enter Your Height and Weight:** Accurately input your current height and weight into the respective fields.
-4.  **View Your BMI Score and Category:** The tool automatically calculates and displays your BMI score. Alongside the score, it provides your corresponding weight category (e.g., Underweight, Normal weight) based on World Health Organization guidelines.`
+4.  **View Your BMI Score and Category:** The tool automatically calculates and displays your BMI score, along with your corresponding weight category.`
   },
   {
     slug: "calculate-percentages-easily",
@@ -449,7 +426,7 @@ Percentages are a fundamental part of daily life. Our versatile Percentage Calcu
 1.  **Select the Right Tool:** Navigate to our 'Percentage Calculator'.
 2.  **Select Your Calculation Type:** Use the dropdown menu to choose the question that matches the problem you are trying to solve.
 3.  **Enter Your Numbers:** The input field labels will change dynamically based on your selection, guiding you to enter the correct numbers in the correct places.
-4.  **Get an Instant Result:** The answer is calculated and displayed automatically in the result box as you type, making the process fast and efficient.`
+4.  **Get an Instant Result:** The answer is calculated and displayed automatically in the result box as you type.`
   },
   {
     slug: "all-about-unit-converter",
@@ -467,9 +444,9 @@ Our Unit Converter is a versatile tool organized into clear tabs for different t
 
 ### How to Convert Any Unit
 1.  **Select the Right Tool:** Open our 'Unit Converter'.
-2.  **Select the Measurement Category:** Click the tab that corresponds to the type of unit you want to convert (e.g., 'Length,' 'Mass').
+2.  **Select the Measurement Category:** Click the tab that corresponds to the type of unit you want to convert.
 3.  **Enter Your Value and Units:** Type the number you want to convert into the 'From' input box and select your starting and target units from the dropdown menus.
-4.  **Get the Result Instantly:** The converted value appears immediately in the 'To' output box, providing a quick, accurate, and hassle-free result.`
+4.  **Get the Result Instantly:** The converted value appears immediately in the 'To' output box.`
   },
   {
     slug: "what-is-a-standard-deviation",
@@ -479,14 +456,12 @@ Our Unit Converter is a versatile tool organized into clear tabs for different t
     aiHint: "data graph",
     toolSlug: "standard-deviation-calculator",
     content: `### Why is Standard Deviation Important?
-In statistics, standard deviation quantifies the amount of variation or dispersion within a set of values. It tells you how spread out your data points are from the average (mean). A **low standard deviation** indicates that the data points tend to be very close to the mean, signifying consistency. A **high standard deviation** indicates that the data points are spread out over a much wider range of values, signifying high variability. It's an essential metric in finance, science, and manufacturing for understanding the reliability and consistency of data, providing deeper insights than the average alone can offer.
+In statistics, standard deviation quantifies the amount of variation or dispersion within a set of values. It tells you how spread out your data points are from the average (mean). A **low standard deviation** indicates that the data points tend to be very close to the mean, signifying consistency. A **high standard deviation** indicates that the data points are spread out over a much wider range of values, signifying high variability. It's an essential metric in finance, science, and manufacturing for understanding the reliability and consistency of data.
 
 ### How to Use Our Standard Deviation Calculator
 1.  **Select the Right Tool:** Find and open our 'Standard Deviation Calculator'.
 2.  **Enter Your Dataset:** Type or paste your list of numbers into the main text area. You can separate the numbers using commas, spaces, or new lines.
-3.  **View the Results Instantly:** The calculator automatically computes and displays two key statistical metrics for your dataset:
-    - **Mean:** The average of all the numbers in your list.
-    - **Sample Standard Deviation:** The standard deviation, calculated using the common formula for a sample of a population.`
+3.  **View the Results Instantly:** The calculator automatically computes and displays two key statistical metrics for your dataset: the Mean and the Sample Standard Deviation.`
   },
   
   // Category 8: Data & Developer Utilities
@@ -502,8 +477,8 @@ A Version 4 UUID is a standardized 128-bit number generated using random numbers
 
 ### How to Use the UUID Generator
 1.  **Select the Right Tool:** Navigate to our 'UUID Generator'.
-2.  **Generate a UUID:** A new, valid Version 4 UUID is automatically generated for you the moment the page loads. It is immediately ready for use.
-3.  **Refresh and Copy:** If you require another unique ID, simply click the 'Refresh' button. With a single click on the 'Copy' button, the generated UUID is copied to your clipboard, ready to be pasted into your code or database client. No software installation is required.`
+2.  **Generate a UUID:** A new, valid Version 4 UUID is automatically generated for you the moment the page loads.
+3.  **Refresh and Copy:** If you require another unique ID, simply click the 'Refresh' button. With a single click on the 'Copy' button, the generated UUID is copied to your clipboard, ready to be pasted into your code.`
   },
   {
     slug: "testing-patterns-regex-tester",
@@ -516,7 +491,7 @@ A Version 4 UUID is a standardized 128-bit number generated using random numbers
 Regular expressions (regex) are an essential tool for developers and data scientists, providing a powerful way to find and manipulate patterns within text. Our interactive tester is designed to make this process intuitive.
 1.  **Select the Right Tool:** Open our 'Regex Tester'.
 2.  **Enter Your Regex Pattern and Flags:** In the 'Regular Expression' field, type the pattern you want to test. In the 'Flags' field, add any necessary flags to modify the search behavior, such as 'g' (global) or 'i' (case-insensitive).
-3.  **Provide a Test String and See Matches:** In the 'Test String' area, paste the text you want to run your expression against. The 'Matches' box on the right will instantly populate with all parts of your text that match your expression. This immediate feedback loop allows you to build and refine complex expressions with confidence. No software installation is needed.`
+3.  **Provide a Test String and See Matches:** In the 'Test String' area, paste the text you want to run your expression against. The 'Matches' box on the right will instantly populate with all parts of your text that match your expression.`
   },
   {
     slug: "how-to-use-a-json-formatter",
@@ -529,12 +504,12 @@ Regular expressions (regex) are an essential tool for developers and data scient
 Our JSON tool is designed to handle the three most common tasks developers face:
 1.  **Formatting (Beautifying):** When you get a response from an API, the JSON is often sent as a single, compressed line. Our formatter instantly converts this into a beautifully indented structure that's easy to read and debug.
 2.  **Validation:** As the tool formats your JSON, it also validates it against the official JSON syntax rules, immediately flagging any errors like a missing comma or an unclosed bracket.
-3.  **Minifying:** Before sending JSON data over a network, it's a best practice to minify it. The minifier removes all unnecessary whitespace and line breaks, creating a compact, single-line string that reduces bandwidth.
+3.  **Minifying:** Before sending JSON data over a network, it's a best practice to minify it. The minifier removes all unnecessary whitespace, creating a compact string that reduces bandwidth.
 
 ### How to Use the JSON Tool
 1.  **Select the Right Tool:** Navigate to our 'JSON Formatter' tool.
 2.  **Paste Your Raw JSON Data:** Copy your JSON string and paste it into the input text area on the left.
-3.  **Format, Validate, and Minify:** Click 'Format / Validate' to beautify your JSON or 'Minify' to compress it. The processed JSON appears instantly in the output area on the right, ready to be copied.`
+3.  **Format, Validate, and Minify:** Click 'Format / Validate' to beautify your JSON or 'Minify' to compress it. The processed JSON appears instantly in the output area on the right.`
   },
   {
     slug: "jwt-decoder-guide",
@@ -549,7 +524,7 @@ A JSON Web Token (JWT) is a standard used to securely represent claims between t
 ### How to Use the JWT Decoder
 1.  **Select the Right Tool:** Open our 'JWT Decoder'.
 2.  **Paste Your JWT:** A JWT consists of three parts separated by dots. Copy the entire token string and paste it into the main input field.
-3.  **Inspect the Decoded Parts:** The tool automatically decodes the token in your browser, never sending it to our servers. It breaks the token down into its three components: Header (metadata), Payload (the data or 'claims'), and Signature (for verification). **Important Note:** This tool decodes the token but does not verify the signature. You should never trust the payload without first verifying its signature on your server.`
+3.  **Inspect the Decoded Parts:** The tool automatically decodes the token in your browser. It breaks the token down into its three components: Header, Payload, and Signature. **Important Note:** This tool does not verify the signature.`
   },
 
   // Category 9: Web & URL Utilities
@@ -566,7 +541,7 @@ A hash function is a one-way cryptographic operation that takes an input and pro
 ### How to Use Our Hashing Tools
 1.  **Select the Right Tool:** Open the 'Hash Generator' or 'HMAC Generator' on our website.
 2.  **Provide Input:** Enter your text. For the HMAC generator, you must also provide your secret key.
-3.  **Generate and Copy:** The tool instantly computes the result using your chosen algorithm (SHA-256 is the modern standard). You can then copy the hash for comparison or for your application's needs. No software installation is required.`
+3.  **Generate and Copy:** The tool instantly computes the result using your chosen algorithm (SHA-256 is the modern standard). You can then copy the hash for comparison or for your application's needs.`
   },
   {
     slug: "generate-qr-codes-for-anything",
@@ -581,7 +556,7 @@ QR (Quick Response) codes are incredibly versatile and can be used to encode var
 ### How to Create Your Custom QR Code
 1.  **Select the Right Tool:** Navigate to our 'QR Code Generator'.
 2.  **Select the Content Type:** Use the tabs to choose what kind of information you want the code to contain (e.g., "URL", "Text", "Wi-Fi").
-3.  **Enter Your Data and Download:** Fill in the required information in the form that appears. The QR code is generated in real-time. Once you're ready, you can download it as a high-quality image file. No software installation is required, and the process is completely free.`
+3.  **Enter Your Data and Download:** Fill in the required information in the form that appears. The QR code is generated in real-time. Once you're ready, you can download it as a high-quality image file.`
   },
   {
     slug: "guide-to-url-encoding",
@@ -594,7 +569,6 @@ QR (Quick Response) codes are incredibly versatile and can be used to encode var
 URLs are designed to contain only a specific set of characters. Many characters, such as spaces, ampersands (\`&\`), and question marks (\`?\`), have reserved meanings and can cause a URL to break or be misinterpreted. URL encoding (or percent-encoding) solves this problem. It converts these unsafe characters into a safe format consisting of a percent sign followed by a two-digit hexadecimal code (e.g., a space becomes \`%20\`), ensuring the URL remains intact, especially when passing data in query parameters.
 
 ### How to Use the URL Encoder/Decoder
-Our tool provides a simple, two-way process for handling URL encoding.
 1.  **Select the Right Tool:** Open our 'URL Encoder/Decoder'.
 2.  **Enter Your URL or Text and Convert:** Paste the URL or string into the input box. Click 'Encode' to convert special characters into their percent-encoded equivalents, or click 'Decode' to convert them back.
 3.  **Use the Result:** The converted URL appears in the output box, ready to be safely used.`
@@ -607,7 +581,7 @@ Our tool provides a simple, two-way process for handling URL encoding.
     aiHint: "lock key",
     toolSlug: "password-generator",
     content: `### Why Use a Password Generator?
-Humans are inherently bad at creating truly random passwords. We use predictable patterns, common words, or personal information. A password generator, on the other hand, creates truly random strings of characters that are exponentially harder to crack. Furthermore, using a unique, randomly generated password for every single website is critical. If one site you use is ever breached, a unique password ensures that your other accounts remain safe, as the leaked password cannot be used to access anything else. It's a simple step that drastically improves your online security.
+Humans are inherently bad at creating truly random passwords. We use predictable patterns, common words, or personal information. A password generator, on the other hand, creates truly random strings of characters that are exponentially harder to crack. Furthermore, using a unique, randomly generated password for every single website is critical. If one site you use is ever breached, a unique password ensures that your other accounts remain safe.
 
 ### How to Generate a Secure Password
 1.  **Select the Right Tool:** Navigate to our 'Password Generator'.
@@ -629,7 +603,7 @@ A hash function is a one-way algorithm that takes an input and produces a unique
 ### How to Use Our Hash Generator
 1.  **Select the Right Tool:** Open our 'Hash Generator'.
 2.  **Enter Your Text:** Type or paste any text or data you want to hash into the input area.
-3.  **View and Copy the Hashes:** The tool automatically computes hashes for your input using several common algorithms, including SHA-1, SHA-256 (the modern standard), and SHA-512. Click the copy icon next to the hash you need to use it for comparison or in your application.`
+3.  **View and Copy the Hashes:** The tool automatically computes hashes for your input using several common algorithms, including SHA-1, SHA-256 (the modern standard), and SHA-512. Click the copy icon next to the hash you need.`
   },
   {
     slug: "what-is-hmac-and-why-use-it-v2",
@@ -654,12 +628,12 @@ While a standard hash verifies data integrity (proving it hasn't changed), it do
     aiHint: "password security",
     toolSlug: "password-generator",
     content: `### Why You Shouldn't Create Your Own Passwords
-Humans are creatures of habit, making us terrible at creating random passwords. We use guessable patterns or personal information. A password generator, on the other hand, creates truly random strings of characters that are exponentially harder to crack. Furthermore, using a unique password for every single website is a critical security practice. If one site you use is ever breached, a unique password ensures that your other accounts remain safe, as the leaked password cannot be used to access anything else.
+Humans are creatures of habit, making us terrible at creating random passwords. We use guessable patterns or personal information. A password generator, on the other hand, creates truly random strings of characters that are exponentially harder to crack. Furthermore, using a unique password for every single website is a critical security practice. If one site you use is ever breached, a unique password ensures that your other accounts remain safe.
 
 ### How to Generate a Secure Password
 1.  **Select the Right Tool:** Open our 'Password Generator'.
-2.  **Set Your Password Options:** The strength of a password is determined by its length and complexity. Set the desired password length (16+ characters is recommended) and select the character types you want to include (Uppercase, Lowercase, Numbers, and Symbols).
-3.  **Generate, Copy, and Secure It:** A strong, random password that meets your criteria is automatically generated. Click the 'Refresh' button for a new one, then 'Copy' to copy the password. Always store this new password in a reputable password manager.`
+2.  **Set Your Password Options:** Set the desired password length (16+ characters is recommended) and select the character types you want to include (Uppercase, Lowercase, Numbers, and Symbols).
+3.  **Generate, Copy, and Secure It:** A strong, random password that meets your criteria is automatically generated. Click 'Refresh' for a new one, then 'Copy' to copy the password. Always store this new password in a reputable password manager.`
   },
   {
     slug: "what-is-rot13-cipher-v2",
@@ -669,7 +643,7 @@ Humans are creatures of habit, making us terrible at creating random passwords. 
     aiHint: "puzzle message",
     toolSlug: "rot13-encoder-decoder",
     content: `### How Does ROT13 Work?
-ROT13, or "rotate by 13 places," is a basic letter substitution cipher. It replaces each letter in a text with the letter that is 13 places after it in the alphabet. Because the English alphabet has 26 letters, applying the cipher twice restores the original text, making it a convenient reversible process. For example, 'A' becomes 'N', and 'N' becomes 'A'. Numbers and symbols are unaffected. It is important to know that ROT13 is **not** a form of security; its sole purpose is to hide text from a casual glance, often used in online forums to obscure spoilers or puzzle solutions.
+ROT13, or "rotate by 13 places," is a basic letter substitution cipher. It replaces each letter in a text with the letter that is 13 places after it in the alphabet. Because the English alphabet has 26 letters, applying the cipher twice restores the original text, making it a convenient reversible process. For example, 'A' becomes 'N', and 'N' becomes 'A'. Numbers and symbols are unaffected. It is important to know that ROT13 is **not** a form of security; its sole purpose is to hide text from a casual glance.
 
 ### How to Use Our ROT13 Converter
 1.  **Select the Right Tool:** Open our 'ROT13 Encoder/Decoder'.
@@ -686,12 +660,12 @@ ROT13, or "rotate by 13 places," is a basic letter substitution cipher. It repla
     aiHint: "timer clock",
     toolSlug: "pomodoro-timer",
     content: `### What is the Pomodoro Technique?
-The Pomodoro Technique is a time management method that can help you resist distractions and get more done. The core idea is to break down your work into timed, focused intervals, traditionally 25 minutes long, known as a "Pomodoro." By committing to a short, single-focused work session, you create a sense of urgency. This cyclical system of work and rest helps to prevent burnout and maintain a high level of productivity throughout the day. It's a simple but effective way to improve your focus and manage your time.
+The Pomodoro Technique is a time management method that can help you resist distractions and get more done. The core idea is to break down your work into timed, focused intervals, traditionally 25 minutes long, known as a "Pomodoro." By committing to a short, single-focused work session, you create a sense of urgency. This cyclical system of work and rest helps to prevent burnout and maintain a high level of productivity throughout the day.
 
 ### How to Use Our Pomodoro Timer
 1.  **Select the Right Tool:** Open our 'Pomodoro Timer'.
 2.  **Choose a Task and Start:** Before you begin, decide on the one task you will focus on. Click the 'Start' button to begin your first 25-minute Pomodoro session.
-3.  **Work and Take Breaks:** Work without distraction for the full 25 minutes. When the timer rings, take a mandatory 5-minute break. After four Pomodoros, the technique recommends taking a longer break of 15-30 minutes. Our tool will help you keep track.`
+3.  **Work and Take Breaks:** Work without distraction for the full 25 minutes. When the timer rings, take a mandatory 5-minute break. After four Pomodoros, the technique recommends taking a longer break of 15-30 minutes.`
   },
   {
     slug: "kanban-board-for-productivity",
@@ -701,15 +675,12 @@ The Pomodoro Technique is a time management method that can help you resist dist
     aiHint: "workflow board",
     toolSlug: "kanban-board",
     content: `### Understanding the Kanban Columns
-A Kanban board is a simple visual tool for managing tasks. It helps you visualize your work, limit work-in-progress, and maximize efficiency. Our tool uses the three most fundamental columns:
--   **To Do:** This is your backlog where you add all new tasks and ideas.
--   **In Progress:** This column represents what you are actively working on right now. A key principle is to limit items in this column to maintain focus.
--   **Done:** This column provides a satisfying record of all your accomplishments.
+A Kanban board is a simple visual tool for managing tasks. It helps you visualize your work, limit work-in-progress, and maximize efficiency. Our tool uses the three most fundamental columns: To Do, In Progress, and Done. The 'To Do' column is your backlog where you add all new tasks. 'In Progress' represents what you are actively working on right now. 'Done' provides a satisfying record of all your accomplishments.
 
 ### How to Use Our Simple Kanban Board
 1.  **Select the Right Tool:** Find and open our 'Kanban Board' tool.
 2.  **Add Your Tasks:** Use the input field in the 'To Do' column to add new tasks to your backlog.
-3.  **Drag and Drop to Update Status:** When you are ready to start a task, click and drag the task card from 'To Do' to 'In Progress.' Once completed, drag it to 'Done.' This visual movement makes tracking progress intuitive. Your board is saved automatically in your browser, so your tasks will be waiting for you next time.`
+3.  **Drag and Drop to Update Status:** When you are ready to start a task, click and drag the task card from 'To Do' to 'In Progress.' Once completed, drag it to 'Done.' Your board is saved automatically in your browser.`
   },
   {
     slug: "time-zone-converter-guide",
@@ -723,8 +694,8 @@ In today's globally connected world, coordinating with colleagues in different t
 
 ### How to Use Our World Clock Board
 1.  **Select the Right Tool:** Navigate to our 'World Clock Board' tool.
-2.  **Set Your Local Time:** The tool automatically detects your computer's time zone. You can manually change the time in the input box to see how it corresponds to other time zones when planning.
-3.  **Add Target Time Zones and View:** Use the 'Add Timezone' dropdown menu to search for and select the cities or time zones you want to compare. The board displays the current time in all your selected locations simultaneously. Your selections are saved in your browser for your next visit.`
+2.  **Set Your Local Time:** The tool automatically detects your computer's time zone. You can manually change the time in the input box to see how it corresponds to other time zones.
+3.  **Add Target Time Zones and View:** Use the 'Add Timezone' dropdown menu to search for and select the cities or time zones you want to compare. The board displays the current time in all your selected locations simultaneously.`
   },
   {
     slug: "expense-splitter-guide",
@@ -738,7 +709,7 @@ When you're out with a group, different people often pay for different things. A
 
 ### How to Split Your Expenses
 1.  **Select the Right Tool:** Open our 'Expense Splitter' tool.
-2.  **Add People and Amounts:** Use the 'Add Person' button to create an entry for each person in your group. For each person, enter the total amount of money they paid towards the group's expenses. If someone owes money but didn't make any purchases, leave their amount as '0'.
+2.  **Add People and Amounts:** Use the 'Add Person' button to create an entry for each person in your group. For each person, enter the total amount of money they paid towards the group's expenses.
 3.  **Follow the Settlement Plan:** The tool automatically calculates the total spent and the average amount each person should have paid, then generates a simple list of transactions telling you exactly who needs to pay whom.`
   },
 
@@ -751,13 +722,12 @@ When you're out with a group, different people often pay for different things. A
     aiHint: "domain search",
     toolSlug: "domain-availability-checker",
     content: `### Why Check Domain Availability?
-Your domain name is your online identity. A great domain name is memorable, easy to spell, and relevant to your brand. Before you can start building your website, you need to register a domain that isn't already in use. Our tool provides a quick and simple way to check the availability of any domain you can think of. It helps you brainstorm different options and instantly see if your perfect name is free to be registered. This is the crucial first step before investing time and money into building your brand.
+Your domain name is your online identity. A great domain name is memorable, easy to spell, and relevant to your brand. Before you can start building your website, you need to register a domain that isn't already in use. Our tool provides a quick and simple way to check the availability of any domain you can think of. It helps you brainstorm different options and instantly see if your perfect name is free to be registered.
 
 ### How to Use the Domain Availability Checker
 1.  **Select the Right Tool:** Navigate to our 'Domain Availability Checker' tool.
 2.  **Enter Your Desired Domain:** In the search bar, type the domain name you want to check. You can enter it with or without the extension (e.g., '.com').
-3.  **Check Availability:** The tool performs a real-time lookup to see if the name is currently registered. The results will tell you if the domain is available or if it's already taken. If it's available, you can then proceed to a domain registrar to purchase it.
-*Please note: This tool is for checking availability only and does not handle registration.*`
+3.  **Check Availability:** The tool performs a real-time lookup to see if the name is currently registered. The results will tell you if the domain is available or if it's already taken.`
   },
   {
     slug: "what-is-whois-lookup",
@@ -767,12 +737,12 @@ Your domain name is your online identity. A great domain name is memorable, easy
     aiHint: "database search",
     toolSlug: "whois-lookup",
     content: `### What Does a WHOIS Record Contain?
-A WHOIS record is the publicly accessible information associated with a domain name registration. A typical record includes the registrant's contact information (often hidden by a privacy service), the registrar company, important dates (creation, expiration), and the name servers that point the domain to its hosting. This information is useful for contacting a domain owner for a purchase inquiry, investigating a suspicious website, or simply gathering data on a domain's history. It is a fundamental tool for transparency on the internet.
+A WHOIS record is the publicly accessible information associated with a domain name registration. A typical record includes the registrant's contact information (often hidden by a privacy service), the registrar company, important dates (creation, expiration), and the name servers that point the domain to its hosting. This information is useful for contacting a domain owner for a purchase inquiry, investigating a suspicious website, or simply gathering data on a domain's history.
 
 ### How to Perform a WHOIS Lookup
 1.  **Select the Right Tool:** Open the 'WHOIS Lookup' tool on our website.
 2.  **Enter the Domain Name:** In the tool's search field, type the full domain name you wish to investigate (e.g., \`d2ools.com\`).
-3.  **Initiate and Review:** Click the 'Search' button. The tool queries the appropriate WHOIS servers and displays the raw registration data it finds, including all the public details about the domain's registration and ownership. No software installation is required.`
+3.  **Initiate and Review:** Click the 'Search' button. The tool queries the appropriate WHOIS servers and displays the raw registration data it finds, including all the public details about the domain's registration and ownership.`
   },
   {
     slug: "troubleshooting-with-dns-lookup",
@@ -782,12 +752,12 @@ A WHOIS record is the publicly accessible information associated with a domain n
     aiHint: "network issue",
     toolSlug: "dns-lookup",
     content: `### Why Perform a DNS Lookup?
-The Domain Name System (DNS) is the internet's phonebook. If DNS records are configured incorrectly, it can cause a wide range of problems, from your website not loading to emails not being delivered. A DNS lookup is the first step in troubleshooting these issues. You can use it to check if your domain's **A record** points to the correct server IP, verify that your **MX records** are set up for your email provider, inspect **CNAME records** for subdomains, or check **TXT records** used for domain verification and security protocols like SPF. It is an essential diagnostic tool for any website owner.
+The Domain Name System (DNS) is the internet's phonebook. If DNS records are configured incorrectly, it can cause a wide range of problems, from your website not loading to emails not being delivered. A DNS lookup is the first step in troubleshooting these issues. You can use it to check if your domain's **A record** points to the correct server IP, verify that your **MX records** are set up for your email provider, or inspect **TXT records** used for domain verification.
 
 ### How to Use the DNS Lookup Tool
 1.  **Select the Right Tool:** Open our 'DNS Lookup' tool.
 2.  **Enter Domain and Select Record Type:** Type the domain you want to check into the search box. Use the dropdown menu to choose the specific DNS record you want to query (A, MX, TXT, etc.).
-3.  **Analyze the Results:** Click 'Search.' Our tool queries public DNS servers and displays the records it finds. This allows you to verify that your settings are correct and that any changes you've made have propagated across the internet.`
+3.  **Analyze the Results:** Click 'Search.' Our tool queries public DNS servers and displays the records it finds, allowing you to verify that your settings are correct.`
   },
   {
     slug: "finding-ip-location",
@@ -797,13 +767,12 @@ The Domain Name System (DNS) is the internet's phonebook. If DNS records are con
     aiHint: "world data",
     toolSlug: "ip-location-finder",
     content: `### How Does IP Geolocation Work?
-Every device connected to the internet is assigned a public IP address by its Internet Service Provider (ISP). IP geolocation works by mapping that address back to a real-world geographical location. This is possible because large blocks of IP addresses are allocated to ISPs in specific countries and regions. Geolocation databases maintain records of which IP blocks belong to which ISP and where that ISP is located. While it's usually not accurate to your exact street address, it is an effective method for determining the general location of a user or a web server anywhere in the world.
+Every device connected to the internet is assigned a public IP address by its Internet Service Provider (ISP). IP geolocation works by mapping that address back to a real-world geographical location. This is possible because large blocks of IP addresses are allocated to ISPs in specific countries and regions. Geolocation databases maintain records of which IP blocks belong to which ISP and where that ISP is located. While it's usually not accurate to your exact street address, it is an effective method for determining the general location of a user or a web server.
 
 ### How to Use Our IP Location Finder
-Our tool is designed for simplicity and requires no input from you.
 1.  **Select the Right Tool:** Open our 'IP Location Finder'.
 2.  **Load the Tool:** The process is completely automatic. As soon as the page loads, the tool identifies your public IP address.
-3.  **View Your IP and Location:** Your public IP address is displayed prominently. Below it, the tool shows the estimated city, region, and country based on the geolocation data associated with your IP. This is useful for verifying that a VPN connection is working correctly.`
+3.  **View Your IP and Location:** Your public IP address is displayed prominently. Below it, the tool shows the estimated city, region, and country based on the geolocation data associated with your IP.`
   },
 
   // Category 13: Color, Design & Branding
@@ -815,10 +784,7 @@ Our tool is designed for simplicity and requires no input from you.
     aiHint: "color wheel",
     toolSlug: "color-picker",
     content: `### Understanding Different Color Models
-In digital design, colors can be represented in several ways. Our tool helps you work with the three most common formats:
-- **HEX (Hexadecimal):** The most common format for web design, used in CSS (e.g., \`#558bcf\`).
-- **RGB (Red, Green, Blue):** Defines colors by mixing red, green, and blue light, with each value ranging from 0 to 255. It is the standard for digital displays.
-- **HSL (Hue, Saturation, Lightness):** Often the most intuitive model. Hue is the color's position on the color wheel (0-360), Saturation is its intensity (0-100%), and Lightness is its brightness (0-100%).
+In digital design, colors can be represented in several ways. Our tool helps you work with the three most common formats: HEX (Hexadecimal), RGB (Red, Green, Blue), and HSL (Hue, Saturation, Lightness). HEX is most common for web design, RGB is the standard for digital displays, and HSL is often the most intuitive model for adjusting color properties.
 
 ### How to Use the Color Picker
 1.  **Select the Right Tool:** Navigate to our 'Color Picker'.
@@ -833,10 +799,7 @@ In digital design, colors can be represented in several ways. Our tool helps you
     aiHint: "accessibility icon",
     toolSlug: "contrast-checker",
     content: `### Why is Color Contrast So Important?
-Good contrast between text and its background is one of the most critical aspects of web accessibility, ensuring content is readable for everyone, including people with visual impairments. The Web Content Accessibility Guidelines (WCAG) provide clear standards for this:
-- **AA Level (Minimum Compliance):** Requires a contrast ratio of at least **4.5:1** for normal-sized text.
-- **AAA Level (Enhanced Compliance):** A stricter standard requiring a ratio of at least **7:1**.
-Meeting these standards doesn't just help users with disabilities; it improves the reading experience for everyone.
+Good contrast between text and its background is one of the most critical aspects of web accessibility, ensuring content is readable for everyone, including people with visual impairments. The Web Content Accessibility Guidelines (WCAG) provide clear standards for this: AA Level (minimum compliance) requires a contrast ratio of at least 4.5:1 for normal-sized text, while AAA Level (enhanced compliance) requires a ratio of at least 7:1.
 
 ### How to Use Our Contrast Checker
 1.  **Select the Right Tool:** Open our 'Contrast Checker'.
@@ -851,12 +814,12 @@ Meeting these standards doesn't just help users with disabilities; it improves t
     aiHint: "color background",
     toolSlug: "gradient-generator",
     content: `### Why Use Gradients in Your Design?
-A well-executed gradient can make a design feel modern, vibrant, and dynamic. They are a popular choice for backgrounds, buttons, and other UI elements. While CSS gradients are powerful, manually writing the \`linear-gradient()\` function can be tedious. Our generator simplifies this process, allowing you to visually create the perfect gradient and get the code instantly. It's a must-have tool for any front-end developer or UI designer looking to speed up their workflow and add a professional touch to their projects without the hassle of manual coding.
+A well-executed gradient can make a design feel modern, vibrant, and dynamic. They are a popular choice for backgrounds, buttons, and other UI elements. While CSS gradients are powerful, manually writing the \`linear-gradient()\` function can be tedious. Our generator simplifies this process, allowing you to visually create the perfect gradient and get the code instantly. It's a must-have tool for any front-end developer or UI designer looking to speed up their workflow.
 
 ### How to Generate Your Own CSS Gradient
 1.  **Select the Right Tool:** Navigate to our 'Gradient Generator'.
 2.  **Select Your Colors and Angle:** Use the two color pickers to choose the colors you want to blend. Use the slider to change the direction of the gradient (e.g., 90° for horizontal).
-3.  **Preview and Copy the CSS:** The preview box instantly updates to show you what your gradient will look like. When you're happy, click the 'Copy' button to get the clean, cross-browser compatible \`background: linear-gradient(...)\` CSS rule.`
+3.  **Preview and Copy the CSS:** The preview box instantly updates to show you what your gradient will look like. When you're happy, click the 'Copy' button to get the clean, cross-browser compatible CSS rule.`
   },
   {
     slug: "designing-with-shadows-generator",
@@ -871,7 +834,7 @@ A CSS \`box-shadow\` is a powerful property for creating depth in your user inte
 ### How to Use Our Shadow Generator
 1.  **Select the Right Tool:** Find and open our 'Shadow Generator'.
 2.  **Adjust the Sliders:** Use the intuitive sliders to visually control the horizontal and vertical offsets, the blur radius, and the spread of the shadow.
-3.  **Set Color, Opacity, and Inset:** Choose your desired shadow color and use the opacity slider to fine-tune its intensity. Check the 'Inset' box to switch from a standard outset shadow to an inner shadow effect.
+3.  **Set Color, Opacity, and Inset:** Choose your desired shadow color and use the opacity slider to fine-tune its intensity. Check the 'Inset' box to switch to an inner shadow effect.
 4.  **Copy the CSS:** The tool generates the complete \`box-shadow\` CSS rule in real-time. Simply click the 'Copy' button to get the code.`
   },
   
@@ -884,11 +847,11 @@ A CSS \`box-shadow\` is a powerful property for creating depth in your user inte
     aiHint: "text document",
     toolSlug: "image-to-text-ocr",
     content: `### What is OCR and How Can It Help You?
-OCR (Optical Character Recognition) is a technology that converts documents, such as scanned papers or images, into editable and searchable data. It's an incredibly useful tool for digitizing physical documents. You can use it to quickly convert photos of documents, receipts, or book pages into text that you can edit or copy. It's also great for extracting information from screenshots, infographics, or presentation slides without having to manually re-type everything. It makes information more accessible and easier to work with.
+OCR (Optical Character Recognition) is a technology that converts documents, such as scanned papers or images, into editable and searchable data. It's an incredibly useful tool for digitizing physical documents. You can use it to quickly convert photos of documents, receipts, or book pages into text that you can edit or copy. It's also great for extracting information from screenshots, infographics, or presentation slides without having to manually re-type everything.
 
 ### How to Use Our Image to Text OCR Tool
 1.  **Select the Right Tool:** Navigate to our 'Image to Text (OCR)' tool.
-2.  **Upload Your Image:** Drag and drop your image file (.jpg, .png, etc.) directly into the upload area, or click to browse your computer and select a file. For best results, use a clear, well-lit image.
+2.  **Upload Your Image:** Drag and drop your image file (.jpg, .png, etc.) directly into the upload area, or click to browse your computer and select a file.
 3.  **Let the AI Process and Copy Your Text:** Once you upload your image, our AI will immediately analyze it and extract any readable text. The extracted text will appear in the output text box, ready for you to copy and use.`
   },
   {
@@ -899,11 +862,11 @@ OCR (Optical Character Recognition) is a technology that converts documents, suc
     aiHint: "document scanner",
     toolSlug: "pdf-to-text-ocr",
     content: `### Regular PDFs vs. Scanned PDFs
-It's important to understand there are two main types of PDFs. A **regular PDF** contains actual text data that you can select and copy. A **scanned PDF**, on the other hand, is just an image of a document wrapped in a PDF file; you cannot select the text because the computer sees it as a picture. Our PDF to Text OCR tool is designed specifically to solve this problem by 'reading' the image and converting it into actual, usable text. This is invaluable for digitizing old contracts, academic papers, or any paper document that has been scanned for archival purposes.
+It's important to understand there are two main types of PDFs. A **regular PDF** contains actual text data that you can select and copy. A **scanned PDF**, on the other hand, is just an image of a document wrapped in a PDF file; you cannot select the text. Our PDF to Text OCR tool is designed specifically to solve this problem by 'reading' the image and converting it into actual, usable text. This is invaluable for digitizing old contracts, academic papers, or any paper document that has been scanned.
 
 ### How to Use Our PDF OCR Tool
 1.  **Select the Right Tool:** Open the 'PDF to Text (OCR)' tool on our site.
-2.  **Upload Your Scanned PDF:** Drag and drop your PDF file into the tool's upload area, or click to select it from your computer. The tool works best with clear, high-quality scans.
+2.  **Upload Your Scanned PDF:** Drag and drop your PDF file into the tool's upload area, or click to select it from your computer.
 3.  **Automatic Extraction and Copying:** As soon as you upload the file, our AI-powered OCR engine gets to work, processing the entire document. The extracted text will appear in the output text box, ready for you to copy.`
   },
   {
@@ -917,10 +880,9 @@ It's important to understand there are two main types of PDFs. A **regular PDF**
 A language detection tool is a simple but useful utility for anyone working in a multilingual environment. It can be used to identify the language of a comment on your blog, an email from an international client, or a document you've received. In a business context, you can use it to automatically determine the language of a customer support request so you can route it to the correct team member. It is also useful for preparing a piece of text for translation by verifying the source language.
 
 ### How to Use Our Language Detector
-Our tool is designed for speed and simplicity, giving you an answer in just a few clicks.
 1.  **Select the Right Tool:** Navigate to our 'Language Detector'.
 2.  **Enter Your Text:** Type or paste any block of text into the input area. The tool works with just a few words or entire paragraphs.
-3.  **Detect and View Result:** Click the 'Detect Language' button. The tool will instantly display the detected language name and its standard ISO 639-1 code (e.g., 'English (en)', 'Spanish (es)').`
+3.  **Detect and View Result:** Click the 'Detect Language' button. The tool will instantly display the detected language name and its standard ISO 639-1 code.`
   },
   {
     slug: "transliteration-tool-explained",
@@ -935,7 +897,7 @@ It's crucial to understand that **transliteration is not the same as translation
 ### How to Use Our Transliteration Tool
 1.  **Select the Right Tool:** Open our 'Transliteration Tool'.
 2.  **Enter Text and Select Scripts:** In the input box, type the text you want to convert. Choose the script you are typing in (e.g., 'Latin') and the script you want to convert to (e.g., 'Devanagari').
-3.  **Click 'Transliterate':** Our AI model will process your text and provide the phonetic conversion in the target script (e.g., converting 'shukriya' to ' शुक्रिया'). The result will appear below.`
+3.  **Click 'Transliterate':** Our AI model will process your text and provide the phonetic conversion in the target script.`
   },
 
   // Category 15: System & File Management
@@ -944,13 +906,12 @@ It's crucial to understand that **transliteration is not the same as translation
     title: "How to Create a ZIP Archive to Compress Your Files",
     summary: "A ZIP file is the perfect way to bundle multiple files into a single, smaller package for easy sharing. Learn how our ZIP Archive Creator works.",
     category: "System & File Management",
-aiHint: "zip folder",
+    aiHint: "zip folder",
     toolSlug: "zip-archive-creator",
     content: `### Why Use a ZIP File?
 ZIP files are a universally recognized standard for file compression and archiving. They solve two common problems: organization and size. Instead of sending ten separate documents in an email, you can place them all into a single, neatly organized ZIP file. ZIP files also use lossless compression to reduce the overall file size of the contents, making the archive faster to upload and download without sacrificing quality. This is perfect for bundling project files, photo albums, or a collection of reports.
 
 ### How to Use Our ZIP Archive Creator
-Our tool makes creating a ZIP file incredibly simple and secure.
 1.  **Select the Right Tool:** Navigate to our 'ZIP Archive Creator'.
 2.  **Select Your Files and Name Your Archive:** Drag and drop multiple files and folders directly into the upload area. You can give your archive a custom name in the provided input field.
 3.  **Create and Download:** Click the 'Create ZIP' button. All compression happens directly in your browser, so your files are never uploaded to our servers. The download for your new .zip file will begin automatically.`
@@ -963,7 +924,7 @@ Our tool makes creating a ZIP file incredibly simple and secure.
     aiHint: "archive folder",
     toolSlug: "unzip-files",
     content: `### Why Use an Online Unzipper?
-Often, you might find yourself on a computer that doesn't have file extraction software like WinZip or WinRAR installed, such as a library computer or a work machine with restricted software. In these situations, an online unzipper is the perfect solution. It allows you to quickly view the contents of a compressed archive and download either all the files or just the specific ones you need, all without having to install any additional software. Our tool handles this entire process securely within your browser, ensuring your files remain private.
+Often, you might find yourself on a computer that doesn't have file extraction software like WinZip or WinRAR installed, such as a library computer or a work machine with restricted software. In these situations, an online unzipper is the perfect solution. It allows you to quickly view the contents of a compressed archive and download either all the files or just the specific ones you need, all without having to install any additional software. Our tool handles this entire process securely within your browser.
 
 ### How to Unzip Your Files
 1.  **Select the Right Tool:** Open our 'Unzip Files' tool.
@@ -982,8 +943,8 @@ When you download a large file, how can you be sure it's identical to the one on
 
 ### How to Verify a File's Checksum
 1.  **Select the Right Tool:** Navigate to our 'Verify File Checksum' tool.
-2.  **Upload Your File:** Select the file you want to verify. All processing is done locally in your browser for speed and privacy; your file is never uploaded.
-3.  **Generate and Compare the Hash:** The tool will automatically calculate the file's hash using various algorithms. Paste the checksum provided by the original source into the 'Compare with' field. The tool will instantly give you a clear visual confirmation if the hashes match.`
+2.  **Upload Your File:** Select the file you want to verify. All processing is done locally in your browser for speed and privacy.
+3.  **Generate and Compare the Hash:** The tool will automatically calculate the file's hash. Paste the checksum provided by the original source into the 'Compare with' field to see if they match.`
   },
   {
     slug: "find-and-remove-duplicate-files",
@@ -993,18 +954,16 @@ When you download a large file, how can you be sure it's identical to the one on
     aiHint: "search files",
     toolSlug: "duplicate-file-finder",
     content: `### Why You Should Find and Remove Duplicates
-Over time, it's easy to accumulate multiple copies of the same documents, photos, and music files. These duplicate files can silently consume a significant amount of your valuable disk space, leading to a cluttered file system. Manually searching for these duplicates is a nearly impossible task, especially if the files have different names but identical content. Our tool automates this process, making it simple to reclaim your storage space and organize your digital life. It provides a safe and efficient way to declutter your hard drive.
+Over time, it's easy to accumulate multiple copies of the same documents, photos, and music files. These duplicate files can silently consume a significant amount of your valuable disk space, leading to a cluttered file system. Manually searching for these duplicates is a nearly impossible task, especially if the files have different names but identical content. Our tool automates this process, making it simple to reclaim your storage space and organize your digital life.
 
 ### How Our Duplicate File Finder Works
-Our tool is designed with your privacy as the top priority.
 1.  **Select the Right Tool:** Open our 'Duplicate File Finder'.
 2.  **Select a Folder:** Click the 'Select Folder' button and choose the directory on your computer you want to scan.
-3.  **Client-Side Hashing and Deletion:** The tool reads each file **locally** in your browser and calculates a unique hash. It then compares these hashes to find identical files. The tool presents you with a clear, grouped list of all duplicates, and you can safely delete the extra copies to free up space. *Note: This feature relies on modern browser APIs and works best in Chrome, Edge, and other Chromium-based browsers.*`
+3.  **Client-Side Hashing and Deletion:** The tool reads each file **locally** in your browser and calculates a unique hash. It then compares these hashes to find identical files. The tool presents you with a clear, grouped list of all duplicates, and you can safely delete the extra copies to free up space. *Note: This feature relies on modern browser APIs.*`
   },
 ];
 
-// Sort posts by date descending, and then assign dates sequentially
-const sortedBlogPosts = blogPosts.sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically first for consistency
+const sortedBlogPosts = blogPosts.sort((a, b) => a.title.localeCompare(b.title));
 
 const TOTAL_POSTS = sortedBlogPosts.length;
 const DATE_RANGE_DAYS = 9; // Sept 17 to 25 is 9 days
