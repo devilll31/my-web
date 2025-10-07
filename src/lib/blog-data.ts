@@ -18,6 +18,7 @@ import {
   LucideIcon,
   Star,
 } from 'lucide-react';
+import { getCategories } from '@/lib/tools-data';
 
 export interface BlogPost {
   slug: string;
@@ -1028,3 +1029,5 @@ export const getBlogCategories = (): { name: string; slug: string }[] => {
     }
   });
 };
+
+    
