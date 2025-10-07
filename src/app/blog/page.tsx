@@ -19,7 +19,7 @@ export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const allPosts = useMemo(() => getBlogPosts(), []);
-  const categories = useMemo(() => getBlogCategories().sort((a, b) => a.name.localeCompare(b.name)), []);
+  const categories = useMemo(() => getBlogCategories(), []);
 
   const filteredPosts = useMemo(() => {
     return allPosts.filter(post => {
@@ -33,7 +33,7 @@ export default function BlogPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 gradient-text">D2ools blogs</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline gradient-text">D2ools blogs</h1>
         <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
           Tips, tutorials, and insights from the D2ools team on how to master our suite of 500+ free online tools.
         </p>
