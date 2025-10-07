@@ -19,7 +19,7 @@ export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const allPosts = useMemo(() => getBlogPosts(), []);
-  const categories = useMemo(() => getBlogCategories(), []);
+  const categories = useMemo(() => getBlogCategories().sort((a, b) => a.name.localeCompare(b.name)), []);
 
   const filteredPosts = useMemo(() => {
     return allPosts.filter(post => {
