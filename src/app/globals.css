@@ -181,6 +181,10 @@ body {
     background-color: hsl(var(--primary));
   }
   
+  .category-item {
+    @apply py-1 px-2;
+  }
+
   .category-item[data-state='active'],
   .category-item[data-highlighted] {
     @apply text-white;
