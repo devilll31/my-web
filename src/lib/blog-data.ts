@@ -1,5 +1,23 @@
 
-import { getCategories } from "./tools-data";
+import {
+  FileText,
+  Image,
+  ArrowRightLeft,
+  PenLine,
+  Globe,
+  Calculator,
+  FlaskConical,
+  Code,
+  Link as LinkIcon,
+  Lock,
+  CheckSquare,
+  Network,
+  Palette,
+  ScanText,
+  Folder,
+  LucideIcon,
+  Star,
+} from 'lucide-react';
 
 export interface BlogPost {
   slug: string;
@@ -147,13 +165,21 @@ Generative Fill is a cutting-edge AI technology that understands the content of 
     category: "Document & File Converters",
     aiHint: "data transfer",
     toolSlug: "csv-to-excel",
-    content: `### Why Convert Between CSV and Excel?
-CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight. However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, and apply professional formatting. Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format.
+    content: `Why Convert Between CSV and Excel? CSV (Comma-Separated Values) and Excel (.xlsx) are two of the most common formats for storing tabular data, but they serve different purposes. CSV is a universal, plain-text format ideal for data exchange between different applications, scripts, or databases. It's simple and lightweight.
 
-### How to Use Our Converters in 3 Simple Steps
-1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.'
-2. **Upload Your File Securely:** Drag and drop your source file (.csv or .xlsx) directly onto the tool's interface. All conversions happen securely within your browser or on our server, and your files are never stored.
-3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use.`
+However, for in-depth data analysis, visualization, and reporting, you often need the robust features of a spreadsheet program like Microsoft Excel. Converting your CSV to an Excel file allows you to apply complex formulas, create pivot tables and charts, use advanced sorting and filtering, and apply professional formatting for presentations. 
+
+Conversely, converting from Excel back to CSV is essential when you need to export your data for use in another application that requires a simple, flat-file format without any of Excel's proprietary formatting.
+
+How to Use Our Converters in 3 Simple, 
+
+Steps 1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity. 
+
+2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed. 
+
+3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. 
+
+No software installation is required, and the entire process is completely free.`
   },
   {
     slug: "json-to-csv-data-transformation",
@@ -586,7 +612,7 @@ Humans are inherently bad at creating truly random passwords. We use predictable
 ### How to Generate a Secure Password
 1.  **Select the Right Tool:** Navigate to our 'Password Generator'.
 2.  **Set Your Password Options:** Set the desired password length (16+ characters is recommended) and select the character types you want to include (Uppercase, Lowercase, Numbers, and Symbols).
-3.  **Generate, Copy, and Secure It:** A strong password is automatically generated. Click 'Refresh' for a new one, then 'Copy' to copy it to your clipboard. Always store this new password in a reputable password manager.`
+3.  **Generate, Copy, and Secure It:** A strong, random password that meets your criteria is automatically generated. Click 'Refresh' for a new one, then 'Copy' to copy the password. Always store this new password in a reputable password manager.`
   },
 
   // Category 10: Security, Privacy & Hashing
@@ -939,7 +965,7 @@ Often, you might find yourself on a computer that doesn't have file extraction s
     aiHint: "data fingerprint",
     toolSlug: "verify-file-checksum",
     content: `### Why is a Checksum Important for Security?
-When you download a large file, how can you be sure it's identical to the one on the server? It could have been corrupted during download or maliciously tampered with. This is where checksums come in. The provider of the file will often publish a checksum value (a hash like MD5 or SHA-256). A hash function creates a unique, fixed-length 'digital fingerprint' for the file. After you download the file, you can use our tool to calculate its checksum. If your hash exactly matches the one provided by the source, you can be 100% certain the file is authentic and unaltered.
+When you download a large file, how can you be sure it's identical to the one on the server? It could have been corrupted during download or maliciously tampered with. This is where checksums come in. The provider of the file will often publish a checksum value (a hash like MD5 or SHA-256). A hash function creates a unique, fixed-length 'digital fingerprint' for the file. After you download the file, you can use our tool to calculate its checksum. If your hash exactly matches the one provided by the original source, you can be 100% certain the file is authentic and unaltered.
 
 ### How to Verify a File's Checksum
 1.  **Select the Right Tool:** Navigate to our 'Verify File Checksum' tool.
