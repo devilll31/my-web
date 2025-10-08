@@ -1,0 +1,171 @@
+
+# D2ools Website Build Prompt (v2.0)
+
+This document provides a comprehensive, step-by-step guide to build the D2ools website, an online toolkit featuring over 500 free utilities. This prompt reflects all design choices, content structures, and specific UI implementations as of September 2025.
+
+---
+
+## 1. Core App Concept & Style Guide
+
+### 1.1. App Name & Mission
+- **App Name:** D2ools
+- **Core Mission:** To provide a comprehensive library of over 500+ free online tools across 15 categories. The website must prioritize an exceptional user experience through speed, intuitive design, robust security, and user privacy.
+
+### 1.2. Style Guidelines
+- **Primary Color:** A professional, muted blue (`#558bcf`). This is used for key interactive elements, links, and highlights.
+- **Background Color:** A light, near-white gray (`#f0f4f8`) to provide gentle contrast. The theme should use HSL CSS variables, so this corresponds to `--background: 224 71.4% 96%`.
+- **Accent Color:** A soft, warm orange (`#ffab40`) for important calls-to-action and secondary highlights.
+- **Fonts:**
+    - **Body & Headline:** 'Inter', sans-serif, for a clean, modern aesthetic.
+    - **Code:** 'Source Code Pro', monospace, for displaying code snippets.
+- **Icons:** Use the `lucide-react` library for consistent, professional icons throughout the application.
+
+### 1.3. General Design Principles
+- **Layout:** Clean, spacious, and balanced layouts on all pages.
+- **Responsiveness:** All pages and components must be fully responsive and visually appealing on desktop, tablet, and mobile devices.
+- **Interactivity:** Incorporate subtle hover effects and animations to enhance user feedback and create a polished feel. Buttons, links, and cards should have clear hover states.
+- **Branding:** The `Logo` component should be used consistently in the header and footer.
+
+---
+
+## 2. Global Components & Layout
+
+### 2.1. Root Layout (`src/app/layout.tsx`)
+- **Structure:** The main layout must wrap all page content. It should include the `Header`, the main `children` content, a `QuickStats` component, and the `Footer`.
+- **Fonts:** Import and apply the 'Inter' and 'Source Code Pro' fonts from Google Fonts.
+- **Metadata:** The default site title should be "D2ools - The Next Level of Online Utility Tools" with a corresponding descriptive summary.
+
+### 2.2. Header (`src/components/layout/header.tsx`)
+- **Appearance:** A sticky header with a blurred background (`backdrop-blur-lg`) for a modern glassmorphism effect.
+- **Logo:** The site logo should be on the far left and link to the homepage.
+- **Navigation:**
+    - Main links: "Home", "Tools", "Blogs", "Contact Us".
+    - "Tools" link must be a popover menu that opens on hover.
+    - **Popover Content:**
+        - **Left Side:** A "Top 50 Tools" section showing the first 20 top tools with numbered list styling. This section should have a prominent link to `/tools/top-50`.
+        - **Right Side:** A "Tool Categories" section displaying all 15 categories in a two-column grid. Each category item must show its icon (with the correct category-specific color), its name, and link to the corresponding anchor on the `/tools` page.
+- **Universal Search:** On the right side, implement the `UniversalSearch` component.
+
+### 2.3. Universal Search (`src/components/universal-search.tsx`)
+- **Functionality:** A search bar that provides live suggestions for tools and categories as the user types.
+- **Suggestions Dropdown:**
+    - Appears when the query is > 0 characters.
+    - Suggests both tools and categories.
+    - Each suggestion item must display the correct category-colored icon, the item name, and a description.
+    - Tool suggestions link to `/tools/[slug]`.
+    - Category suggestions link to `/tools#[slug]`.
+    - The dropdown should close when a selection is made or when the user clicks outside the search component.
+
+### 2.4. Quick Stats (`src/components/quick-stats.tsx`)
+- A full-width section displayed above the footer.
+- **Functionality:** On component mount, it should randomly select and display 5 out of 7 available stats (e.g., "500+ Tools," "100k+ Users"). Each stat must include its value, a label, and a unique `lucide-react` icon. This randomization must be client-side to avoid hydration errors.
+
+### 2.5. Footer (`src/components/layout/footer.tsx`)
+- **Appearance:** A dark footer (`bg-slate-900`) with light text.
+- **Structure:** A four-column layout:
+    - **Column 1:** Logo and a brief site description.
+    - **Column 2:** A list of main site pages (Home, All Tools, Blog, Contact, etc.).
+    - **Column 3:** A list of the first 10 tool categories, linking to their respective sections on the `/tools` page.
+    - **Column 4:** A list of 10 popular, handpicked tools.
+- **Links:** All links in the footer must have a hover effect where the text color changes to primary and an underline animates from right to left.
+- **Copyright:** A copyright notice with the current year must be displayed at the very bottom.
+
+---
+
+## 3. Homepage (`src/app/page.tsx`)
+
+### 3.1. Hero Section
+- **Background:** Use the `bg-hero-gradient` class for a subtle radial gradient effect.
+- **Title:** A large, headline-font title featuring the `TypingAnimation` component. The animation should loop and display "Welcome to D2ools".
+- **Slogan:** A descriptive slogan below the title.
+- **Stats Bar:** A three-column grid displaying key stats: "500+ Tools," "100k+ Users," and "100% Free." Each stat must have an icon, a value, and a label, enclosed in a rounded, semi-transparent card.
+- **Buttons:** Prominent call-to-action buttons ("Explore All 500+ Tools", "Top 50 Tools") with a gradient background and hover effect.
+- **Features Bar:** A list of trust-building features at the bottom of the section (e.g., "100% Secure," "Lightning Fast"), each with an orange icon.
+
+### 3.2. Tool Carousel Sections
+- Implement three distinct sections for "Trending," "Popular," and "Featured" tools.
+- Each section must use the `RotatingToolCarousel` component.
+- **Configuration:**
+    - Display 20 tools per section (`itemsPerPage={20}`).
+    - Show the rank number for each tool (`showRank={true}`).
+    - Each section title must be accompanied by a unique icon or badge (e.g., "HOT" badge for Trending).
+- Each section must have a button at the bottom linking to the respective full page (e.g., `/tools/trending`).
+
+### 3.3. Categories Section
+- **Title:** "15 Categories, 500+ Tools".
+- **Layout:** A grid (3 columns on desktop) displaying the first 15 tool categories.
+- **Category Card:** Each category should be a clickable link that navigates to the corresponding anchor on the `/tools` page. The card must display:
+    - The category-specific icon with its correct background and icon color.
+    - The category name.
+    - The number of tools in that category.
+    - An arrow icon on the right that changes color on hover.
+
+---
+
+## 4. Blog Section (High Priority & Detail-Specific)
+
+### 4.1. Blog Data Source (`src/lib/blog-data.ts`)
+- **Content:** The file must contain exactly 60 unique blog posts.
+- **Post Structure (for each post):**
+    - **Word Count:** Each post's `content` must be between 250 and 300 words.
+    - **Formatting:** The content must be written in Markdown and follow a strict, three-part structure:
+        1.  An introductory section titled "### Why [Tool Action]?", explaining the tool's purpose and benefits.
+        2.  A step-by-step guide titled "### How to Use [Tool Name]".
+        3.  The steps must be formatted as a Markdown numbered list (e.g., `1. **Step Title:** Step description.`).
+        4.  A brief concluding sentence or paragraph.
+- **Unique Thumbnails:** Each of the 60 posts must have a unique, two-word `aiHint` to generate a distinct and relevant thumbnail image.
+- **Dating and Order:** All publication dates must be programmatically assigned to fall sequentially between September 17, 2025, and September 25, 2025. The final `processedBlogPosts` array must be sorted in descending order by date (newest first).
+
+### 4.2. Blog Index Page (`src/app/blog/page.tsx`)
+- **Layout:** A main title, a brief description, a search/filter bar, and a grid of blog post cards.
+- **Search & Filter Bar:**
+    - A search input that filters posts by title or summary in real-time.
+    - A "Filter" button that triggers a dropdown menu for categories.
+    - **Filter Dropdown:**
+        - The `DropdownMenuRadioGroup` must have a negative vertical margin (`-my-1`) to make the list compact.
+        - The categories must be listed in the specific, predefined order from `getBlogCategories()`.
+        - The currently selected category must be clearly indicated by a visible dot (`•`) to its left. This is achieved with a `<span>` and conditional `cn` styling for opacity.
+- **Blog Post Card:** Each card in the grid must display the post's image, category, title, summary, and publication date, with a "Read More" link.
+
+### 4.3. Blog Post Page (`src/app/blog/[slug]/page.tsx`)
+- **Layout:** A single-column layout with a max-width for readability.
+- **Metadata Header:** The metadata must be displayed at the top of the article in this exact order:
+    1.  📅 Published Date
+    2.  ✍️ by The D2ools Team
+    3.  📂 Category
+- **Thumbnail Image:** The image must have rounded corners (`rounded-xl`).
+- **Content Rendering:**
+    - The `formatContent` function must correctly parse the Markdown.
+    - Paragraphs (`<p>`) must have a line-height of `1.8` and a bottom margin of `mb-6`.
+    - Step-by-step guides (`<ol>`) must have a bottom margin of `mb-6`, and each list item (`<li>`) must have `mb-5` for spacing.
+    - Step numbers and titles must be bolded.
+- **Container Padding:** The main article container must have vertical padding of `py-10` and horizontal padding of `md:px-12`.
+- **CTA Button:** If a `toolSlug` is present for the blog post, a prominent call-to-action button linking to that tool page must be displayed at the bottom of the article.
+
+---
+
+## 5. Tool Pages
+
+### 5.1. All Tools Page (`src/app/tools/page.tsx`)
+- **Layout:** An accordion-style layout where each item represents a tool category.
+- **Accordion Item:** Each category accordion must display its icon, name, and tool count. The colors must be category-specific.
+- **Accordion Content:** When expanded, the accordion must reveal a grid of `ToolCard` components for every tool in that category.
+
+### 5.2. Individual Tool Page (`src/app/tools/[slug]/page.tsx`)
+- **Breadcrumbs:** Display navigation breadcrumbs at the top (e.g., Home > Tools > [Tool Name]).
+- **Header:** A large title with the tool's name and a description of its function.
+- **Tool Component:** The main content area must dynamically render the specific tool's interactive component based on the URL slug.
+- **Related Tools Section:** Display a `RotatingToolCarousel` showing other tools from the *same category*.
+- **Suggested Tools Section:** Display a `RotatingToolCarousel` showing tools from *other categories*.
+
+---
+
+## 6. Static Content Pages
+
+Implement the following pages with professional, well-structured content. The content should be placed directly within the respective page components.
+
+- **Contact Page (`/contact`):** Must include a contact form, contact information (email, location), and a "Quick Help" FAQ section. It should also contain an "About Us" tab with content explaining the mission and principles of D2ools.
+- **FAQ Page (`/faq`):** A comprehensive FAQ page using an accordion component to display questions and answers.
+- **Privacy Policy Page (`/privacy-policy`):** A detailed privacy policy explaining data handling, particularly the client-side nature of many tools.
+- **Terms of Service Page (`/terms-of-service`):** A standard terms of service document.
+- **Sitemap Page (`/sitemap`):** An HTML sitemap that lists all main pages and all tools grouped by category in an accordion layout.
