@@ -101,7 +101,7 @@ No software installation is required, and the entire process is completely free.
     title: "How to Add a Watermark to Your PDF Documents",
     summary: "Learn how to protect your documents or add branding by easily adding a text or image watermark to your PDF files with our free online tool.",
     category: "PDF Tools",
-aiHint: "document protection",
+    aiHint: "document protection",
     toolSlug: "add-watermark-to-pdf",
     content: `### The Purpose of Adding a Watermark
 
@@ -125,7 +125,7 @@ No software installation is required, and the entire process is completely free.
     title: "Remove Image Backgrounds in 5 Seconds with AI",
     summary: "Creating professional-looking photos often requires removing distracting backgrounds. With our AI Background Remover, you can do this in just a few clicks.",
     category: "Image Tools",
-aiHint: "photo editing",
+    aiHint: "photo editing",
     toolSlug: "image-background-remover-ai",
     content: `### Why Remove Image Backgrounds?
 
@@ -146,7 +146,7 @@ This process is fast, free, and produces excellent results.`
     title: "Upscale Your Photos: Increase Image Resolution with AI",
     summary: "Have a small, low-resolution image that you need to make bigger? Our AI Image Upscaler intelligently enhances photos, increasing their resolution and clarity.",
     category: "Image Tools",
-aiHint: "high definition",
+    aiHint: "high definition",
     toolSlug: "image-upscaler-ai",
     content: `### Why Use AI Upscaling?
 
@@ -167,7 +167,7 @@ This tool is perfect for reviving old photos or preparing small images for large
     title: "How to Resize Images for Any Purpose",
     summary: "Learn how to resize your images to the exact dimensions you need without losing quality, using our simple and free Image Resizer tool.",
     category: "Image Tools",
-aiHint: "photograph dimensions",
+    aiHint: "photograph dimensions",
     toolSlug: "image-resizer",
     content: `### Why is Correct Image Resizing Important?
 
@@ -188,7 +188,7 @@ It's a fast, easy way to get perfectly sized images every time.`
     title: "Unleash Your Creativity with AI Generative Fill",
     summary: "Go beyond simple editing. Our Generative Fill tool uses AI to add, remove, or change elements in your photos based on simple text prompts.",
     category: "Image Tools",
-aiHint: "creative painting",
+    aiHint: "creative painting",
     toolSlug: "generative-fill-ai",
     content: `### What Can You Do with Generative Fill?
 
@@ -223,9 +223,9 @@ Conversely, converting from Excel back to CSV is essential when you need to expo
 
 ### How to Use Our Converters in 3 Simple Steps
 
-1. **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity. 
-2. **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed. 
-3. **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use. 
+1.  **Select the Right Tool:** On our website, navigate to the converter that fits your need—either 'CSV to Excel' or 'Excel to CSV.' Both tools are designed for maximum simplicity.
+2.  **Upload Your File Securely:** Drag and drop your source file (either .csv or .xlsx) directly onto the tool's interface. You can also click to browse your computer and select the file. All conversions happen securely within your browser or on our server for a brief processing period, and your files are never stored or viewed.
+3.  **Download Your Converted File Instantly:** The tool processes your file in seconds. Once complete, a download link will appear for your new document, formatted correctly and ready for immediate use.
 
 No software installation is required, and the entire process is completely free.`
   },
@@ -299,7 +299,7 @@ This makes data format conversion a quick and painless process.`
     title: "Mastering Text Formatting with Case Converter",
     summary: "The D2ools Case Converter is your go-to utility for standardizing text capitalization, offering various formats like UPPERCASE, lowercase, Title Case, and Sentence case.",
     category: "Text & Writing Tools",
-aiHint: "keyboard text",
+    aiHint: "keyboard text",
     toolSlug: "case-converter",
     content: `### Why Is Consistent Text Case Important?
 
@@ -320,7 +320,7 @@ It's the fastest way to standardize your text.`
     title: "Create SEO-Friendly URLs with the Slug Generator",
     summary: "A clean, readable URL is not only user-friendly but also great for SEO. This guide introduces our Slug Generator for creating perfect, URL-safe slugs from any title.",
     category: "Text & Writing Tools",
-aiHint: "web link",
+    aiHint: "web link",
     toolSlug: "slug-generator",
     content: `### Why Clean URLs (Slugs) Matter
 
@@ -341,7 +341,7 @@ This is an essential tool for content creators and web developers.`
     title: "How to Extract Email Addresses from Text Instantly",
     summary: "Need to pull a list of email addresses from a large document or webpage? Our Email Extractor tool automates this process, saving you hours of manual work.",
     category: "Text & Writing Tools",
-aiHint: "email list",
+    aiHint: "email list",
     toolSlug: "email-extractor",
     content: `### Where Can This Email Extractor Be Used?
 
@@ -362,7 +362,7 @@ It makes building mailing lists or contact sheets incredibly simple.`
     title: "Get the Gist in Seconds with Our AI Text Summarizer",
     summary: "Too much to read, too little time? Our AI Summarizer (TLDR) tool condenses long articles, reports, or emails into a short, digestible summary.",
     category: "Text & Writing Tools",
-aiHint: "reading glasses",
+    aiHint: "reading glasses",
     toolSlug: "summarizer",
     content: `### How AI Summarization Can Boost Your Productivity
 
@@ -385,7 +385,7 @@ This allows you to quickly understand any content.`
     title: "A Simple Guide to Creating a robots.txt File",
     summary: "A robots.txt file tells search engine crawlers which pages on your site to not access. Our generator helps you create one with the correct syntax.",
     category: "SEO & Website Tools",
-aiHint: "web robot",
+    aiHint: "web robot",
     toolSlug: "robots-txt-generator",
     content: `### Why is a robots.txt File Important?
 
@@ -407,7 +407,7 @@ It's a simple way to gain control over how search engines interact with your sit
     title: "Preview Your Google Listing with the SERP Snippet Tool",
     summary: "Optimize your click-through rate by seeing how your webpage will appear in Google search results before you publish.",
     category: "SEO & Website Tools",
-aiHint: "google search",
+    aiHint: "google search",
     toolSlug: "serp-snippet-preview",
     content: `### Why a SERP Preview is Crucial
 
@@ -428,7 +428,7 @@ This helps you maximize your visibility on search engines.`
     title: "DNS Lookup: What It Is and How to Use It",
     summary: "The Domain Name System (DNS) is the phonebook of the internet. Our DNS Lookup tool lets you query this system to find records for any domain.",
     category: "SEO & Website Tools",
-aiHint: "server network",
+    aiHint: "server network",
     toolSlug: "dns-lookup",
     content: `### Why Perform a DNS Lookup?
 
@@ -449,7 +449,7 @@ It's an essential tool for any website owner or developer.`
     title: "Hreflang Tags for International SEO: A Generator Tool",
     summary: "If your site targets multiple languages or regions, hreflang tags are essential for SEO. Our generator helps you create the correct HTML tags with ease.",
     category: "SEO & Website Tools",
-aiHint: "map network",
+    aiHint: "map network",
     toolSlug: "hreflang-generator",
     content: `### Why Hreflang Tags are Essential
 
@@ -472,7 +472,7 @@ This ensures search engines can properly serve your content to a global audience
     title: "Understanding Your Loan: A Guide to Using an EMI Calculator",
     summary: "This guide explains what an Equated Monthly Installment (EMI) is and how you can use our calculator to understand your future loan payments for better financial planning.",
     category: "Finance & Business Calculators",
-aiHint: "signed loan",
+    aiHint: "signed loan",
     toolSlug: "emi-calculator",
     content: `### What is an Equated Monthly Installment (EMI)?
 
@@ -493,7 +493,7 @@ This empowers you to make informed financial decisions.`
     title: "SIP Calculator: Visualizing Your Path to Wealth",
     summary: "This guide introduces our SIP Calculator, a tool that projects the future value of your monthly investments and demonstrates the power of compounding.",
     category: "Finance & Business Calculators",
-aiHint: "bar chart",
+    aiHint: "bar chart",
     toolSlug: "sip-calculator",
     content: `### The Power of a Systematic Investment Plan (SIP)
 
@@ -514,7 +514,7 @@ It's the perfect tool for long-term financial planning.`
     title: "GST Calculation Made Easy: A Beginner's Guide",
     summary: "This tutorial simplifies Goods and Services Tax (GST) calculations with our user-friendly GST Calculator, showing you how to add or remove GST from a price.",
     category: "Finance & Business Calculators",
-aiHint: "tax form",
+    aiHint: "tax form",
     toolSlug: "gst-calculator",
     content: `### How to Add GST (Exclusive Price)
 
@@ -539,7 +539,7 @@ It's an essential tool for business owners and consumers alike.`
     title: "How Much Home Loan Can You Get? A Guide to Eligibility",
     summary: "Our Home Loan Eligibility Calculator helps you estimate the loan amount you can borrow based on your income, existing debts, and loan terms.",
     category: "Finance & Business Calculators",
-aiHint: "house drawing",
+    aiHint: "house drawing",
     toolSlug: "home-loan-eligibility-calculator",
     content: `### Understanding Home Loan Eligibility
 
@@ -562,7 +562,7 @@ This gives you a realistic picture of your borrowing power.`
     title: "Find Your BMI: A Simple Guide to Body Mass Index",
     summary: "Body Mass Index (BMI) is a common metric used to assess health. Our calculator makes it easy to find your BMI and understand what it means.",
     category: "Math, Science & Academic",
-aiHint: "health check",
+    aiHint: "health check",
     toolSlug: "bmi-calculator",
     content: `### What is Body Mass Index (BMI)?
 
@@ -584,7 +584,7 @@ It's a quick and easy way to get a baseline health assessment.`
     title: "How to Calculate Percentages for Any Situation",
     summary: "From discounts to statistics, percentages are everywhere. Our versatile Percentage Calculator handles three common scenarios to make your math easy.",
     category: "Math, Science & Academic",
-aiHint: "pie chart",
+    aiHint: "pie chart",
     toolSlug: "percentage-calculator",
     content: `### One Tool for Three Common Calculations
 
@@ -608,7 +608,7 @@ It simplifies all your percentage-related math.`
     title: "A Comprehensive Guide to the Unit Converter Tool",
     summary: "Need to convert meters to feet, or kilograms to pounds? Our all-in-one Unit Converter handles length, mass, temperature, and volume with ease.",
     category: "Math, Science & Academic",
-aiHint: "tape measure",
+    aiHint: "tape measure",
     toolSlug: "unit-converter",
     content: `### Four Powerful Converters in One
 
@@ -633,7 +633,7 @@ It's the only converter you'll need for everyday measurements.`
     title: "Understanding Your Data: The Standard Deviation Calculator",
     summary: "Standard deviation is a key statistical concept for understanding data spread. Our calculator makes it easy to compute for any set of numbers.",
     category: "Math, Science & Academic",
-aiHint: "data graph",
+    aiHint: "data graph",
     toolSlug: "standard-deviation-calculator",
     content: `### Why is Standard Deviation Important?
 
@@ -656,7 +656,7 @@ This provides a quick and easy way to analyze your data's spread.`
     title: "How to Generate and Use UUIDs in Your Application",
     summary: "Need a unique identifier? A Universally Unique Identifier (UUID) is the standard solution. Our tool provides a one-click way to generate them instantly.",
     category: "Data & Developer Utilities",
-aiHint: "unique id",
+    aiHint: "unique id",
     toolSlug: "uuid-generator",
     content: `### What is a Version 4 UUID and Why Use It?
 
@@ -677,7 +677,7 @@ It's a simple, reliable solution for creating unique IDs.`
     title: "Testing Your Patterns: A Guide to the Regex Tester",
     summary: "Regular expressions are incredibly powerful but notoriously tricky. Our interactive Regex Tester provides real-time feedback to help you build and debug patterns with ease.",
     category: "Data & Developer Utilities",
-aiHint: "code terminal",
+    aiHint: "code terminal",
     toolSlug: "regex-tester",
     content: `### How to Use Our Interactive Regex Tester
 
@@ -694,7 +694,7 @@ This real-time feedback loop makes debugging patterns much faster.`
     title: "The Developer's Best Friend: How to Use a JSON Formatter",
     summary: "Learn how to beautify, validate, and minify your JSON data with our all-in-one formatter tool, an essential utility for any developer working with APIs.",
     category: "Data & Developer Utilities",
-aiHint: "json code",
+    aiHint: "json code",
     toolSlug: "json-formatter",
     content: `### Three Essential JSON Tools in One
 
@@ -740,7 +740,7 @@ It's an essential tool for developers working with token-based authentication.`
     title: "Generating Secure Hashes: An Intro to SHA and HMAC",
     summary: "This guide explains two critical cryptographic tools: our Hash and HMAC generators, which are essential for verifying data integrity and authenticity in web applications.",
     category: "Web & URL Utilities",
-aiHint: "hashing code",
+    aiHint: "hashing code",
     toolSlug: "hash-generator",
     content: `### What is a Hash (e.g., SHA-256)?
 
@@ -761,7 +761,7 @@ These tools are fundamental for building secure applications.`
     title: "How to Generate QR Codes for Websites, Wi-Fi, and More",
     summary: "QR codes are a powerful way to bridge the physical and digital worlds. Learn how to create custom QR codes for any purpose with our easy-to-use generator.",
     category: "Web & URL Utilities",
-aiHint: "mobile scan",
+    aiHint: "mobile scan",
     toolSlug: "qr-code-generator",
     content: `### What Can You Use QR Codes For?
 
@@ -782,7 +782,7 @@ It's a simple way to connect your physical marketing to your digital presence.`
     title: "Why and How to Use a URL Encoder",
     summary: "Special characters in URLs can cause them to break. Our URL Encoder/Decoder tool ensures your links are always safe and valid by converting characters into a URL-safe format.",
     category: "Web & URL Utilities",
-aiHint: "url text",
+    aiHint: "url text",
     toolSlug: "url-encoder-decoder",
     content: `### Why is URL Encoding Necessary?
 
@@ -803,7 +803,7 @@ This is an essential step for building robust web applications.`
     title: "How a Password Generator Can Boost Your Security",
     summary: "Creating strong, unique passwords for every account is one of the most effective ways to protect your digital life. Our Password Generator makes this easy.",
     category: "Web & URL Utilities",
-aiHint: "lock key",
+    aiHint: "lock key",
     toolSlug: "password-generator",
     content: `### Why Use a Password Generator?
 
@@ -826,7 +826,7 @@ It's the simplest way to enhance your online security.`
     title: "A Beginner's Guide to Hashing for Data Integrity",
     summary: "Learn what a cryptographic hash is and how you can use our Hash Generator to create digital fingerprints for your data, ensuring it remains untampered.",
     category: "Security, Privacy & Hashing",
-aiHint: "fingerprint security",
+    aiHint: "fingerprint security",
     toolSlug: "hash-generator",
     content: `### What is a Cryptographic Hash?
 
@@ -847,7 +847,7 @@ This is a fundamental security practice.`
     title: "What is HMAC? The Key to Secure API Authentication",
     summary: "HMAC goes beyond simple hashing by adding a secret key. Learn how our HMAC Generator can help you create secure signatures to authenticate your webhooks and APIs.",
     category: "Security, Privacy & Hashing",
-aiHint: "API key",
+    aiHint: "API key",
     toolSlug: "hmac-generator",
     content: `### Hash vs. HMAC: What's the Difference?
 
@@ -868,7 +868,7 @@ It's a critical tool for building secure systems.`
     title: "Step-by-Step: How to Generate a Truly Strong Password",
     summary: "The foundation of online security is a strong, unique password. Our generator helps you create one in seconds, tailored to your needs.",
     category: "Security, Privacy & Hashing",
-aiHint: "password security",
+    aiHint: "password security",
     toolSlug: "password-generator",
     content: `### Why You Shouldn't Create Your Own Passwords
 
@@ -889,7 +889,7 @@ This simple habit can drastically improve your digital security.`
     title: "What is ROT13? A Fun Guide to a Simple Cipher",
     summary: "ROT13 is a simple letter substitution cipher. Learn how it works and use our tool to easily encode and decode messages for fun.",
     category: "Security, Privacy & Hashing",
-aiHint: "puzzle message",
+    aiHint: "puzzle message",
     toolSlug: "rot13-encoder-decoder",
     content: `### How Does ROT13 Work?
 
@@ -912,7 +912,7 @@ It's a classic and fun way to obscure text.`
     title: "Boost Your Focus with the Pomodoro Timer",
     summary: "The Pomodoro Technique is a time management method that uses a timer to break down work into focused intervals. Our tool is a simple timer to help you get started.",
     category: "Productivity & Planning",
-aiHint: "timer clock",
+    aiHint: "timer clock",
     toolSlug: "pomodoro-timer",
     content: `### What is the Pomodoro Technique?
 
@@ -933,7 +933,7 @@ This technique can revolutionize your workflow.`
     title: "Organize Your Workflow with a Simple Kanban Board",
     summary: "A Kanban board is a powerful visual tool for managing your tasks and workflow. Our simple, client-side Kanban board helps you track your progress with ease.",
     category: "Productivity & Planning",
-aiHint: "workflow board",
+    aiHint: "workflow board",
     toolSlug: "kanban-board",
     content: `### Understanding the Kanban Columns
 
@@ -954,7 +954,7 @@ It's a simple way to visualize your progress and stay organized.`
     title: "Never Miss a Meeting Again: Using a Time Zone Converter",
     summary: "Scheduling meetings with people across the globe can be confusing. Our Time Zone Converter simplifies the process by showing you the corresponding time in multiple locations at once.",
     category: "Productivity & Planning",
-aiHint: "world clocks",
+    aiHint: "world clocks",
     toolSlug: "time-zone-converter",
     content: `### Why a Time Zone Converter is Essential
 
@@ -975,7 +975,7 @@ This makes scheduling across the world simple and error-free.`
     title: "How to Easily Split Expenses with Friends",
     summary: "Splitting bills after a group trip or dinner can be awkward. Our Expense Splitter tool does the math for you, calculating the simplest way for everyone to settle up.",
     category: "Productivity & Planning",
-aiHint: "splitting bill",
+    aiHint: "splitting bill",
     toolSlug: "expense-splitter",
     content: `### The Problem with Splitting Group Expenses
 
@@ -998,7 +998,7 @@ It's the easiest way to handle group finances.`
     title: "How to Check if Your Dream Domain is Available",
     summary: "The first step to building a website is finding the perfect domain name. Our Domain Availability Checker helps you see if your desired name is taken or available.",
     category: "Networking & Diagnostics",
-aiHint: "domain search",
+    aiHint: "domain search",
     toolSlug: "domain-availability-checker",
     content: `### Why Check Domain Availability?
 
@@ -1019,7 +1019,7 @@ It's the first step in creating your online presence.`
     title: "What is WHOIS? A Guide to Domain Ownership Information",
     summary: "A WHOIS lookup retrieves the registration information for any domain name, including who owns it and when it was created. Learn how to use this essential internet tool.",
     category: "Networking & Diagnostics",
-aiHint: "database search",
+    aiHint: "database search",
     toolSlug: "whois-lookup",
     content: `### What Does a WHOIS Record Contain?
 
@@ -1040,7 +1040,7 @@ It's a key tool for internet research.`
     title: "Troubleshooting Your Website with a DNS Lookup",
     summary: "Is your website not loading? A DNS issue might be the culprit. Our DNS Lookup tool helps you check a domain's records to diagnose common problems.",
     category: "Networking & Diagnostics",
-aiHint: "network issue",
+    aiHint: "network issue",
     toolSlug: "dns-lookup",
     content: `### Why Perform a DNS Lookup?
 
@@ -1061,7 +1061,7 @@ It simplifies a crucial diagnostic step.`
     title: "Where in the World is That Server? Using an IP Location Finder",
     summary: "Our IP Location Finder automatically detects your public IP address and provides an estimated geographical location, giving you insight into your internet connection's public presence.",
     category: "Networking & Diagnostics",
-aiHint: "world data",
+    aiHint: "world data",
     toolSlug: "ip-location-finder",
     content: `### How Does IP Geolocation Work?
 
@@ -1084,7 +1084,7 @@ It's a quick and simple diagnostic.`
     title: "Choosing Perfect Colors with a HEX, RGB, and HSL Picker",
     summary: "Our Color Picker tool is an essential utility for designers and developers, providing instant conversion between HEX, RGB, and HSL color formats.",
     category: "Color, Design & Branding",
-aiHint: "color wheel",
+    aiHint: "color wheel",
     toolSlug: "color-picker",
     content: `### Understanding Different Color Models
 
@@ -1105,7 +1105,7 @@ It's a must-have for any design work.`
     title: "Ensuring Readability: A Guide to the WCAG Contrast Checker",
     summary: "Good color contrast is essential for web accessibility. Our tool helps you check if your text and background color combinations meet WCAG standards.",
     category: "Color, Design & Branding",
-aiHint: "accessibility icon",
+    aiHint: "accessibility icon",
     toolSlug: "contrast-checker",
     content: `### Why is Color Contrast So Important?
 
@@ -1126,7 +1126,7 @@ It's an essential step for building inclusive websites.`
     title: "Creating Beautiful Gradients with a CSS Generator",
     summary: "Gradients add depth and visual appeal to any design. Our Gradient Generator helps you create and customize linear gradients and provides the CSS code instantly.",
     category: "Color, Design & Branding",
-aiHint: "color background",
+    aiHint: "color background",
     toolSlug: "gradient-generator",
     content: `### Why Use Gradients in Your Design?
 
@@ -1147,7 +1147,7 @@ It makes creating beautiful gradients effortless.`
     title: "A Guide to Designing with the Box Shadow Generator",
     summary: "Box shadows are key to creating depth in UI design. Our generator gives you full control to create the perfect shadow and get the CSS instantly.",
     category: "Color, Design & Branding",
-aiHint: "UI design",
+    aiHint: "UI design",
     toolSlug: "shadow-generator",
     content: `### The Elements of a Box Shadow
 
@@ -1171,7 +1171,7 @@ It's the fastest way to craft perfect UI shadows.`
     title: "How to Extract Text from Images with OCR",
     summary: "Our Image to Text (OCR) tool uses AI to scan images and extract any readable text, turning photos of documents or notes into editable content.",
     category: "OCR, Language & Localization",
-aiHint: "text document",
+    aiHint: "text document",
     toolSlug: "image-to-text-ocr",
     content: `### What is OCR and How Can It Help You?
 
@@ -1192,7 +1192,7 @@ It's a powerful way to digitize your physical world.`
     title: "Convert Scanned PDFs to Text with OCR",
     summary: "Unlock the content in your scanned, non-searchable PDF files. Our tool uses OCR to extract all the text, making it fully editable and searchable.",
     category: "OCR, Language & Localization",
-aiHint: "document scanner",
+    aiHint: "document scanner",
     toolSlug: "pdf-to-text-ocr",
     content: `### Regular PDFs vs. Scanned PDFs
 
@@ -1213,7 +1213,7 @@ It brings your scanned documents to life.`
     title: "How to Instantly Detect the Language of Any Text",
     summary: "Not sure what language a piece of text is written in? Our AI-powered Language Detector can analyze any text and tell you the language in seconds.",
     category: "OCR, Language & Localization",
-aiHint: "language translation",
+    aiHint: "language translation",
     toolSlug: "language-detector",
     content: `### Why Use a Language Detector?
 
@@ -1234,7 +1234,7 @@ It's a quick and simple way to identify any language.`
     title: "Transliteration vs. Translation: A Guide to Our Tool",
     summary: "Learn the difference between transliteration and translation, and how our tool can help you convert text from one writing system to another based on phonetic sound.",
     category: "OCR, Language & Localization",
-aiHint: "language book",
+    aiHint: "language book",
     toolSlug: "transliteration-tool",
     content: `### Transliteration Explained: Converting Sound, Not Meaning
 
@@ -1257,7 +1257,7 @@ This tool helps bridge the gap between different writing systems.`
     title: "How to Create a ZIP Archive to Compress Your Files",
     summary: "A ZIP file is the perfect way to bundle multiple files into a single, smaller package for easy sharing. Learn how our ZIP Archive Creator works.",
     category: "System & File Management",
-aiHint: "zip folder",
+    aiHint: "zip folder",
     toolSlug: "zip-archive-creator",
     content: `### Why Use a ZIP File?
 
@@ -1278,7 +1278,7 @@ It's the easiest way to manage and share multiple files.`
     title: "How to Unzip Files Online Without Any Software",
     summary: "Received a ZIP, TAR, or GZ file but don't have the software to open it? Our online unzipper tool lets you extract the contents right in your browser.",
     category: "System & File Management",
-aiHint: "archive folder",
+    aiHint: "archive folder",
     toolSlug: "unzip-files",
     content: `### Why Use an Online Unzipper?
 
@@ -1299,7 +1299,7 @@ It's a convenient solution for accessing compressed files anywhere.`
     title: "How to Verify File Integrity with a Checksum",
     summary: "A checksum (or hash) is a digital fingerprint for a file. Our tool lets you generate a hash for your file and compare it to a known value to ensure the file is authentic and uncorrupted.",
     category: "System & File Management",
-aiHint: "data fingerprint",
+    aiHint: "data fingerprint",
     toolSlug: "verify-file-checksum",
     content: `### Why is a Checksum Important for Security?
 
@@ -1320,7 +1320,7 @@ This is a simple but vital security check.`
     title: "How to Find and Remove Duplicate Files on Your Computer",
     summary: "Duplicate files waste valuable disk space. Our Duplicate File Finder tool helps you scan for identical files in a folder and clean them up easily.",
     category: "System & File Management",
-aiHint: "search files",
+    aiHint: "search files",
     toolSlug: "duplicate-file-finder",
     content: `### Why You Should Find and Remove Duplicates
 

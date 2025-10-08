@@ -69,12 +69,12 @@ export default function BlogPage() {
                     <DropdownMenuContent>
                         <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory} className="-my-1">
                             <DropdownMenuRadioItem value="all" className="category-item">
-                                <span className={cn('mr-2', selectedCategory === 'all' ? 'opacity-100' : 'opacity-0')}>•</span>
+                                <span className={cn('mr-2 transition-opacity', selectedCategory === 'all' ? 'opacity-100' : 'opacity-0')}>•</span>
                                 All Categories
                             </DropdownMenuRadioItem>
                             {categories.map(cat => (
                                 <DropdownMenuRadioItem key={cat.slug} value={cat.slug} className="category-item">
-                                  <span className={cn('mr-2', selectedCategory === cat.slug ? 'opacity-100' : 'opacity-0')}>•</span>
+                                  <span className={cn('mr-2 transition-opacity', selectedCategory === cat.slug ? 'opacity-100' : 'opacity-0')}>•</span>
                                   {cat.name}
                                 </DropdownMenuRadioItem>
                             ))}
