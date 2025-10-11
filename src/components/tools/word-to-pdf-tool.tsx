@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useRef } from 'react';
@@ -35,9 +34,9 @@ export default function WordToPdfTool() {
   };
 
   const processFile = (file: File) => {
-    const validTypes = ['application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const validTypes = ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     if (!validTypes.includes(file.type)) {
-      toast({ title: 'Invalid File Type', description: 'Please upload a .docx file.', variant: 'destructive' });
+      toast({ title: 'Invalid File Type', description: 'Please upload a .doc or .docx file.', variant: 'destructive' });
       return;
     }
     setError(null);
@@ -47,18 +46,9 @@ export default function WordToPdfTool() {
 
     const reader = new FileReader();
     reader.onload = async (e) => {
-      const arrayBuffer = e.target?.result as ArrayBuffer;
+      const dataUri = e.target?.result as string;
       try {
-        // Use mammoth to extract raw text content from the DOCX file
-        const textContentResult = await mammoth.extractRawText({ arrayBuffer });
-        const textContent = textContentResult.value;
-
-        if (!textContent.trim()) {
-            throw new Error('Could not extract any text from the Word document.');
-        }
-
-        // Send the extracted text to the AI flow
-        const result = await wordToPdf({ textContent });
+        const result = await wordToPdf({ wordDataUri: dataUri });
         setConvertedFile(result.pdfDataUri);
         
       } catch (err) {
@@ -69,7 +59,7 @@ export default function WordToPdfTool() {
         setIsLoading(false);
       }
     };
-    reader.readAsArrayBuffer(file);
+    reader.readAsDataURL(file);
   };
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
@@ -102,7 +92,7 @@ export default function WordToPdfTool() {
   const guideProps = {
     title: "How to Convert Word to PDF",
     steps: [
-      { title: "Upload Word File", description: "Select or drag and drop your .docx file." },
+      { title: "Upload Word File", description: "Select or drag and drop your .docx or .doc file." },
       { title: "Automatic Conversion", description: "The tool will automatically process the file and convert it into a high-quality PDF document." },
       { title: "Download PDF", description: "Once finished, you can download your new, universally compatible PDF file." }
     ],
@@ -129,16 +119,16 @@ export default function WordToPdfTool() {
                   <p className="mt-4 text-muted-foreground">or drop file here</p>
                 </div>
               </div>
-              <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+              <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
             </motion.div>
           ) : (
             <motion.div key="result" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center">
               {isLoading ? (
-                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><Loader2 className="h-16 w-16 animate-spin text-primary mb-4" /><p className="text-xl font-semibold">Converting...</p><p className="text-muted-foreground mt-1">{originalFile.name}</p></div>
+                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><Loader2 className="h-16 w-16 animate-spin text-primary mb-4" /><p className="text-xl font-semibold">Converting your file...</p><p className="text-muted-foreground mt-1">{originalFile.name}</p></div>
               ) : error ? (
                 <div className="flex flex-col items-center justify-center p-12 bg-destructive/10 rounded-2xl border border-destructive/50 text-destructive"><X className="h-16 w-16 mb-4" /><p className="text-2xl font-bold">Conversion Failed</p><p className="mt-1 max-w-md">{error}</p><Button size="lg" onClick={handleReset} variant="destructive" className="mt-8">Try Again</Button></div>
               ) : (
-                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><CheckCircle className="h-16 w-16 text-green-500 mb-4" /><p className="text-2xl font-bold">Conversion Complete!</p><p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.docx?$/i, '.pdf')}</p><div className="mt-8 flex flex-wrap justify-center gap-4"><Button size="lg" onClick={handleDownload} className="btn-gradient text-white"><Download className="mr-2" />Download PDF</Button><Button size="lg" onClick={handleReset} variant="outline"><X className="mr-2" />Convert Another</Button></div></div>
+                <div className="flex flex-col items-center justify-center p-12 bg-card rounded-2xl"><CheckCircle className="h-16 w-16 text-green-500 mb-4" /><p className="text-2xl font-bold">Conversion Complete!</p><p className="font-semibold mt-4 text-lg bg-primary/10 text-primary px-4 py-2 rounded-lg">{originalFile.name.replace(/\.docx?$/i, '.pdf')}</p><div className="mt-8 flex flex-wrap justify-center gap-4"><Button size="lg" onClick={handleDownload} className="btn-gradient text-white"><Download className="mr-2" />Download PDF</Button><Button size="lg" onClick={handleReset} variant="outline"><X className="mr-2" />Convert Another File</Button></div></div>
               )}
             </motion.div>
           )}
