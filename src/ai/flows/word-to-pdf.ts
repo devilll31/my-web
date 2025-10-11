@@ -11,10 +11,10 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const WordToPdfInputSchema = z.object({
-  wordDataUri: z
+  htmlContent: z
     .string()
     .describe(
-      "A Word document (.doc or .docx) to be converted to PDF, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
+      "The HTML content of the Word document to be converted to PDF."
     ),
 });
 export type WordToPdfInput = z.infer<typeof WordToPdfInputSchema>;
@@ -34,11 +34,11 @@ const prompt = ai.definePrompt({
   name: 'wordToPdfPrompt',
   input: {schema: WordToPdfInputSchema},
   output: {schema: WordToPdfOutputSchema},
-  prompt: `You are a document conversion expert. Convert the provided Word document into a high-quality PDF file.
+  prompt: `You are a document conversion expert. Convert the provided HTML content into a high-quality PDF file.
 
-  Preserve the original formatting, fonts, tables, and layout perfectly. The resulting PDF should be print-ready and identical in appearance to the source document.
+  Preserve the original formatting, fonts, tables, and layout as closely as possible. The resulting PDF should be print-ready.
 
-  Word document for conversion: {{media url=wordDataUri}}
+  HTML content for conversion: {{{htmlContent}}}
   
   Return the converted PDF document as a data URI.`,
 });

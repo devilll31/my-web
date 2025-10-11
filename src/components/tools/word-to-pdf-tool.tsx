@@ -46,9 +46,10 @@ export default function WordToPdfTool() {
 
     const reader = new FileReader();
     reader.onload = async (e) => {
-      const dataUri = e.target?.result as string;
+      const arrayBuffer = e.target?.result as ArrayBuffer;
       try {
-        const result = await wordToPdf({ wordDataUri: dataUri });
+        const { value: htmlContent } = await mammoth.convertToHtml({ arrayBuffer });
+        const result = await wordToPdf({ htmlContent });
         setConvertedFile(result.pdfDataUri);
         
       } catch (err) {
@@ -59,7 +60,7 @@ export default function WordToPdfTool() {
         setIsLoading(false);
       }
     };
-    reader.readAsDataURL(file);
+    reader.readAsArrayBuffer(file);
   };
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
