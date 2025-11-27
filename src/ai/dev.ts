@@ -23,3 +23,8 @@ import '@/ai/flows/transliteration-flow.ts';
 import '@/ai/flows/number-to-words-flow.ts';
 import '@/ai/flows/email-extractor-flow.ts';
 import '@/ai/flows/pdf-to-powerpoint.ts';
+import '@/ai/flows/powerpoint-to-pdf.ts';
+import '@/ai/flows/pdf-to-jpg.ts';
+import '@/ai/flows/jpg-to-pdf.ts';
+import '@/ai/flows/pdf-to-png.ts';
+import '@/ai/flows/png-to-pdf.ts';

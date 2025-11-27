@@ -20,9 +20,9 @@ const PdfToWordInputSchema = z.object({
 export type PdfToWordInput = z.infer<typeof PdfToWordInputSchema>;
 
 const PdfToWordOutputSchema = z.object({
-  wordDataUri: z
+  base64Data: z
     .string()
-    .describe('The converted Word document, as a data URI.'),
+    .describe('The Base64 encoded string of the converted Word document, without the data URI prefix.'),
 });
 export type PdfToWordOutput = z.infer<typeof PdfToWordOutputSchema>;
 
@@ -40,7 +40,7 @@ const prompt = ai.definePrompt({
 
   PDF for conversion: {{media url=pdfDataUri}}
   
-  Return the converted Word document as a data URI.`,
+  Return ONLY the Base64 encoded string of the converted Word document. Do not include the data URI prefix.`,
 });
 
 const pdfToWordFlow = ai.defineFlow(
@@ -52,7 +52,7 @@ const pdfToWordFlow = ai.defineFlow(
   async input => {
     const llmResponse = await prompt(input);
     const output = llmResponse.output;
-    if (!output?.wordDataUri) {
+    if (!output?.base64Data) {
       throw new Error('Conversion failed: The service did not return a valid Word file.');
     }
     return output;

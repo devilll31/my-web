@@ -50,8 +50,8 @@ export default function WordToPdfTool() {
       try {
         const { value: htmlContent } = await mammoth.convertToHtml({ arrayBuffer });
         const result = await wordToPdf({ htmlContent });
-        setConvertedFile(result.pdfDataUri);
-        
+        const dataUriResult = 'data:application/pdf;base64,' + result.base64Data;
+        setConvertedFile(dataUriResult);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
         setError(errorMessage);

@@ -20,9 +20,9 @@ const PdfToPowerPointInputSchema = z.object({
 export type PdfToPowerPointInput = z.infer<typeof PdfToPowerPointInputSchema>;
 
 const PdfToPowerPointOutputSchema = z.object({
-  powerpointDataUri: z
+  base64Data: z
     .string()
-    .describe('The converted PowerPoint document (.pptx), as a data URI.'),
+    .describe('The Base64 encoded string of the converted PowerPoint document (.pptx), without the data URI prefix.'),
 });
 export type PdfToPowerPointOutput = z.infer<typeof PdfToPowerPointOutputSchema>;
 
@@ -40,7 +40,7 @@ const prompt = ai.definePrompt({
 
   PDF for conversion: {{media url=pdfDataUri}}
   
-  Return the converted PowerPoint document as a data URI.`,
+  Return ONLY the Base64 encoded string of the converted PowerPoint document. Do not include the data URI prefix.`,
 });
 
 const pdfToPowerPointFlow = ai.defineFlow(
@@ -52,7 +52,7 @@ const pdfToPowerPointFlow = ai.defineFlow(
   async input => {
     const llmResponse = await prompt(input);
     const output = llmResponse.output;
-    if (!output?.powerpointDataUri) {
+    if (!output?.base64Data) {
       throw new Error('Conversion failed: The service did not return a valid PowerPoint file.');
     }
     return output;

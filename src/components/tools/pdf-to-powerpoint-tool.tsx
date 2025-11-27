@@ -47,7 +47,8 @@ export default function PdfToPowerpointTool() {
       setOriginalFile({ name: file.name, dataUri });
       try {
         const result = await pdfToPowerPoint({ pdfDataUri: dataUri });
-        setConvertedFile(result.powerpointDataUri);
+        const dataUriResult = 'data:application/vnd.openxmlformats-officedocument.presentationml.presentation;base64,' + result.base64Data;
+        setConvertedFile(dataUriResult);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
         setError(errorMessage);

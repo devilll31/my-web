@@ -20,9 +20,9 @@ const PdfToExcelInputSchema = z.object({
 export type PdfToExcelInput = z.infer<typeof PdfToExcelInputSchema>;
 
 const PdfToExcelOutputSchema = z.object({
-  excelDataUri: z
+  base64Data: z
     .string()
-    .describe('The converted Excel spreadsheet (.xlsx), as a data URI.'),
+    .describe('The Base64 encoded string of the converted Excel spreadsheet (.xlsx), without the data URI prefix.'),
 });
 export type PdfToExcelOutput = z.infer<typeof PdfToExcelOutputSchema>;
 
@@ -40,7 +40,7 @@ const prompt = ai.definePrompt({
 
   PDF for conversion: {{media url=pdfDataUri}}
   
-  Return the converted Excel spreadsheet as a data URI.`,
+  Return ONLY the Base64 encoded string of the converted Excel spreadsheet. Do not include the data URI prefix.`,
 });
 
 const pdfToExcelFlow = ai.defineFlow(
@@ -52,7 +52,7 @@ const pdfToExcelFlow = ai.defineFlow(
   async input => {
     const llmResponse = await prompt(input);
     const output = llmResponse.output;
-    if (!output?.excelDataUri) {
+    if (!output?.base64Data) {
       throw new Error('Conversion failed: The service did not return a valid Excel file.');
     }
     return output;

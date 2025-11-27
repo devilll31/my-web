@@ -48,7 +48,8 @@ export default function PdfToExcelTool() {
       setOriginalFile({ name: file.name, dataUri });
       try {
         const result = await pdfToExcel({ pdfDataUri: dataUri });
-        setConvertedFile(result.excelDataUri);
+        const dataUriResult = 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,' + result.base64Data;
+        setConvertedFile(dataUriResult);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
         setError(errorMessage);
