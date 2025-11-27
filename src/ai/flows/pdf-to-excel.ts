@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI agent that converts PDF to Excel.
@@ -15,7 +14,7 @@ const PdfToExcelInputSchema = z.object({
   pdfDataUri: z
     .string()
     .describe(
-      "A PDF file with tables to be converted to Excel, as a data URI that must include a MIME type and use Base64 encoding."
+      "A PDF file with tables to be converted to Excel, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:application/pdf;base64,<encoded_data>'"
     ),
 });
 export type PdfToExcelInput = z.infer<typeof PdfToExcelInputSchema>;

@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI agent that converts Excel to PDF.
@@ -15,7 +14,7 @@ const ExcelToPdfInputSchema = z.object({
   excelDataUri: z
     .string()
     .describe(
-      "An Excel spreadsheet (.xlsx) to be converted to PDF, as a data URI that must include a MIME type and use Base64 encoding."
+      "An Excel spreadsheet (.xlsx) to be converted to PDF, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,<encoded_data>'"
     ),
 });
 export type ExcelToPdfInput = z.infer<typeof ExcelToPdfInputSchema>;

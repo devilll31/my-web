@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI agent that converts PDF to Word.
@@ -15,7 +14,7 @@ const PdfToWordInputSchema = z.object({
   pdfDataUri: z
     .string()
     .describe(
-      "A PDF file to be converted to Word, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
+      "A PDF file to be converted to Word, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:application/pdf;base64,<encoded_data>'."
     ),
 });
 export type PdfToWordInput = z.infer<typeof PdfToWordInputSchema>;
