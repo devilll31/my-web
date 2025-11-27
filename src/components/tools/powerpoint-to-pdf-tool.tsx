@@ -1,7 +1,8 @@
+
 'use client';
 
 import { useState, useRef } from 'react';
-import { FileUp, Download, X, Loader2, CheckCircle, FilePresentation } from 'lucide-react';
+import { FileUp, Download, X, Loader2, CheckCircle, LucidePresentation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { powerpointToPdf } from '@/ai/flows/powerpoint-to-pdf';
@@ -18,14 +19,18 @@ export default function PowerpointToPdfTool() {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) processFile(file);
+    if (file) {
+      processFile(file);
+    }
   };
 
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.stopPropagation();
     const file = event.dataTransfer.files?.[0];
-    if (file) processFile(file);
+    if (file) {
+      processFile(file);
+    }
   };
 
   const processFile = (file: File) => {
@@ -67,7 +72,9 @@ export default function PowerpointToPdfTool() {
     setConvertedFile(null);
     setError(null);
     setIsLoading(false);
-    if (fileInputRef.current) fileInputRef.current.value = '';
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   const handleDownload = () => {
@@ -90,7 +97,7 @@ export default function PowerpointToPdfTool() {
       { title: "Download PDF", description: "Download your new, universally shareable PDF file." }
     ],
     features: [
-      { icon: FilePresentation, title: "Preserve Layout", description: "Maintains your presentation's formatting and layout for consistent viewing on any device." }
+      { icon: LucidePresentation, title: "Preserve Layout", description: "Maintains your presentation's formatting and layout for consistent viewing on any device." }
     ]
   };
 
