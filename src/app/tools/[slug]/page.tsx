@@ -275,13 +275,17 @@ import CronExpressionGeneratorTool from '@/components/tools/cron-expression-gene
 import CronExpressionParserTool from '@/components/tools/cron-expression-parser-tool';
 import UrlShortenerTool from '@/components/tools/url-shortener-tool';
 import UrlExpanderTool from '@/components/tools/url-expander-tool';
-import UtmBuilderTool from '@/components/tools/utm-builder-tool';
 import OpenRedirectCheckerTool from '@/components/tools/open-redirect-checker-tool';
 import LinkHealthCheckerTool from '@/components/tools/link-health-checker-tool';
 import BmpToPngTool from '@/components/tools/bmp-to-png-tool';
 import BlurImageTool from '@/components/tools/blur-image-tool';
 import BarcodeGeneratorTool from '@/components/tools/barcode-generator-tool';
 import PdfToPowerpointTool from '@/components/tools/pdf-to-powerpoint-tool';
+import PowerpointToPdfTool from '@/components/tools/powerpoint-to-pdf-tool';
+import PdfToJpgTool from '@/components/tools/pdf-to-jpg-tool';
+import JpgToPdfTool from '@/components/tools/jpg-to-pdf-tool';
+import PdfToPngTool from '@/components/tools/pdf-to-png-tool';
+import PngToPdfTool from '@/components/tools/png-to-pdf-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -326,6 +330,16 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <ExcelToPdfTool />;
     case 'pdf-to-powerpoint':
       return <PdfToPowerpointTool />;
+    case 'powerpoint-to-pdf':
+      return <PowerpointToPdfTool />;
+    case 'pdf-to-jpg':
+      return <PdfToJpgTool />;
+    case 'jpg-to-pdf':
+      return <JpgToPdfTool />;
+    case 'pdf-to-png':
+      return <PdfToPngTool />;
+    case 'png-to-pdf':
+      return <PngToPdfTool />;
     case 'emi-calculator':
       return <EmiCalculatorTool />;
     case 'home-loan-eligibility-calculator':
