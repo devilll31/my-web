@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PngToPdfInputSchema = z.object({
   pngDataUri: z
@@ -18,13 +19,7 @@ const PngToPdfInputSchema = z.object({
     ),
 });
 export type PngToPdfInput = z.infer<typeof PngToPdfInputSchema>;
-
-const PngToPdfOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted PDF document, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type PngToPdfOutput = z.infer<typeof PngToPdfOutputSchema>;
+export type PngToPdfOutput = z.infer<typeof FileOutputSchema>;
 
 export async function pngToPdf(input: PngToPdfInput): Promise<PngToPdfOutput> {
   return pngToPdfFlow(input);
@@ -33,7 +28,7 @@ export async function pngToPdf(input: PngToPdfInput): Promise<PngToPdfOutput> {
 const prompt = ai.definePrompt({
   name: 'pngToPdfPrompt',
   input: {schema: PngToPdfInputSchema},
-  output: {schema: PngToPdfOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided PNG image into a single-page PDF document.
 
   PNG for conversion: {{media url=pngDataUri}}
@@ -45,7 +40,7 @@ const pngToPdfFlow = ai.defineFlow(
   {
     name: 'pngToPdfFlow',
     inputSchema: PngToPdfInputSchema,
-    outputSchema: PngToPdfOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

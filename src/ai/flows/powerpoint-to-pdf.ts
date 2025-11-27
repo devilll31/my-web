@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PowerpointToPdfInputSchema = z.object({
   powerpointDataUri: z
@@ -18,13 +19,7 @@ const PowerpointToPdfInputSchema = z.object({
     ),
 });
 export type PowerpointToPdfInput = z.infer<typeof PowerpointToPdfInputSchema>;
-
-const PowerpointToPdfOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted PDF document, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type PowerpointToPdfOutput = z.infer<typeof PowerpointToPdfOutputSchema>;
+export type PowerpointToPdfOutput = z.infer<typeof FileOutputSchema>;
 
 export async function powerpointToPdf(input: PowerpointToPdfInput): Promise<PowerpointToPdfOutput> {
   return powerpointToPdfFlow(input);
@@ -33,7 +28,7 @@ export async function powerpointToPdf(input: PowerpointToPdfInput): Promise<Powe
 const prompt = ai.definePrompt({
   name: 'powerpointToPdfPrompt',
   input: {schema: PowerpointToPdfInputSchema},
-  output: {schema: PowerpointToPdfOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided PowerPoint presentation into a PDF file.
 
   Ensure that each slide is a separate page in the PDF, and that the layout and content are preserved perfectly.
@@ -47,7 +42,7 @@ const powerpointToPdfFlow = ai.defineFlow(
   {
     name: 'powerpointToPdfFlow',
     inputSchema: PowerpointToPdfInputSchema,
-    outputSchema: PowerpointToPdfOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

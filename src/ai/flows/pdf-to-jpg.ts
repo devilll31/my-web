@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PdfToJpgInputSchema = z.object({
   pdfDataUri: z
@@ -18,13 +19,7 @@ const PdfToJpgInputSchema = z.object({
     ),
 });
 export type PdfToJpgInput = z.infer<typeof PdfToJpgInputSchema>;
-
-const PdfToJpgOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted JPG image, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type PdfToJpgOutput = z.infer<typeof PdfToJpgOutputSchema>;
+export type PdfToJpgOutput = z.infer<typeof FileOutputSchema>;
 
 export async function pdfToJpg(input: PdfToJpgInput): Promise<PdfToJpgOutput> {
   return pdfToJpgFlow(input);
@@ -33,7 +28,7 @@ export async function pdfToJpg(input: PdfToJpgInput): Promise<PdfToJpgOutput> {
 const prompt = ai.definePrompt({
   name: 'pdfToJpgPrompt',
   input: {schema: PdfToJpgInputSchema},
-  output: {schema: PdfToJpgOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the first page of the provided PDF file into a high-quality JPG image.
 
   PDF for conversion: {{media url=pdfDataUri}}
@@ -45,7 +40,7 @@ const pdfToJpgFlow = ai.defineFlow(
   {
     name: 'pdfToJpgFlow',
     inputSchema: PdfToJpgInputSchema,
-    outputSchema: PdfToJpgOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

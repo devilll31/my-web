@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PdfToWordInputSchema = z.object({
   pdfDataUri: z
@@ -18,13 +19,7 @@ const PdfToWordInputSchema = z.object({
     ),
 });
 export type PdfToWordInput = z.infer<typeof PdfToWordInputSchema>;
-
-const PdfToWordOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The Base64 encoded string of the converted Word document, without the data URI prefix.'),
-});
-export type PdfToWordOutput = z.infer<typeof PdfToWordOutputSchema>;
+export type PdfToWordOutput = z.infer<typeof FileOutputSchema>;
 
 export async function pdfToWord(input: PdfToWordInput): Promise<PdfToWordOutput> {
   return pdfToWordFlow(input);
@@ -33,7 +28,7 @@ export async function pdfToWord(input: PdfToWordInput): Promise<PdfToWordOutput>
 const prompt = ai.definePrompt({
   name: 'pdfToWordPrompt',
   input: {schema: PdfToWordInputSchema},
-  output: {schema: PdfToWordOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided PDF file into a Microsoft Word (.docx) document.
 
   Maintain the original formatting, layout, text, and images as closely as possible.
@@ -47,7 +42,7 @@ const pdfToWordFlow = ai.defineFlow(
   {
     name: 'pdfToWordFlow',
     inputSchema: PdfToWordInputSchema,
-    outputSchema: PdfToWordOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

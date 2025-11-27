@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PdfToExcelInputSchema = z.object({
   pdfDataUri: z
@@ -18,13 +19,7 @@ const PdfToExcelInputSchema = z.object({
     ),
 });
 export type PdfToExcelInput = z.infer<typeof PdfToExcelInputSchema>;
-
-const PdfToExcelOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The Base64 encoded string of the converted Excel spreadsheet (.xlsx), without the data URI prefix.'),
-});
-export type PdfToExcelOutput = z.infer<typeof PdfToExcelOutputSchema>;
+export type PdfToExcelOutput = z.infer<typeof FileOutputSchema>;
 
 export async function pdfToExcel(input: PdfToExcelInput): Promise<PdfToExcelOutput> {
   return pdfToExcelFlow(input);
@@ -33,7 +28,7 @@ export async function pdfToExcel(input: PdfToExcelInput): Promise<PdfToExcelOutp
 const prompt = ai.definePrompt({
   name: 'pdfToExcelPrompt',
   input: {schema: PdfToExcelInputSchema},
-  output: {schema: PdfToExcelOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a data extraction expert. Analyze the provided PDF, identify all tables, and convert them into a single, well-structured Microsoft Excel (.xlsx) spreadsheet.
 
   Each table from the PDF should be on a separate sheet in the Excel file. Preserve the original table structure, including rows, columns, and cell data.
@@ -47,7 +42,7 @@ const pdfToExcelFlow = ai.defineFlow(
   {
     name: 'pdfToExcelFlow',
     inputSchema: PdfToExcelInputSchema,
-    outputSchema: PdfToExcelOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

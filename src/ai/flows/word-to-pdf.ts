@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const WordToPdfInputSchema = z.object({
   htmlContent: z
@@ -18,13 +19,7 @@ const WordToPdfInputSchema = z.object({
     ),
 });
 export type WordToPdfInput = z.infer<typeof WordToPdfInputSchema>;
-
-const WordToPdfOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted PDF document, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type WordToPdfOutput = z.infer<typeof WordToPdfOutputSchema>;
+export type WordToPdfOutput = z.infer<typeof FileOutputSchema>;
 
 export async function wordToPdf(input: WordToPdfInput): Promise<WordToPdfOutput> {
   return wordToPdfFlow(input);
@@ -33,7 +28,7 @@ export async function wordToPdf(input: WordToPdfInput): Promise<WordToPdfOutput>
 const prompt = ai.definePrompt({
   name: 'wordToPdfPrompt',
   input: {schema: WordToPdfInputSchema},
-  output: {schema: WordToPdfOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided HTML content into a high-quality PDF file.
 
   Preserve the original formatting, fonts, tables, and layout as closely as possible. The resulting PDF should be print-ready.
@@ -47,7 +42,7 @@ const wordToPdfFlow = ai.defineFlow(
   {
     name: 'wordToPdfFlow',
     inputSchema: WordToPdfInputSchema,
-    outputSchema: WordToPdfOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

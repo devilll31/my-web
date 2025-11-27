@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const ExcelToPdfInputSchema = z.object({
   excelDataUri: z
@@ -18,13 +19,7 @@ const ExcelToPdfInputSchema = z.object({
     ),
 });
 export type ExcelToPdfInput = z.infer<typeof ExcelToPdfInputSchema>;
-
-const ExcelToPdfOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted PDF document, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type ExcelToPdfOutput = z.infer<typeof ExcelToPdfOutputSchema>;
+export type ExcelToPdfOutput = z.infer<typeof FileOutputSchema>;
 
 export async function excelToPdf(input: ExcelToPdfInput): Promise<ExcelToPdfOutput> {
   return excelToPdfFlow(input);
@@ -33,7 +28,7 @@ export async function excelToPdf(input: ExcelToPdfInput): Promise<ExcelToPdfOutp
 const prompt = ai.definePrompt({
   name: 'excelToPdfPrompt',
   input: {schema: ExcelToPdfInputSchema},
-  output: {schema: ExcelToPdfOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided Excel spreadsheet into a PDF file.
 
   Ensure that each sheet is a separate page or set of pages in the PDF, and that the layout, charts, and tables are preserved perfectly. The resulting PDF should be print-ready.
@@ -47,7 +42,7 @@ const excelToPdfFlow = ai.defineFlow(
   {
     name: 'excelToPdfFlow',
     inputSchema: ExcelToPdfInputSchema,
-    outputSchema: ExcelToPdfOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

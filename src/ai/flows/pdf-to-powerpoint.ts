@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const PdfToPowerPointInputSchema = z.object({
   pdfDataUri: z
@@ -18,13 +19,7 @@ const PdfToPowerPointInputSchema = z.object({
     ),
 });
 export type PdfToPowerPointInput = z.infer<typeof PdfToPowerPointInputSchema>;
-
-const PdfToPowerPointOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The Base64 encoded string of the converted PowerPoint document (.pptx), without the data URI prefix.'),
-});
-export type PdfToPowerPointOutput = z.infer<typeof PdfToPowerPointOutputSchema>;
+export type PdfToPowerPointOutput = z.infer<typeof FileOutputSchema>;
 
 export async function pdfToPowerPoint(input: PdfToPowerPointInput): Promise<PdfToPowerPointOutput> {
   return pdfToPowerPointFlow(input);
@@ -33,7 +28,7 @@ export async function pdfToPowerPoint(input: PdfToPowerPointInput): Promise<PdfT
 const prompt = ai.definePrompt({
   name: 'pdfToPowerPointPrompt',
   input: {schema: PdfToPowerPointInputSchema},
-  output: {schema: PdfToPowerPointOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided PDF file into a Microsoft PowerPoint (.pptx) presentation.
 
   Each page of the PDF should be converted into a separate slide. Preserve the original layout, text, and images as closely as possible, making them editable in PowerPoint.
@@ -47,7 +42,7 @@ const pdfToPowerPointFlow = ai.defineFlow(
   {
     name: 'pdfToPowerPointFlow',
     inputSchema: PdfToPowerPointInputSchema,
-    outputSchema: PdfToPowerPointOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);

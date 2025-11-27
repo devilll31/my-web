@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { FileOutputSchema } from '../schemas/file-conversion-schemas';
 
 const JpgToPdfInputSchema = z.object({
   jpgDataUri: z
@@ -18,13 +19,7 @@ const JpgToPdfInputSchema = z.object({
     ),
 });
 export type JpgToPdfInput = z.infer<typeof JpgToPdfInputSchema>;
-
-const JpgToPdfOutputSchema = z.object({
-  base64Data: z
-    .string()
-    .describe('The converted PDF document, as a Base64 encoded string, without the data URI prefix.'),
-});
-export type JpgToPdfOutput = z.infer<typeof JpgToPdfOutputSchema>;
+export type JpgToPdfOutput = z.infer<typeof FileOutputSchema>;
 
 export async function jpgToPdf(input: JpgToPdfInput): Promise<JpgToPdfOutput> {
   return jpgToPdfFlow(input);
@@ -33,7 +28,7 @@ export async function jpgToPdf(input: JpgToPdfInput): Promise<JpgToPdfOutput> {
 const prompt = ai.definePrompt({
   name: 'jpgToPdfPrompt',
   input: {schema: JpgToPdfInputSchema},
-  output: {schema: JpgToPdfOutputSchema},
+  output: {schema: FileOutputSchema},
   prompt: `You are a document conversion expert. Convert the provided JPG image into a single-page PDF document.
 
   JPG for conversion: {{media url=jpgDataUri}}
@@ -45,7 +40,7 @@ const jpgToPdfFlow = ai.defineFlow(
   {
     name: 'jpgToPdfFlow',
     inputSchema: JpgToPdfInputSchema,
-    outputSchema: JpgToPdfOutputSchema,
+    outputSchema: FileOutputSchema,
   },
   async input => {
     const llmResponse = await prompt(input);
