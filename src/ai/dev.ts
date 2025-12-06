@@ -29,3 +29,8 @@ import '@/ai/flows/pdf-to-jpg.ts';
 import '@/ai/flows/jpg-to-pdf.ts';
 import '@/ai/flows/pdf-to-png.ts';
 import '@/ai/flows/png-to-pdf.ts';
+import '@/ai/flows/pdf-to-html.ts';
+import '@/ai/flows/html-to-pdf.ts';
+import '@/ai/flows/pdf-to-txt.ts';
+import '@/ai/flows/txt-to-pdf.ts';
+import '@/ai/flows/pdf-to-epub.ts';

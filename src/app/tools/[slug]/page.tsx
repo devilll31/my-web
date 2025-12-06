@@ -286,6 +286,11 @@ import PdfToJpgTool from '@/components/tools/pdf-to-jpg-tool';
 import JpgToPdfTool from '@/components/tools/jpg-to-pdf-tool';
 import PdfToPngTool from '@/components/tools/pdf-to-png-tool';
 import PngToPdfTool from '@/components/tools/png-to-pdf-tool';
+import PdfToHtmlTool from '@/components/tools/pdf-to-html-tool';
+import HtmlToPdfTool from '@/components/tools/html-to-pdf-tool';
+import PdfToTxtTool from '@/components/tools/pdf-to-txt-tool';
+import TxtToPdfTool from '@/components/tools/txt-to-pdf-tool';
+import PdfToEpubTool from '@/components/tools/pdf-to-epub-tool';
 
 export async function generateStaticParams() {
   const tools = getTools();
@@ -340,6 +345,16 @@ const ToolComponent = ({ slug }: { slug: string }) => {
       return <PdfToPngTool />;
     case 'png-to-pdf':
       return <PngToPdfTool />;
+    case 'pdf-to-html':
+      return <PdfToHtmlTool />;
+    case 'html-to-pdf':
+      return <HtmlToPdfTool />;
+    case 'pdf-to-txt':
+      return <PdfToTxtTool />;
+    case 'txt-to-pdf':
+      return <TxtToPdfTool />;
+    case 'pdf-to-epub':
+      return <PdfToEpubTool />;
     case 'emi-calculator':
       return <EmiCalculatorTool />;
     case 'home-loan-eligibility-calculator':
