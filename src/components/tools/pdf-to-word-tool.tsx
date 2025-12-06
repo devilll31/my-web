@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef } from 'react';
@@ -37,6 +38,7 @@ export default function PdfToWordTool() {
       toast({ title: 'Invalid File Type', description: 'Please upload a PDF file.', variant: 'destructive' });
       return;
     }
+    
     setError(null);
     setConvertedFile(null);
     setIsLoading(true);
