@@ -7,6 +7,12 @@ import TypingAnimation from '@/components/typing-animation';
 import Slogan from '@/components/slogan';
 import ToolCard from '@/components/tool-card';
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   const allTools = getTools();
@@ -136,26 +142,40 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center font-headline">15 Categories, 500+ Tools</h2>
             </div>
             <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">From PDF manipulation to image editing, we cover a vast range of needs. All our tools are free, secure, and designed to work seamlessly in your browser.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {categoriesWithTools.map((category) => {
-                 const catDetails = getCategoryBySlug(category.slug);
-                 if (!catDetails) return null;
-                 return (
-                   <Link href={`/tools#${category.slug}`} key={category.slug} className="group block">
-                    <div className="flex items-center gap-4 p-4 border rounded-lg bg-white hover:bg-gray-100/50 transition-colors hover:border-primary/50 shadow-sm h-full" style={{ '--category-color': `hsl(${catDetails.color})` } as React.CSSProperties}>
-                      <div className="p-3 rounded-lg" style={{ backgroundColor: `hsla(${catDetails.color}, 70%, 50%, 0.15)`}}>
-                        <category.icon className="h-6 w-6" style={{ color: `hsl(${catDetails.color}, 70%, 50%)` }} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold">{category.name}</h3>
-                        <p className="text-sm text-muted-foreground">{category.tools.length} Tools</p>
-                      </div>
-                      <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
+            <Accordion type="single" collapsible className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+                {categoriesWithTools.map((category, categoryIndex) => {
+                  const catDetails = getCategoryBySlug(category.slug);
+                  if (!catDetails) return null;
+                  return (
+                    <AccordionItem value={category.slug} key={category.slug} className="border bg-card rounded-lg shadow-sm">
+                      <AccordionTrigger className="text-lg text-left font-semibold p-4 hover:no-underline">
+                        <div className="flex items-center gap-3">
+                           <div className="p-2 rounded-md" style={{ backgroundColor: `hsla(${catDetails.color}, 80%, 60%, 0.25)` }}>
+                              <category.icon className="w-5 h-5" style={{ color: `hsl(${catDetails.color})` }} />
+                          </div>
+                          <div className="text-left">
+                            <h3 className="font-semibold">{category.name}</h3>
+                            <p className="text-sm text-muted-foreground">{category.tools.length} Tools</p>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-4 pb-4">
+                        <ul className="space-y-2 text-sm max-h-60 overflow-y-auto">
+                          {category.tools.map((tool, toolIndex) => (
+                            <li key={tool.slug} className="flex items-start">
+                              <span className="text-muted-foreground w-6 text-right mr-2">{toolIndex + 1}.</span>
+                              <Link href={`/tools/${tool.slug}`} className="flex-1 text-muted-foreground hover:text-primary hover:underline">
+                                {tool.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  )})}
+              </div>
+            </Accordion>
              <div className="text-center mt-12">
               <Button asChild size="lg" className="rounded-full group btn-gradient">
                 <Link href="/tools"><span className="text-white group-hover:text-black transition-colors duration-300">Browse All Categories</span></Link>
