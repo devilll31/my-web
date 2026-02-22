@@ -8,14 +8,14 @@ interface LogoProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Logo = ({ className, isFooter = false, ...props }: LogoProps) => {
   return (
-    <div className={cn("relative flex items-center h-10", className)} {...props}>
+    <div className={cn("relative flex items-center h-12", className)} {...props}>
       <Image
         src="/logo.png"
         alt="D2ools Logo"
-        width={150}
-        height={150}
+        width={200}
+        height={60}
         className={cn(
-          "h-full w-auto object-contain transition-all",
+          "h-full w-auto object-contain transition-all duration-300",
           isFooter && "brightness-0 invert"
         )}
         priority
