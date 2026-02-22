@@ -71,7 +71,10 @@ export default function Home() {
                     <Link href="/tools"><span className="text-white group-hover:text-black transition-colors duration-300">Explore All 500+ Tools</span> <ArrowRight className="ml-2 text-white group-hover:text-black transition-colors duration-300" /></Link>
                 </Button>
                 <Button asChild size="lg" className="rounded-full group btn-gradient shadow-lg">
-                    <Link href="/tools/top-50"><Star className="mr-2 text-white" /> <span className="text-white group-hover:text-black transition-colors duration-300">Top 50 Tools</span></Link>
+                    <Link href="/tools/top-50">
+                        <Star className="mr-2 text-white group-hover:text-black transition-colors duration-300" /> 
+                        <span className="text-white group-hover:text-black transition-colors duration-300">Top 50 Tools</span>
+                    </Link>
                 </Button>
             </div>
 

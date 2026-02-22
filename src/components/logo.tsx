@@ -12,8 +12,8 @@ const Logo = ({ className, isFooter = false, ...props }: LogoProps) => {
       <Image
         src="/logo.png"
         alt="D2ools Logo"
-        width={120}
-        height={120}
+        width={150}
+        height={150}
         className={cn(
           "h-full w-auto object-contain transition-all",
           isFooter && "brightness-0 invert"
