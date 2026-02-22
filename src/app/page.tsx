@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, Check, Star, Wand2, Users, FileText, Smartphone, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
