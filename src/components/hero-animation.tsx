@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
 
 const meanings = [
   "Digital Tools",
@@ -18,12 +17,11 @@ const HeroAnimation = () => {
   const [meaningIndex, setMeaningIndex] = useState(0);
 
   const fullWelcomeText = "Welcome to D2ools";
+  const typingPhaseDuration = 6000;
+  const flippingPhaseDuration = 8000;
 
-  // Phase Controller
+  // Phase Controller: Switches between Typing (6s) and Flipping (8s)
   useEffect(() => {
-    const typingDuration = 6000;
-    const flippingDuration = 8000;
-
     const runLoop = () => {
       setPhase('typing');
       setDisplayText('');
@@ -32,23 +30,23 @@ const HeroAnimation = () => {
       setTimeout(() => {
         setPhase('flipping');
         setMeaningIndex(0);
-      }, typingDuration);
+      }, typingPhaseDuration);
     };
 
     runLoop();
-    const interval = setInterval(runLoop, typingDuration + flippingDuration);
+    const interval = setInterval(runLoop, typingPhaseDuration + flippingPhaseDuration);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Typing Logic
+  // Typing Logic: Handles character-by-character typing and erasing
   useEffect(() => {
     if (phase !== 'typing') return;
 
     let timer: NodeJS.Timeout;
-    const typeSpeed = 100;
-    const deleteSpeed = 50;
-    const pauseTime = 1000;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseTime = 1200;
 
     const handleType = () => {
       if (!isDeleting) {
@@ -56,14 +54,13 @@ const HeroAnimation = () => {
           setDisplayText(fullWelcomeText.substring(0, displayText.length + 1));
           timer = setTimeout(handleType, typeSpeed);
         } else {
+          // Pause at full text before starting to delete
           timer = setTimeout(() => setIsDeleting(true), pauseTime);
         }
       } else {
         if (displayText.length > 0) {
           setDisplayText(fullWelcomeText.substring(0, displayText.length - 1));
           timer = setTimeout(handleType, deleteSpeed);
-        } else {
-          // Stay empty until phase switches
         }
       }
     };
@@ -72,7 +69,7 @@ const HeroAnimation = () => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, phase]);
 
-  // Flipping Logic
+  // Flipping Logic: Cycles meanings every 2 seconds
   useEffect(() => {
     if (phase !== 'flipping') return;
 
@@ -84,50 +81,57 @@ const HeroAnimation = () => {
   }, [phase]);
 
   return (
-    <div className="relative h-24 sm:h-32 md:h-40 flex items-center justify-center w-full overflow-hidden">
+    <div className="relative h-32 sm:h-40 md:h-48 flex items-center justify-center w-full overflow-hidden">
       <AnimatePresence mode="wait">
         {phase === 'typing' ? (
           <motion.div
             key="typing-phase"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="flex items-center justify-center"
           >
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline gradient-text">
               {displayText}
-              <span className="inline-block w-[2px] h-[0.6em] ml-1 bg-primary animate-pulse align-middle opacity-70" style={{ height: '40%' }}></span>
+              <span 
+                className="inline-block w-[3px] ml-1 bg-primary animate-pulse align-middle opacity-70" 
+                style={{ height: '0.2em', marginBottom: '0.1em' }}
+              ></span>
             </h1>
           </motion.div>
         ) : (
           <motion.div
             key="flipping-phase"
-            initial={{ opacity: 0, scale: 0.8, rotateX: -90 }}
-            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-            exit={{ opacity: 0, scale: 1.1, rotateX: 90 }}
-            transition={{ type: "spring", stiffness: 100, damping: 15 }}
-            className="perspective-1000 w-full max-w-2xl px-4"
+            initial={{ opacity: 0, y: 20, rotateX: -30 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            exit={{ opacity: 0, y: -20, rotateX: 30 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="w-full max-w-2xl px-4"
+            style={{ perspective: '1000px' }}
           >
-            <div className="relative bg-gradient-to-r from-primary to-accent rounded-2xl p-1 shadow-2xl overflow-hidden group">
-              <div className="bg-background/95 backdrop-blur-sm rounded-xl py-6 md:py-8 px-4 md:px-10 text-center flex flex-col items-center justify-center gap-2">
-                <span className="text-muted-foreground text-sm md:text-base uppercase tracking-widest font-semibold">D2ools means</span>
-                <div className="h-12 md:h-16 flex items-center justify-center overflow-hidden">
+            <div className="relative bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-1 shadow-[0_20px_50px_rgba(85,139,207,0.15)] overflow-hidden border border-primary/20">
+              <div className="bg-background/90 backdrop-blur-xl rounded-[1.4rem] py-8 md:py-12 px-6 md:px-12 text-center flex flex-col items-center justify-center gap-4">
+                <span className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.3em] font-black opacity-60">
+                  D2ools means
+                </span>
+                <div className="h-16 md:h-24 flex items-center justify-center overflow-hidden w-full">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={meanings[meaningIndex]}
                       initial={{ rotateX: -90, opacity: 0, y: 20 }}
                       animate={{ rotateX: 0, opacity: 1, y: 0 }}
                       exit={{ rotateX: 90, opacity: 0, y: -20 }}
-                      transition={{ duration: 0.6, ease: "easeInOut" }}
-                      className="text-2xl sm:text-3xl md:text-5xl font-bold gradient-text whitespace-nowrap"
+                      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                      className="text-3xl sm:text-4xl md:text-6xl font-extrabold gradient-text whitespace-nowrap"
                     >
                       &quot;{meanings[meaningIndex]}&quot;
                     </motion.div>
                   </AnimatePresence>
                 </div>
               </div>
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Subtle background glow effect */}
+              <div className="absolute -inset-24 bg-gradient-to-r from-primary/5 to-accent/5 blur-3xl pointer-events-none opacity-50" />
             </div>
           </motion.div>
         )}
