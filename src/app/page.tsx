@@ -2,10 +2,9 @@ import Link from 'next/link';
 import { ArrowRight, Check, Star, Wand2, Users, FileText, Smartphone, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAllToolsByCategories, Category, getTools, getCategoryBySlug } from '@/lib/tools-data';
-import TypingAnimation from '@/components/typing-animation';
 import Slogan from '@/components/slogan';
-import ToolCard from '@/components/tool-card';
 import RotatingToolCarousel from '@/components/rotating-tool-carousel';
+import HeroAnimation from '@/components/hero-animation';
 import {
   Accordion,
   AccordionContent,
@@ -36,14 +35,8 @@ export default function Home() {
         <section className="relative w-full pt-28 pb-12 md:pt-32 md:pb-16 bg-hero-gradient overflow-hidden">
           <div className="container px-4 md:px-6 relative text-center">
             <div className="flex flex-col items-center space-y-4">
-              <div className="space-y-6">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
-                   <TypingAnimation
-                      text="Welcome to D2ools"
-                      className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline inline-block gradient-text"
-                      isLooping={true}
-                  />
-                </h1>
+              <div className="space-y-6 w-full max-w-4xl">
+                <HeroAnimation />
                 <div className="mb-8 pb-4">
                   <Slogan 
                     text="The next level of online utility tools. Access 500+ free utilities for PDF, files, images, and more."
